@@ -7,7 +7,7 @@
 
 ![Concept admin dashboard template preview](https://colorlib.com/wp/wp-content/uploads/sites/2/concept-free-admin-dashboard-panel.jpg)
 
-### Demo Site: [Sooon]
+### Demo Site: https://colorlib.com/polygon/concept/index.html
 
 ### TOC
 - [Built With](#built-with)
