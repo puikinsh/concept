@@ -1,0 +1,378 @@
+{{> layouts/main title="Checkout" activeMenu="ecommerce" activePage="checkout"}}
+
+{{#*inline "content"}}
+<div class="dashboard-main-wrapper">
+    <!-- Header -->
+    {{> layouts/header}}
+    
+    <!-- Sidebar -->
+    {{> layouts/sidebar activeMenu="ecommerce" activePage="checkout"}}
+    
+    <!-- Main Content -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Checkout</h2>
+                            <p class="pageheader-text">Complete your purchase by providing shipping and payment information.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="/pages/ecommerce/products.html" class="breadcrumb-link">E-Commerce</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Checkout Steps -->
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="checkout-steps">
+                            <div class="step active">
+                                <div class="step-icon">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </div>
+                                <div class="step-title">Cart</div>
+                            </div>
+                            <div class="step active">
+                                <div class="step-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div class="step-title">Shipping</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="step-title">Payment</div>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="step-title">Confirm</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Checkout Form -->
+                    <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+                        <!-- Shipping Information -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Shipping Information</h5>
+                            </div>
+                            <div class="card-body">
+                                <form id="shippingForm">
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id="firstName" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id="lastName" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" placeholder="+1 (555) 123-4567" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
+                                        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-5 mb-3">
+                                            <label for="country" class="form-label">Country</label>
+                                            <select class="form-select" id="country" required>
+                                                <option value="">Choose...</option>
+                                                <option value="US" selected>United States</option>
+                                                <option value="CA">Canada</option>
+                                                <option value="UK">United Kingdom</option>
+                                                <option value="AU">Australia</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label for="state" class="form-label">State</label>
+                                            <select class="form-select" id="state" required>
+                                                <option value="">Choose...</option>
+                                                <option value="CA">California</option>
+                                                <option value="NY">New York</option>
+                                                <option value="TX">Texas</option>
+                                                <option value="FL">Florida</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="zip" class="form-label">Zip</label>
+                                            <input type="text" class="form-control" id="zip" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <hr class="mb-4">
+                                    
+                                    <div class="form-check mb-3">
+                                        <input type="checkbox" class="form-check-input" id="sameAddress">
+                                        <label class="form-check-label" for="sameAddress">
+                                            Billing address is the same as shipping address
+                                        </label>
+                                    </div>
+                                    
+                                    <div class="form-check mb-3">
+                                        <input type="checkbox" class="form-check-input" id="saveInfo">
+                                        <label class="form-check-label" for="saveInfo">
+                                            Save this information for next time
+                                        </label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment Information -->
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <h5 class="mb-0">Payment Information</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="payment-methods mb-4">
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" checked>
+                                        <label class="form-check-label" for="creditCard">
+                                            <i class="fas fa-credit-card me-2"></i>Credit/Debit Card
+                                        </label>
+                                    </div>
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypal">
+                                        <label class="form-check-label" for="paypal">
+                                            <i class="fab fa-paypal me-2"></i>PayPal
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="applePay">
+                                        <label class="form-check-label" for="applePay">
+                                            <i class="fab fa-apple me-2"></i>Apple Pay
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div id="creditCardForm">
+                                    <div class="mb-3">
+                                        <label for="cardName" class="form-label">Name on Card</label>
+                                        <input type="text" class="form-control" id="cardName" required>
+                                        <small class="text-muted">Full name as displayed on card</small>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <label for="cardNumber" class="form-label">Card Number</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" required>
+                                            <span class="input-group-text">
+                                                <i class="fab fa-cc-visa me-1"></i>
+                                                <i class="fab fa-cc-mastercard me-1"></i>
+                                                <i class="fab fa-cc-amex"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="expiry" class="form-label">Expiry Date</label>
+                                            <input type="text" class="form-control" id="expiry" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="cvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div id="paypalForm" style="display: none;">
+                                    <div class="text-center py-4">
+                                        <p class="mb-3">You will be redirected to PayPal to complete your purchase.</p>
+                                        <button class="btn btn-warning btn-lg">
+                                            <i class="fab fa-paypal me-2"></i>Continue with PayPal
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div id="applePayForm" style="display: none;">
+                                    <div class="text-center py-4">
+                                        <p class="mb-3">Use Touch ID or Face ID to complete your purchase.</p>
+                                        <button class="btn btn-dark btn-lg">
+                                            <i class="fab fa-apple me-2"></i>Pay with Apple Pay
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Order Summary -->
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Order Summary</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- Cart Items -->
+                                <div class="order-items mb-3">
+                                    <div class="order-item d-flex justify-content-between align-items-start mb-3">
+                                        <div class="d-flex">
+                                            <img src="/assets/images/eco-product-img-1.png" alt="Product" width="60" class="me-3">
+                                            <div>
+                                                <h6 class="mb-1">iPhone 15 Pro Max</h6>
+                                                <small class="text-muted">512GB, Natural Titanium</small>
+                                                <div class="text-muted small">Qty: 1</div>
+                                            </div>
+                                        </div>
+                                        <span class="fw-bold">$1,399</span>
+                                    </div>
+                                    
+                                    <div class="order-item d-flex justify-content-between align-items-start mb-3">
+                                        <div class="d-flex">
+                                            <img src="/assets/images/eco-product-img-3.png" alt="Product" width="60" class="me-3">
+                                            <div>
+                                                <h6 class="mb-1">AirPods Pro</h6>
+                                                <small class="text-muted">2nd Generation</small>
+                                                <div class="text-muted small">Qty: 1</div>
+                                            </div>
+                                        </div>
+                                        <span class="fw-bold">$249</span>
+                                    </div>
+                                </div>
+                                
+                                <hr>
+                                
+                                <!-- Promo Code -->
+                                <div class="mb-3">
+                                    <label for="promoCode" class="form-label small text-muted">Promo Code</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="promoCode" placeholder="Enter code">
+                                        <button class="btn btn-outline-secondary" type="button">Apply</button>
+                                    </div>
+                                </div>
+                                
+                                <hr>
+                                
+                                <!-- Order Totals -->
+                                <div class="order-totals">
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Subtotal</span>
+                                        <span>$1,648.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Shipping</span>
+                                        <span>$15.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span>Tax</span>
+                                        <span>$149.67</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between mb-3">
+                                        <strong>Total</strong>
+                                        <strong class="text-primary h5 mb-0">$1,812.67</strong>
+                                    </div>
+                                </div>
+                                
+                                <button class="btn btn-primary btn-lg w-100" onclick="completeOrder()">
+                                    <i class="fas fa-lock me-2"></i>Complete Order
+                                </button>
+                                
+                                <div class="text-center mt-3">
+                                    <small class="text-muted">
+                                        <i class="fas fa-shield-alt me-1"></i>
+                                        Secure checkout powered by SSL encryption
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Trust Badges -->
+                        <div class="card mt-3">
+                            <div class="card-body text-center">
+                                <h6 class="mb-3">We Accept</h6>
+                                <div class="payment-icons">
+                                    <i class="fab fa-cc-visa fa-2x me-2 text-muted"></i>
+                                    <i class="fab fa-cc-mastercard fa-2x me-2 text-muted"></i>
+                                    <i class="fab fa-cc-amex fa-2x me-2 text-muted"></i>
+                                    <i class="fab fa-cc-paypal fa-2x text-muted"></i>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-around small text-muted">
+                                    <div>
+                                        <i class="fas fa-shipping-fast mb-2 d-block"></i>
+                                        Free Shipping
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-undo mb-2 d-block"></i>
+                                        30-Day Returns
+                                    </div>
+                                    <div>
+                                        <i class="fas fa-lock mb-2 d-block"></i>
+                                        Secure Checkout
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        {{> layouts/footer}}
+    </div>
+</div>
+
+<!-- Page Specific Scripts -->
+<script type="module" src="/js/pages/checkout.js"></script>
+
+<script>
+// Payment method toggle
+document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        document.getElementById('creditCardForm').style.display = 'none';
+        document.getElementById('paypalForm').style.display = 'none';
+        document.getElementById('applePayForm').style.display = 'none';
+        
+        if (this.id === 'creditCard') {
+            document.getElementById('creditCardForm').style.display = 'block';
+        } else if (this.id === 'paypal') {
+            document.getElementById('paypalForm').style.display = 'block';
+        } else if (this.id === 'applePay') {
+            document.getElementById('applePayForm').style.display = 'block';
+        }
+    });
+});
+
+function completeOrder() {
+    // In real app, would validate and submit order
+    alert('Order completed successfully!');
+}
+</script>
+{{/inline}}
+
+{{> layouts/base}}

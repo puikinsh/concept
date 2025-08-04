@@ -1,0 +1,633 @@
+{{> layouts/main title="Influencer Profile" activeMenu="influencer" activePage="influencer-profile"}}
+
+{{#*inline "content"}}
+<div class="dashboard-main-wrapper">
+    <!-- Header -->
+    {{> layouts/header}}
+    
+    <!-- Sidebar -->
+    {{> layouts/sidebar activeMenu="influencer" activePage="influencer-profile"}}
+    
+    <!-- Main Content -->
+    <div class="dashboard-wrapper">
+        <div class="influence-profile">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Influencer Profile</h2>
+                            <p class="pageheader-text">View detailed information about influencer campaigns, packages, reviews, and engagement metrics.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="/pages/apps/influencer-finder.html" class="breadcrumb-link">Influencer</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Influencer Profile</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Profile Sidebar -->
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-12 col-12">
+                        <!-- Profile Card -->
+                        <div class="card profile-card">
+                            <div class="card-body">
+                                <div class="user-avatar text-center d-block">
+                                    <img src="/assets/images/avatar-1.jpg" alt="Michael J. Christy" class="rounded-circle user-avatar-xxl">
+                                </div>
+                                <div class="text-center">
+                                    <h3 class="font-24 mb-0">Michael J. Christy</h3>
+                                    <p class="text-muted">Project Manager @Influence</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-body border-top">
+                                <h5 class="mb-3">Contact Information</h5>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-2">
+                                        <i class="fas fa-fw fa-envelope me-2 text-primary"></i>
+                                        <a href="mailto:michaelchristy@gmail.com">michaelchristy@gmail.com</a>
+                                    </li>
+                                    <li class="mb-0">
+                                        <i class="fas fa-fw fa-phone me-2 text-primary"></i>
+                                        <a href="tel:+19001234567">(900) 123 4567</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="card-body border-top">
+                                <h5 class="mb-3">Rating</h5>
+                                <h2 class="mb-0">4.8</h2>
+                                <div class="rating-star">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                </div>
+                                <p class="text-muted mb-0">14 Reviews</p>
+                            </div>
+                            
+                            <div class="card-body border-top">
+                                <h5 class="mb-3">Social Channels</h5>
+                                <ul class="list-unstyled mb-0 social-channels">
+                                    <li class="mb-2">
+                                        <a href="#" class="text-decoration-none">
+                                            <i class="fab fa-fw fa-facebook-square me-2 text-primary"></i>
+                                            fb.me/michaelchristy
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-decoration-none">
+                                            <i class="fab fa-fw fa-twitter-square me-2 text-info"></i>
+                                            twitter.com/michaelchristy
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-decoration-none">
+                                            <i class="fab fa-fw fa-instagram me-2 text-danger"></i>
+                                            instagram.com/michaelchristy
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-decoration-none">
+                                            <i class="fas fa-fw fa-rss-square me-2 text-warning"></i>
+                                            michaelchristy.com/blog
+                                        </a>
+                                    </li>
+                                    <li class="mb-2">
+                                        <a href="#" class="text-decoration-none">
+                                            <i class="fab fa-fw fa-pinterest-square me-2 text-danger"></i>
+                                            pinterest.com/michaelchristy
+                                        </a>
+                                    </li>
+                                    <li class="mb-0">
+                                        <a href="#" class="text-decoration-none">
+                                            <i class="fab fa-fw fa-youtube me-2 text-danger"></i>
+                                            youtube/michaelchristy
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="card-body border-top">
+                                <h5 class="mb-3">Categories</h5>
+                                <div>
+                                    <span class="badge bg-light text-dark me-1">Fitness</span>
+                                    <span class="badge bg-light text-dark me-1">Life Style</span>
+                                    <span class="badge bg-light text-dark">Gym</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Campaign Data -->
+                    <div class="col-xl-9 col-lg-9 col-md-7 col-sm-12 col-12">
+                        <div class="influence-profile-content">
+                            <!-- Tabs Navigation -->
+                            <ul class="nav nav-pills nav-fill mb-4" id="profileTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="campaign-tab" data-bs-toggle="pill" data-bs-target="#campaign" type="button" role="tab" aria-controls="campaign" aria-selected="true">
+                                        <i class="fas fa-bullhorn me-2"></i>Campaign
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="packages-tab" data-bs-toggle="pill" data-bs-target="#packages" type="button" role="tab" aria-controls="packages" aria-selected="false">
+                                        <i class="fas fa-box me-2"></i>Packages
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="reviews-tab" data-bs-toggle="pill" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">
+                                        <i class="fas fa-star me-2"></i>Reviews
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="messages-tab" data-bs-toggle="pill" data-bs-target="#messages" type="button" role="tab" aria-controls="messages" aria-selected="false">
+                                        <i class="fas fa-envelope me-2"></i>Send Message
+                                    </button>
+                                </li>
+                            </ul>
+                            
+                            <!-- Tab Content -->
+                            <div class="tab-content" id="profileTabContent">
+                                <!-- Campaign Tab -->
+                                <div class="tab-pane fade show active" id="campaign" role="tabpanel" aria-labelledby="campaign-tab">
+                                    <!-- Campaign Stats -->
+                                    <div class="section-block">
+                                        <h3 class="section-title">My Campaign Stats</h3>
+                                    </div>
+                                    <div class="row mb-4">
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-3">
+                                            <div class="card h-100">
+                                                <div class="card-body text-center">
+                                                    <h1 class="mb-1 text-primary">9</h1>
+                                                    <p class="mb-0">Campaign Invitations</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-3">
+                                            <div class="card h-100">
+                                                <div class="card-body text-center">
+                                                    <h1 class="mb-1 text-success">35</h1>
+                                                    <p class="mb-0">Finished Campaigns</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-3">
+                                            <div class="card h-100">
+                                                <div class="card-body text-center">
+                                                    <h1 class="mb-1 text-info">8</h1>
+                                                    <p class="mb-0">Accepted Campaigns</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12 mb-3">
+                                            <div class="card h-100">
+                                                <div class="card-body text-center">
+                                                    <h1 class="mb-1 text-danger">1</h1>
+                                                    <p class="mb-0">Declined Campaigns</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Campaign List -->
+                                    <div class="section-block">
+                                        <h3 class="section-title">Campaign List</h3>
+                                    </div>
+                                    
+                                    <!-- Campaign Item 1 -->
+                                    <div class="card campaign-card mb-3">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <img src="/assets/images/slack.png" alt="Slack" class="campaign-logo me-4">
+                                                <div class="flex-grow-1">
+                                                    <h4 class="mb-2">Slack Marketing Campaign 2025</h4>
+                                                    <div class="campaign-dates">
+                                                        <span class="me-3">
+                                                            <i class="far fa-calendar me-1"></i>
+                                                            Draft Due: <span class="text-primary">24 Jan 2025</span>
+                                                        </span>
+                                                        <span class="me-3">
+                                                            <i class="far fa-calendar-check me-1"></i>
+                                                            Publish: <span class="text-secondary">30 Feb 2025</span>
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-calendar-times me-1"></i>
+                                                            Ends: <span class="text-info">30 May 2025</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-light">
+                                            <div class="row text-center g-0">
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">45k</h5>
+                                                        <small class="text-muted">Total Reach</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">29k</h5>
+                                                        <small class="text-muted">Total Views</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">5k</h5>
+                                                        <small class="text-muted">Total Clicks</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">4k</h5>
+                                                        <small class="text-muted">Engagement</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">2k</h5>
+                                                        <small class="text-muted">Conversion</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Campaign Item 2 -->
+                                    <div class="card campaign-card mb-3">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <img src="/assets/images/dribbble.png" alt="Dribbble" class="campaign-logo me-4">
+                                                <div class="flex-grow-1">
+                                                    <h4 class="mb-2">Dribbble Design Contest 2025</h4>
+                                                    <div class="campaign-dates">
+                                                        <span class="me-3">
+                                                            <i class="far fa-calendar me-1"></i>
+                                                            Draft Due: <span class="text-primary">28 Jan 2025</span>
+                                                        </span>
+                                                        <span class="me-3">
+                                                            <i class="far fa-calendar-check me-1"></i>
+                                                            Publish: <span class="text-secondary">20 March 2025</span>
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-calendar-times me-1"></i>
+                                                            Ends: <span class="text-info">10 July 2025</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-light">
+                                            <div class="row text-center g-0">
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">35k</h5>
+                                                        <small class="text-muted">Total Reach</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">45k</h5>
+                                                        <small class="text-muted">Total Views</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">8k</h5>
+                                                        <small class="text-muted">Total Clicks</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">10k</h5>
+                                                        <small class="text-muted">Engagement</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">3k</h5>
+                                                        <small class="text-muted">Conversion</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Campaign Item 3 -->
+                                    <div class="card campaign-card mb-3">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center">
+                                                <img src="/assets/images/dropbox.png" alt="Dropbox" class="campaign-logo me-4">
+                                                <div class="flex-grow-1">
+                                                    <h4 class="mb-2">Dropbox Business Solutions</h4>
+                                                    <div class="campaign-dates">
+                                                        <span class="me-3">
+                                                            <i class="far fa-calendar me-1"></i>
+                                                            Draft Due: <span class="text-primary">05 Feb 2025</span>
+                                                        </span>
+                                                        <span class="me-3">
+                                                            <i class="far fa-calendar-check me-1"></i>
+                                                            Publish: <span class="text-secondary">14 May 2025</span>
+                                                        </span>
+                                                        <span>
+                                                            <i class="far fa-calendar-times me-1"></i>
+                                                            Ends: <span class="text-info">16 Aug 2025</span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-light">
+                                            <div class="row text-center g-0">
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">40k</h5>
+                                                        <small class="text-muted">Total Reach</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">35k</h5>
+                                                        <small class="text-muted">Total Views</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">5k</h5>
+                                                        <small class="text-muted">Total Clicks</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">15k</h5>
+                                                        <small class="text-muted">Engagement</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="campaign-metric">
+                                                        <h5 class="mb-0">14k</h5>
+                                                        <small class="text-muted">Conversion</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Packages Tab -->
+                                <div class="tab-pane fade" id="packages" role="tabpanel" aria-labelledby="packages-tab">
+                                    <div class="section-block">
+                                        <h3 class="section-title">My Packages</h3>
+                                    </div>
+                                    <div class="row">
+                                        <!-- Basic Package -->
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                                            <div class="card pricing-card h-100">
+                                                <div class="card-header bg-primary text-white text-center p-4">
+                                                    <h4 class="mb-0">Basic</h4>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <h1 class="mb-1">$150</h1>
+                                                    <p class="text-muted">Per Month Platform</p>
+                                                </div>
+                                                <div class="card-body border-top">
+                                                    <ul class="list-unstyled package-features">
+                                                        <li><i class="fas fa-check text-success me-2"></i>Facebook, Instagram, Pinterest, Snapchat</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Guaranteed follower growth for increased brand awareness</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Daily updates on chosen platforms</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Stronger customer service through daily interaction</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Monthly progress report</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>1 Million Followers</li>
+                                                    </ul>
+                                                    <div class="d-grid">
+                                                        <a href="#" class="btn btn-outline-primary btn-lg">Get Started</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Standard Package -->
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                                            <div class="card pricing-card h-100 featured">
+                                                <div class="position-absolute top-0 end-0 p-2">
+                                                    <span class="badge bg-warning text-dark">Popular</span>
+                                                </div>
+                                                <div class="card-header bg-info text-white text-center p-4">
+                                                    <h4 class="mb-0">Standard</h4>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <h1 class="mb-1">$350</h1>
+                                                    <p class="text-muted">Per Month Platform</p>
+                                                </div>
+                                                <div class="card-body border-top">
+                                                    <ul class="list-unstyled package-features">
+                                                        <li><i class="fas fa-check text-success me-2"></i>Everything in Basic plan</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>2 Blog Posts & 3 Social Posts</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>5 Million Followers</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Growth Result Analytics</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Priority Support</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Content Calendar</li>
+                                                    </ul>
+                                                    <div class="d-grid">
+                                                        <a href="#" class="btn btn-info btn-lg">Get Started</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Premium Package -->
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                                            <div class="card pricing-card h-100">
+                                                <div class="card-header bg-dark text-white text-center p-4">
+                                                    <h4 class="mb-0">Premium</h4>
+                                                </div>
+                                                <div class="card-body text-center">
+                                                    <h1 class="mb-1">$550</h1>
+                                                    <p class="text-muted">Per Month Platform</p>
+                                                </div>
+                                                <div class="card-body border-top">
+                                                    <ul class="list-unstyled package-features">
+                                                        <li><i class="fas fa-check text-success me-2"></i>Everything in Standard plan</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>4 Blog Posts & 6 Social Posts</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Unlimited Followers</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Advanced Analytics Dashboard</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Dedicated Account Manager</li>
+                                                        <li><i class="fas fa-check text-success me-2"></i>Custom Strategy Development</li>
+                                                    </ul>
+                                                    <div class="d-grid">
+                                                        <a href="#" class="btn btn-dark btn-lg">Contact Us</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Reviews Tab -->
+                                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                                    <div class="card">
+                                        <h5 class="card-header">Campaign Reviews</h5>
+                                        <div class="card-body">
+                                            <!-- Review 1 -->
+                                            <div class="review-block mb-4">
+                                                <div class="rating-star mb-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </div>
+                                                <p class="review-text mb-3">"Quisque lobortis vestibulum elit, vel fermentum elit pretium et. Nullam id ultrices odio. Cras id nulla mollis, molestie diam eu, facilisis tortor. Mauris ultrices lectus laoreet commodo hendrerit. Nullam varius arcu sed aliquam imperdiet. Etiam ut luctus augue."</p>
+                                                <div class="reviewer-info">
+                                                    <strong>Tabitha C. Campbell</strong>
+                                                    <span class="text-muted">- Tech Innovations Inc.</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Review 2 -->
+                                            <div class="review-block mb-4">
+                                                <div class="rating-star mb-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </div>
+                                                <p class="review-text mb-3">"Maecenas rutrum viverra augue. Nulla in eros vitae ante ullamcorper congue. Praesent tristique massa ac arcu dapibus tincidunt. Mauris arcu mi, lacinia et ipsum vel, sollicitudin laoreet risus."</p>
+                                                <div class="reviewer-info">
+                                                    <strong>Luise M. Michet</strong>
+                                                    <span class="text-muted">- Digital Marketing Pro</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Review 3 -->
+                                            <div class="review-block mb-4">
+                                                <div class="rating-star mb-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </div>
+                                                <p class="review-text mb-3">"Cras non rutrum neque. Sed lacinia ex elit, vel viverra nisl faucibus eu. Aenean faucibus neque vestibulum condimentum maximus. In id porttitor nisi. Quisque sit amet commodo arcu, cursus pharetra elit. Nam tincidunt lobortis augueat euismod ante sodales non."</p>
+                                                <div class="reviewer-info">
+                                                    <strong>Gloria S. Castillo</strong>
+                                                    <span class="text-muted">- Creative Agency LLC</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Review 4 -->
+                                            <div class="review-block mb-4">
+                                                <div class="rating-star mb-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="far fa-star text-warning"></i>
+                                                </div>
+                                                <p class="review-text mb-3">"Vestibulum cursus felis vel arcu convallis, viverra commodo felis bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Proin non auctor est, sed lacinia velit. Orci varius natoque penatibus et magnis dis parturient montes nascetur ridiculus mus."</p>
+                                                <div class="reviewer-info">
+                                                    <strong>Virgina G. Lightfoot</strong>
+                                                    <span class="text-muted">- Fashion Brand Co.</span>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Review 5 -->
+                                            <div class="review-block">
+                                                <div class="rating-star mb-2">
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                    <i class="fas fa-star text-warning"></i>
+                                                </div>
+                                                <p class="review-text mb-3">"Integer pretium laoreet mi ultrices tincidunt. Suspendisse eget risus nec sapien malesuada ullamcorper eu ac sapien. Maecenas nulla orci, varius ac tincidunt non, ornare a sem. Aliquam sed massa volutpat, aliquet nibh sit amet, tincidunt ex. Donec interdum pharetra dignissim."</p>
+                                                <div class="reviewer-info">
+                                                    <strong>Ruby B. Matheny</strong>
+                                                    <span class="text-muted">- StartUp Ventures</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Pagination -->
+                                    <nav aria-label="Reviews pagination" class="mt-4">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                                <!-- Send Message Tab -->
+                                <div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
+                                    <div class="card">
+                                        <h5 class="card-header">Send Message to Michael</h5>
+                                        <div class="card-body">
+                                            <form id="messageForm">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-xl-8 col-lg-10 col-md-12">
+                                                        <div class="mb-3">
+                                                            <label for="yourName" class="form-label">Your Name</label>
+                                                            <input type="text" class="form-control form-control-lg" id="yourName" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="yourEmail" class="form-label">Your Email</label>
+                                                            <input type="email" class="form-control form-control-lg" id="yourEmail" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="subject" class="form-label">Subject</label>
+                                                            <input type="text" class="form-control form-control-lg" id="subject" required>
+                                                        </div>
+                                                        <div class="mb-4">
+                                                            <label for="message" class="form-label">Message</label>
+                                                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                                                        </div>
+                                                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                                            <button type="reset" class="btn btn-outline-secondary">Clear</button>
+                                                            <button type="submit" class="btn btn-primary">
+                                                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        {{> layouts/footer}}
+    </div>
+</div>
+
+<!-- Page Specific Scripts -->
+<script type="module" src="/js/pages/influencer-profile.js"></script>
+{{/inline}}
+
+{{> layouts/base}}

@@ -58,10 +58,15 @@ export default defineConfig({
         // Tables
         'general-tables': resolve(__dirname, 'src/pages/tables/general-tables.html'),
         'data-tables': resolve(__dirname, 'src/pages/tables/data-tables.html'),
+        // E-Commerce
+        'products': resolve(__dirname, 'src/pages/ecommerce/products.html'),
+        'product-single': resolve(__dirname, 'src/pages/ecommerce/product-single.html'),
+        'checkout': resolve(__dirname, 'src/pages/ecommerce/checkout.html'),
         // Apps
         'calendar': resolve(__dirname, 'src/pages/calendar.html'),
         'chat': resolve(__dirname, 'src/pages/chat.html'),
         'inbox': resolve(__dirname, 'src/pages/inbox.html'),
+        'influencer-finder': resolve(__dirname, 'src/pages/apps/influencer-finder.html'),
         // Settings
         'settings': resolve(__dirname, 'src/pages/settings.html'),
         // User Management

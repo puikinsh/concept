@@ -1,0 +1,578 @@
+{{> layouts/main title="Products" activeMenu="ecommerce" activePage="products"}}
+
+{{#*inline "content"}}
+<div class="dashboard-main-wrapper">
+    <!-- Header -->
+    {{> layouts/header}}
+    
+    <!-- Sidebar -->
+    {{> layouts/sidebar activeMenu="ecommerce" activePage="products"}}
+    
+    <!-- Main Content -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard-ecommerce">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Products</h2>
+                            <p class="pageheader-text">Browse and manage your product catalog with advanced filtering and search capabilities.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">E-Commerce</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Products</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Filters and Search -->
+                <div class="row mb-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-6 col-lg-6 col-md-12">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search products..." id="productSearch">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-12">
+                                        <div class="d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0">
+                                            <select class="form-select" id="categoryFilter">
+                                                <option value="">All Categories</option>
+                                                <option value="electronics">Electronics</option>
+                                                <option value="fashion">Fashion</option>
+                                                <option value="home">Home & Garden</option>
+                                                <option value="sports">Sports & Outdoors</option>
+                                                <option value="books">Books</option>
+                                            </select>
+                                            <select class="form-select" id="sortBy">
+                                                <option value="featured">Featured</option>
+                                                <option value="price-low">Price: Low to High</option>
+                                                <option value="price-high">Price: High to Low</option>
+                                                <option value="newest">Newest First</option>
+                                                <option value="rating">Best Rated</option>
+                                            </select>
+                                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                                                <i class="fas fa-plus me-1"></i>Add Product
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Stats -->
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-inline-block">
+                                    <h5 class="text-muted">Total Products</h5>
+                                    <h2 class="mb-0">2,386</h2>
+                                </div>
+                                <div class="float-end">
+                                    <i class="fas fa-box fa-2x text-primary"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-inline-block">
+                                    <h5 class="text-muted">Active Products</h5>
+                                    <h2 class="mb-0">1,953</h2>
+                                </div>
+                                <div class="float-end">
+                                    <i class="fas fa-check-circle fa-2x text-success"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-inline-block">
+                                    <h5 class="text-muted">Out of Stock</h5>
+                                    <h2 class="mb-0">147</h2>
+                                </div>
+                                <div class="float-end">
+                                    <i class="fas fa-exclamation-triangle fa-2x text-warning"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-inline-block">
+                                    <h5 class="text-muted">Categories</h5>
+                                    <h2 class="mb-0">24</h2>
+                                </div>
+                                <div class="float-end">
+                                    <i class="fas fa-tags fa-2x text-info"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Grid -->
+                <div class="row">
+                    <!-- Product Card 1 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <img src="/assets/images/eco-product-img-1.png" alt="Product" class="img-fluid">
+                                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-20%</span>
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">Apple iPhone 15 Pro</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                    <small class="text-muted">(125)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Latest flagship smartphone with advanced features</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$999</span>
+                                        <span class="text-muted text-decoration-line-through small">$1,199</span>
+                                    </div>
+                                    <span class="badge bg-success">In Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 2 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <img src="/assets/images/eco-product-img-2.png" alt="Product" class="img-fluid">
+                                <span class="badge bg-success position-absolute top-0 end-0 m-2">New</span>
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">MacBook Pro 16"</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <small class="text-muted">(89)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Professional laptop with M3 Pro chip</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$2,499</span>
+                                    </div>
+                                    <span class="badge bg-success">In Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 3 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <img src="/assets/images/eco-product-img-3.png" alt="Product" class="img-fluid">
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">Sony WH-1000XM5</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <small class="text-muted">(156)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Premium noise-canceling headphones</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$399</span>
+                                    </div>
+                                    <span class="badge bg-warning text-dark">Low Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Card 4 -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <img src="/assets/images/eco-product-img-4.png" alt="Product" class="img-fluid">
+                                <span class="badge bg-danger position-absolute top-0 end-0 m-2">Hot</span>
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">Samsung Galaxy S24</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <small class="text-muted">(98)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Android flagship with AI features</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$899</span>
+                                    </div>
+                                    <span class="badge bg-danger">Out of Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-secondary btn-sm w-100" disabled>
+                                    <i class="fas fa-bell me-1"></i>Notify Me
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- More Product Cards... -->
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
+                                    <i class="fas fa-laptop fa-3x text-muted"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">Dell XPS 13</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star-half-alt text-warning"></i>
+                                    <small class="text-muted">(67)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Ultra-portable laptop with stunning display</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$1,299</span>
+                                    </div>
+                                    <span class="badge bg-success">In Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
+                                    <i class="fas fa-tablet-alt fa-3x text-muted"></i>
+                                </div>
+                                <span class="badge bg-info position-absolute top-0 end-0 m-2">Popular</span>
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">iPad Pro 12.9"</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <small class="text-muted">(203)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Professional tablet with M2 chip</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$1,099</span>
+                                    </div>
+                                    <span class="badge bg-success">In Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
+                                    <i class="fas fa-camera fa-3x text-muted"></i>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">Canon EOS R6</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="far fa-star text-warning"></i>
+                                    <small class="text-muted">(45)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Full-frame mirrorless camera</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$2,499</span>
+                                    </div>
+                                    <span class="badge bg-success">In Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
+                        <div class="card product-card h-100">
+                            <div class="card-header p-0 position-relative">
+                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
+                                    <i class="fas fa-gamepad fa-3x text-muted"></i>
+                                </div>
+                                <span class="badge bg-danger position-absolute top-0 end-0 m-2">-15%</span>
+                                <div class="product-actions">
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title mb-1">
+                                    <a href="/pages/ecommerce/product-single.html" class="text-decoration-none text-dark">PlayStation 5</a>
+                                </h5>
+                                <div class="mb-2">
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <i class="fas fa-star text-warning"></i>
+                                    <small class="text-muted">(512)</small>
+                                </div>
+                                <p class="text-muted small mb-2">Next-gen gaming console</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <span class="h5 mb-0 text-primary">$425</span>
+                                        <span class="text-muted text-decoration-line-through small">$499</span>
+                                    </div>
+                                    <span class="badge bg-warning text-dark">Low Stock</span>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button class="btn btn-primary btn-sm w-100">
+                                    <i class="fas fa-shopping-cart me-1"></i>Add to Cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        {{> layouts/footer}}
+    </div>
+</div>
+
+<!-- Add Product Modal -->
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addProductForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input type="text" class="form-control" id="productName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="productCategory" class="form-label">Category</label>
+                            <select class="form-select" id="productCategory" required>
+                                <option value="">Select Category</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="fashion">Fashion</option>
+                                <option value="home">Home & Garden</option>
+                                <option value="sports">Sports & Outdoors</option>
+                                <option value="books">Books</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label for="productPrice" class="form-label">Price</label>
+                            <input type="number" class="form-control" id="productPrice" step="0.01" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="productStock" class="form-label">Stock Quantity</label>
+                            <input type="number" class="form-control" id="productStock" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label for="productSKU" class="form-label">SKU</label>
+                            <input type="text" class="form-control" id="productSKU" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productDescription" class="form-label">Description</label>
+                        <textarea class="form-control" id="productDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="productImage" class="form-label">Product Image</label>
+                        <input type="file" class="form-control" id="productImage" accept="image/*">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" form="addProductForm" class="btn btn-primary">Add Product</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Specific Scripts -->
+<script type="module" src="/js/pages/products.js"></script>
+{{/inline}}
+
+{{> layouts/base}}

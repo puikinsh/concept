@@ -1,0 +1,205 @@
+// E-commerce Products Page Styles
+
+.dashboard-ecommerce {
+    // Product card styles
+    .product-card {
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        overflow: hidden;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            
+            .product-actions {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        
+        .card-header {
+            position: relative;
+            overflow: hidden;
+            border-bottom: 0;
+            
+            img {
+                transition: transform 0.3s ease-in-out;
+            }
+            
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+        
+        .placeholder-image {
+            transition: background-color 0.2s ease-in-out;
+            
+            &:hover {
+                background-color: darken(#f8f9fa, 5%) !important;
+            }
+        }
+        
+        .product-actions {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+            
+            .btn {
+                background: rgba(255, 255, 255, 0.9);
+                backdrop-filter: blur(5px);
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                
+                &:hover {
+                    background: white;
+                    transform: translateY(-2px);
+                }
+            }
+        }
+        
+        .card-title {
+            font-size: 1rem;
+            
+            a {
+                transition: color 0.2s ease-in-out;
+                
+                &:hover {
+                    color: $primary !important;
+                }
+            }
+        }
+        
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.35em 0.65em;
+        }
+        
+        .card-footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            
+            .btn {
+                transition: all 0.2s ease-in-out;
+                
+                &:hover {
+                    transform: translateY(-1px);
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                }
+                
+                &:disabled {
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+    
+    // Filter section
+    .form-select {
+        min-width: 150px;
+        
+        @media (max-width: 575.98px) {
+            min-width: 100%;
+            margin-bottom: 0.5rem;
+        }
+    }
+    
+    // Search input
+    .input-group {
+        .form-control {
+            border-right: 0;
+            
+            &:focus {
+                border-color: #ced4da;
+                box-shadow: none;
+                
+                + .btn {
+                    border-color: $primary;
+                }
+            }
+        }
+        
+        .btn {
+            border-left: 0;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+    
+    // Stats cards
+    .card-body {
+        .fa-2x {
+            opacity: 0.3;
+            transition: opacity 0.2s ease-in-out;
+        }
+        
+        &:hover .fa-2x {
+            opacity: 0.5;
+        }
+    }
+    
+    // Rating stars
+    .fa-star,
+    .fa-star-half-alt {
+        font-size: 0.875rem;
+    }
+    
+    // Pagination
+    .pagination {
+        .page-link {
+            color: #495057;
+            border-radius: 0.25rem;
+            margin: 0 2px;
+            
+            &:hover {
+                background-color: #f8f9fa;
+                border-color: #dee2e6;
+            }
+            
+            &:focus {
+                box-shadow: none;
+            }
+        }
+        
+        .page-item {
+            &.active .page-link {
+                background-color: $primary;
+                border-color: $primary;
+            }
+            
+            &.disabled .page-link {
+                background-color: transparent;
+            }
+        }
+    }
+    
+    // Modal styles
+    .modal-content {
+        border: 0;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+    
+    // Responsive adjustments
+    @media (max-width: 991.98px) {
+        .product-card {
+            .card-title {
+                font-size: 0.9rem;
+            }
+            
+            .text-muted.small {
+                font-size: 0.8rem;
+            }
+        }
+    }
+    
+    @media (max-width: 575.98px) {
+        .d-flex.gap-2 {
+            flex-direction: column;
+            
+            > * {
+                width: 100%;
+            }
+        }
+    }
+}

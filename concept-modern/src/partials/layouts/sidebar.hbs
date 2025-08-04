@@ -107,6 +107,30 @@
                     </div>
                 </li>
                 
+                <!-- E-Commerce -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'ecommerce')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-ecommerce" 
+                       aria-expanded="{{#if (eq activeMenu 'ecommerce')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-ecommerce">
+                        <i class="fas fa-fw fa-shopping-cart"></i>E-Commerce
+                        <span class="badge bg-warning ms-auto">New</span>
+                    </a>
+                    <div id="submenu-ecommerce" class="collapse {{#if (eq activeMenu 'ecommerce')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'products')}}active{{/if}}" href="/pages/ecommerce/products.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'product-single')}}active{{/if}}" href="/pages/ecommerce/product-single.html">Product Details</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'checkout')}}active{{/if}}" href="/pages/ecommerce/checkout.html">Checkout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
                 <li class="nav-divider">
                     Features
                 </li>
@@ -156,6 +180,26 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{#if (eq activePage 'inbox')}}active{{/if}}" href="/pages/inbox.html">Mail</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- Influencer -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'influencer')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-influencer" 
+                       aria-expanded="{{#if (eq activeMenu 'influencer')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-influencer">
+                        <i class="fas fa-fw fa-star"></i>Influencer
+                    </a>
+                    <div id="submenu-influencer" class="collapse {{#if (eq activeMenu 'influencer')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'influencer-finder')}}active{{/if}}" href="/pages/apps/influencer-finder.html">Influencer Finder</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'influencer-profile')}}active{{/if}}" href="/pages/apps/influencer-profile.html">Influencer Profile</a>
                             </li>
                         </ul>
                     </div>

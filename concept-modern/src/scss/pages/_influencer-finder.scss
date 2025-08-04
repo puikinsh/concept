@@ -1,0 +1,286 @@
+// Influencer Finder Page Styles
+
+// Search form
+.influencer-search-form {
+    .input-group {
+        .form-control {
+            border-right: 0;
+            
+            &:focus {
+                box-shadow: none;
+                border-color: #ced4da;
+            }
+        }
+        
+        .btn {
+            border-left: 0;
+            padding: 0.5rem 1.5rem;
+        }
+    }
+}
+
+// Influencer cards
+.influencer-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+}
+
+// Influencer profile section
+.influencer-profile {
+    .user-avatar {
+        flex-shrink: 0;
+    }
+    
+    .user-avatar-xl {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+    
+    .influencer-info {
+        h3 {
+            font-size: 1.375rem;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        .rating-star {
+            font-size: 0.875rem;
+        }
+    }
+    
+    .influencer-details {
+        p {
+            font-size: 0.875rem;
+            color: #6c757d;
+            
+            i {
+                font-size: 0.75rem;
+            }
+        }
+        
+        .badge {
+            font-weight: normal;
+            padding: 0.35em 0.75em;
+            font-size: 0.75rem;
+            
+            &:hover {
+                background-color: $primary !important;
+                color: white !important;
+            }
+        }
+    }
+}
+
+// Influencer actions
+.influencer-actions {
+    .btn {
+        font-size: 0.875rem;
+        padding: 0.375rem 1rem;
+        
+        &.btn-outline-secondary {
+            border-color: #dee2e6;
+            
+            &:hover {
+                background-color: #ffc107;
+                border-color: #ffc107;
+                color: white;
+                
+                i {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+// Social stats box
+.user-social-box {
+    background-color: #f8f9fa;
+    margin: 0 -1.5rem;
+    padding: 1rem 1.5rem;
+    
+    .social-stat {
+        i {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+            display: block;
+        }
+        
+        span {
+            font-size: 0.875rem;
+            color: #495057;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+        
+        &:hover span {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// Filter sidebar
+.filter-sidebar {
+    position: sticky;
+    top: 1rem;
+    
+    .card-title {
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+    }
+    
+    .form-label {
+        font-size: 0.875rem;
+        margin-bottom: 0.75rem;
+        color: #495057;
+    }
+    
+    .form-select,
+    .form-control {
+        font-size: 0.875rem;
+    }
+    
+    .form-check {
+        margin-bottom: 0.5rem;
+        
+        .form-check-label {
+            font-size: 0.875rem;
+            cursor: pointer;
+            
+            i {
+                width: 16px;
+                text-align: center;
+            }
+        }
+    }
+    
+    .rating-filter {
+        .form-check-label {
+            display: flex;
+            align-items: center;
+            
+            i {
+                font-size: 0.75rem;
+                margin-right: 1px;
+            }
+            
+            .text-muted {
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
+
+// Pagination
+.pagination {
+    .page-link {
+        color: #495057;
+        border-radius: 0.25rem;
+        margin: 0 2px;
+        
+        &:hover {
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+        
+        &:focus {
+            box-shadow: none;
+        }
+    }
+    
+    .page-item.active .page-link {
+        background-color: $primary;
+        border-color: $primary;
+    }
+}
+
+// Mobile responsive adjustments
+@media (max-width: 991.98px) {
+    .influencer-profile {
+        .influencer-info h3 {
+            font-size: 1.125rem;
+        }
+    }
+    
+    .influencer-actions {
+        .btn {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+        }
+    }
+    
+    .filter-sidebar {
+        position: static;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .influencer-profile {
+        flex-direction: column;
+        text-align: center;
+        
+        .user-avatar {
+            margin-bottom: 1rem;
+        }
+        
+        .influencer-info {
+            text-align: center;
+            
+            h3 {
+                font-size: 1rem;
+            }
+        }
+    }
+    
+    .user-social-box {
+        .row {
+            font-size: 0.75rem;
+        }
+        
+        .social-stat {
+            i {
+                font-size: 1rem;
+            }
+            
+            span {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+// Animation for social stats
+@keyframes statPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.social-stat {
+    animation: statPulse 2s ease-in-out infinite;
+    animation-delay: calc(var(--stat-index) * 0.2s);
+    
+    &:nth-child(1) { --stat-index: 0; }
+    &:nth-child(2) { --stat-index: 1; }
+    &:nth-child(3) { --stat-index: 2; }
+    &:nth-child(4) { --stat-index: 3; }
+    &:nth-child(5) { --stat-index: 4; }
+    &:nth-child(6) { --stat-index: 5; }
+}

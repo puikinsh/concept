@@ -1,0 +1,643 @@
+{{> layouts/main title="Influencer Finder" activeMenu="influencer" activePage="influencer-finder"}}
+
+{{#*inline "content"}}
+<div class="dashboard-main-wrapper">
+    <!-- Header -->
+    {{> layouts/header}}
+    
+    <!-- Sidebar -->
+    {{> layouts/sidebar activeMenu="influencer" activePage="influencer-finder"}}
+    
+    <!-- Main Content -->
+    <div class="dashboard-wrapper">
+        <div class="influence-finder">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Influencer Finder</h2>
+                            <p class="pageheader-text">Discover and connect with influencers that match your brand's needs across various social media platforms.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="/pages/dashboards/influencer.html" class="breadcrumb-link">Influencer</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Influencer Finder</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Search Bar -->
+                <div class="row mb-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <form class="influencer-search-form">
+                                    <div class="input-group">
+                                        <input class="form-control form-control-lg" type="search" placeholder="Search influencers by name, category, or location..." aria-label="Search">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fas fa-search"></i> Search
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <!-- Influencer List -->
+                    <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
+                        <!-- Influencer Card 1 -->
+                        <div class="card influencer-card mb-3">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-profile d-flex align-items-start">
+                                            <div class="user-avatar me-3">
+                                                <img src="/assets/images/avatar-1.jpg" alt="Henry Barbara" class="rounded-circle user-avatar-xl">
+                                            </div>
+                                            <div class="influencer-info flex-grow-1">
+                                                <div class="mb-2">
+                                                    <h3 class="mb-1 d-inline-block">Henry Barbara</h3>
+                                                    <div class="rating-star d-inline-block ms-3">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <span class="text-muted ms-1">14 Reviews</span>
+                                                    </div>
+                                                </div>
+                                                <div class="influencer-details">
+                                                    <p class="mb-2">
+                                                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>Salt Lake City, UT
+                                                        <span class="ms-3"><i class="fas fa-male me-1"></i>Male</span>
+                                                        <span class="ms-3"><i class="fas fa-birthday-cake me-1"></i>29 Years Old</span>
+                                                    </p>
+                                                    <div class="mt-2">
+                                                        <span class="badge bg-light text-dark me-1">Fitness</span>
+                                                        <span class="badge bg-light text-dark me-1">Life Style</span>
+                                                        <span class="badge bg-light text-dark me-1">Gym</span>
+                                                        <span class="badge bg-light text-dark">Crossfit</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
+                                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                            <a href="/pages/apps/influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top user-social-box mt-3 pt-3">
+                                    <div class="row g-2 text-center">
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-twitter text-info"></i>
+                                                <span class="d-block fw-bold">13.2K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-pinterest text-danger"></i>
+                                                <span class="d-block fw-bold">84K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-instagram text-danger"></i>
+                                                <span class="d-block fw-bold">12.3K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-facebook text-primary"></i>
+                                                <span class="d-block fw-bold">92.9K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-medium text-dark"></i>
+                                                <span class="d-block fw-bold">291</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-youtube text-danger"></i>
+                                                <span class="d-block fw-bold">1.3K</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Influencer Card 2 -->
+                        <div class="card influencer-card mb-3">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-profile d-flex align-items-start">
+                                            <div class="user-avatar me-3">
+                                                <img src="/assets/images/avatar-2.jpg" alt="Louis Mstara" class="rounded-circle user-avatar-xl">
+                                            </div>
+                                            <div class="influencer-info flex-grow-1">
+                                                <div class="mb-2">
+                                                    <h3 class="mb-1 d-inline-block">Louis Mstara</h3>
+                                                    <div class="rating-star d-inline-block ms-3">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <span class="text-muted ms-1">22 Reviews</span>
+                                                    </div>
+                                                </div>
+                                                <div class="influencer-details">
+                                                    <p class="mb-2">
+                                                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>Avenal, CA, USA
+                                                        <span class="ms-3"><i class="fas fa-female me-1"></i>Female</span>
+                                                        <span class="ms-3"><i class="fas fa-birthday-cake me-1"></i>24 Years Old</span>
+                                                    </p>
+                                                    <div class="mt-2">
+                                                        <span class="badge bg-light text-dark me-1">Fashion</span>
+                                                        <span class="badge bg-light text-dark me-1">Beauty</span>
+                                                        <span class="badge bg-light text-dark me-1">Travel</span>
+                                                        <span class="badge bg-light text-dark">Lifestyle</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
+                                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                            <a href="/pages/apps/influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top user-social-box mt-3 pt-3">
+                                    <div class="row g-2 text-center">
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-twitter text-info"></i>
+                                                <span class="d-block fw-bold">45.6K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-pinterest text-danger"></i>
+                                                <span class="d-block fw-bold">120K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-instagram text-danger"></i>
+                                                <span class="d-block fw-bold">234K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-facebook text-primary"></i>
+                                                <span class="d-block fw-bold">156K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-medium text-dark"></i>
+                                                <span class="d-block fw-bold">3.2K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-youtube text-danger"></i>
+                                                <span class="d-block fw-bold">89K</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Influencer Card 3 -->
+                        <div class="card influencer-card mb-3">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-profile d-flex align-items-start">
+                                            <div class="user-avatar me-3">
+                                                <img src="/assets/images/avatar-3.jpg" alt="Nichole Oliver" class="rounded-circle user-avatar-xl">
+                                            </div>
+                                            <div class="influencer-info flex-grow-1">
+                                                <div class="mb-2">
+                                                    <h3 class="mb-1 d-inline-block">Nichole Oliver</h3>
+                                                    <div class="rating-star d-inline-block ms-3">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="far fa-star text-warning"></i>
+                                                        <span class="text-muted ms-1">18 Reviews</span>
+                                                    </div>
+                                                </div>
+                                                <div class="influencer-details">
+                                                    <p class="mb-2">
+                                                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>98 Richland Avenue, USA
+                                                        <span class="ms-3"><i class="fas fa-male me-1"></i>Male</span>
+                                                        <span class="ms-3"><i class="fas fa-birthday-cake me-1"></i>34 Years Old</span>
+                                                    </p>
+                                                    <div class="mt-2">
+                                                        <span class="badge bg-light text-dark me-1">Business</span>
+                                                        <span class="badge bg-light text-dark me-1">Tech</span>
+                                                        <span class="badge bg-light text-dark me-1">Startup</span>
+                                                        <span class="badge bg-light text-dark">Finance</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
+                                            <button class="btn btn-warning btn-sm me-2" data-bs-toggle="tooltip" title="Remove from favorites">
+                                                <i class="fas fa-star"></i>
+                                            </button>
+                                            <a href="/pages/apps/influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top user-social-box mt-3 pt-3">
+                                    <div class="row g-2 text-center">
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-twitter text-info"></i>
+                                                <span class="d-block fw-bold">78.9K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-linkedin text-primary"></i>
+                                                <span class="d-block fw-bold">45K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-instagram text-danger"></i>
+                                                <span class="d-block fw-bold">22.1K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-facebook text-primary"></i>
+                                                <span class="d-block fw-bold">34.5K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-medium text-dark"></i>
+                                                <span class="d-block fw-bold">12.8K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-youtube text-danger"></i>
+                                                <span class="d-block fw-bold">156K</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Influencer Card 4 -->
+                        <div class="card influencer-card mb-3">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-9 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-profile d-flex align-items-start">
+                                            <div class="user-avatar me-3">
+                                                <img src="/assets/images/avatar-4.jpg" alt="Pallavi Johnson" class="rounded-circle user-avatar-xl">
+                                            </div>
+                                            <div class="influencer-info flex-grow-1">
+                                                <div class="mb-2">
+                                                    <h3 class="mb-1 d-inline-block">Pallavi Johnson</h3>
+                                                    <div class="rating-star d-inline-block ms-3">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <span class="text-muted ms-1">32 Reviews</span>
+                                                    </div>
+                                                </div>
+                                                <div class="influencer-details">
+                                                    <p class="mb-2">
+                                                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>4427 Wines Lane, USA
+                                                        <span class="ms-3"><i class="fas fa-female me-1"></i>Female</span>
+                                                        <span class="ms-3"><i class="fas fa-birthday-cake me-1"></i>29 Years Old</span>
+                                                    </p>
+                                                    <div class="mt-2">
+                                                        <span class="badge bg-light text-dark me-1">Food</span>
+                                                        <span class="badge bg-light text-dark me-1">Cooking</span>
+                                                        <span class="badge bg-light text-dark me-1">Recipes</span>
+                                                        <span class="badge bg-light text-dark">Healthy Living</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
+                                        <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
+                                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites">
+                                                <i class="far fa-star"></i>
+                                            </button>
+                                            <a href="/pages/apps/influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top user-social-box mt-3 pt-3">
+                                    <div class="row g-2 text-center">
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-twitter text-info"></i>
+                                                <span class="d-block fw-bold">112K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-pinterest text-danger"></i>
+                                                <span class="d-block fw-bold">445K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-instagram text-danger"></i>
+                                                <span class="d-block fw-bold">789K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-facebook text-primary"></i>
+                                                <span class="d-block fw-bold">234K</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-tiktok text-dark"></i>
+                                                <span class="d-block fw-bold">1.2M</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 col-md-2">
+                                            <div class="social-stat">
+                                                <i class="fab fa-youtube text-danger"></i>
+                                                <span class="d-block fw-bold">567K</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Pagination -->
+                        <nav aria-label="Page navigation" class="mt-4">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <!-- Filter Sidebar -->
+                    <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
+                        <div class="card filter-sidebar">
+                            <div class="card-body">
+                                <h5 class="card-title">Filter Results</h5>
+                                
+                                <!-- Sorting -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Sort By</label>
+                                    <select class="form-select" id="sortBy">
+                                        <option value="followers">Most Followers</option>
+                                        <option value="engagement">Highest Engagement</option>
+                                        <option value="rating">Best Rated</option>
+                                        <option value="recent">Recently Active</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Rating Filter -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Minimum Rating</label>
+                                    <div class="rating-filter">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating5" value="5">
+                                            <label class="form-check-label" for="rating5">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating4" value="4">
+                                            <label class="form-check-label" for="rating4">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="far fa-star text-warning"></i>
+                                                <span class="text-muted small">& up</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="rating3" value="3">
+                                            <label class="form-check-label" for="rating3">
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="fas fa-star text-warning"></i>
+                                                <i class="far fa-star text-warning"></i>
+                                                <i class="far fa-star text-warning"></i>
+                                                <span class="text-muted small">& up</span>
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="rating" id="ratingAll" value="all" checked>
+                                            <label class="form-check-label" for="ratingAll">
+                                                All Ratings
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Social Media Platforms -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Social Media Platforms</label>
+                                    <div class="platform-filter">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="facebook" checked>
+                                            <label class="form-check-label" for="facebook">
+                                                <i class="fab fa-facebook text-primary me-1"></i> Facebook
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="instagram" checked>
+                                            <label class="form-check-label" for="instagram">
+                                                <i class="fab fa-instagram text-danger me-1"></i> Instagram
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="twitter" checked>
+                                            <label class="form-check-label" for="twitter">
+                                                <i class="fab fa-twitter text-info me-1"></i> Twitter
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="youtube" checked>
+                                            <label class="form-check-label" for="youtube">
+                                                <i class="fab fa-youtube text-danger me-1"></i> YouTube
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="tiktok">
+                                            <label class="form-check-label" for="tiktok">
+                                                <i class="fab fa-tiktok text-dark me-1"></i> TikTok
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="pinterest">
+                                            <label class="form-check-label" for="pinterest">
+                                                <i class="fab fa-pinterest text-danger me-1"></i> Pinterest
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Categories -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Categories</label>
+                                    <div class="category-filter">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="business">
+                                            <label class="form-check-label" for="business">Business</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="lifestyle" checked>
+                                            <label class="form-check-label" for="lifestyle">Lifestyle</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="fitness" checked>
+                                            <label class="form-check-label" for="fitness">Fitness</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="fashion">
+                                            <label class="form-check-label" for="fashion">Fashion</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="food">
+                                            <label class="form-check-label" for="food">Food</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="tech">
+                                            <label class="form-check-label" for="tech">Technology</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="beauty">
+                                            <label class="form-check-label" for="beauty">Beauty & Makeup</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Age Range -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Age Range</label>
+                                    <select class="form-select" id="ageRange">
+                                        <option value="">All Ages</option>
+                                        <option value="18-25">18-25</option>
+                                        <option value="26-35">26-35</option>
+                                        <option value="36-45">36-45</option>
+                                        <option value="46+">46+</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Follower Range -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Follower Count</label>
+                                    <select class="form-select" id="followerRange">
+                                        <option value="">Any</option>
+                                        <option value="1k-10k">1K - 10K (Nano)</option>
+                                        <option value="10k-100k">10K - 100K (Micro)</option>
+                                        <option value="100k-1m">100K - 1M (Macro)</option>
+                                        <option value="1m+">1M+ (Mega)</option>
+                                    </select>
+                                </div>
+                                
+                                <!-- Apply/Reset Buttons -->
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+                                    <button class="btn btn-outline-secondary" onclick="resetFilters()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        {{> layouts/footer}}
+    </div>
+</div>
+
+<!-- Page Specific Scripts -->
+<script type="module" src="/js/pages/influencer-finder.js"></script>
+
+<script>
+// Quick inline scripts for demonstration
+function applyFilters() {
+    // Apply filters logic
+    console.log('Applying filters...');
+}
+
+function resetFilters() {
+    // Reset all filters
+    document.getElementById('sortBy').value = 'followers';
+    document.getElementById('ratingAll').checked = true;
+    document.getElementById('ageRange').value = '';
+    document.getElementById('followerRange').value = '';
+    
+    // Reset checkboxes
+    document.querySelectorAll('.form-check-input[type="checkbox"]').forEach(cb => {
+        cb.checked = ['facebook', 'instagram', 'twitter', 'youtube', 'lifestyle', 'fitness'].includes(cb.id);
+    });
+}
+
+// Initialize tooltips
+document.addEventListener('DOMContentLoaded', function() {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+});
+</script>
+{{/inline}}
+
+{{> layouts/base}}

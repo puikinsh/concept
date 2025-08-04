@@ -1,0 +1,222 @@
+// Product Single Page Styles
+
+.product-images {
+    .main-image {
+        text-align: center;
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        
+        img {
+            max-height: 500px;
+            width: auto;
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+            
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+    
+    .image-thumbnails {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 0.5rem 0;
+        
+        img {
+            cursor: pointer;
+            transition: all 0.2s ease;
+            opacity: 0.6;
+            border: 2px solid transparent;
+            
+            &:hover {
+                opacity: 1;
+                border-color: $primary;
+            }
+            
+            &.active {
+                opacity: 1;
+                border-color: $primary;
+            }
+        }
+    }
+}
+
+.product-info {
+    .rating {
+        font-size: 1.125rem;
+    }
+    
+    .price {
+        h3 {
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        
+        del {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .product-options {
+        .btn-check:checked + .btn {
+            background-color: $primary;
+            color: white;
+            border-color: $primary;
+        }
+        
+        .input-group {
+            .form-control {
+                border-left: 0;
+                border-right: 0;
+                
+                &:focus {
+                    box-shadow: none;
+                    border-color: #ced4da;
+                }
+            }
+        }
+    }
+    
+    .product-meta {
+        border-top: 1px solid #e9ecef;
+        padding-top: 1rem;
+        margin-top: 2rem;
+        
+        .badge {
+            font-weight: normal;
+            padding: 0.35em 0.65em;
+            
+            &:hover {
+                background-color: $primary !important;
+                color: white !important;
+            }
+        }
+    }
+}
+
+// Product tabs
+.nav-tabs {
+    .nav-link {
+        color: #495057;
+        border: 0;
+        border-bottom: 2px solid transparent;
+        padding: 0.75rem 1.5rem;
+        
+        &:hover {
+            border-color: transparent;
+            color: $primary;
+        }
+        
+        &.active {
+            color: $primary;
+            background-color: transparent;
+            border-color: transparent;
+            border-bottom-color: $primary;
+        }
+    }
+}
+
+// Reviews section
+.rating-breakdown {
+    .progress {
+        background-color: #e9ecef;
+    }
+}
+
+.review-item {
+    .rating {
+        font-size: 0.875rem;
+    }
+}
+
+// Star rating widget
+.star-rating {
+    font-size: 1.5rem;
+    
+    i {
+        cursor: pointer;
+        color: #ddd;
+        transition: color 0.2s ease;
+        
+        &:hover,
+        &.fas {
+            color: #ffc107;
+        }
+    }
+}
+
+// Related products
+.product-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-header {
+        border: 0;
+        background: #f8f9fa;
+        
+        img {
+            transition: transform 0.3s ease;
+        }
+        
+        &:hover img {
+            transform: scale(1.05);
+        }
+    }
+    
+    .placeholder-image {
+        transition: background-color 0.2s ease;
+        
+        &:hover {
+            background-color: darken(#f8f9fa, 5%) !important;
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 991.98px) {
+    .product-info {
+        margin-top: 2rem;
+    }
+    
+    .product-options {
+        .color-options,
+        .storage-options {
+            flex-wrap: wrap;
+            
+            .btn {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 575.98px) {
+    .product-images {
+        .main-image {
+            padding: 1rem;
+            
+            img {
+                max-height: 300px;
+            }
+        }
+    }
+    
+    .price h3 {
+        font-size: 1.5rem;
+    }
+    
+    .d-flex.gap-2 {
+        flex-direction: column;
+        
+        > * {
+            width: 100%;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
