@@ -12,7 +12,7 @@ body {
 .dashboard-wrapper {
   margin-left: $sidebar-width;
   min-height: 100vh;
-  padding-top: 70px;
+  padding-top: 60px;
   background-color: #efeff6;
   
   @include media-breakpoint-down(lg) {
@@ -22,7 +22,7 @@ body {
 
 .dashboard-content {
   padding: 30px 30px 60px;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 60px);
   background-color: #efeff6;
   
   @include media-breakpoint-down(md) {

@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Timeline" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="timeline" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Activity Timeline</h2>
+                            <p class="pageheader-text">Track user activities, system events, and important milestones</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Timeline</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Timeline Filters -->
+                    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5 class="mb-0">Filters</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-4">
+                                    <label class="form-label">Date Range</label>
+                                    <select class="form-select" id="dateFilter">
+                                        <option value="today">Today</option>
+                                        <option value="week" selected>This Week</option>
+                                        <option value="month">This Month</option>
+                                        <option value="year">This Year</option>
+                                        <option value="custom">Custom Range</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Activity Type</label>
+                                    <div class="activity-filters">
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="user" id="filterUser" checked>
+                                            <label class="form-check-label" for="filterUser">
+                                                <i class="fas fa-user text-primary me-2"></i>User Activities
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="system" id="filterSystem" checked>
+                                            <label class="form-check-label" for="filterSystem">
+                                                <i class="fas fa-cog text-warning me-2"></i>System Events
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="security" id="filterSecurity" checked>
+                                            <label class="form-check-label" for="filterSecurity">
+                                                <i class="fas fa-shield-alt text-danger me-2"></i>Security
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="transaction" id="filterTransaction" checked>
+                                            <label class="form-check-label" for="filterTransaction">
+                                                <i class="fas fa-dollar-sign text-success me-2"></i>Transactions
+                                            </label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" value="milestone" id="filterMilestone" checked>
+                                            <label class="form-check-label" for="filterMilestone">
+                                                <i class="fas fa-flag text-info me-2"></i>Milestones
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label class="form-label">Users</label>
+                                    <input type="text" class="form-control" placeholder="Search users..." id="userSearch">
+                                </div>
+                                
+                                <button class="btn btn-primary w-100 mb-2" id="applyFilters">Apply Filters</button>
+                                <button class="btn btn-outline-secondary w-100" id="resetFilters">Reset</button>
+                            </div>
+                        </div>
+
+                        <!-- Statistics -->
+                        <div class="card mt-3">
+                            <div class="card-header">
+                                <h5 class="mb-0">Activity Stats</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="text-muted">Total Activities</span>
+                                    <span class="fw-bold">1,234</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="text-muted">Today</span>
+                                    <span class="fw-bold text-primary">47</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="text-muted">This Week</span>
+                                    <span class="fw-bold text-success">312</span>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span class="text-muted">Active Users</span>
+                                    <span class="fw-bold text-info">89</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Content -->
+                    <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Recent Activities</h5>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-secondary me-2" id="exportTimeline">
+                                            <i class="fas fa-download me-1"></i>Export
+                                        </button>
+                                        <button class="btn btn-sm btn-primary" id="refreshTimeline">
+                                            <i class="fas fa-sync me-1"></i>Refresh
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="timeline" id="timeline">
+                                    <!-- Today -->
+                                    <div class="timeline-date">
+                                        <h6 class="text-muted">Today</h6>
+                                    </div>
+                                    
+                                    <div class="timeline-item" data-type="user">
+                                        <div class="timeline-marker bg-primary"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <img src="https://ui-avatars.com/api/?name=John+Doe&background=667eea&color=fff" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">John Doe <small class="text-muted">updated profile</small></h6>
+                                                    <small class="text-muted"><i class="far fa-clock me-1"></i>2 hours ago</small>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View Details</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i class="fas fa-share me-2"></i>Share</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p class="mb-0">Changed profile picture and updated bio information.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item" data-type="system">
+                                        <div class="timeline-marker bg-warning"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <i class="fas fa-server text-warning me-2"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">System <small class="text-muted">backup completed</small></h6>
+                                                    <small class="text-muted"><i class="far fa-clock me-1"></i>3 hours ago</small>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p class="mb-2">Daily backup completed successfully.</p>
+                                                <div class="progress" style="height: 10px;">
+                                                    <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                                                </div>
+                                                <small class="text-muted">Backup size: 2.4 GB</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item" data-type="security">
+                                        <div class="timeline-marker bg-danger"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <i class="fas fa-shield-alt text-danger me-2"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Security Alert <small class="text-muted">failed login attempts</small></h6>
+                                                    <small class="text-muted"><i class="far fa-clock me-1"></i>5 hours ago</small>
+                                                </div>
+                                                <span class="badge bg-danger">High</span>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <p class="mb-0">Multiple failed login attempts detected from IP: 192.168.1.100</p>
+                                                <div class="mt-2">
+                                                    <button class="btn btn-sm btn-danger me-2">Block IP</button>
+                                                    <button class="btn btn-sm btn-outline-secondary">View Details</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item" data-type="transaction">
+                                        <div class="timeline-marker bg-success"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=48bb78&color=fff" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Jane Smith <small class="text-muted">completed purchase</small></h6>
+                                                    <small class="text-muted"><i class="far fa-clock me-1"></i>6 hours ago</small>
+                                                </div>
+                                                <span class="fw-bold text-success">+$299.00</span>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <p class="mb-0">Premium Plan Subscription</p>
+                                                        <small class="text-muted">Order #12345</small>
+                                                    </div>
+                                                    <button class="btn btn-sm btn-outline-primary">View Invoice</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Yesterday -->
+                                    <div class="timeline-date">
+                                        <h6 class="text-muted">Yesterday</h6>
+                                    </div>
+                                    
+                                    <div class="timeline-item" data-type="milestone">
+                                        <div class="timeline-marker bg-info">
+                                            <i class="fas fa-trophy text-white small"></i>
+                                        </div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <i class="fas fa-flag text-info me-2"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Milestone Achieved <small class="text-muted">1000 users registered</small></h6>
+                                                    <small class="text-muted"><i class="far fa-clock me-1"></i>Yesterday at 3:45 PM</small>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <div class="card bg-light">
+                                                    <div class="card-body text-center">
+                                                        <i class="fas fa-users fa-3x text-info mb-3"></i>
+                                                        <h4 class="mb-1">1,000 Users!</h4>
+                                                        <p class="mb-0 text-muted">Congratulations on reaching this milestone!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item" data-type="user">
+                                        <div class="timeline-marker bg-primary"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=f39c12&color=fff" alt="Avatar" class="rounded-circle me-2" width="32" height="32">
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Mike Johnson <small class="text-muted">commented on</small> Sales Report Q4</h6>
+                                                    <small class="text-muted"><i class="far fa-clock me-1"></i>Yesterday at 2:15 PM</small>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <div class="card bg-light">
+                                                    <div class="card-body">
+                                                        <p class="mb-0">"Great work on the Q4 report! The revenue growth is impressive."</p>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2">
+                                                    <button class="btn btn-sm btn-outline-primary me-2">
+                                                        <i class="far fa-thumbs-up me-1"></i>Like
+                                                    </button>
+                                                    <button class="btn btn-sm btn-outline-secondary">
+                                                        <i class="far fa-comment me-1"></i>Reply
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="timeline-item" data-type="system">
+                                        <div class="timeline-marker bg-warning"></div>
+                                        <div class="timeline-content">
+                                            <div class="timeline-header">
+                                                <i class="fas fa-database text-warning me-2"></i>
+                                                <div class="flex-grow-1">
+                                                    <h6 class="mb-0">Database <small class="text-muted">optimization completed</small></h6>
+                                                    <small class="text-muted"><i class="far fa-clock me-1"></i>Yesterday at 11:30 AM</small>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-body">
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                        <div class="text-center">
+                                                            <h5 class="mb-0 text-success">-45%</h5>
+                                                            <small class="text-muted">Query Time</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="text-center">
+                                                            <h5 class="mb-0 text-primary">+30%</h5>
+                                                            <small class="text-muted">Performance</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Load More -->
+                                    <div class="text-center mt-4">
+                                        <button class="btn btn-outline-primary" id="loadMore">
+                                            <i class="fas fa-arrow-down me-2"></i>Load More Activities
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+        import { initializeTimeline } from '@js/pages/timeline.js';
+    </script>
+</body>
+</html>

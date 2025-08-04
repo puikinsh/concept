@@ -1,0 +1,136 @@
+// User Management page styles
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    
+    &.bg-primary-light {
+        background-color: rgba($primary, 0.1);
+    }
+    
+    &.bg-success-light {
+        background-color: rgba($success, 0.1);
+    }
+    
+    &.bg-info-light {
+        background-color: rgba($info, 0.1);
+    }
+    
+    &.bg-danger-light {
+        background-color: rgba($danger, 0.1);
+    }
+}
+
+// User table styles
+#userTable {
+    tbody tr {
+        transition: all 0.2s ease;
+        
+        &.table-active {
+            background-color: rgba($primary, 0.05);
+        }
+        
+        &:hover {
+            background-color: $gray-100;
+        }
+    }
+    
+    .form-check-input {
+        cursor: pointer;
+    }
+}
+
+// Bulk actions
+.bulk-actions {
+    background-color: $light;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// DataTables customization
+.dataTables_wrapper {
+    .dataTables_length {
+        label {
+            font-weight: normal;
+            color: $text-muted;
+        }
+        
+        select {
+            @extend .form-select;
+            width: auto;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+    }
+    
+    .dataTables_info {
+        color: $text-muted;
+        font-size: 0.875rem;
+    }
+    
+    .dataTables_paginate {
+        .pagination {
+            margin: 0;
+        }
+        
+        .page-link {
+            padding: 0.375rem 0.75rem;
+            font-size: 0.875rem;
+            
+            &:hover {
+                background-color: $gray-100;
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(lg) {
+    .bulk-actions {
+        .btn {
+            font-size: 0.875rem;
+            padding: 0.375rem 0.75rem;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .icon-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .bulk-actions {
+        .d-flex {
+            flex-direction: column;
+            align-items: stretch !important;
+            
+            span {
+                margin-bottom: 0.5rem;
+                text-align: center;
+            }
+            
+            .btn {
+                margin: 0.25rem 0 !important;
+            }
+        }
+    }
+}

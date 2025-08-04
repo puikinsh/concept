@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="User Management" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="users" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">User Management</h2>
+                            <p class="pageheader-text">Manage system users, roles, permissions, and access control</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Users</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Stats -->
+                <div class="row mb-4">
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted mb-2">Total Users</h5>
+                                        <h3 class="mb-0">2,543</h3>
+                                        <p class="mb-0 text-success">
+                                            <i class="fas fa-arrow-up me-1"></i>12.5%
+                                        </p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <div class="icon-circle bg-primary-light text-primary">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted mb-2">Active Users</h5>
+                                        <h3 class="mb-0">1,893</h3>
+                                        <p class="mb-0 text-success">
+                                            <i class="fas fa-arrow-up me-1"></i>8.2%
+                                        </p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <div class="icon-circle bg-success-light text-success">
+                                            <i class="fas fa-user-check"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted mb-2">New Users</h5>
+                                        <h3 class="mb-0">127</h3>
+                                        <p class="mb-0 text-info">
+                                            <i class="fas fa-minus me-1"></i>0%
+                                        </p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <div class="icon-circle bg-info-light text-info">
+                                            <i class="fas fa-user-plus"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-grow-1">
+                                        <h5 class="text-muted mb-2">Suspended</h5>
+                                        <h3 class="mb-0">23</h3>
+                                        <p class="mb-0 text-danger">
+                                            <i class="fas fa-arrow-down me-1"></i>4.3%
+                                        </p>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                        <div class="icon-circle bg-danger-light text-danger">
+                                            <i class="fas fa-user-slash"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- User Table -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">User List</h5>
+                                    <div>
+                                        <button class="btn btn-sm btn-outline-secondary me-2" id="exportBtn">
+                                            <i class="fas fa-download me-1"></i>Export
+                                        </button>
+                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                                            <i class="fas fa-plus me-1"></i>Add User
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <!-- Filters -->
+                                <div class="row mb-3">
+                                    <div class="col-md-3">
+                                        <input type="text" class="form-control" id="searchInput" placeholder="Search users...">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-select" id="roleFilter">
+                                            <option value="">All Roles</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="manager">Manager</option>
+                                            <option value="user">User</option>
+                                            <option value="guest">Guest</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select class="form-select" id="statusFilter">
+                                            <option value="">All Status</option>
+                                            <option value="active">Active</option>
+                                            <option value="inactive">Inactive</option>
+                                            <option value="suspended">Suspended</option>
+                                            <option value="pending">Pending</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-outline-secondary w-100" id="resetFilters">
+                                            <i class="fas fa-redo me-1"></i>Reset
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Table -->
+                                <div class="table-responsive">
+                                    <table id="userTable" class="table table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" id="selectAll">
+                                                    </div>
+                                                </th>
+                                                <th>User</th>
+                                                <th>Email</th>
+                                                <th>Role</th>
+                                                <th>Status</th>
+                                                <th>Joined</th>
+                                                <th>Last Active</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=667eea&color=fff" alt="Avatar" class="rounded-circle me-3" width="40" height="40">
+                                                        <div>
+                                                            <h6 class="mb-0">John Doe</h6>
+                                                            <small class="text-muted">@johndoe</small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>john.doe@example.com</td>
+                                                <td><span class="badge bg-danger">Admin</span></td>
+                                                <td><span class="badge bg-success">Active</span></td>
+                                                <td>Jan 15, 2024</td>
+                                                <td>2 hours ago</td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Edit</a></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash me-2"></i>Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://ui-avatars.com/api/?name=Jane+Smith&background=48bb78&color=fff" alt="Avatar" class="rounded-circle me-3" width="40" height="40">
+                                                        <div>
+                                                            <h6 class="mb-0">Jane Smith</h6>
+                                                            <small class="text-muted">@janesmith</small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>jane.smith@example.com</td>
+                                                <td><span class="badge bg-primary">Manager</span></td>
+                                                <td><span class="badge bg-success">Active</span></td>
+                                                <td>Feb 28, 2024</td>
+                                                <td>5 minutes ago</td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Edit</a></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash me-2"></i>Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://ui-avatars.com/api/?name=Mike+Johnson&background=f39c12&color=fff" alt="Avatar" class="rounded-circle me-3" width="40" height="40">
+                                                        <div>
+                                                            <h6 class="mb-0">Mike Johnson</h6>
+                                                            <small class="text-muted">@mikej</small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>mike.j@example.com</td>
+                                                <td><span class="badge bg-info">User</span></td>
+                                                <td><span class="badge bg-warning text-dark">Pending</span></td>
+                                                <td>Mar 10, 2024</td>
+                                                <td>1 day ago</td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Edit</a></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash me-2"></i>Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://ui-avatars.com/api/?name=Sarah+Davis&background=e74c3c&color=fff" alt="Avatar" class="rounded-circle me-3" width="40" height="40">
+                                                        <div>
+                                                            <h6 class="mb-0">Sarah Davis</h6>
+                                                            <small class="text-muted">@sarahd</small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>sarah.davis@example.com</td>
+                                                <td><span class="badge bg-info">User</span></td>
+                                                <td><span class="badge bg-danger">Suspended</span></td>
+                                                <td>Dec 20, 2023</td>
+                                                <td>1 week ago</td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Edit</a></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash me-2"></i>Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="https://ui-avatars.com/api/?name=Tom+Wilson&background=3498db&color=fff" alt="Avatar" class="rounded-circle me-3" width="40" height="40">
+                                                        <div>
+                                                            <h6 class="mb-0">Tom Wilson</h6>
+                                                            <small class="text-muted">@tomw</small>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>tom.wilson@example.com</td>
+                                                <td><span class="badge bg-secondary">Guest</span></td>
+                                                <td><span class="badge bg-secondary">Inactive</span></td>
+                                                <td>Nov 5, 2023</td>
+                                                <td>1 month ago</td>
+                                                <td>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-edit me-2"></i>Edit</a></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash me-2"></i>Delete</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Pagination -->
+                                <div class="d-flex justify-content-between align-items-center mt-4">
+                                    <div>
+                                        Showing 1 to 5 of 2,543 entries
+                                    </div>
+                                    <nav>
+                                        <ul class="pagination mb-0">
+                                            <li class="page-item disabled">
+                                                <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                            </li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">509</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                                <!-- Bulk Actions -->
+                                <div class="bulk-actions mt-3" id="bulkActions" style="display: none;">
+                                    <div class="d-flex align-items-center">
+                                        <span class="me-3"><span id="selectedCount">0</span> users selected</span>
+                                        <button class="btn btn-sm btn-outline-primary me-2">
+                                            <i class="fas fa-envelope me-1"></i>Send Email
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-warning me-2">
+                                            <i class="fas fa-ban me-1"></i>Suspend
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger">
+                                            <i class="fas fa-trash me-1"></i>Delete
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="addUserForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-select" id="role" required>
+                                <option value="">Select Role</option>
+                                <option value="admin">Admin</option>
+                                <option value="manager">Manager</option>
+                                <option value="user">User</option>
+                                <option value="guest">Guest</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="status" class="form-label">Status</label>
+                            <select class="form-select" id="status" required>
+                                <option value="active">Active</option>
+                                <option value="pending">Pending</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sendInvite" checked>
+                            <label class="form-check-label" for="sendInvite">
+                                Send invitation email to user
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Add User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+        import { initializeUserManagement } from '@js/pages/users.js';
+    </script>
+</body>
+</html>

@@ -62,6 +62,11 @@ export default defineConfig({
         'calendar': resolve(__dirname, 'src/pages/calendar.html'),
         'chat': resolve(__dirname, 'src/pages/chat.html'),
         'inbox': resolve(__dirname, 'src/pages/inbox.html'),
+        // Settings
+        'settings': resolve(__dirname, 'src/pages/settings.html'),
+        // User Management
+        'users': resolve(__dirname, 'src/pages/users.html'),
+        'timeline': resolve(__dirname, 'src/pages/timeline.html'),
         // Misc Pages
         'blank-page': resolve(__dirname, 'src/pages/misc/blank-page.html'),
         'login': resolve(__dirname, 'src/pages/misc/login.html'),

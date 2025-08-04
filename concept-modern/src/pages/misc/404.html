@@ -1,179 +1,307 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="en">
 <head>
-    {{> layouts/head pageTitle="Page Not Found" }}
-    <style>
-        .error-container {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .error-container::before {
-            content: '';
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: float 20s infinite linear;
-        }
-        
-        @keyframes float {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        
-        .error-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            padding: 2rem;
-        }
-        
-        .error-code {
-            font-size: 10rem;
-            font-weight: 700;
-            color: white;
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
-            margin: 0;
-            line-height: 1;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .error-code::after {
-            content: '404';
-            position: absolute;
-            left: 0;
-            top: 0;
-            color: rgba(255,255,255,0.1);
-            transform: translate(5px, 5px);
-            z-index: -1;
-        }
-        
-        .astronaut {
-            font-size: 6rem;
-            animation: bounce 3s infinite;
-            display: block;
-            margin: 2rem auto;
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(-5deg); }
-            75% { transform: translateY(-10px) rotate(5deg); }
-        }
-        
-        .search-box {
-            max-width: 400px;
-            margin: 2rem auto;
-        }
-        
-        .quick-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .error-code {
-                font-size: 6rem;
-            }
-            .astronaut {
-                font-size: 4rem;
-            }
-        }
-    </style>
+    {{> layouts/head pageTitle="404 - Page Not Found" }}
 </head>
 <body>
-    <div class="error-container">
-        <div class="error-content">
-            <div class="text-white">
-                <span class="astronaut">🚀</span>
-                <h1 class="error-code">404</h1>
-                <h2 class="h3 mb-3 text-white">Oops! Lost in Space</h2>
-                <p class="lead text-white-50 mb-4">
-                    The page you're looking for has drifted away into the digital cosmos.
-                    <br>Let's get you back on track!
-                </p>
-                
-                <div class="search-box">
-                    <form class="d-flex gap-2" onsubmit="return false;">
-                        <input type="text" class="form-control form-control-lg" placeholder="Search for pages...">
-                        <button type="submit" class="btn btn-light btn-lg">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="quick-links">
-                    <a href="/" class="btn btn-light btn-lg">
-                        <i class="fas fa-home me-2"></i>Go Home
-                    </a>
-                    <a href="#" onclick="history.back()" class="btn btn-outline-light btn-lg">
-                        <i class="fas fa-arrow-left me-2"></i>Go Back
-                    </a>
-                </div>
-                
-                <div class="mt-5 text-white-50">
-                    <p class="mb-2">Popular destinations:</p>
-                    <div class="d-flex gap-3 justify-content-center flex-wrap">
-                        <a href="/" class="text-white-50 text-decoration-none">Dashboard</a>
-                        <span class="text-white-50">•</span>
-                        <a href="/pages/charts/index.html" class="text-white-50 text-decoration-none">Charts</a>
-                        <span class="text-white-50">•</span>
-                        <a href="/pages/tables/data-tables.html" class="text-white-50 text-decoration-none">Tables</a>
-                        <span class="text-white-50">•</span>
-                        <a href="/pages/misc/login.html" class="text-white-50 text-decoration-none">Login</a>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="error-container">
+                            <div class="error-content text-center">
+                                <div class="error-number">
+                                    <h1 class="display-1 fw-bold text-primary">404</h1>
+                                </div>
+                                
+                                <div class="error-illustration mb-4">
+                                    <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="img-fluid">
+                                        <!-- Background circles -->
+                                        <circle cx="200" cy="150" r="120" fill="#E8EAED" opacity="0.5"/>
+                                        <circle cx="200" cy="150" r="90" fill="#F5F5F5" opacity="0.7"/>
+                                        
+                                        <!-- Magnifying glass -->
+                                        <circle cx="180" cy="130" r="50" fill="none" stroke="#667EEA" stroke-width="8"/>
+                                        <line x1="215" y1="165" x2="245" y2="195" stroke="#667EEA" stroke-width="8" stroke-linecap="round"/>
+                                        
+                                        <!-- Question mark inside magnifying glass -->
+                                        <text x="180" y="145" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#667EEA">?</text>
+                                        
+                                        <!-- Floating elements -->
+                                        <circle cx="100" cy="80" r="8" fill="#FFD93D" opacity="0.8">
+                                            <animate attributeName="cy" values="80;70;80" dur="3s" repeatCount="indefinite"/>
+                                        </circle>
+                                        <circle cx="300" cy="100" r="6" fill="#6BCF7F" opacity="0.8">
+                                            <animate attributeName="cy" values="100;90;100" dur="2.5s" repeatCount="indefinite"/>
+                                        </circle>
+                                        <circle cx="320" cy="200" r="10" fill="#FF6B6B" opacity="0.8">
+                                            <animate attributeName="cy" values="200;190;200" dur="3.5s" repeatCount="indefinite"/>
+                                        </circle>
+                                        <circle cx="80" cy="180" r="7" fill="#4ECDC4" opacity="0.8">
+                                            <animate attributeName="cy" values="180;170;180" dur="2.8s" repeatCount="indefinite"/>
+                                        </circle>
+                                    </svg>
+                                </div>
+                                
+                                <h2 class="error-title mb-3">Oops! Page Not Found</h2>
+                                <p class="error-description text-muted mb-4">
+                                    The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+                                </p>
+                                
+                                <div class="error-search mb-5">
+                                    <form class="d-flex justify-content-center" style="max-width: 500px; margin: 0 auto;">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search for pages..." aria-label="Search">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <div class="error-actions">
+                                    <a href="/" class="btn btn-primary me-3">
+                                        <i class="fas fa-home me-2"></i>Go to Homepage
+                                    </a>
+                                    <button onclick="history.back()" class="btn btn-outline-primary">
+                                        <i class="fas fa-arrow-left me-2"></i>Go Back
+                                    </button>
+                                </div>
+                                
+                                <div class="error-suggestions mt-5">
+                                    <h5 class="mb-3">Here are some helpful links:</h5>
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-8">
+                                            <div class="list-group list-group-horizontal-md text-center">
+                                                <a href="/" class="list-group-item list-group-item-action">
+                                                    <i class="fas fa-tachometer-alt fa-2x mb-2 text-primary"></i>
+                                                    <p class="mb-0">Dashboard</p>
+                                                </a>
+                                                <a href="/pages/settings.html" class="list-group-item list-group-item-action">
+                                                    <i class="fas fa-cog fa-2x mb-2 text-primary"></i>
+                                                    <p class="mb-0">Settings</p>
+                                                </a>
+                                                <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="modal" data-bs-target="#supportModal">
+                                                    <i class="fas fa-headset fa-2x mb-2 text-primary"></i>
+                                                    <p class="mb-0">Support</p>
+                                                </a>
+                                                <a href="#" class="list-group-item list-group-item-action" onclick="location.reload()">
+                                                    <i class="fas fa-redo fa-2x mb-2 text-primary"></i>
+                                                    <p class="mb-0">Refresh</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="error-footer mt-5 text-muted">
+                                    <small>Error Code: 404 | Request ID: #{{generateRequestId}}</small>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="mt-5">
-                    <a href="#" class="text-white-50 text-decoration-none small">
-                        <i class="fas fa-envelope me-1"></i>Contact Support
-                    </a>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    <!-- Support Modal -->
+    <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="supportModalLabel">Contact Support</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="supportEmail" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="supportEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="supportSubject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="supportSubject" value="404 Error - Page Not Found" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="supportMessage" class="form-label">Message</label>
+                            <textarea class="form-control" id="supportMessage" rows="4" required>I encountered a 404 error while trying to access: {{currentUrl}}</textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Error Details</label>
+                            <div class="bg-light p-3 rounded">
+                                <small class="text-muted">
+                                    <strong>URL:</strong> <span id="errorUrl"></span><br>
+                                    <strong>Time:</strong> <span id="errorTime"></span><br>
+                                    <strong>Browser:</strong> <span id="errorBrowser"></span>
+                                </small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="submitSupport()">Send Report</button>
                 </div>
             </div>
         </div>
     </div>
     
+    {{> layouts/scripts }}
+    
     <script>
-        // Fun Easter egg: Make astronaut fly when clicked
-        document.querySelector('.astronaut').addEventListener('click', function() {
-            this.style.animation = 'none';
-            setTimeout(() => {
-                this.style.animation = 'bounce 3s infinite, flyAway 1s ease-out';
-                setTimeout(() => {
-                    this.style.animation = 'bounce 3s infinite';
-                }, 1000);
-            }, 10);
+        // Generate random request ID
+        function generateRequestId() {
+            return Math.random().toString(36).substr(2, 9).toUpperCase();
+        }
+        
+        // Set request ID
+        document.addEventListener('DOMContentLoaded', function() {
+            const requestIdElement = document.querySelector('.error-footer small');
+            if (requestIdElement) {
+                requestIdElement.innerHTML = requestIdElement.innerHTML.replace('{{generateRequestId}}', generateRequestId());
+            }
+            
+            // Fill error details in modal
+            document.getElementById('errorUrl').textContent = window.location.href;
+            document.getElementById('errorTime').textContent = new Date().toLocaleString();
+            document.getElementById('errorBrowser').textContent = navigator.userAgent.split(' ').slice(-2).join(' ');
         });
         
-        // Add flyAway animation dynamically
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes flyAway {
-                0% { transform: translateY(0) scale(1); opacity: 1; }
-                100% { transform: translateY(-200px) scale(0.5); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
+        // Submit support function
+        function submitSupport() {
+            const btn = event.target;
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check me-2"></i>Sent!';
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-success');
+                
+                setTimeout(() => {
+                    const modal = bootstrap.Modal.getInstance(document.getElementById('supportModal'));
+                    modal.hide();
+                    
+                    // Reset button
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('btn-success');
+                    btn.classList.add('btn-primary');
+                    btn.disabled = false;
+                }, 1500);
+            }, 2000);
+        }
         
-        // Search functionality (demo)
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Search functionality
+        document.querySelector('.error-search form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const searchTerm = this.querySelector('input').value;
+            const searchTerm = e.target.querySelector('input').value;
             if (searchTerm) {
-                alert(`Searching for: ${searchTerm}\n\nIn a real application, this would search your site!`);
+                // In a real app, this would perform a search
+                window.location.href = '/?search=' + encodeURIComponent(searchTerm);
             }
         });
     </script>
+    
+    <style>
+        .error-container {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+        
+        .error-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .error-number h1 {
+            font-size: 10rem;
+            line-height: 1;
+            margin-bottom: 0;
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            color: #2d3748;
+        }
+        
+        .error-description {
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+        
+        .error-illustration svg {
+            filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.08));
+        }
+        
+        .list-group-horizontal-md .list-group-item {
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .list-group-horizontal-md .list-group-item:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .list-group-horizontal-md .list-group-item i {
+            transition: transform 0.3s ease;
+        }
+        
+        .list-group-horizontal-md .list-group-item:hover i {
+            transform: scale(1.1);
+        }
+        
+        @media (max-width: 768px) {
+            .error-number h1 {
+                font-size: 6rem;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-illustration svg {
+                width: 100%;
+                height: auto;
+                max-width: 300px;
+            }
+            
+            .error-actions .btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 0.5rem;
+            }
+            
+            .error-actions .btn.me-3 {
+                margin-right: 0 !important;
+            }
+        }
+        
+        /* Animation for floating elements */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
 </body>
 </html>

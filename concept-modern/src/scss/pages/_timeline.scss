@@ -1,0 +1,245 @@
+// Timeline page styles
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background-color: $gray-300;
+    }
+}
+
+.timeline-date {
+    margin: 2rem 0 1rem;
+    position: relative;
+    
+    h6 {
+        background-color: $white;
+        display: inline-block;
+        padding-right: 1rem;
+        margin-bottom: 0;
+        margin-left: -2rem;
+        font-weight: 600;
+        color: $gray-600;
+    }
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    margin-bottom: 2rem;
+    
+    &.new-item {
+        opacity: 0;
+        transform: translateY(20px);
+        
+        &.animate-in {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    }
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    z-index: 1;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: $white;
+        border-radius: 50%;
+    }
+    
+    i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 0.5rem;
+    }
+}
+
+.timeline-content {
+    flex: 1;
+    background-color: $white;
+    border: 1px solid $gray-200;
+    border-radius: 0.5rem;
+    padding: 1.25rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    
+    img {
+        object-fit: cover;
+    }
+    
+    h6 {
+        margin: 0;
+        font-size: 0.9375rem;
+        
+        small {
+            font-weight: normal;
+        }
+    }
+    
+    .dropdown {
+        .btn {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            background-color: transparent;
+            
+            &:hover {
+                background-color: $gray-100;
+            }
+        }
+    }
+}
+
+.timeline-body {
+    font-size: 0.875rem;
+    
+    p {
+        line-height: 1.6;
+    }
+    
+    .card {
+        border: none;
+        margin-top: 0.5rem;
+        
+        .card-body {
+            padding: 1rem;
+        }
+    }
+    
+    .progress {
+        margin: 0.5rem 0;
+    }
+    
+    .btn-sm {
+        font-size: 0.8125rem;
+        padding: 0.25rem 0.75rem;
+    }
+}
+
+// Activity type colors
+.activity-filters {
+    .form-check-label {
+        display: flex;
+        align-items: center;
+        font-size: 0.875rem;
+        
+        i {
+            width: 1.25rem;
+        }
+    }
+}
+
+// Reply input
+.reply-input {
+    .input-group {
+        .form-control {
+            font-size: 0.875rem;
+        }
+        
+        .btn {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+// Animations
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Mobile responsiveness
+@include media-breakpoint-down(md) {
+    .timeline {
+        padding-left: 1.5rem;
+        
+        &::before {
+            left: 0;
+        }
+    }
+    
+    .timeline-marker {
+        left: -1.75rem;
+        width: 0.875rem;
+        height: 0.875rem;
+        
+        &::after {
+            width: 0.375rem;
+            height: 0.375rem;
+        }
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .timeline-header {
+        flex-wrap: wrap;
+        
+        img {
+            width: 28px;
+            height: 28px;
+        }
+        
+        h6 {
+            font-size: 0.875rem;
+        }
+        
+        .dropdown {
+            margin-left: auto;
+        }
+    }
+    
+    .timeline-date h6 {
+        margin-left: -1.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .timeline {
+        padding-left: 1rem;
+    }
+    
+    .timeline-marker {
+        left: -1.25rem;
+        width: 0.75rem;
+        height: 0.75rem;
+    }
+    
+    .timeline-date h6 {
+        margin-left: -1rem;
+    }
+}

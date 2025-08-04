@@ -1,0 +1,194 @@
+// Settings page styles
+.nav-pills {
+    .nav-link {
+        color: $gray-700;
+        border-radius: 0.375rem;
+        padding: 0.75rem 1rem;
+        margin-bottom: 0.25rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: $gray-100;
+            color: $primary;
+        }
+        
+        &.active {
+            background-color: $primary;
+            color: $white;
+            
+            i {
+                color: $white;
+            }
+        }
+        
+        i {
+            width: 1.25rem;
+            text-align: center;
+        }
+    }
+}
+
+// Card radio buttons for theme selection
+.card-radio {
+    position: relative;
+    
+    .form-check-input {
+        position: absolute;
+        opacity: 0;
+        
+        &:checked + .form-check-label {
+            border-color: $primary;
+            background-color: rgba($primary, 0.1);
+            
+            i {
+                color: $primary;
+            }
+        }
+    }
+    
+    .form-check-label {
+        cursor: pointer;
+        border: 2px solid $gray-300;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            border-color: $gray-400;
+        }
+    }
+}
+
+// Color scheme buttons
+.color-scheme-btn {
+    position: relative;
+    
+    &.active::after {
+        content: '\f00c';
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 0.875rem;
+    }
+}
+
+// Icon circles for integrations
+.icon-circle {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.25rem;
+    
+    &.bg-primary-light {
+        background-color: rgba($primary, 0.1);
+        color: $primary;
+    }
+    
+    &.bg-info-light {
+        background-color: rgba($info, 0.1);
+        color: $info;
+    }
+    
+    &.bg-success-light {
+        background-color: rgba($success, 0.1);
+        color: $success;
+    }
+    
+    &.bg-warning-light {
+        background-color: rgba($warning, 0.1);
+        color: $warning;
+    }
+    
+    &.bg-danger-light {
+        background-color: rgba($danger, 0.1);
+        color: $danger;
+    }
+}
+
+// Settings content spacing
+.tab-content {
+    .card {
+        .card-header {
+            background-color: $white;
+            border-bottom: 2px solid $gray-200;
+            
+            h5 {
+                font-weight: 600;
+                color: $gray-800;
+            }
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+    }
+}
+
+// Form styling
+.form-label {
+    font-weight: 500;
+    color: $gray-700;
+    margin-bottom: 0.5rem;
+}
+
+.form-text {
+    font-size: 0.875rem;
+}
+
+// Session list items
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    
+    &:first-child {
+        border-top: none;
+    }
+    
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// API key input group
+.input-group {
+    .form-control[readonly] {
+        background-color: $gray-100;
+        font-family: $font-family-monospace;
+        font-size: 0.875rem;
+    }
+}
+
+// Responsive adjustments
+@include media-breakpoint-down(lg) {
+    .nav-pills {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-bottom: 1rem;
+        
+        .nav-link {
+            white-space: nowrap;
+            margin-bottom: 0;
+            margin-right: 0.5rem;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .tab-content {
+        .card-body {
+            padding: 1.25rem;
+        }
+    }
+    
+    .color-scheme-btn {
+        padding: 0.375rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}

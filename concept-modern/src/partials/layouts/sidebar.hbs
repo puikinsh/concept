@@ -131,7 +131,7 @@
                                 <a class="nav-link {{#if (eq activePage 'signup')}}active{{/if}}" href="/pages/misc/signup.html">Sign Up</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{#if (eq activePage '404')}}active{{/if}}" href="404.html">404 page</a>
+                                <a class="nav-link {{#if (eq activePage '404')}}active{{/if}}" href="/pages/misc/404.html">404 page</a>
                             </li>
                         </ul>
                     </div>
@@ -159,6 +159,31 @@
                             </li>
                         </ul>
                     </div>
+                </li>
+                
+                <li class="nav-divider">
+                    System
+                </li>
+                
+                <!-- Users -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'users')}}active{{/if}}" href="/pages/users.html">
+                        <i class="fas fa-fw fa-users"></i>Users
+                    </a>
+                </li>
+                
+                <!-- Timeline -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'timeline')}}active{{/if}}" href="/pages/timeline.html">
+                        <i class="fas fa-fw fa-stream"></i>Timeline
+                    </a>
+                </li>
+                
+                <!-- Settings -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'settings')}}active{{/if}}" href="/pages/settings.html">
+                        <i class="fas fa-fw fa-cog"></i>Settings
+                    </a>
                 </li>
             </ul>
         </nav>

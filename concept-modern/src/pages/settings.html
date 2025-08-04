@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Settings" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="settings" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Settings</h2>
+                            <p class="pageheader-text">Manage your application settings and preferences</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Settings</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Settings Navigation -->
+                    <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="nav flex-column nav-pills" id="settings-tabs" role="tablist" aria-orientation="vertical">
+                                    <a class="nav-link active" id="general-tab" data-bs-toggle="pill" href="#general" role="tab" aria-controls="general" aria-selected="true">
+                                        <i class="fas fa-cog me-2"></i> General
+                                    </a>
+                                    <a class="nav-link" id="account-tab" data-bs-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="false">
+                                        <i class="fas fa-user me-2"></i> Account
+                                    </a>
+                                    <a class="nav-link" id="security-tab" data-bs-toggle="pill" href="#security" role="tab" aria-controls="security" aria-selected="false">
+                                        <i class="fas fa-shield-alt me-2"></i> Security
+                                    </a>
+                                    <a class="nav-link" id="email-tab" data-bs-toggle="pill" href="#email" role="tab" aria-controls="email" aria-selected="false">
+                                        <i class="fas fa-envelope me-2"></i> Email
+                                    </a>
+                                    <a class="nav-link" id="notifications-tab" data-bs-toggle="pill" href="#notifications" role="tab" aria-controls="notifications" aria-selected="false">
+                                        <i class="fas fa-bell me-2"></i> Notifications
+                                    </a>
+                                    <a class="nav-link" id="appearance-tab" data-bs-toggle="pill" href="#appearance" role="tab" aria-controls="appearance" aria-selected="false">
+                                        <i class="fas fa-palette me-2"></i> Appearance
+                                    </a>
+                                    <a class="nav-link" id="integrations-tab" data-bs-toggle="pill" href="#integrations" role="tab" aria-controls="integrations" aria-selected="false">
+                                        <i class="fas fa-plug me-2"></i> Integrations
+                                    </a>
+                                    <a class="nav-link" id="advanced-tab" data-bs-toggle="pill" href="#advanced" role="tab" aria-controls="advanced" aria-selected="false">
+                                        <i class="fas fa-tools me-2"></i> Advanced
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Settings Content -->
+                    <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12 col-12">
+                        <div class="tab-content" id="settings-content">
+                            <!-- General Settings -->
+                            <div class="tab-pane fade show active" id="general" role="tabpanel" aria-labelledby="general-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">General Settings</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-4">
+                                                <label for="siteName" class="form-label">Site Name</label>
+                                                <input type="text" class="form-control" id="siteName" value="Concept Dashboard">
+                                                <small class="form-text text-muted">The name of your website displayed in the header and title</small>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="siteDescription" class="form-label">Site Description</label>
+                                                <textarea class="form-control" id="siteDescription" rows="3">A modern Bootstrap 5 admin dashboard template</textarea>
+                                                <small class="form-text text-muted">Brief description of your website for SEO purposes</small>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="siteUrl" class="form-label">Site URL</label>
+                                                <input type="url" class="form-control" id="siteUrl" value="https://example.com">
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="timezone" class="form-label">Timezone</label>
+                                                <select class="form-select" id="timezone">
+                                                    <option value="UTC">UTC</option>
+                                                    <option value="America/New_York" selected>Eastern Time (US & Canada)</option>
+                                                    <option value="America/Chicago">Central Time (US & Canada)</option>
+                                                    <option value="America/Denver">Mountain Time (US & Canada)</option>
+                                                    <option value="America/Los_Angeles">Pacific Time (US & Canada)</option>
+                                                    <option value="Europe/London">London</option>
+                                                    <option value="Europe/Paris">Paris</option>
+                                                    <option value="Asia/Tokyo">Tokyo</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="dateFormat" class="form-label">Date Format</label>
+                                                <select class="form-select" id="dateFormat">
+                                                    <option value="MM/DD/YYYY">MM/DD/YYYY</option>
+                                                    <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                                    <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="language" class="form-label">Language</label>
+                                                <select class="form-select" id="language">
+                                                    <option value="en" selected>English</option>
+                                                    <option value="es">Spanish</option>
+                                                    <option value="fr">French</option>
+                                                    <option value="de">German</option>
+                                                    <option value="ja">Japanese</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="d-flex justify-content-end">
+                                                <button type="button" class="btn btn-outline-secondary me-2">Reset</button>
+                                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Account Settings -->
+                            <div class="tab-pane fade" id="account" role="tabpanel" aria-labelledby="account-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Account Settings</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="mb-4">
+                                                <label for="username" class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="username" value="johndoe">
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="displayName" class="form-label">Display Name</label>
+                                                <input type="text" class="form-control" id="displayName" value="John Doe">
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="accountEmail" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="accountEmail" value="john.doe@example.com">
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="phone" class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" id="phone" value="+1 (555) 123-4567">
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="bio" class="form-label">Bio</label>
+                                                <textarea class="form-control" id="bio" rows="3">Product designer with 5+ years of experience</textarea>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label class="form-label">Profile Picture</label>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="me-3">
+                                                        <div class="avatar-upload">
+                                                            <div class="avatar-preview">
+                                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                                                    <span class="h3 mb-0">JD</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" class="btn btn-sm btn-primary">Change Avatar</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-danger ms-2">Remove</button>
+                                                        <p class="mb-0 mt-2 text-muted small">JPG, GIF or PNG. Max size of 2MB</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Delete Account</h6>
+                                            <p class="text-muted">Once you delete your account, there is no going back. Please be certain.</p>
+                                            <button type="button" class="btn btn-danger">Delete Account</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Security Settings -->
+                            <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Security Settings</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <h6 class="mb-3">Change Password</h6>
+                                            <div class="mb-3">
+                                                <label for="currentPassword" class="form-label">Current Password</label>
+                                                <input type="password" class="form-control" id="currentPassword">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="newPassword" class="form-label">New Password</label>
+                                                <input type="password" class="form-control" id="newPassword">
+                                                <small class="form-text text-muted">Use 8 or more characters with a mix of letters, numbers & symbols</small>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                                                <input type="password" class="form-control" id="confirmPassword">
+                                            </div>
+                                            
+                                            <button type="submit" class="btn btn-primary mb-4">Update Password</button>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Two-Factor Authentication</h6>
+                                            <p class="text-muted">Add an extra layer of security to your account by enabling two-factor authentication.</p>
+                                            <div class="form-check form-switch mb-4">
+                                                <input class="form-check-input" type="checkbox" id="enable2FA">
+                                                <label class="form-check-label" for="enable2FA">
+                                                    Enable Two-Factor Authentication
+                                                </label>
+                                            </div>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Sessions</h6>
+                                            <p class="text-muted">Manage and logout your active sessions on other browsers and devices.</p>
+                                            
+                                            <div class="list-group mb-3">
+                                                <div class="list-group-item">
+                                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                                        <div>
+                                                            <h6 class="mb-1">Chrome on Windows</h6>
+                                                            <p class="mb-0 text-muted small">Your current session</p>
+                                                        </div>
+                                                        <span class="badge bg-success">Active</span>
+                                                    </div>
+                                                </div>
+                                                <div class="list-group-item">
+                                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                                        <div>
+                                                            <h6 class="mb-1">Safari on iPhone</h6>
+                                                            <p class="mb-0 text-muted small">Last active 2 hours ago</p>
+                                                        </div>
+                                                        <button class="btn btn-sm btn-outline-danger">Logout</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <button type="button" class="btn btn-outline-danger">Logout Other Sessions</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Email Settings -->
+                            <div class="tab-pane fade" id="email" role="tabpanel" aria-labelledby="email-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Email Settings</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <h6 class="mb-3">Email Configuration</h6>
+                                            
+                                            <div class="mb-3">
+                                                <label for="mailDriver" class="form-label">Mail Driver</label>
+                                                <select class="form-select" id="mailDriver">
+                                                    <option value="smtp" selected>SMTP</option>
+                                                    <option value="sendmail">Sendmail</option>
+                                                    <option value="mailgun">Mailgun</option>
+                                                    <option value="ses">Amazon SES</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="smtpHost" class="form-label">SMTP Host</label>
+                                                <input type="text" class="form-control" id="smtpHost" value="smtp.gmail.com">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="smtpPort" class="form-label">SMTP Port</label>
+                                                <input type="number" class="form-control" id="smtpPort" value="587">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="smtpUsername" class="form-label">SMTP Username</label>
+                                                <input type="text" class="form-control" id="smtpUsername" value="your-email@gmail.com">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="smtpPassword" class="form-label">SMTP Password</label>
+                                                <input type="password" class="form-control" id="smtpPassword" placeholder="••••••••">
+                                            </div>
+                                            
+                                            <div class="mb-3">
+                                                <label for="smtpEncryption" class="form-label">Encryption</label>
+                                                <select class="form-select" id="smtpEncryption">
+                                                    <option value="tls" selected>TLS</option>
+                                                    <option value="ssl">SSL</option>
+                                                    <option value="none">None</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="fromEmail" class="form-label">From Email Address</label>
+                                                <input type="email" class="form-control" id="fromEmail" value="noreply@example.com">
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="fromName" class="form-label">From Name</label>
+                                                <input type="text" class="form-control" id="fromName" value="Concept Dashboard">
+                                            </div>
+                                            
+                                            <div class="d-flex justify-content-between">
+                                                <button type="button" class="btn btn-outline-primary">Send Test Email</button>
+                                                <button type="submit" class="btn btn-primary">Save Configuration</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Notification Settings -->
+                            <div class="tab-pane fade" id="notifications" role="tabpanel" aria-labelledby="notifications-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Notification Settings</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <h6 class="mb-3">Email Notifications</h6>
+                                            
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="emailComments" checked>
+                                                <label class="form-check-label" for="emailComments">
+                                                    Comments on your posts
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="emailFollowers" checked>
+                                                <label class="form-check-label" for="emailFollowers">
+                                                    New followers
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="emailMentions">
+                                                <label class="form-check-label" for="emailMentions">
+                                                    Mentions and tags
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="form-check form-switch mb-4">
+                                                <input class="form-check-input" type="checkbox" id="emailNewsletter" checked>
+                                                <label class="form-check-label" for="emailNewsletter">
+                                                    Newsletter and product updates
+                                                </label>
+                                            </div>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Push Notifications</h6>
+                                            
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="pushMessages" checked>
+                                                <label class="form-check-label" for="pushMessages">
+                                                    Direct messages
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="pushTasks" checked>
+                                                <label class="form-check-label" for="pushTasks">
+                                                    Task assignments
+                                                </label>
+                                            </div>
+                                            
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="pushReminders" checked>
+                                                <label class="form-check-label" for="pushReminders">
+                                                    Reminders
+                                                </label>
+                                            </div>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Desktop Notifications</h6>
+                                            <p class="text-muted">Show notifications on desktop when the app is in background</p>
+                                            <div class="form-check form-switch mb-4">
+                                                <input class="form-check-input" type="checkbox" id="desktopNotifications">
+                                                <label class="form-check-label" for="desktopNotifications">
+                                                    Enable desktop notifications
+                                                </label>
+                                            </div>
+                                            
+                                            <button type="submit" class="btn btn-primary">Save Preferences</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Appearance Settings -->
+                            <div class="tab-pane fade" id="appearance" role="tabpanel" aria-labelledby="appearance-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Appearance Settings</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <h6 class="mb-3">Theme</h6>
+                                            <div class="row mb-4">
+                                                <div class="col-md-4">
+                                                    <div class="form-check card-radio">
+                                                        <input class="form-check-input" type="radio" name="theme" id="themeLight" value="light" checked>
+                                                        <label class="form-check-label card p-3 text-center" for="themeLight">
+                                                            <i class="fas fa-sun fa-2x mb-2"></i>
+                                                            <p class="mb-0">Light</p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-check card-radio">
+                                                        <input class="form-check-input" type="radio" name="theme" id="themeDark" value="dark">
+                                                        <label class="form-check-label card p-3 text-center" for="themeDark">
+                                                            <i class="fas fa-moon fa-2x mb-2"></i>
+                                                            <p class="mb-0">Dark</p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-check card-radio">
+                                                        <input class="form-check-input" type="radio" name="theme" id="themeAuto" value="auto">
+                                                        <label class="form-check-label card p-3 text-center" for="themeAuto">
+                                                            <i class="fas fa-adjust fa-2x mb-2"></i>
+                                                            <p class="mb-0">Auto</p>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <h6 class="mb-3">Color Scheme</h6>
+                                            <div class="d-flex gap-2 mb-4">
+                                                <button type="button" class="btn btn-primary color-scheme-btn active" data-color="primary">Primary</button>
+                                                <button type="button" class="btn btn-success color-scheme-btn" data-color="success">Success</button>
+                                                <button type="button" class="btn btn-danger color-scheme-btn" data-color="danger">Danger</button>
+                                                <button type="button" class="btn btn-warning color-scheme-btn" data-color="warning">Warning</button>
+                                                <button type="button" class="btn btn-info color-scheme-btn" data-color="info">Info</button>
+                                                <button type="button" class="btn btn-dark color-scheme-btn" data-color="dark">Dark</button>
+                                            </div>
+                                            
+                                            <h6 class="mb-3">Layout</h6>
+                                            <div class="mb-3">
+                                                <label for="sidebarLayout" class="form-label">Sidebar Layout</label>
+                                                <select class="form-select" id="sidebarLayout">
+                                                    <option value="fixed" selected>Fixed</option>
+                                                    <option value="scrollable">Scrollable</option>
+                                                    <option value="compact">Compact</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="mb-4">
+                                                <label for="contentWidth" class="form-label">Content Width</label>
+                                                <select class="form-select" id="contentWidth">
+                                                    <option value="fluid" selected>Fluid</option>
+                                                    <option value="boxed">Boxed</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <h6 class="mb-3">Font Size</h6>
+                                            <div class="mb-4">
+                                                <input type="range" class="form-range" min="12" max="20" value="16" id="fontSize">
+                                                <div class="d-flex justify-content-between">
+                                                    <small>Small</small>
+                                                    <small>Large</small>
+                                                </div>
+                                            </div>
+                                            
+                                            <button type="submit" class="btn btn-primary">Apply Changes</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Integrations Settings -->
+                            <div class="tab-pane fade" id="integrations" role="tabpanel" aria-labelledby="integrations-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Integrations</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="list-group">
+                                            <div class="list-group-item">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="icon-circle bg-primary-light text-primary me-3">
+                                                            <i class="fab fa-google"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">Google Analytics</h6>
+                                                            <small class="text-muted">Track website traffic and user behavior</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="googleAnalytics" checked>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="list-group-item">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="icon-circle bg-info-light text-info me-3">
+                                                            <i class="fab fa-slack"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">Slack</h6>
+                                                            <small class="text-muted">Get notifications in your Slack workspace</small>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-sm btn-outline-primary">Connect</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="list-group-item">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="icon-circle bg-success-light text-success me-3">
+                                                            <i class="fab fa-stripe"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">Stripe</h6>
+                                                            <small class="text-muted">Accept payments and manage subscriptions</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" id="stripe">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="list-group-item">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="icon-circle bg-warning-light text-warning me-3">
+                                                            <i class="fab fa-mailchimp"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">Mailchimp</h6>
+                                                            <small class="text-muted">Email marketing automation</small>
+                                                        </div>
+                                                    </div>
+                                                    <button class="btn btn-sm btn-outline-primary">Connect</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="list-group-item">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="icon-circle bg-danger-light text-danger me-3">
+                                                            <i class="fab fa-github"></i>
+                                                        </div>
+                                                        <div>
+                                                            <h6 class="mb-0">GitHub</h6>
+                                                            <small class="text-muted">Source code management</small>
+                                                        </div>
+                                                    </div>
+                                                    <span class="badge bg-success">Connected</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-4">
+                                            <h6 class="mb-3">API Keys</h6>
+                                            <div class="mb-3">
+                                                <label for="apiKey" class="form-label">API Key</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" id="apiKey" value="sk_test_4eC39HqLyjWDarjtT1zdp7dc" readonly>
+                                                    <button class="btn btn-outline-secondary" type="button">
+                                                        <i class="fas fa-copy"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary">Generate New Key</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Advanced Settings -->
+                            <div class="tab-pane fade" id="advanced" role="tabpanel" aria-labelledby="advanced-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5 class="mb-0">Advanced Settings</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <h6 class="mb-3">Developer Options</h6>
+                                            
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox" id="debugMode">
+                                                <label class="form-check-label" for="debugMode">
+                                                    Debug Mode
+                                                </label>
+                                                <small class="form-text text-muted d-block">Show detailed error messages and logs</small>
+                                            </div>
+                                            
+                                            <div class="form-check form-switch mb-4">
+                                                <input class="form-check-input" type="checkbox" id="maintenanceMode">
+                                                <label class="form-check-label" for="maintenanceMode">
+                                                    Maintenance Mode
+                                                </label>
+                                                <small class="form-text text-muted d-block">Temporarily disable the site for maintenance</small>
+                                            </div>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Cache</h6>
+                                            <p class="text-muted">Clear various types of cached data to improve performance</p>
+                                            
+                                            <div class="d-flex gap-2 mb-4">
+                                                <button type="button" class="btn btn-outline-secondary">Clear App Cache</button>
+                                                <button type="button" class="btn btn-outline-secondary">Clear View Cache</button>
+                                                <button type="button" class="btn btn-outline-secondary">Clear All Cache</button>
+                                            </div>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Database</h6>
+                                            
+                                            <div class="mb-3">
+                                                <label for="dbBackup" class="form-label">Automatic Backup</label>
+                                                <select class="form-select" id="dbBackup">
+                                                    <option value="daily" selected>Daily</option>
+                                                    <option value="weekly">Weekly</option>
+                                                    <option value="monthly">Monthly</option>
+                                                    <option value="never">Never</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <button type="button" class="btn btn-primary mb-4">Backup Now</button>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3">Export/Import</h6>
+                                            <p class="text-muted">Export your settings or import from a backup</p>
+                                            
+                                            <div class="d-flex gap-2 mb-4">
+                                                <button type="button" class="btn btn-outline-primary">
+                                                    <i class="fas fa-download me-2"></i>Export Settings
+                                                </button>
+                                                <button type="button" class="btn btn-outline-primary">
+                                                    <i class="fas fa-upload me-2"></i>Import Settings
+                                                </button>
+                                            </div>
+                                            
+                                            <hr>
+                                            
+                                            <h6 class="mb-3 text-danger">Danger Zone</h6>
+                                            <p class="text-muted">These actions are irreversible. Please be careful.</p>
+                                            
+                                            <button type="button" class="btn btn-outline-danger me-2">Reset All Settings</button>
+                                            <button type="button" class="btn btn-danger">Delete All Data</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+        import { initializeSettings } from '@js/pages/settings.js';
+    </script>
+</body>
+</html>
