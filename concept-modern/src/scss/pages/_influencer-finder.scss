@@ -110,9 +110,14 @@
     padding: 1rem 1.5rem;
     
     .social-stat {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
         i {
             font-size: 1.25rem;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
             display: block;
         }
         
@@ -120,7 +125,8 @@
             font-size: 0.875rem;
             color: #495057;
             transition: transform 0.2s ease;
-            display: inline-block;
+            display: block;
+            text-align: center;
         }
         
         &:hover span {
@@ -260,27 +266,11 @@
     }
 }
 
-// Animation for social stats
-@keyframes statPulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
+// Social stats styling (removed pulsing animation)
 .social-stat {
-    animation: statPulse 2s ease-in-out infinite;
-    animation-delay: calc(var(--stat-index) * 0.2s);
+    transition: transform 0.2s ease;
     
-    &:nth-child(1) { --stat-index: 0; }
-    &:nth-child(2) { --stat-index: 1; }
-    &:nth-child(3) { --stat-index: 2; }
-    &:nth-child(4) { --stat-index: 3; }
-    &:nth-child(5) { --stat-index: 4; }
-    &:nth-child(6) { --stat-index: 5; }
+    &:hover {
+        transform: scale(1.05);
+    }
 }

@@ -3,10 +3,8 @@
 // Filter bar improvements
 .dashboard-ecommerce {
     .card-body {
-        .input-group-lg {
+        .input-group {
             .form-control {
-                font-size: 1rem;
-                padding: 0.75rem 1rem;
                 border-right: 0;
                 
                 &:focus {
@@ -17,17 +15,15 @@
             
             .btn {
                 border-left: 0;
-                padding: 0.75rem 1.25rem;
                 
                 i {
-                    font-size: 1.1rem;
+                    font-size: 0.875rem;
                 }
             }
         }
         
         .form-select {
             border-color: #dee2e6;
-            font-size: 0.875rem;
             
             &:focus {
                 border-color: $primary;

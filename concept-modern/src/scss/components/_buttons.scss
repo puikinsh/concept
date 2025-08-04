@@ -26,7 +26,11 @@
 
 // Dark buttons should have white text
 .btn-dark,
-.btn-secondary {
+.btn-secondary,
+.btn-success,
+.btn-danger,
+.btn-info,
+.btn-warning {
     color: $white !important;
     
     &:hover,
