@@ -1,0 +1,159 @@
+{{> layouts/main title="Inbox" activeMenu="email" activePage="inbox"}}
+
+{{#*inline "content"}}
+<div class="dashboard-main-wrapper">
+    <!-- Header -->
+    {{> layouts/header}}
+    
+    <!-- Sidebar -->
+    {{> layouts/sidebar activeMenu="email" activePage="inbox"}}
+    
+    <!-- Main Content -->
+    <div class="dashboard-wrapper">
+        <div class="dashboard-email">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Inbox</h2>
+                            <p class="pageheader-text">Manage your emails efficiently</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Email</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Inbox</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Interface -->
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-body p-0">
+                                <div class="email-wrapper">
+                                    <div class="row g-0">
+                                        <!-- Sidebar -->
+                                        <div class="col-lg-3 col-md-4 border-end">
+                                            <div class="email-sidebar p-4">
+                                                <!-- Compose Button -->
+                                                <a href="/pages/email/compose.html" class="btn btn-primary btn-lg w-100 mb-4">
+                                                    <i class="fas fa-edit me-2"></i>Compose
+                                                </a>
+
+                                                <!-- Folders -->
+                                                <div class="email-folders">
+                                                    <h6 class="text-muted text-uppercase small mb-3">Folders</h6>
+                                                    <div class="list-group list-group-flush">
+                                                        <a href="#" class="list-group-item list-group-item-action active" data-folder="inbox">
+                                                            <i class="fas fa-inbox me-2"></i>Inbox
+                                                            <span class="badge bg-primary rounded-pill float-end">24</span>
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action" data-folder="starred">
+                                                            <i class="fas fa-star me-2"></i>Starred
+                                                            <span class="badge bg-warning rounded-pill float-end">8</span>
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action" data-folder="sent">
+                                                            <i class="fas fa-paper-plane me-2"></i>Sent
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action" data-folder="drafts">
+                                                            <i class="fas fa-file-alt me-2"></i>Drafts
+                                                            <span class="badge bg-secondary rounded-pill float-end">2</span>
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action" data-folder="trash">
+                                                            <i class="fas fa-trash me-2"></i>Trash
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Labels -->
+                                                <div class="email-labels mt-4">
+                                                    <h6 class="text-muted text-uppercase small mb-3">Labels</h6>
+                                                    <div class="list-group list-group-flush">
+                                                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                                            <span class="badge bg-success me-2">&nbsp;</span>
+                                                            <span>Work</span>
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                                            <span class="badge bg-primary me-2">&nbsp;</span>
+                                                            <span>Personal</span>
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                                            <span class="badge bg-warning me-2">&nbsp;</span>
+                                                            <span>Important</span>
+                                                        </a>
+                                                        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                                            <span class="badge bg-danger me-2">&nbsp;</span>
+                                                            <span>Private</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Email List -->
+                                        <div class="col-lg-9 col-md-8">
+                                            <div class="email-list">
+                                                <!-- Email Toolbar -->
+                                                <div class="email-toolbar border-bottom p-3">
+                                                    <div class="row align-items-center">
+                                                        <div class="col">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="checkbox" id="selectAll">
+                                                                <label class="form-check-label" for="selectAll">
+                                                                    Select All
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <div class="btn-group btn-group-sm" role="group">
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Archive">
+                                                                    <i class="fas fa-archive"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Delete">
+                                                                    <i class="fas fa-trash"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Mark as Read">
+                                                                    <i class="fas fa-envelope-open"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Mark as Unread">
+                                                                    <i class="fas fa-envelope"></i>
+                                                                </button>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Star">
+                                                                    <i class="fas fa-star"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Email Items -->
+                                                <div class="email-items" id="emailItems">
+                                                    <!-- Email items will be populated here by JavaScript -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        {{> layouts/footer}}
+    </div>
+</div>
+
+<!-- Page Specific Scripts -->
+<script type="module" src="/js/pages/inbox.js"></script>
+{{/inline}}
+
+{{> layouts/base}}

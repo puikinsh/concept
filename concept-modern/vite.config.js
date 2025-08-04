@@ -73,10 +73,12 @@ export default defineConfig({
         // User Management
         'users': resolve(__dirname, 'src/pages/users.html'),
         'timeline': resolve(__dirname, 'src/pages/timeline.html'),
+        // Auth Pages
+        'login': resolve(__dirname, 'src/pages/auth/login.html'),
+        'signup': resolve(__dirname, 'src/pages/auth/signup.html'),
+        'forgot-password': resolve(__dirname, 'src/pages/auth/forgot-password.html'),
         // Misc Pages
         'blank-page': resolve(__dirname, 'src/pages/misc/blank-page.html'),
-        'login': resolve(__dirname, 'src/pages/misc/login.html'),
-        'signup': resolve(__dirname, 'src/pages/misc/signup.html'),
         '404': resolve(__dirname, 'src/pages/misc/404.html'),
       },
       output: {
