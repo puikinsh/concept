@@ -1,2 +1,43 @@
-*.md
+# OS Files
 .DS_Store
+Thumbs.db
+
+# Development/Migration Files
+MIGRATION_STATUS.md
+MODERNIZATION_PLAN.md
+SIMPLIFIED_APPROACH.md
+CLAUDE.md
+TODO.md
+*.log
+
+# Old Template Files (to be removed after full migration)
+/pages/
+/assets/
+/documentation/
+/package.json
+/package-lock.json
+/vite.config.js
+/src/scss/main.scss
+concept-bootstrap-5-admin-dashboard.png
+
+# Keep only the modern version
+!/concept-modern/
+
+# Node modules
+node_modules/
+
+# Build files
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+concept-modern/DEVELOPMENT_STATUS.md
