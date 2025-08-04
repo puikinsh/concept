@@ -1,0 +1,21 @@
+{
+  "name": "concept-dashboard",
+  "version": "2.0.0",
+  "description": "Concept - Modern Bootstrap 5 Admin Dashboard Template",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^5.2.0",
+    "sass": "^1.69.5",
+    "vite": "^5.0.10"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2"
+  }
+}

@@ -1,0 +1,22 @@
+// Custom variables
+$primary: #5969ff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #343a40;
+
+// Import Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+// Import FontAwesome
+@import "~fontawesome/css/all.min.css";
+
+// Custom styles
+@import "components/sidebar";
+@import "components/navbar";
+@import "components/cards";
+@import "components/buttons";
+@import "components/general";

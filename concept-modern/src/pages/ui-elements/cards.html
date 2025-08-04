@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Card Components" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="ui-elements" activePage="cards" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Card Components</h2>
+                            <p class="pageheader-text">Cards provide a flexible and extensible content container with multiple variants and options.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item">UI Elements</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Cards</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Basic Cards -->
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="mb-3">Basic Cards</h3>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Simple Card</h5>
+                                <p class="card-text">This is a simple card with some text content. Cards are built with as little markup and styles as possible.</p>
+                                <a href="#" class="btn btn-primary">Action</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Card Header
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Card with Header</h5>
+                                <p class="card-text">Add an optional header within a card. Headers can be styled by adding .card-header to elements.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Card with Footer</h5>
+                                <p class="card-text">Add an optional footer within a card. Footers can be styled by adding .card-footer to elements.</p>
+                            </div>
+                            <div class="card-footer text-muted">
+                                Card Footer
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards with Images -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Cards with Images</h3>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-img-top bg-primary d-flex align-items-center justify-content-center text-white" style="height: 200px;">
+                                <div class="text-center">
+                                    <i class="fas fa-image fa-3x mb-2"></i>
+                                    <p class="mb-0">Image Cap</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Image Cap</h5>
+                                <p class="card-text">Cards include various options for working with images. Choose from appending "image caps" at either end of a card.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Image Bottom</h5>
+                                <p class="card-text">Place an image at the bottom of the card. Images in cards have no fixed width or height by default.</p>
+                            </div>
+                            <div class="card-img-bottom bg-success d-flex align-items-center justify-content-center text-white" style="height: 200px;">
+                                <div class="text-center">
+                                    <i class="fas fa-image fa-3x mb-2"></i>
+                                    <p class="mb-0">Image Bottom</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card bg-dark text-white">
+                            <div class="card-img bg-dark d-flex align-items-center justify-content-center text-white" style="height: 300px;">
+                                <div class="text-center">
+                                    <i class="fas fa-layer-group fa-4x mb-2 opacity-25"></i>
+                                </div>
+                            </div>
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Image Overlay</h5>
+                                <p class="card-text">Turn an image into a card background and overlay your card's text.</p>
+                                <p class="card-text"><small>Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colored Cards -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Colored Cards</h3>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card text-white bg-primary">
+                            <div class="card-header">Primary Card</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Primary Background</h5>
+                                <p class="card-text">Use text and background utilities to change the appearance of a card.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card text-white bg-success">
+                            <div class="card-header">Success Card</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Success Background</h5>
+                                <p class="card-text">Cards include their own variant classes for quickly changing the background-color.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card text-white bg-danger">
+                            <div class="card-header">Danger Card</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Danger Background</h5>
+                                <p class="card-text">Conveying meaning to assistive technologies using color.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card text-white bg-warning">
+                            <div class="card-header">Warning Card</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Warning Background</h5>
+                                <p class="card-text">Use .text-bg-{color} helpers to improve color contrast.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Border Cards -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Border Cards</h3>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-primary">
+                            <div class="card-header">Primary Border</div>
+                            <div class="card-body text-primary">
+                                <h5 class="card-title">Primary Border Card</h5>
+                                <p class="card-text">Use border utilities to change just the border-color of a card.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-success">
+                            <div class="card-header">Success Border</div>
+                            <div class="card-body text-success">
+                                <h5 class="card-title">Success Border Card</h5>
+                                <p class="card-text">Note that .text-{color} utilities are also available.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-danger">
+                            <div class="card-header">Danger Border</div>
+                            <div class="card-body text-danger">
+                                <h5 class="card-title">Danger Border Card</h5>
+                                <p class="card-text">Mix and match with various content and components.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-warning">
+                            <div class="card-header">Warning Border</div>
+                            <div class="card-body">
+                                <h5 class="card-title text-warning">Warning Border Card</h5>
+                                <p class="card-text">Create visually appealing cards with border colors.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Top Border Cards -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Top Border Cards</h3>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-primary">
+                            <div class="card-body">
+                                <h5 class="text-muted">Total Revenue</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">$12,099</h1>
+                                </div>
+                                <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                    <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-success">
+                            <div class="card-body">
+                                <h5 class="text-muted">New Orders</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">1,340</h1>
+                                </div>
+                                <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                    <span><i class="fa fa-fw fa-arrow-up"></i></span><span>12%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-danger">
+                            <div class="card-body">
+                                <h5 class="text-muted">Bounce Rate</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">28.5%</h1>
+                                </div>
+                                <div class="metric-label d-inline-block float-end text-danger fw-bold">
+                                    <span><i class="fa fa-fw fa-arrow-up"></i></span><span>3.5%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card border-3 border-top border-top-warning">
+                            <div class="card-body">
+                                <h5 class="text-muted">Page Views</h5>
+                                <div class="metric-value d-inline-block">
+                                    <h1 class="mb-1">45,320</h1>
+                                </div>
+                                <div class="metric-label d-inline-block float-end text-warning fw-bold">
+                                    <span><i class="fa fa-fw fa-minus"></i></span><span>0%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cards with Lists -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Cards with Lists</h3>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Featured List
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Dapibus ac facilisis in</li>
+                                <li class="list-group-item">Vestibulum at eros</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                List with Badges
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Messages
+                                    <span class="badge bg-primary rounded-pill">14</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Notifications
+                                    <span class="badge bg-success rounded-pill">2</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Updates
+                                    <span class="badge bg-warning rounded-pill">1</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                Recent Activity
+                            </div>
+                            <div class="card-body p-0">
+                                <div class="list-group list-group-flush">
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">List group item heading</h6>
+                                            <small>3 days ago</small>
+                                        </div>
+                                        <p class="mb-1">Some placeholder content.</p>
+                                        <small>And some small print.</small>
+                                    </a>
+                                    <a href="#" class="list-group-item list-group-item-action">
+                                        <div class="d-flex w-100 justify-content-between">
+                                            <h6 class="mb-1">Another item heading</h6>
+                                            <small class="text-muted">3 days ago</small>
+                                        </div>
+                                        <p class="mb-1">Some more placeholder content.</p>
+                                        <small class="text-muted">And some muted small print.</small>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Special Cards -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Special Cards</h3>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body text-center">
+                                <div class="user-avatar-lg mb-3">
+                                    <div class="user-avatar-lg rounded-circle bg-primary text-white d-flex align-items-center justify-content-center mx-auto" style="width: 80px; height: 80px;">
+                                        <span class="h3 mb-0">JD</span>
+                                    </div>
+                                </div>
+                                <h4 class="card-title mb-1">John Doe</h4>
+                                <p class="text-muted">UI/UX Designer</p>
+                                <p class="card-text">Creating beautiful and functional user interfaces with modern design principles.</p>
+                                <div class="d-flex justify-content-center gap-2">
+                                    <a href="#" class="btn btn-primary btn-sm">Follow</a>
+                                    <a href="#" class="btn btn-outline-primary btn-sm">Message</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-circle-medium bg-primary-light me-3">
+                                        <i class="fas fa-shopping-cart text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">Shopping Cart</h5>
+                                        <p class="mb-0 text-muted">3 items</p>
+                                    </div>
+                                </div>
+                                <div class="product-list">
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span>Product 1</span>
+                                        <span class="fw-bold">$29.99</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-2">
+                                        <span>Product 2</span>
+                                        <span class="fw-bold">$49.99</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>Product 3</span>
+                                        <span class="fw-bold">$19.99</span>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="mb-0">Total</h5>
+                                    <h5 class="mb-0 text-primary">$99.97</h5>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <a href="#" class="btn btn-primary w-100">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Featured Announcement</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="alert alert-info mb-3" role="alert">
+                                    <i class="fas fa-info-circle me-2"></i>New features available!
+                                </div>
+                                <h5 class="card-title">Version 2.0 Released</h5>
+                                <p class="card-text">We're excited to announce the release of version 2.0 with many new features and improvements.</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>Enhanced Performance</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>New Dashboard Layouts</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>Improved Mobile Experience</li>
+                                </ul>
+                            </div>
+                            <div class="card-footer bg-light">
+                                <small class="text-muted">Posted 2 hours ago</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Groups -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Card Groups</h3>
+                    </div>
+                    <div class="col-12">
+                        <div class="card-group">
+                            <div class="card">
+                                <div class="card-img-top bg-primary d-flex align-items-center justify-content-center text-white" style="height: 200px;">
+                                    <div class="text-center">
+                                        <i class="fas fa-image fa-3x mb-2"></i>
+                                        <p class="mb-0">Card 1</p>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Group 1</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-img-top bg-success d-flex align-items-center justify-content-center text-white" style="height: 200px;">
+                                    <div class="text-center">
+                                        <i class="fas fa-image fa-3x mb-2"></i>
+                                        <p class="mb-0">Card 2</p>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Group 2</h5>
+                                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-img-top bg-danger d-flex align-items-center justify-content-center text-white" style="height: 200px;">
+                                    <div class="text-center">
+                                        <i class="fas fa-image fa-3x mb-2"></i>
+                                        <p class="mb-0">Card 3</p>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Card Group 3</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horizontal Cards -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <h3 class="mb-3">Horizontal Cards</h3>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="bg-primary d-flex align-items-center justify-content-center text-white rounded-start h-100" style="min-height: 200px;">
+                                        <div class="text-center p-4">
+                                            <i class="fas fa-image fa-3x mb-2"></i>
+                                            <p class="mb-0">Horizontal</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Horizontal Card Layout</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-12">
+                        <div class="card">
+                            <div class="row g-0">
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Right Image Layout</h5>
+                                        <p class="card-text">Using a combination of grid and utility classes, cards can be made horizontal in a mobile-friendly and responsive way.</p>
+                                        <a href="#" class="btn btn-primary">Learn More</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="bg-success d-flex align-items-center justify-content-center text-white rounded-end h-100" style="min-height: 200px;">
+                                        <div class="text-center p-4">
+                                            <i class="fas fa-image fa-3x mb-2"></i>
+                                            <p class="mb-0">Image Right</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <style>
+        .icon-circle-medium {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
+        
+        .bg-primary-light {
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+        
+        .border-top-success {
+            border-top-color: #71dd37 !important;
+        }
+        
+        .border-top-danger {
+            border-top-color: #ef476f !important;
+        }
+        
+        .border-top-warning {
+            border-top-color: #ffc107 !important;
+        }
+        
+        .user-avatar-lg {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            font-weight: 600;
+        }
+        
+        .bg-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        
+        .post-thumbnail-placeholder {
+            font-size: 1.5rem;
+        }
+        
+        /* Card image placeholder styling */
+        .card-img-top, .card-img-bottom, .card-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-img-overlay {
+            z-index: 1;
+        }
+        
+        /* Opacity utility */
+        .opacity-25 {
+            opacity: 0.25;
+        }
+        
+        /* Ensure horizontal cards work properly */
+        .row.g-0 > div > div {
+            height: 100%;
+        }
+    </style>
+</body>
+</html>

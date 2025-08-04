@@ -1,0 +1,34 @@
+// Variables
+@use "variables" as *;
+
+// Font imports
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Import Bootstrap 5
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// Import FontAwesome
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+// Core styles
+@import "layouts/layout";
+@import "layouts/sidebar";
+@import "layouts/header";
+@import "layouts/footer";
+
+// Components
+@import "components/cards";
+@import "components/badges";
+@import "components/buttons";
+@import "components/charts";
+@import "components/datatables";
+@import "components/multiselect";
+
+// Pages
+@import "pages/dashboard";
+@import "pages/influencer";
+@import "pages/calendar";
+@import "pages/chat";
+
+// Utilities
+@import "utilities/scrollbar";

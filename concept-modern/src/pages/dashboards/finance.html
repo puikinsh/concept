@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Finance Dashboard" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-finance" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Finance Dashboard</h2>
+                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Finance Dashboard Template</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date Range Picker -->
+                    <div class="row">
+                        <div class="offset-xl-10 col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+                            <form>
+                                <div class="form-group">
+                                    <select class="form-select" id="daterange">
+                                        <option value="today">Today</option>
+                                        <option value="week">This Week</option>
+                                        <option value="month" selected>This Month</option>
+                                        <option value="quarter">This Quarter</option>
+                                        <option value="year">This Year</option>
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Finance Metric Cards -->
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card finance-metric-card">
+                                <h5 class="card-header">Total Income</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$5,79,000</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ms-1">25%</span>
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light">
+                                    <div class="sparkline-container">
+                                        <canvas id="sparkline-income"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card finance-metric-card">
+                                <h5 class="card-header">Total Expenses</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$1,79,000</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-danger fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span><span class="ms-1">15%</span>
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light">
+                                    <div class="sparkline-container">
+                                        <canvas id="sparkline-expenses"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card finance-metric-card">
+                                <h5 class="card-header">Cash on Hand</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$79,000</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ms-1">25%</span>
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light">
+                                    <div class="sparkline-container">
+                                        <canvas id="sparkline-cash"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card finance-metric-card">
+                                <h5 class="card-header">Net Profit Margin</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$92,000</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span> <span class="ms-1">25%</span>
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light">
+                                    <div class="sparkline-container">
+                                        <canvas id="sparkline-profit"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row 1 -->
+                    <div class="row mt-4">
+                        <!-- AP and AR Balance -->
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">AP and AR Balance</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="ap-ar-balance"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Income Budget -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">% of Income Budget</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="income-budget"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <p>Budget <span class="float-end text-dark">12,000.00</span></p>
+                                    <p>Balance<span class="float-end text-dark">-2300.00 <span class="ms-2 text-secondary"><i class="fas fa-caret-up me-1"></i>25%</span></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Expenses Budget -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">% of Expenses Budget</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="expenses-budget"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <p>Budget <span class="float-end text-dark">3500.00</span></p>
+                                    <p>Balance <span class="float-end text-dark">230.00 <span class="ms-2 text-secondary"><i class="fas fa-caret-up me-1"></i>25%</span></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row 2 -->
+                    <div class="row mt-4">
+                        <!-- EBIT -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">EBIT (Earnings Before Interest & Tax)</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="ebit-chart"></canvas>
+                                    </div>
+                                    <div class="text-center">
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">EBIT (Earnings Before Interest & Tax)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Cost of Goods/Services -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Cost of goods / Services <span class="float-end">1 Jan 2025 to 31 Dec 2025</span></h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="cost-goods-services"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row 3 -->
+                    <div class="row mt-4">
+                        <!-- Disputed vs Overdue Invoices -->
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Disputed vs Overdue Invoices</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="disputed-overdue"></canvas>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-primary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span><span class="legend-text">Disputed Invoices</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span><span class="legend-text">Overdue Invoices</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Disputed Invoices -->
+                        <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Disputed Invoices</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="disputed-invoices"></canvas>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-primary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Disputed Invoices</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Average</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Accounts Payable Age -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Accounts Payable Age</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="accounts-payable-age"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row 4 -->
+                    <div class="row mt-4">
+                        <!-- Working Capital -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Working Capital <span class="float-end">1 Jan 2025 to 31 Dec 2025</span></h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="working-capital"></canvas>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Working Capital</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Inventory Turnover -->
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Inventory Turnover</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="inventory-turnover"></canvas>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-primary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Turnover</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Target</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-info me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Achieved</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+    import { createSparkline, createLineChart, createDoughnutChart, createBarChart, colors } from '/js/components/charts.js';
+
+    // Initialize charts
+    document.addEventListener('DOMContentLoaded', () => {
+        // Handle date range selection
+        const dateRangeSelect = document.getElementById('daterange');
+        if (dateRangeSelect) {
+            dateRangeSelect.addEventListener('change', (e) => {
+                console.log('Date range changed to:', e.target.value);
+                // Here you would typically reload chart data based on the selected range
+            });
+        }
+
+        // Initialize sparklines
+        createSparkline('#sparkline-income', [10, 15, 20, 18, 25, 22, 30, 28, 35], { 
+            color: colors.success 
+        });
+        
+        createSparkline('#sparkline-expenses', [30, 25, 28, 22, 20, 18, 15, 12], { 
+            color: colors.danger 
+        });
+        
+        createSparkline('#sparkline-cash', [5, 10, 8, 15, 12, 20, 18, 25], { 
+            color: colors.success 
+        });
+        
+        createSparkline('#sparkline-profit', [8, 12, 10, 15, 18, 20, 25, 30], { 
+            color: colors.success 
+        });
+
+        // AP and AR Balance Chart
+        const apArData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Accounts Payable',
+                data: [45000, 52000, 48000, 51000, 49000, 53000],
+                backgroundColor: colors.primary,
+                borderColor: colors.primary,
+                borderWidth: 1
+            }, {
+                label: 'Accounts Receivable',
+                data: [65000, 59000, 68000, 71000, 69000, 75000],
+                backgroundColor: colors.success,
+                borderColor: colors.success,
+                borderWidth: 1
+            }]
+        };
+        
+        createBarChart('#ap-ar-balance', apArData, {
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        });
+
+        // Income Budget Gauge
+        const incomeBudgetData = {
+            labels: ['Used', 'Remaining'],
+            datasets: [{
+                data: [75, 25],
+                backgroundColor: [colors.primary, '#e9ecef'],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#income-budget', incomeBudgetData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            cutout: '70%'
+        });
+
+        // Expenses Budget Gauge
+        const expensesBudgetData = {
+            labels: ['Used', 'Remaining'],
+            datasets: [{
+                data: [65, 35],
+                backgroundColor: [colors.warning, '#e9ecef'],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#expenses-budget', expensesBudgetData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            cutout: '70%'
+        });
+
+        // EBIT Chart
+        const ebitData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'EBIT',
+                data: [120000, 135000, 125000, 145000, 150000, 165000, 160000, 175000, 180000, 195000, 190000, 210000],
+                backgroundColor: `${colors.secondary}20`,
+                borderColor: colors.secondary,
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        };
+        
+        createLineChart('#ebit-chart', ebitData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + (value/1000) + 'k';
+                        }
+                    }
+                }
+            }
+        });
+
+        // Cost of Goods/Services Chart
+        const costGoodsData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Cost',
+                data: [80000, 85000, 82000, 88000, 90000, 95000, 92000, 98000, 100000, 105000, 102000, 110000],
+                backgroundColor: colors.info,
+                borderColor: colors.info,
+                borderWidth: 1
+            }]
+        };
+        
+        createBarChart('#cost-goods-services', costGoodsData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + (value/1000) + 'k';
+                        }
+                    }
+                }
+            }
+        });
+
+        // Disputed vs Overdue Invoices
+        const disputedOverdueData = {
+            labels: ['Disputed', 'Overdue'],
+            datasets: [{
+                data: [35, 65],
+                backgroundColor: [colors.primary, colors.secondary],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#disputed-overdue', disputedOverdueData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+
+        // Disputed Invoices Trend
+        const disputedInvoicesData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Disputed Invoices',
+                data: [12, 15, 18, 14, 16, 13],
+                borderColor: colors.primary,
+                backgroundColor: `${colors.primary}20`,
+                borderWidth: 2,
+                fill: false,
+                tension: 0.4
+            }, {
+                label: 'Average',
+                data: [15, 15, 15, 15, 15, 15],
+                borderColor: colors.secondary,
+                borderWidth: 2,
+                borderDash: [5, 5],
+                fill: false
+            }]
+        };
+        
+        createLineChart('#disputed-invoices', disputedInvoicesData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        });
+
+        // Accounts Payable Age
+        const accountsPayableAgeData = {
+            labels: ['0-30 days', '31-60 days', '61-90 days', '90+ days'],
+            datasets: [{
+                data: [45, 25, 20, 10],
+                backgroundColor: [colors.success, colors.warning, colors.danger, colors.dark],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#accounts-payable-age', accountsPayableAgeData, {
+            plugins: {
+                legend: {
+                    position: 'right',
+                    labels: {
+                        boxWidth: 10,
+                        padding: 10
+                    }
+                }
+            }
+        });
+
+        // Working Capital Chart
+        const workingCapitalData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Working Capital',
+                data: [250000, 260000, 255000, 270000, 275000, 285000, 280000, 295000, 300000, 310000, 305000, 320000],
+                backgroundColor: `${colors.secondary}20`,
+                borderColor: colors.secondary,
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        };
+        
+        createLineChart('#working-capital', workingCapitalData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + (value/1000) + 'k';
+                        }
+                    }
+                }
+            }
+        });
+
+        // Inventory Turnover Chart
+        const inventoryTurnoverData = {
+            labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+            datasets: [{
+                label: 'Turnover',
+                data: [4.2, 4.5, 4.8, 5.1],
+                backgroundColor: colors.primary,
+                borderColor: colors.primary,
+                borderWidth: 1
+            }, {
+                label: 'Target',
+                data: [4.0, 4.0, 4.0, 4.0],
+                backgroundColor: colors.secondary,
+                borderColor: colors.secondary,
+                borderWidth: 1
+            }, {
+                label: 'Achieved',
+                data: [4.2, 4.5, 4.8, 5.1],
+                backgroundColor: colors.info,
+                borderColor: colors.info,
+                borderWidth: 1
+            }]
+        };
+        
+        createBarChart('#inventory-turnover', inventoryTurnoverData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    max: 6
+                }
+            }
+        });
+    });
+    </script>
+</body>
+</html>

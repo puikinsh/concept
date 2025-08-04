@@ -1,0 +1,92 @@
+// Bootstrap 5 Variable Overrides
+// Colors
+$primary: #5969ff;
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #23272b;
+
+// Gray scale
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+// Additional grays
+$gray-50:  #fafbfc;
+
+// Custom Colors
+$brand-primary: $primary;
+$brand-secondary: #ff407b;
+$brand-success: $success;
+$brand-info: $info;
+$brand-warning: $warning;
+$brand-danger: $danger;
+
+// Body
+$body-bg: #efeff6;
+$body-color: #3d405c;
+
+// Typography
+$font-family-base: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+$font-size-base: 0.875rem;
+$line-height-base: 1.5;
+
+// Navbar
+$navbar-padding-y: 0.5rem;
+$navbar-brand-font-size: 1.25rem;
+
+// Sidebar
+$sidebar-width: 260px;
+$sidebar-bg: #0e0c28;
+$sidebar-color: #8287a0;
+$sidebar-hover-bg: rgba(255, 255, 255, 0.08);
+$sidebar-active-bg: $primary;
+
+// Cards
+$card-border-width: 0;
+$card-border-radius: 0.25rem;
+$card-box-shadow: 0 0 2px rgba(145, 158, 171, 0.2), 0 12px 24px -4px rgba(145, 158, 171, 0.12);
+
+// Dropdowns
+$dropdown-border-width: 0;
+$dropdown-box-shadow: 0 0 2px rgba(145, 158, 171, 0.2), 0 12px 24px -4px rgba(145, 158, 171, 0.12);
+
+// Forms
+$input-border-color: #d4d9e3;
+$input-focus-border-color: $primary;
+$input-focus-box-shadow: 0 0 0 0.2rem rgba($primary, 0.25);
+
+// Tables
+$table-cell-padding-y: 0.75rem;
+$table-cell-padding-x: 0.75rem;
+
+// Utilities
+$enable-shadows: true;
+$enable-gradients: false;
+$enable-responsive-font-sizes: true;
+
+// Spacing
+$spacer: 1rem;
+
+// Border radius
+$border-radius: 0.25rem;
+$border-radius-lg: 0.3rem;
+$border-radius-sm: 0.2rem;
+
+// Transitions
+$transition-base: all 0.2s ease-in-out;
+$transition-fade: opacity 0.15s linear;
+
+// Button color contrast
+$btn-primary-color: $white;

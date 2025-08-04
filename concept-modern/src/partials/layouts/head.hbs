@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>{{#if pageTitle}}{{pageTitle}} - {{/if}}{{title}}</title>
+<meta name="description" content="{{#if pageDescription}}{{pageDescription}}{{else}}Modern Bootstrap 5 Admin Dashboard Template{{/if}}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+
+<!-- CSS -->
+<link rel="stylesheet" href="/scss/main.scss">
+
+{{#if customStyles}}
+  {{#each customStyles}}
+    <link rel="stylesheet" href="{{this}}">
+  {{/each}}
+{{/if}}

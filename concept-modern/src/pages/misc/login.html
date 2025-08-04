@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    {{> layouts/head pageTitle="Login" }}
+</head>
+<body class="h-100 d-flex align-items-center bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10">
+                <div class="text-center mb-4">
+                    <a href="/" class="d-inline-block">
+                        <h1 class="text-primary fw-bold mb-0">Concept</h1>
+                    </a>
+                    <p class="text-muted mt-2">Welcome back! Please login to your account.</p>
+                </div>
+                
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-5">
+                        <form id="loginForm" novalidate>
+                            <div class="mb-4">
+                                <label for="email" class="form-label fw-medium">Email address</label>
+                                <input type="email" 
+                                       class="form-control form-control-lg" 
+                                       id="email" 
+                                       placeholder="name@example.com" 
+                                       required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <label for="password" class="form-label fw-medium mb-0">Password</label>
+                                    <a href="#" class="text-decoration-none small">Forgot password?</a>
+                                </div>
+                                <input type="password" 
+                                       class="form-control form-control-lg" 
+                                       id="password" 
+                                       placeholder="Enter your password" 
+                                       required>
+                                <div class="invalid-feedback">
+                                    Password is required.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">
+                                        Keep me logged in
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                                Sign In
+                            </button>
+                            
+                            <div class="text-center">
+                                <span class="text-muted">Don't have an account?</span>
+                                <a href="/pages/misc/signup.html" class="text-decoration-none fw-medium">Sign up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <hr class="flex-grow-1">
+                        <span class="px-3 text-muted small">Or continue with</span>
+                        <hr class="flex-grow-1">
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-lg">
+                            <i class="fab fa-google me-2"></i>
+                            Sign in with Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-lg">
+                            <i class="fab fa-github me-2"></i>
+                            Sign in with GitHub
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <p class="text-muted small mb-0">
+                        By signing in, you agree to our 
+                        <a href="#" class="text-decoration-none">Terms</a> and 
+                        <a href="#" class="text-decoration-none">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            // Form validation
+            const form = document.getElementById('loginForm');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                if (form.checkValidity()) {
+                    // Here you would normally submit the form
+                    console.log('Form is valid, submitting...');
+                    // Redirect to dashboard
+                    window.location.href = '/';
+                }
+                
+                form.classList.add('was-validated');
+            });
+            
+            // Remove validation classes on input
+            const inputs = form.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    if (input.value) {
+                        input.classList.remove('is-invalid');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

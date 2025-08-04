@@ -1,0 +1,272 @@
+// Calendar page styles
+#calendar {
+    .fc {
+        // Toolbar styles
+        .fc-toolbar {
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            
+            .fc-toolbar-chunk {
+                display: flex;
+                align-items: center;
+                
+                .fc-button-group {
+                    .fc-button {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+            
+            .fc-toolbar-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
+        
+        // Button styles
+        .fc-button {
+            background-color: #fff;
+            border-color: #dee2e6;
+            color: #212529;
+            
+            &:hover {
+                background-color: #e9ecef;
+                border-color: #adb5bd;
+                color: #212529;
+            }
+            
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            }
+            
+            &.fc-button-active {
+                background-color: $primary;
+                border-color: $primary;
+                color: #fff;
+                
+                &:hover {
+                    background-color: darken($primary, 10%);
+                    border-color: darken($primary, 10%);
+                }
+            }
+        }
+        
+        // Ensure FontAwesome icons are visible in buttons
+        .fc-prev-button,
+        .fc-next-button {
+            .fas {
+                font-size: 1rem;
+                line-height: 1;
+            }
+        }
+        
+        // Table styles
+        .fc-theme-bootstrap5 {
+            .fc-scrollgrid {
+                border-color: #dee2e6;
+            }
+        }
+        
+        // Day grid styles
+        .fc-daygrid-day {
+            &.fc-day-today {
+                background-color: rgba($primary, 0.1);
+            }
+            
+            &:hover {
+                background-color: #f8f9fa;
+                cursor: pointer;
+            }
+        }
+        
+        // Event styles
+        .fc-event {
+            border: none;
+            border-radius: 0.25rem;
+            padding: 2px 4px;
+            font-size: 0.875rem;
+            
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+        
+        // Time grid styles
+        .fc-timegrid-slot {
+            height: 3em;
+        }
+        
+        .fc-timegrid-axis {
+            padding-right: 0.5rem;
+        }
+        
+        // List view styles
+        .fc-list {
+            .fc-list-event:hover td {
+                background-color: #f8f9fa;
+            }
+        }
+    }
+}
+
+// Mini calendar styles
+#mini-calendar {
+    .fc {
+        font-size: 0.875rem;
+        
+        .fc-toolbar {
+            margin-bottom: 0.5rem;
+            
+            .fc-toolbar-title {
+                font-size: 1rem;
+            }
+        }
+        
+        .fc-button {
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        // Maintain aspect ratio for day cells
+        .fc-daygrid-day-frame {
+            min-height: 2rem;
+            height: auto;
+        }
+        
+        .fc-daygrid-day-number {
+            font-size: 0.75rem;
+            padding: 0.125rem 0.25rem;
+        }
+        
+        .fc-col-header-cell {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.125rem;
+            
+            .fc-col-header-cell-cushion {
+                padding: 0.125rem;
+            }
+        }
+        
+        // Ensure minimum width for columns
+        .fc-daygrid-day {
+            min-width: 1.75rem;
+        }
+        
+        // Hide events in mini calendar to save space
+        .fc-daygrid-event {
+            display: none;
+        }
+        
+        // Responsive table layout
+        .fc-scrollgrid-sync-table {
+            width: 100%;
+            table-layout: fixed;
+        }
+    }
+}
+
+// Upcoming events styles
+#upcoming-events {
+    .list-group-item {
+        border: none;
+        padding: 0.75rem 0;
+        
+        &:not(:last-child) {
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        &:hover {
+            background-color: #f8f9fa;
+        }
+        
+        h6 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+    }
+}
+
+// Event categories
+.event-categories {
+    .form-check-label {
+        font-size: 0.875rem;
+        
+        .badge {
+            width: 1rem;
+            height: 1rem;
+            padding: 0;
+            border-radius: 0.25rem;
+        }
+    }
+}
+
+// Mobile responsiveness
+@include media-breakpoint-down(lg) {
+    #calendar {
+        .fc-toolbar {
+            .fc-toolbar-chunk {
+                margin-bottom: 0.5rem;
+                width: 100%;
+                justify-content: center;
+                
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #calendar {
+        .fc {
+            font-size: 0.875rem;
+            
+            .fc-toolbar-title {
+                font-size: 1.25rem;
+            }
+            
+            .fc-button {
+                padding: 0.25rem 0.5rem;
+                font-size: 0.875rem;
+            }
+        }
+    }
+    
+    // Mini calendar responsive adjustments
+    #mini-calendar {
+        .fc {
+            .fc-col-header-cell-cushion {
+                font-size: 0.625rem;
+                padding: 0.0625rem;
+            }
+            
+            .fc-daygrid-day-number {
+                font-size: 0.625rem;
+            }
+            
+            .fc-daygrid-day {
+                min-width: 1.5rem;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    // Hide day names on very small screens to save space
+    #mini-calendar {
+        .fc-col-header {
+            display: none;
+        }
+        
+        .fc-daygrid-day {
+            min-width: calc(100% / 7);
+        }
+    }
+}

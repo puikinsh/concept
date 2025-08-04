@@ -1,0 +1,202 @@
+<div class="dashboard-header">
+    <nav class="navbar navbar-expand fixed-top">
+        <div class="container-fluid">
+            <!-- Mobile Sidebar Toggle -->
+            <button class="navbar-toggler sidebar-toggler me-3 d-lg-none" type="button" aria-label="Toggle sidebar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Brand -->
+            <a class="navbar-brand" href="/">Concept</a>
+            
+            <!-- Search Bar - Hidden on Mobile -->
+            <div class="mx-auto d-none d-md-block">
+                <div class="top-search-bar">
+                    <i class="fas fa-search search-icon"></i>
+                    <input class="form-control" type="search" placeholder="Search anything..." aria-label="Search">
+                </div>
+            </div>
+            
+            <!-- Right Side Items - Always visible -->
+            <ul class="navbar-nav ms-auto navbar-right-top">
+                <!-- Mobile Search Toggle -->
+                <li class="nav-item d-md-none">
+                    <a class="nav-link nav-icons" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </li>
+                
+                <!-- Apps Grid - Hidden on small mobile -->
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a class="nav-link nav-icons" href="#" id="navbarApps" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-th"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end apps-dropdown" aria-labelledby="navbarApps">
+                        <div class="dropdown-header d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">Quick Apps</h6>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="apps-grid">
+                            <a href="#" class="app-item">
+                                <i class="fas fa-calendar text-primary"></i>
+                                <span>Calendar</span>
+                            </a>
+                            <a href="#" class="app-item">
+                                <i class="fas fa-envelope text-success"></i>
+                                <span>Email</span>
+                            </a>
+                            <a href="#" class="app-item">
+                                <i class="fas fa-file-alt text-warning"></i>
+                                <span>Docs</span>
+                            </a>
+                            <a href="#" class="app-item">
+                                <i class="fas fa-chart-line text-info"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                
+                <!-- Notifications -->
+                <li class="nav-item dropdown notification">
+                    <a class="nav-link nav-icons" href="#" id="navbarNotifications" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bell"></i>
+                        <span class="indicator"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="navbarNotifications">
+                        <div class="dropdown-header d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">Notifications</h6>
+                            <span class="badge bg-primary rounded-pill">4 New</span>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <div class="notification-list">
+                            <a href="#" class="dropdown-item">
+                                <div class="notification-item">
+                                    <div class="notification-item-icon bg-success-light">
+                                        <i class="fas fa-check text-success"></i>
+                                    </div>
+                                    <div class="notification-item-content">
+                                        <p class="mb-0 fw-medium">Order #12345 completed</p>
+                                        <small class="text-muted">2 min ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="notification-item">
+                                    <div class="notification-item-icon bg-info-light">
+                                        <i class="fas fa-user text-info"></i>
+                                    </div>
+                                    <div class="notification-item-content">
+                                        <p class="mb-0 fw-medium">New user registered</p>
+                                        <small class="text-muted">15 min ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div class="notification-item">
+                                    <div class="notification-item-icon bg-warning-light">
+                                        <i class="fas fa-exclamation-triangle text-warning"></i>
+                                    </div>
+                                    <div class="notification-item-content">
+                                        <p class="mb-0 fw-medium">Low stock alert</p>
+                                        <small class="text-muted">1 hour ago</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item text-center text-primary">View all notifications</a>
+                    </div>
+                </li>
+                
+                <!-- Messages - Hidden on small mobile -->
+                <li class="nav-item dropdown d-none d-sm-block">
+                    <a class="nav-link nav-icons" href="#" id="navbarMessages" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-envelope"></i>
+                        <span class="indicator"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end messages-dropdown" aria-labelledby="navbarMessages">
+                        <div class="dropdown-header d-flex justify-content-between align-items-center">
+                            <h6 class="mb-0">Messages</h6>
+                            <span class="badge bg-primary rounded-pill">3 New</span>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <div class="message-item d-flex">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=5969ff&color=fff" alt="User" class="rounded-circle me-3" width="40">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Sarah Johnson</h6>
+                                    <p class="mb-0 text-muted small">Hey, are you available for a quick call?</p>
+                                    <small class="text-muted">5 min ago</small>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <div class="message-item d-flex">
+                                <img src="https://ui-avatars.com/api/?name=Mike+Davis&background=28a745&color=fff" alt="User" class="rounded-circle me-3" width="40">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Mike Davis</h6>
+                                    <p class="mb-0 text-muted small">The quarterly report is ready for review</p>
+                                    <small class="text-muted">2 hours ago</small>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <div class="message-item d-flex">
+                                <img src="https://ui-avatars.com/api/?name=Lisa+Chen&background=dc3545&color=fff" alt="User" class="rounded-circle me-3" width="40">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-0">Lisa Chen</h6>
+                                    <p class="mb-0 text-muted small">Thanks for the help yesterday!</p>
+                                    <small class="text-muted">1 day ago</small>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item text-center text-primary">View all messages</a>
+                    </div>
+                </li>
+                
+                <!-- User Profile -->
+                <li class="nav-item dropdown nav-user ms-2">
+                    <a class="nav-link p-0" href="#" id="navbarUser" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://ui-avatars.com/api/?name=John+Abraham&background=5969ff&color=fff" alt="User" class="user-avatar-md rounded-circle">
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end nav-user-dropdown" aria-labelledby="navbarUser">
+                        <div class="nav-user-info">
+                            <div class="d-flex align-items-center">
+                                <img src="https://ui-avatars.com/api/?name=John+Abraham&background=5969ff&color=fff" alt="User" class="rounded-circle me-3" width="50">
+                                <div>
+                                    <h6 class="mb-0">John Abraham</h6>
+                                    <small class="text-muted">john@example.com</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a>
+                        <a class="dropdown-item" href="#"><i class="fas fa-credit-card me-2"></i>Billing</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="#"><i class="fas fa-power-off me-2"></i>Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- Mobile Search Modal -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="searchModalLabel">Search</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input class="form-control form-control-lg" type="search" placeholder="Search anything..." aria-label="Search" autofocus>
+            </div>
+        </div>
+    </div>
+</div>

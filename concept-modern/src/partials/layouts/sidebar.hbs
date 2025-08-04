@@ -1,0 +1,166 @@
+<div class="nav-left-sidebar sidebar-dark">
+    <div class="menu-list">
+        <nav class="navbar navbar-expand navbar-light">
+            <ul class="navbar-nav flex-column w-100">
+                <li class="nav-divider">
+                    Menu
+                </li>
+                
+                <!-- Dashboard -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'dashboard')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-dashboard" 
+                       aria-expanded="{{#if (eq activeMenu 'dashboard')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-dashboard">
+                        <i class="fa fa-fw fa-chart-line"></i>Dashboard
+                        <span class="badge bg-primary ms-auto">4</span>
+                    </a>
+                    <div id="submenu-dashboard" class="collapse {{#if (eq activeMenu 'dashboard')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'dashboard-ecommerce')}}active{{/if}}" href="/">E-Commerce</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'dashboard-finance')}}active{{/if}}" href="/pages/dashboards/finance.html">Finance</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'dashboard-sales')}}active{{/if}}" href="/pages/dashboards/sales.html">Sales</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'dashboard-influencer')}}active{{/if}}" href="/pages/dashboards/influencer.html">Influencer</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- UI Elements -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'ui-elements')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-ui" 
+                       aria-expanded="{{#if (eq activeMenu 'ui-elements')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-ui">
+                        <i class="fas fa-fw fa-palette"></i>UI Elements
+                    </a>
+                    <div id="submenu-ui" class="collapse {{#if (eq activeMenu 'ui-elements')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'cards')}}active{{/if}}" href="/pages/ui-elements/cards.html">Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'general')}}active{{/if}}" href="/pages/ui-elements/general.html">General</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'typography')}}active{{/if}}" href="/pages/ui-elements/typography.html">Typography</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- Charts -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'charts')}}active{{/if}}" href="/pages/charts/index.html">
+                        <i class="fas fa-fw fa-chart-pie"></i>Charts
+                    </a>
+                </li>
+                
+                <!-- Forms -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'forms')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-forms" 
+                       aria-expanded="{{#if (eq activeMenu 'forms')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-forms">
+                        <i class="fab fa-fw fa-wpforms"></i>Forms
+                        <span class="badge bg-success ms-auto">6</span>
+                    </a>
+                    <div id="submenu-forms" class="collapse {{#if (eq activeMenu 'forms')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'form-elements')}}active{{/if}}" href="/pages/form-elements.html">Form Elements</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'form-validation')}}active{{/if}}" href="/pages/form-validation.html">Form Validation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'multiselect')}}active{{/if}}" href="/pages/multiselect.html">Multiselect</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- Tables -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'tables')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-tables" 
+                       aria-expanded="{{#if (eq activeMenu 'tables')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-tables">
+                        <i class="fas fa-fw fa-table"></i>Tables
+                    </a>
+                    <div id="submenu-tables" class="collapse {{#if (eq activeMenu 'tables')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'general-tables')}}active{{/if}}" href="/pages/tables/general-tables.html">General Tables</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'data-tables')}}active{{/if}}" href="/pages/tables/data-tables.html">Data Tables</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="nav-divider">
+                    Features
+                </li>
+                
+                <!-- Pages -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'pages')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-pages" 
+                       aria-expanded="{{#if (eq activeMenu 'pages')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-pages">
+                        <i class="fas fa-fw fa-file"></i>Pages
+                    </a>
+                    <div id="submenu-pages" class="collapse {{#if (eq activeMenu 'pages')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'blank-page')}}active{{/if}}" href="/pages/misc/blank-page.html">Blank Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'login')}}active{{/if}}" href="/pages/misc/login.html">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'signup')}}active{{/if}}" href="/pages/misc/signup.html">Sign Up</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage '404')}}active{{/if}}" href="404.html">404 page</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                
+                <!-- Apps -->
+                <li class="nav-item">
+                    <a class="nav-link {{#if (eq activeMenu 'apps')}}active{{/if}}" href="#" 
+                       data-bs-toggle="collapse" data-bs-target="#submenu-apps" 
+                       aria-expanded="{{#if (eq activeMenu 'apps')}}true{{else}}false{{/if}}" 
+                       aria-controls="submenu-apps">
+                        <i class="fas fa-fw fa-rocket"></i>Apps
+                        <span class="badge bg-danger ms-auto">New</span>
+                    </a>
+                    <div id="submenu-apps" class="collapse {{#if (eq activeMenu 'apps')}}show{{/if}}">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'calendar')}}active{{/if}}" href="/pages/calendar.html">Calendar</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'chat')}}active{{/if}}" href="/pages/chat.html">Chat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{#if (eq activePage 'inbox')}}active{{/if}}" href="/pages/inbox.html">Mail</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

@@ -1,0 +1,156 @@
+// Sidebar Styles
+.nav-left-sidebar {
+  position: fixed;
+  width: $sidebar-width;
+  top: 70px;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: $sidebar-bg;
+  box-shadow: 0 0 28px 0 rgba(82, 63, 105, 0.08);
+  transition: all 0.3s ease;
+  
+  @include media-breakpoint-down(lg) {
+    left: -$sidebar-width;
+    transform: translateX(0);
+    
+    &.active {
+      left: 0;
+      transform: translateX(0);
+    }
+  }
+  
+  .menu-list {
+    height: 100%;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+    
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+    }
+  }
+}
+
+// Navbar inside sidebar
+.nav-left-sidebar .navbar {
+  padding: 0;
+  
+  .navbar-nav {
+    width: 100%;
+    
+    .nav-divider {
+      padding: 20px 30px 10px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-item {
+      .nav-link {
+        padding: 12px 30px;
+        color: $sidebar-color;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+        border-left: 3px solid transparent;
+        
+        i {
+          width: 20px;
+          margin-right: 10px;
+          font-size: 1rem;
+        }
+        
+        .badge {
+          margin-left: auto;
+          font-size: 0.625rem;
+          padding: 0.25rem 0.5rem;
+          font-weight: 600;
+        }
+        
+        &:hover {
+          background-color: $sidebar-hover-bg;
+          color: #fff;
+        }
+        
+        &.active {
+          background-color: $sidebar-hover-bg;
+          color: #fff;
+          border-left-color: $primary;
+        }
+        
+        &[data-bs-toggle="collapse"] {
+          &::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-left: auto;
+            transition: transform 0.3s ease;
+          }
+          
+          &[aria-expanded="true"]::after {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Submenu styles
+.nav-left-sidebar {
+  .collapse,
+  .collapsing {
+    .nav {
+      .nav-item {
+        .nav-link {
+          padding-left: 60px;
+          font-size: 0.8125rem;
+          
+          &.active {
+            background-color: transparent;
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// Sidebar overlay
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1039;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+
+// Body class when sidebar is open
+body.sidebar-open {
+  @include media-breakpoint-down(lg) {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="E-commerce Dashboard" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-ecommerce" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">E-commerce Dashboard Template</h2>
+                                <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">E-Commerce Dashboard Template</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Cards -->
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card revenue-card">
+                                <div class="sparkline-container">
+                                    <canvas id="sparkline-revenue"></canvas>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-muted">Total Revenue</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$12099</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span><span class="ms-1">5.86%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card revenue-card">
+                                <div class="sparkline-container">
+                                    <canvas id="sparkline-revenue2"></canvas>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-muted">Affiliate Revenue</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$12099</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span><i class="fa fa-fw fa-arrow-up"></i></span><span>5.86%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card revenue-card">
+                                <div class="sparkline-container">
+                                    <canvas id="sparkline-revenue3"></canvas>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-muted">Refunds</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">0.00</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-primary fw-bold">
+                                        <span>N/A</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card revenue-card">
+                                <div class="sparkline-container">
+                                    <canvas id="sparkline-revenue4"></canvas>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="text-muted">Avg. Revenue Per User</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$28000</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-secondary fw-bold">
+                                        <span>-2.00%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Orders & Customer Acquisition -->
+                    <div class="row mt-4">
+                        <div class="col-xl-9 col-lg-12">
+                            <div class="card">
+                                <h5 class="card-header">Recent Orders</h5>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th class="border-0">#</th>
+                                                    <th class="border-0">Image</th>
+                                                    <th class="border-0">Product Name</th>
+                                                    <th class="border-0">Product Id</th>
+                                                    <th class="border-0">Quantity</th>
+                                                    <th class="border-0">Price</th>
+                                                    <th class="border-0">Order Time</th>
+                                                    <th class="border-0">Customer</th>
+                                                    <th class="border-0">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <div class="product-icon bg-primary-light">
+                                                            <i class="fas fa-box"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td>Product #1</td>
+                                                    <td>id000001</td>
+                                                    <td>20</td>
+                                                    <td>$80.00</td>
+                                                    <td>27-08-2018 01:22:12</td>
+                                                    <td>Patricia J. King</td>
+                                                    <td><span class="badge-dot badge-brand me-1"></span>InTransit</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>
+                                                        <div class="product-icon bg-success-light">
+                                                            <i class="fas fa-tshirt"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td>Product #2</td>
+                                                    <td>id000002</td>
+                                                    <td>12</td>
+                                                    <td>$180.00</td>
+                                                    <td>25-08-2018 21:12:56</td>
+                                                    <td>Rachel J. Wicker</td>
+                                                    <td><span class="badge-dot badge-success me-1"></span>Delivered</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>
+                                                        <div class="product-icon bg-warning-light">
+                                                            <i class="fas fa-laptop"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td>Product #3</td>
+                                                    <td>id000003</td>
+                                                    <td>23</td>
+                                                    <td>$820.00</td>
+                                                    <td>24-08-2018 14:12:77</td>
+                                                    <td>Michael K. Ledford</td>
+                                                    <td><span class="badge-dot badge-success me-1"></span>Delivered</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>
+                                                        <div class="product-icon bg-info-light">
+                                                            <i class="fas fa-mobile-alt"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td>Product #4</td>
+                                                    <td>id000004</td>
+                                                    <td>34</td>
+                                                    <td>$340.00</td>
+                                                    <td>23-08-2018 09:12:35</td>
+                                                    <td>Michael K. Ledford</td>
+                                                    <td><span class="badge-dot badge-success me-1"></span>Delivered</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="9"><a href="#" class="btn btn-outline-light float-end">View Details</a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card">
+                                <h5 class="card-header">Customer Acquisition</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="customer-acquisition"></canvas>
+                                    </div>
+                                    <div class="text-center mt-3">
+                                        <span class="legend-item me-2">
+                                            <span class="fa-xs text-primary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Returning</span>
+                                        </span>
+                                        <span class="legend-item me-2">
+                                            <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">First Time</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Category, Product Sales, Top Campaigns -->
+                    <div class="row mt-4">
+                        <div class="col-xl-3 col-lg-6">
+                            <div class="card">
+                                <h5 class="card-header">Product Category</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="product-category"></canvas>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-primary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Man</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Woman</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-info me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Accessories</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-12">
+                            <div class="card">
+                                <h5 class="card-header">Product Sales</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="product-sales"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12">
+                            <div class="card">
+                                <h5 class="card-header">Top Performing Campaigns</h5>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-sm">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th class="border-0">Campaign</th>
+                                                    <th class="border-0">Visits</th>
+                                                    <th class="border-0">Revenue</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Campaign#1</td>
+                                                    <td>98,789</td>
+                                                    <td>$4563</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Campaign#2</td>
+                                                    <td>2,789</td>
+                                                    <td>$325</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Campaign#3</td>
+                                                    <td>1,459</td>
+                                                    <td>$225</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Campaign#4</td>
+                                                    <td>5,035</td>
+                                                    <td>$856</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Campaign#5</td>
+                                                    <td>10,000</td>
+                                                    <td>$1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Campaign#6</td>
+                                                    <td>10,000</td>
+                                                    <td>$1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="3">
+                                                        <a href="#" class="btn btn-outline-light btn-sm float-end">Details</a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards Row -->
+                    <div class="row mt-4">
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Sales</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$12099</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span>
+                                        <span class="ms-1">5.86%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">New Customer</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">1245</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span>
+                                        <span class="ms-1">10%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Visitor</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">13000</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span>
+                                        <span class="ms-1">5%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-md-6">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Total Orders</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">1340</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-danger fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-danger bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span>
+                                        <span class="ms-1">4%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue by Category & Total Revenue -->
+                    <div class="row mt-4">
+                        <div class="col-xl-5 col-lg-5">
+                            <div class="card">
+                                <h5 class="card-header">Revenue by Category</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="revenue-by-category"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7">
+                            <div class="card">
+                                <h5 class="card-header">Total Revenue</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="total-revenue"></canvas>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <p class="display-7 fw-bold">
+                                        <span class="text-primary d-inline-block">$26,000</span>
+                                        <span class="text-success float-end">+9.45%</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Sales, Traffic Sources, Country Sales -->
+                    <div class="row mt-4">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="card">
+                                <h5 class="card-header">Sales By Social Source</h5>
+                                <div class="card-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="social-sales-icon-circle facebook-bgcolor me-2"><i class="fab fa-facebook-f"></i></span>
+                                                <span>Facebook</span>
+                                            </div>
+                                            <span class="text-dark">120 Sales</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="social-sales-icon-circle twitter-bgcolor me-2"><i class="fab fa-x-twitter"></i></span>
+                                                <span>X</span>
+                                            </div>
+                                            <span class="text-dark">99 Sales</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="social-sales-icon-circle instagram-bgcolor me-2"><i class="fab fa-instagram"></i></span>
+                                                <span>Instagram</span>
+                                            </div>
+                                            <span class="text-dark">76 Sales</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="social-sales-icon-circle pinterest-bgcolor me-2"><i class="fab fa-pinterest-p"></i></span>
+                                                <span>Pinterest</span>
+                                            </div>
+                                            <span class="text-dark">56 Sales</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="social-sales-icon-circle googleplus-bgcolor me-2"><i class="fab fa-google"></i></span>
+                                                <span>Google</span>
+                                            </div>
+                                            <span class="text-dark">36 Sales</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="btn-primary-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6">
+                            <div class="card">
+                                <h5 class="card-header">Sales By Traffic Source</h5>
+                                <div class="card-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <span>Direct</span>
+                                            <div>
+                                                <span>$4000.00</span>
+                                                <span class="icon-circle-small icon-box-xs text-success ms-2 bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span>
+                                                <span class="ms-1 text-success">5.86%</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <span>Search</span>
+                                            <div>
+                                                <span>$3123.00</span>
+                                                <span class="icon-circle-small icon-box-xs text-success ms-2 bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span>
+                                                <span class="ms-1 text-success">5.86%</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <span>Social</span>
+                                            <div>
+                                                <span>$3099.00</span>
+                                                <span class="icon-circle-small icon-box-xs text-success ms-2 bg-success-light"><i class="fa fa-fw fa-arrow-up"></i></span>
+                                                <span class="ms-1 text-success">5.86%</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <span>Referrals</span>
+                                            <div>
+                                                <span>$2220.00</span>
+                                                <span class="icon-circle-small icon-box-xs text-danger ms-2 bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span>
+                                                <span class="ms-1 text-danger">4.02%</span>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <span>Email</span>
+                                            <div>
+                                                <span>$1567.00</span>
+                                                <span class="icon-circle-small icon-box-xs text-danger ms-2 bg-danger-light"><i class="fa fa-fw fa-arrow-down"></i></span>
+                                                <span class="ms-1 text-danger">3.86%</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="btn-primary-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-12">
+                            <div class="card">
+                                <h5 class="card-header">Sales By Country Traffic Source</h5>
+                                <div class="card-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="me-2">🇺🇸</span>
+                                                <span>United States</span>
+                                            </div>
+                                            <span class="text-dark">78%</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="me-2">🇨🇦</span>
+                                                <span>Canada</span>
+                                            </div>
+                                            <span class="text-dark">7%</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="me-2">🇷🇺</span>
+                                                <span>Russia</span>
+                                            </div>
+                                            <span class="text-dark">4%</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="me-2">🇮🇳</span>
+                                                <span>India</span>
+                                            </div>
+                                            <span class="text-dark">12%</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <span class="me-2">🇫🇷</span>
+                                                <span>France</span>
+                                            </div>
+                                            <span class="text-dark">16%</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a href="#" class="btn-primary-link">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+    import { createSparkline, createLineChart, createDoughnutChart, createBarChart, colors } from '/js/components/charts.js';
+
+    // Initialize charts
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize sparklines
+        createSparkline('#sparkline-revenue', [5, 10, 5, 20, 15, 25, 20, 30], { 
+            color: colors.primary 
+        });
+        
+        createSparkline('#sparkline-revenue2', [3, 7, 5, 10, 5, 12, 16, 15], { 
+            color: colors.success 
+        });
+        
+        createSparkline('#sparkline-revenue3', [15, 13, 15, 12, 10, 8, 10, 7], { 
+            color: colors.danger 
+        });
+        
+        createSparkline('#sparkline-revenue4', [2, 3, 2, 5, 4, 7, 5, 8], { 
+            color: colors.info 
+        });
+
+        // Customer Acquisition Chart
+        const customerData = {
+            labels: ['Returning', 'First Time'],
+            datasets: [{
+                data: [65, 35],
+                backgroundColor: [colors.primary, colors.secondary],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#customer-acquisition', customerData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+
+        // Product Category Chart
+        const categoryData = {
+            labels: ['Man', 'Woman', 'Accessories'],
+            datasets: [{
+                data: [40, 35, 25],
+                backgroundColor: [colors.primary, colors.secondary, colors.info],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#product-category', categoryData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+
+        // Product Sales Chart
+        const productSalesData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+            datasets: [{
+                label: 'Sales',
+                data: [254, 456, 341, 556, 678, 455],
+                backgroundColor: colors.primary,
+                borderColor: colors.primary,
+                borderWidth: 2,
+                fill: false,
+                tension: 0.4
+            }]
+        };
+        
+        createLineChart('#product-sales', productSalesData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        });
+
+        // Revenue by Category Chart
+        const revenueCategoryData = {
+            labels: ['Electronics', 'Fashion', 'Home & Garden', 'Sports', 'Books'],
+            datasets: [{
+                data: [30, 25, 20, 15, 10],
+                backgroundColor: [colors.primary, colors.success, colors.warning, colors.danger, colors.info],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#revenue-by-category', revenueCategoryData, {
+            plugins: {
+                legend: {
+                    position: 'right'
+                }
+            }
+        });
+
+        // Total Revenue Chart
+        const totalRevenueData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                label: 'Revenue',
+                data: [12000, 19000, 15000, 25000, 22000, 30000, 28000, 35000, 32000, 38000, 42000, 45000],
+                backgroundColor: `${colors.primary}20`,
+                borderColor: colors.primary,
+                borderWidth: 2,
+                fill: true,
+                tension: 0.4
+            }]
+        };
+        
+        createLineChart('#total-revenue', totalRevenueData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + value.toLocaleString();
+                        }
+                    }
+                }
+            }
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Chat" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="apps" activePage="chat" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Chat</h2>
+                                <p class="pageheader-text">Real-time messaging interface with modern design</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Apps</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Chat</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Container -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card chat-container">
+                                <div class="row g-0 h-100">
+                                    <!-- Contacts Sidebar -->
+                                    <div class="col-md-4 col-lg-3 border-end">
+                                        <div class="chat-sidebar">
+                                            <!-- Search -->
+                                            <div class="p-3 border-bottom">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Search conversations..." aria-label="Search conversations">
+                                                    <button class="btn btn-outline-secondary" type="button">
+                                                        <i class="fas fa-search"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                            <!-- Online Status -->
+                                            <div class="p-3 border-bottom">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="position-relative">
+                                                        <div class="avatar-circle bg-primary text-white rounded-circle me-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                                            <i class="fas fa-user"></i>
+                                                        </div>
+                                                        <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-light rounded-circle">
+                                                            <span class="visually-hidden">Online</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h6 class="mb-0">John Abraham</h6>
+                                                        <small class="text-success">Online</small>
+                                                    </div>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-ghost" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end">
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Profile</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Contact List -->
+                                            <div class="chat-contacts">
+                                                <!-- Active Chat -->
+                                                <a href="#" class="chat-contact active" data-contact-id="1">
+                                                    <div class="d-flex align-items-center p-3">
+                                                        <div class="position-relative">
+                                                            <div class="avatar-circle bg-info text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                                <span class="fw-bold">SJ</span>
+                                                            </div>
+                                                            <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-light rounded-circle">
+                                                                <span class="visually-hidden">Online</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 overflow-hidden">
+                                                            <h6 class="mb-0">Sarah Johnson</h6>
+                                                            <p class="mb-0 text-muted text-truncate">Hey! How's the project going?</p>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small class="text-muted">2:30 PM</small>
+                                                            <span class="badge bg-primary rounded-pill">3</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- Contact with unread messages -->
+                                                <a href="#" class="chat-contact" data-contact-id="2">
+                                                    <div class="d-flex align-items-center p-3">
+                                                        <div class="position-relative">
+                                                            <div class="avatar-circle bg-success text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                                <span class="fw-bold">MD</span>
+                                                            </div>
+                                                            <span class="position-absolute bottom-0 end-0 p-1 bg-warning border border-light rounded-circle">
+                                                                <span class="visually-hidden">Away</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 overflow-hidden">
+                                                            <h6 class="mb-0">Mike Davis</h6>
+                                                            <p class="mb-0 text-muted text-truncate">Can you review the latest design?</p>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small class="text-muted">1:15 PM</small>
+                                                            <span class="badge bg-primary rounded-pill">1</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- Regular contact -->
+                                                <a href="#" class="chat-contact" data-contact-id="3">
+                                                    <div class="d-flex align-items-center p-3">
+                                                        <div class="position-relative">
+                                                            <div class="avatar-circle bg-warning text-dark rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                                <span class="fw-bold">EW</span>
+                                                            </div>
+                                                            <span class="position-absolute bottom-0 end-0 p-1 bg-secondary border border-light rounded-circle">
+                                                                <span class="visually-hidden">Offline</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 overflow-hidden">
+                                                            <h6 class="mb-0">Emma Wilson</h6>
+                                                            <p class="mb-0 text-muted text-truncate">Thanks for the update!</p>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small class="text-muted">Yesterday</small>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- Group chat -->
+                                                <a href="#" class="chat-contact" data-contact-id="4">
+                                                    <div class="d-flex align-items-center p-3">
+                                                        <div class="position-relative">
+                                                            <div class="avatar-group me-3">
+                                                                <div class="avatar-circle bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                                    <i class="fas fa-users"></i>
+                                                                </div>
+                                                                <span class="avatar-group-badge">
+                                                                    <i class="fas fa-users"></i>
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex-grow-1 overflow-hidden">
+                                                            <h6 class="mb-0">Design Team</h6>
+                                                            <p class="mb-0 text-muted text-truncate"><strong>You:</strong> Sounds good!</p>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small class="text-muted">Monday</small>
+                                                        </div>
+                                                    </div>
+                                                </a>
+
+                                                <!-- More contacts -->
+                                                <a href="#" class="chat-contact" data-contact-id="5">
+                                                    <div class="d-flex align-items-center p-3">
+                                                        <div class="position-relative">
+                                                            <div class="avatar-circle bg-danger text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
+                                                                <span class="fw-bold">AB</span>
+                                                            </div>
+                                                            <span class="position-absolute bottom-0 end-0 p-1 bg-success border border-light rounded-circle">
+                                                                <span class="visually-hidden">Online</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="flex-grow-1 overflow-hidden">
+                                                            <h6 class="mb-0">Alex Brown</h6>
+                                                            <p class="mb-0 text-muted text-truncate">Meeting at 3 PM today</p>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small class="text-muted">10:00 AM</small>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Chat Area -->
+                                    <div class="col-md-8 col-lg-9">
+                                        <div class="chat-area d-flex flex-column h-100">
+                                            <!-- Chat Header -->
+                                            <div class="chat-header p-3 border-bottom">
+                                                <div class="d-flex align-items-center">
+                                                    <button class="btn btn-sm btn-ghost d-md-none me-2" id="toggleContacts">
+                                                        <i class="fas fa-bars"></i>
+                                                    </button>
+                                                    <div class="avatar-circle bg-info text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                        <span class="fw-bold">SJ</span>
+                                    </div>
+                                                    <div class="flex-grow-1">
+                                                        <h5 class="mb-0">Sarah Johnson</h5>
+                                                        <small class="text-success">Online</small>
+                                                    </div>
+                                                    <button class="btn btn-sm btn-ghost me-2" data-bs-toggle="tooltip" title="Voice Call">
+                                                        <i class="fas fa-phone"></i>
+                                                    </button>
+                                                    <button class="btn btn-sm btn-ghost me-2" data-bs-toggle="tooltip" title="Video Call">
+                                                        <i class="fas fa-video"></i>
+                                                    </button>
+                                                    <div class="dropdown">
+                                                        <button class="btn btn-sm btn-ghost" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        </button>
+                                                        <ul class="dropdown-menu dropdown-menu-end">
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>View Profile</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-search me-2"></i>Search in Conversation</a></li>
+                                                            <li><a class="dropdown-item" href="#"><i class="fas fa-bell-slash me-2"></i>Mute Notifications</a></li>
+                                                            <li><hr class="dropdown-divider"></li>
+                                                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-trash me-2"></i>Delete Chat</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Messages Area -->
+                                            <div class="chat-messages flex-grow-1 p-3 overflow-auto">
+                                                <!-- Date Divider -->
+                                                <div class="text-center my-3">
+                                                    <span class="badge bg-light text-muted">Today</span>
+                                                </div>
+
+                                                <!-- Received Message -->
+                                                <div class="message message-left mb-3">
+                                                    <div class="d-flex align-items-end">
+                                                        <div class="avatar-circle bg-info text-white rounded-circle me-2 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 14px;">
+                                            <span class="fw-bold">SJ</span>
+                                        </div>
+                                                        <div>
+                                                            <div class="message-bubble">
+                                                                <p class="mb-0">Hey! How's the project going?</p>
+                                                            </div>
+                                                            <small class="text-muted">2:30 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Sent Message -->
+                                                <div class="message message-right mb-3">
+                                                    <div class="d-flex align-items-end justify-content-end">
+                                                        <div>
+                                                            <div class="message-bubble">
+                                                                <p class="mb-0">Hi Sarah! It's going great. I just finished the dashboard redesign.</p>
+                                                            </div>
+                                                            <small class="text-muted">2:32 PM <i class="fas fa-check-double text-primary ms-1"></i></small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Message with attachment -->
+                                                <div class="message message-right mb-3">
+                                                    <div class="d-flex align-items-end justify-content-end">
+                                                        <div>
+                                                            <div class="message-bubble">
+                                                                <div class="message-attachment mb-2">
+                                                                    <i class="fas fa-file-pdf text-danger me-2"></i>
+                                                                    <span>Dashboard_Design_v2.pdf</span>
+                                                                    <a href="#" class="ms-2"><i class="fas fa-download"></i></a>
+                                                                </div>
+                                                                <p class="mb-0">Here's the latest version for your review</p>
+                                                            </div>
+                                                            <small class="text-muted">2:33 PM <i class="fas fa-check-double text-primary ms-1"></i></small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Received Message -->
+                                                <div class="message message-left mb-3">
+                                                    <div class="d-flex align-items-end">
+                                                        <div class="avatar-circle bg-info text-white rounded-circle me-2 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 14px;">
+                                            <span class="fw-bold">SJ</span>
+                                        </div>
+                                                        <div>
+                                                            <div class="message-bubble">
+                                                                <p class="mb-0">Wow, this looks amazing! 🎉</p>
+                                                                <p class="mb-0">I love the color scheme you chose.</p>
+                                                            </div>
+                                                            <small class="text-muted">2:35 PM</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Typing Indicator -->
+                                                <div class="message message-left mb-3" id="typingIndicator" style="display: none;">
+                                                    <div class="d-flex align-items-end">
+                                                        <div class="avatar-circle bg-info text-white rounded-circle me-2 d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; font-size: 14px;">
+                                            <span class="fw-bold">SJ</span>
+                                        </div>
+                                                        <div>
+                                                            <div class="message-bubble typing-indicator">
+                                                                <span></span>
+                                                                <span></span>
+                                                                <span></span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Message Input -->
+                                            <div class="chat-input border-top p-3">
+                                                <form id="messageForm" class="d-flex align-items-center">
+                                                    <button type="button" class="btn btn-ghost me-2" data-bs-toggle="tooltip" title="Attach File">
+                                                        <i class="fas fa-paperclip"></i>
+                                                    </button>
+                                                    <div class="flex-grow-1">
+                                                        <input type="text" class="form-control" id="messageInput" placeholder="Type a message..." autocomplete="off">
+                                                    </div>
+                                                    <button type="button" class="btn btn-ghost ms-2" data-bs-toggle="tooltip" title="Emoji">
+                                                        <i class="far fa-smile"></i>
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary ms-2" id="sendButton">
+                                                        <i class="fas fa-paper-plane"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <!-- Page Specific JS -->
+    <script type="module" src="../js/pages/chat.js"></script>
+</body>
+</html>

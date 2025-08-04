@@ -1,0 +1,269 @@
+// Influencer Dashboard Styles
+
+// Profile Card
+.influencer-profile-card {
+    overflow: hidden;
+    
+    .profile-cover {
+        position: relative;
+        border-radius: 0.25rem 0.25rem 0 0;
+    }
+    
+    .profile-info {
+        position: relative;
+    }
+}
+
+// Social Media Stat Cards
+.social-stat-card {
+    border: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .social-icon {
+        width: 45px;
+        height: 45px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+    
+    &.twitter {
+        .social-icon {
+            background-color: rgba(29, 161, 242, 0.1);
+            color: #1da1f2;
+        }
+    }
+    
+    &.instagram {
+        .social-icon {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+        }
+    }
+    
+    &.facebook {
+        .social-icon {
+            background-color: rgba(59, 89, 152, 0.1);
+            color: #3b5998;
+        }
+    }
+    
+    &.youtube {
+        .social-icon {
+            background-color: rgba(255, 0, 0, 0.1);
+            color: #ff0000;
+        }
+    }
+    
+    &.tiktok {
+        .social-icon {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #000000;
+        }
+    }
+    
+    &.pinterest {
+        .social-icon {
+            background-color: rgba(189, 8, 28, 0.1);
+            color: #bd081c;
+        }
+    }
+}
+
+// Metric Cards
+.metric-card {
+    border: none;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .metric-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+    }
+}
+
+// Light background colors for metric icons
+.bg-primary-light {
+    background-color: rgba(89, 105, 255, 0.1);
+}
+
+.bg-success-light {
+    background-color: rgba(40, 199, 111, 0.1);
+}
+
+.bg-warning-light {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+.bg-info-light {
+    background-color: rgba(23, 162, 184, 0.1);
+}
+
+.bg-danger-light {
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+// Instagram color
+.text-instagram {
+    color: #e4405f;
+}
+
+// Social Media Colors
+.twitter-color {
+    color: #1da1f2;
+}
+
+.pinterest-color {
+    color: #bd081c;
+}
+
+.instagram-color {
+    color: #e4405f;
+}
+
+.facebook-color {
+    color: #3b5998;
+}
+
+.medium-color {
+    color: #00ab6c;
+}
+
+.youtube-color {
+    color: #ff0000;
+}
+
+.snapchat-color {
+    color: #fffc00;
+}
+
+// Campaign Card
+.campaign-card {
+    height: 100%;
+    transition: all 0.3s ease;
+
+    &:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+    }
+
+    .campaign-img {
+        margin-bottom: 20px;
+
+        img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+        }
+    }
+
+    .campaign-info {
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 14px;
+            color: #71748d;
+        }
+
+        a {
+            margin: 0 5px;
+        }
+    }
+}
+
+// Campaign Table
+.campaign-table {
+    .avatar-group {
+        span {
+            margin-right: 5px;
+
+            a {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .card-drop {
+        color: #71748d;
+        font-size: 20px;
+    }
+}
+
+// Progress bars for age groups
+.progress-md {
+    height: 10px;
+    width: 200px;
+    margin-bottom: 0;
+}
+
+// Icon boxes
+.icon-circle-medium {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-box-lg {
+    &.bg-info-light {
+        background-color: rgba(37, 213, 242, 0.1);
+    }
+
+    &.bg-primary-light {
+        background-color: rgba(89, 105, 255, 0.1);
+    }
+
+    &.bg-secondary-light {
+        background-color: rgba(113, 116, 141, 0.1);
+    }
+
+    &.bg-brand-light {
+        background-color: rgba(239, 83, 80, 0.1);
+    }
+}
+
+// Card footer items
+.card-footer-item {
+    padding: 20px;
+    text-align: center;
+
+    &.card-footer-item-bordered {
+        border-right: 1px solid #e6e6f2;
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #3d405c;
+    }
+
+    p {
+        margin: 0;
+        color: #71748d;
+    }
+}

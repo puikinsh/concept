@@ -1,0 +1,208 @@
+// DataTables Component Styles
+
+// DataTables wrapper
+.dataTables_wrapper {
+  .dataTables_length,
+  .dataTables_filter,
+  .dataTables_info,
+  .dataTables_paginate {
+    margin: 20px 0;
+  }
+  
+  .dataTables_filter {
+    text-align: right;
+    
+    input {
+      margin-left: 0.5em;
+      display: inline-block;
+      width: auto;
+    }
+  }
+}
+
+// DataTable styles
+table.dataTable {
+  background-color: #fff !important;
+  width: 100% !important;
+  margin: 0 !important;
+  
+  thead {
+    background-color: #fff !important;
+    
+    th {
+      background-color: #fff !important;
+      border-bottom: 2px solid #e6e6f2;
+      font-weight: 700;
+      color: #3d405c;
+      padding: 16px 30px;
+    }
+  }
+  
+  tbody {
+    background-color: #fff !important;
+    
+    tr {
+      background-color: #fff !important;
+      
+      &:hover {
+        background-color: #f8f9fa !important;
+      }
+      
+      &.odd {
+        background-color: #fff !important;
+      }
+      
+      &.even {
+        background-color: #fff !important;
+      }
+      
+      td {
+        background-color: transparent !important;
+        padding: 16px 30px;
+        border-bottom: 1px solid #e6e6f2;
+        color: #71748d;
+      }
+    }
+  }
+  
+  &.table-striped {
+    tbody tr {
+      &.odd {
+        background-color: #fff !important;
+      }
+      
+      &.even {
+        background-color: #f8f9fa !important;
+      }
+    }
+  }
+  
+  &.table-hover tbody tr:hover {
+    background-color: #f0f0f8 !important;
+  }
+}
+
+// DataTables controls styling
+.dataTables_wrapper {
+  .dataTables_paginate {
+    .paginate_button {
+      padding: 0.5em 1em;
+      margin-left: 2px;
+      border: 1px solid #ddd !important;
+      background-color: #fff !important;
+      color: #333 !important;
+      
+      &:hover {
+        background-color: #f8f9fa !important;
+        border-color: #999 !important;
+      }
+      
+      &.current {
+        background-color: $primary !important;
+        color: #fff !important;
+        border-color: $primary !important;
+        
+        &:hover {
+          background-color: darken($primary, 10%) !important;
+        }
+      }
+      
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+  
+  // Sort icons
+  table.dataTable thead .sorting,
+  table.dataTable thead .sorting_asc,
+  table.dataTable thead .sorting_desc {
+    cursor: pointer;
+    position: relative;
+    
+    &:after {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      display: block;
+      font-family: 'Font Awesome 5 Free';
+      opacity: 0.5;
+    }
+  }
+  
+  table.dataTable thead .sorting:after {
+    content: "\f0dc";
+    opacity: 0.2;
+  }
+  
+  table.dataTable thead .sorting_asc:after {
+    content: "\f0de";
+  }
+  
+  table.dataTable thead .sorting_desc:after {
+    content: "\f0dd";
+  }
+}
+
+// Responsive DataTable
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  
+  &:before {
+    top: 50%;
+    left: 5px;
+    height: 1em;
+    width: 1em;
+    margin-top: -9px;
+    display: block;
+    position: absolute;
+    color: $primary;
+    border: 2px solid $primary;
+    border-radius: 1em;
+    box-shadow: 0 0 3px #444;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1em;
+    content: '+';
+    background-color: #fff;
+  }
+}
+
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr.parent > th.dtr-control:before {
+  content: '-';
+  background-color: $primary;
+  color: #fff;
+}
+
+// Export buttons
+.dt-buttons {
+  margin-bottom: 20px;
+  
+  .btn {
+    margin-right: 5px;
+  }
+}
+
+// Make sure table responsive wrapper has white background
+.table-responsive {
+  background-color: #fff !important;
+  
+  table {
+    background-color: #fff !important;
+  }
+}
+
+// Override any Bootstrap table backgrounds
+.card-body {
+  .table,
+  table {
+    background-color: #fff !important;
+  }
+}

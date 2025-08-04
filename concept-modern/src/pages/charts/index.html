@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Charts" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="charts" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Charts</h2>
+                                <p class="pageheader-text">Various chart examples using Chart.js library with different configurations and styles.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Charts</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Line Charts -->
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Line Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="line-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Multi-Line Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="multi-line-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bar Charts -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Bar Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="bar-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Horizontal Bar Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="horizontal-bar-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Area Charts -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Area Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="area-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Stacked Area Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="stacked-area-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pie & Doughnut Charts -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Pie Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="pie-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Doughnut Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="doughnut-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mixed & Special Charts -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Mixed Chart (Bar & Line)</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="mixed-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Bubble Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="bubble-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Polar & Radar Charts -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Polar Area Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="polar-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Radar Chart</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="radar-chart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sparkline Examples -->
+                    <div class="row mt-4">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sparkline Charts</h5>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                            <div class="text-center">
+                                                <h6>Revenue Trend</h6>
+                                                <div class="sparkline-container sparkline-inline">
+                                                    <canvas id="sparkline-1"></canvas>
+                                                </div>
+                                                <p class="mt-2 mb-0">$45,678</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                            <div class="text-center">
+                                                <h6>Sales Trend</h6>
+                                                <div class="sparkline-container sparkline-inline">
+                                                    <canvas id="sparkline-2"></canvas>
+                                                </div>
+                                                <p class="mt-2 mb-0">1,234 units</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                            <div class="text-center">
+                                                <h6>User Activity</h6>
+                                                <div class="sparkline-container sparkline-inline">
+                                                    <canvas id="sparkline-3"></canvas>
+                                                </div>
+                                                <p class="mt-2 mb-0">89% active</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                                            <div class="text-center">
+                                                <h6>Performance</h6>
+                                                <div class="sparkline-container sparkline-inline">
+                                                    <canvas id="sparkline-4"></canvas>
+                                                </div>
+                                                <p class="mt-2 mb-0">92% uptime</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+    import { createLineChart, createBarChart, createAreaChart, createPieChart, createDoughnutChart, createSparkline, colors } from '/js/components/charts.js';
+    import Chart from 'chart.js/auto';
+
+    // Initialize charts
+    document.addEventListener('DOMContentLoaded', () => {
+        // Line Chart
+        const lineData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Sales',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: colors.primary,
+                backgroundColor: `${colors.primary}20`,
+                tension: 0.4
+            }]
+        };
+        createLineChart('#line-chart', lineData);
+
+        // Multi-Line Chart
+        const multiLineData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Dataset 1',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: colors.primary,
+                backgroundColor: `${colors.primary}20`,
+                tension: 0.4
+            }, {
+                label: 'Dataset 2',
+                data: [28, 48, 40, 19, 86, 27, 90],
+                borderColor: colors.success,
+                backgroundColor: `${colors.success}20`,
+                tension: 0.4
+            }, {
+                label: 'Dataset 3',
+                data: [45, 25, 16, 36, 67, 18, 76],
+                borderColor: colors.warning,
+                backgroundColor: `${colors.warning}20`,
+                tension: 0.4
+            }]
+        };
+        createLineChart('#multi-line-chart', multiLineData);
+
+        // Bar Chart
+        const barData = {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    colors.danger,
+                    colors.primary,
+                    colors.warning,
+                    colors.success,
+                    colors.purple,
+                    colors.orange
+                ]
+            }]
+        };
+        createBarChart('#bar-chart', barData);
+
+        // Horizontal Bar Chart
+        const horizontalBarData = {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: 'Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: colors.info
+            }]
+        };
+        new Chart(document.getElementById('horizontal-bar-chart'), {
+            type: 'bar',
+            data: horizontalBarData,
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Area Chart
+        const areaData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Revenue',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: colors.primary,
+                backgroundColor: `${colors.primary}40`,
+                fill: true,
+                tension: 0.4
+            }]
+        };
+        createAreaChart('#area-chart', areaData);
+
+        // Stacked Area Chart
+        const stackedAreaData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Dataset 1',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                borderColor: colors.primary,
+                backgroundColor: colors.primary,
+                fill: true
+            }, {
+                label: 'Dataset 2',
+                data: [28, 48, 40, 19, 86, 27, 90],
+                borderColor: colors.success,
+                backgroundColor: colors.success,
+                fill: true
+            }, {
+                label: 'Dataset 3',
+                data: [45, 25, 16, 36, 67, 18, 76],
+                borderColor: colors.warning,
+                backgroundColor: colors.warning,
+                fill: true
+            }]
+        };
+        new Chart(document.getElementById('stacked-area-chart'), {
+            type: 'line',
+            data: stackedAreaData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        stacked: true
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.4
+                    }
+                }
+            }
+        });
+
+        // Pie Chart
+        const pieData = {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+            datasets: [{
+                data: [300, 50, 100, 40, 120],
+                backgroundColor: [
+                    colors.danger,
+                    colors.primary,
+                    colors.warning,
+                    colors.success,
+                    colors.purple
+                ]
+            }]
+        };
+        createPieChart('#pie-chart', pieData);
+
+        // Doughnut Chart
+        const doughnutData = {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'],
+            datasets: [{
+                data: [300, 50, 100, 40, 120],
+                backgroundColor: [
+                    colors.danger,
+                    colors.primary,
+                    colors.warning,
+                    colors.success,
+                    colors.purple
+                ]
+            }]
+        };
+        createDoughnutChart('#doughnut-chart', doughnutData);
+
+        // Mixed Chart
+        const mixedData = {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                type: 'bar',
+                label: 'Bar Dataset',
+                data: [10, 20, 30, 40, 50, 60, 70],
+                backgroundColor: colors.primary
+            }, {
+                type: 'line',
+                label: 'Line Dataset',
+                data: [50, 55, 45, 60, 70, 65, 75],
+                borderColor: colors.danger,
+                backgroundColor: `${colors.danger}20`,
+                tension: 0.4
+            }]
+        };
+        new Chart(document.getElementById('mixed-chart'), {
+            type: 'bar',
+            data: mixedData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Bubble Chart
+        const bubbleData = {
+            datasets: [{
+                label: 'Dataset 1',
+                data: [
+                    { x: 20, y: 30, r: 15 },
+                    { x: 40, y: 10, r: 10 },
+                    { x: 30, y: 20, r: 30 },
+                    { x: 10, y: 40, r: 20 }
+                ],
+                backgroundColor: colors.info
+            }, {
+                label: 'Dataset 2',
+                data: [
+                    { x: 10, y: 20, r: 15 },
+                    { x: 30, y: 30, r: 25 },
+                    { x: 20, y: 10, r: 10 },
+                    { x: 40, y: 40, r: 15 }
+                ],
+                backgroundColor: colors.success
+            }]
+        };
+        new Chart(document.getElementById('bubble-chart'), {
+            type: 'bubble',
+            data: bubbleData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 50
+                    },
+                    y: {
+                        beginAtZero: true,
+                        max: 50
+                    }
+                }
+            }
+        });
+
+        // Polar Area Chart
+        const polarData = {
+            labels: ['Red', 'Green', 'Yellow', 'Blue', 'Purple'],
+            datasets: [{
+                data: [11, 16, 7, 3, 14],
+                backgroundColor: [
+                    `${colors.danger}80`,
+                    `${colors.success}80`,
+                    `${colors.warning}80`,
+                    `${colors.primary}80`,
+                    `${colors.purple}80`
+                ]
+            }]
+        };
+        new Chart(document.getElementById('polar-chart'), {
+            type: 'polarArea',
+            data: polarData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Radar Chart
+        const radarData = {
+            labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [65, 59, 90, 81, 56, 55, 40],
+                fill: true,
+                backgroundColor: `${colors.primary}20`,
+                borderColor: colors.primary,
+                pointBackgroundColor: colors.primary,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: colors.primary
+            }, {
+                label: 'My Second Dataset',
+                data: [28, 48, 40, 19, 96, 27, 100],
+                fill: true,
+                backgroundColor: `${colors.danger}20`,
+                borderColor: colors.danger,
+                pointBackgroundColor: colors.danger,
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: colors.danger
+            }]
+        };
+        new Chart(document.getElementById('radar-chart'), {
+            type: 'radar',
+            data: radarData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                elements: {
+                    line: {
+                        borderWidth: 3
+                    }
+                }
+            }
+        });
+
+        // Sparklines
+        createSparkline('#sparkline-1', [5, 10, 5, 20, 15, 25, 20, 30, 25, 35, 30, 40], {
+            color: colors.primary
+        });
+        
+        createSparkline('#sparkline-2', [3, 7, 5, 10, 5, 12, 16, 15, 20, 18, 22, 25], {
+            color: colors.success
+        });
+        
+        createSparkline('#sparkline-3', [15, 13, 15, 12, 10, 8, 10, 7, 5, 8, 10, 12], {
+            color: colors.warning
+        });
+        
+        createSparkline('#sparkline-4', [8, 12, 10, 15, 18, 20, 25, 30, 28, 35, 32, 40], {
+            color: colors.info
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+// Button Component Styles
+
+// Primary button text color override
+.btn-primary {
+    color: $white !important;
+    
+    &:hover,
+    &:focus,
+    &:active,
+    &.active,
+    &:disabled,
+    &.disabled {
+        color: $white !important;
+    }
+}
+
+// Ensure outline primary buttons have proper contrast
+.btn-outline-primary {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        color: $white !important;
+    }
+}

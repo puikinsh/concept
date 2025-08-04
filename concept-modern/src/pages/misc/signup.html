@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    {{> layouts/head pageTitle="Sign Up" }}
+</head>
+<body class="h-100 d-flex align-items-center bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10">
+                <div class="text-center mb-4">
+                    <a href="/" class="d-inline-block">
+                        <h1 class="text-primary fw-bold mb-0">Concept</h1>
+                    </a>
+                    <p class="text-muted mt-2">Create your account to get started</p>
+                </div>
+                
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-5">
+                        <form id="signupForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="firstName" class="form-label fw-medium">First name</label>
+                                    <input type="text" 
+                                           class="form-control form-control-lg" 
+                                           id="firstName" 
+                                           placeholder="John" 
+                                           required>
+                                    <div class="invalid-feedback">
+                                        Please enter your first name.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lastName" class="form-label fw-medium">Last name</label>
+                                    <input type="text" 
+                                           class="form-control form-control-lg" 
+                                           id="lastName" 
+                                           placeholder="Doe" 
+                                           required>
+                                    <div class="invalid-feedback">
+                                        Please enter your last name.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="email" class="form-label fw-medium">Email address</label>
+                                <input type="email" 
+                                       class="form-control form-control-lg" 
+                                       id="email" 
+                                       placeholder="name@example.com" 
+                                       required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="password" class="form-label fw-medium">Password</label>
+                                <input type="password" 
+                                       class="form-control form-control-lg" 
+                                       id="password" 
+                                       placeholder="Create a strong password" 
+                                       required
+                                       minlength="8">
+                                <div class="invalid-feedback">
+                                    Password must be at least 8 characters long.
+                                </div>
+                                <div class="form-text">
+                                    Must be at least 8 characters
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label fw-medium">Confirm password</label>
+                                <input type="password" 
+                                       class="form-control form-control-lg" 
+                                       id="confirmPassword" 
+                                       placeholder="Confirm your password" 
+                                       required>
+                                <div class="invalid-feedback">
+                                    Passwords do not match.
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        I agree to the <a href="#" class="text-decoration-none">Terms and Conditions</a>
+                                    </label>
+                                    <div class="invalid-feedback">
+                                        You must agree before submitting.
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3">
+                                Create Account
+                            </button>
+                            
+                            <div class="text-center">
+                                <span class="text-muted">Already have an account?</span>
+                                <a href="/pages/misc/login.html" class="text-decoration-none fw-medium">Sign in</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <div class="d-flex align-items-center mb-3">
+                        <hr class="flex-grow-1">
+                        <span class="px-3 text-muted small">Or sign up with</span>
+                        <hr class="flex-grow-1">
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-outline-secondary btn-lg">
+                            <i class="fab fa-google me-2"></i>
+                            Continue with Google
+                        </button>
+                        <button class="btn btn-outline-secondary btn-lg">
+                            <i class="fab fa-github me-2"></i>
+                            Continue with GitHub
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <p class="text-muted small mb-0">
+                        By creating an account, you agree to our 
+                        <a href="#" class="text-decoration-none">Terms of Service</a> and 
+                        <a href="#" class="text-decoration-none">Privacy Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            // Form validation
+            const form = document.getElementById('signupForm');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+            // Custom password match validation
+            confirmPassword.addEventListener('input', () => {
+                if (password.value !== confirmPassword.value) {
+                    confirmPassword.setCustomValidity('Passwords do not match');
+                } else {
+                    confirmPassword.setCustomValidity('');
+                }
+            });
+            
+            password.addEventListener('input', () => {
+                if (confirmPassword.value && password.value !== confirmPassword.value) {
+                    confirmPassword.setCustomValidity('Passwords do not match');
+                } else {
+                    confirmPassword.setCustomValidity('');
+                }
+            });
+            
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                // Check password match
+                if (password.value !== confirmPassword.value) {
+                    confirmPassword.setCustomValidity('Passwords do not match');
+                } else {
+                    confirmPassword.setCustomValidity('');
+                }
+                
+                if (form.checkValidity()) {
+                    // Here you would normally submit the form
+                    console.log('Form is valid, creating account...');
+                    // Redirect to login or dashboard
+                    window.location.href = '/pages/misc/login.html';
+                }
+                
+                form.classList.add('was-validated');
+            });
+            
+            // Remove validation classes on input
+            const inputs = form.querySelectorAll('input:not([type="checkbox"])');
+            inputs.forEach(input => {
+                input.addEventListener('input', () => {
+                    if (input.value) {
+                        input.classList.remove('is-invalid');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

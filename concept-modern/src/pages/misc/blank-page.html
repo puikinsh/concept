@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Blank Page" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Blank Page</h2>
+                                <p class="pageheader-text">This is a blank page template that you can use as a starting point for creating new pages.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Pages</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Blank Page</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Content Area -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sample Card</h5>
+                                <div class="card-body">
+                                    <h3 class="text-center mb-4">Content goes here!</h3>
+                                    <p class="text-center">This is a blank page template with the standard layout structure including:</p>
+                                    <ul class="list-unstyled text-center">
+                                        <li>✓ Header with navigation</li>
+                                        <li>✓ Sidebar menu</li>
+                                        <li>✓ Page title and breadcrumb</li>
+                                        <li>✓ Content area</li>
+                                        <li>✓ Footer</li>
+                                    </ul>
+                                    <p class="text-center mt-4">You can replace this content with your own components and functionality.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Example Grid Layout -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Left Column</h5>
+                                <div class="card-body">
+                                    <p>This demonstrates a two-column layout. You can use Bootstrap's grid system to create any layout you need.</p>
+                                    <p>The grid is responsive and will stack on smaller screens.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Right Column</h5>
+                                <div class="card-body">
+                                    <p>You can add any content here including forms, tables, charts, or custom components.</p>
+                                    <p>The card component provides a clean container for your content.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Full Width Example -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <h5 class="card-header">Full Width Section</h5>
+                                <div class="card-body">
+                                    <p>This is a full-width card that spans the entire container width.</p>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="text-center p-3">
+                                                <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                                                <h5>Clean Code</h5>
+                                                <p>Well-structured HTML with semantic markup</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-center p-3">
+                                                <i class="fas fa-mobile-alt fa-3x text-success mb-3"></i>
+                                                <h5>Responsive Design</h5>
+                                                <p>Works perfectly on all device sizes</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="text-center p-3">
+                                                <i class="fas fa-paint-brush fa-3x text-info mb-3"></i>
+                                                <h5>Customizable</h5>
+                                                <p>Easy to modify and extend</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+</body>
+</html>

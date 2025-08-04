@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Typography" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="ui-elements" activePage="typography" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Typography</h2>
+                            <p class="pageheader-text">Documentation and examples for Bootstrap typography, including global settings, headings, body text, lists, and more.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item">UI Elements</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Typography</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Headings -->
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Headings</h5>
+                            <div class="card-body">
+                                <h1>h1. Bootstrap heading</h1>
+                                <h2>h2. Bootstrap heading</h2>
+                                <h3>h3. Bootstrap heading</h3>
+                                <h4>h4. Bootstrap heading</h4>
+                                <h5>h5. Bootstrap heading</h5>
+                                <h6>h6. Bootstrap heading</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Heading Classes</h5>
+                            <div class="card-body">
+                                <p class="h1">h1. Bootstrap heading</p>
+                                <p class="h2">h2. Bootstrap heading</p>
+                                <p class="h3">h3. Bootstrap heading</p>
+                                <p class="h4">h4. Bootstrap heading</p>
+                                <p class="h5">h5. Bootstrap heading</p>
+                                <p class="h6">h6. Bootstrap heading</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Display Headings -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="card">
+                            <h5 class="card-header">Display Headings</h5>
+                            <div class="card-body">
+                                <h1 class="display-1">Display 1</h1>
+                                <h1 class="display-2">Display 2</h1>
+                                <h1 class="display-3">Display 3</h1>
+                                <h1 class="display-4">Display 4</h1>
+                                <h1 class="display-5">Display 5</h1>
+                                <h1 class="display-6">Display 6</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lead & Body Text -->
+                <div class="row mt-4">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Lead Text</h5>
+                            <div class="card-body">
+                                <p class="lead">
+                                    This is a lead paragraph. It stands out from regular paragraphs with increased font size and weight.
+                                </p>
+                                <p>
+                                    This is a regular paragraph for comparison. You can see the difference in size and weight between lead and regular text.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Inline Text Elements</h5>
+                            <div class="card-body">
+                                <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+                                <p><del>This line of text is meant to be treated as deleted text.</del></p>
+                                <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+                                <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+                                <p><u>This line of text will render as underlined.</u></p>
+                                <p><small>This line of text is meant to be treated as fine print.</small></p>
+                                <p><strong>This line rendered as bold text.</strong></p>
+                                <p><em>This line rendered as italicized text.</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Utilities -->
+                <div class="row mt-4">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Text Alignment</h5>
+                            <div class="card-body">
+                                <p class="text-start">Start aligned text on all viewport sizes.</p>
+                                <p class="text-center">Center aligned text on all viewport sizes.</p>
+                                <p class="text-end">End aligned text on all viewport sizes.</p>
+                                <p class="text-sm-start">Start aligned text on viewports sized SM (small) or wider.</p>
+                                <p class="text-md-start">Start aligned text on viewports sized MD (medium) or wider.</p>
+                                <p class="text-lg-start">Start aligned text on viewports sized LG (large) or wider.</p>
+                                <p class="text-xl-start">Start aligned text on viewports sized XL (extra-large) or wider.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Text Transform</h5>
+                            <div class="card-body">
+                                <p class="text-lowercase">Lowercased text.</p>
+                                <p class="text-uppercase">Uppercased text.</p>
+                                <p class="text-capitalize">CapiTaliZed text.</p>
+                                <p class="fs-1">.fs-1 text</p>
+                                <p class="fs-2">.fs-2 text</p>
+                                <p class="fs-3">.fs-3 text</p>
+                                <p class="fs-4">.fs-4 text</p>
+                                <p class="fs-5">.fs-5 text</p>
+                                <p class="fs-6">.fs-6 text</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Font Weight and Style -->
+                <div class="row mt-4">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Font Weight</h5>
+                            <div class="card-body">
+                                <p class="fw-bold">Bold text.</p>
+                                <p class="fw-bolder">Bolder weight text (relative to the parent element).</p>
+                                <p class="fw-semibold">Semibold weight text.</p>
+                                <p class="fw-normal">Normal weight text.</p>
+                                <p class="fw-light">Light weight text.</p>
+                                <p class="fw-lighter">Lighter weight text (relative to the parent element).</p>
+                                <p class="fst-italic">Italic text.</p>
+                                <p class="fst-normal">Text with normal font style</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Line Height</h5>
+                            <div class="card-body">
+                                <p class="lh-1">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element.</p>
+                                <p class="lh-sm">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element.</p>
+                                <p class="lh-base">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element.</p>
+                                <p class="lh-lg">This is a long paragraph written to show how the line-height of an element is affected by our utilities. Classes are applied to the element itself or sometimes the parent element.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lists -->
+                <div class="row mt-4">
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Unordered List</h5>
+                            <div class="card-body">
+                                <ul>
+                                    <li>This is a list.</li>
+                                    <li>It appears completely unstyled.</li>
+                                    <li>Structurally, it's still a list.</li>
+                                    <li>However, this style only applies to immediate child elements.</li>
+                                    <li>Nested lists:
+                                        <ul>
+                                            <li>are unaffected by this style</li>
+                                            <li>will still show a bullet</li>
+                                            <li>and have appropriate left margin</li>
+                                        </ul>
+                                    </li>
+                                    <li>This may still come in handy in some situations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Ordered List</h5>
+                            <div class="card-body">
+                                <ol>
+                                    <li>This is a list.</li>
+                                    <li>It appears completely styled.</li>
+                                    <li>Structurally, it's still a list.</li>
+                                    <li>However, this style only applies to immediate child elements.</li>
+                                    <li>Nested lists:
+                                        <ol>
+                                            <li>are unaffected by this style</li>
+                                            <li>will still show numbers</li>
+                                            <li>and have appropriate left margin</li>
+                                        </ol>
+                                    </li>
+                                    <li>This may still come in handy in some situations.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Unstyled List</h5>
+                            <div class="card-body">
+                                <ul class="list-unstyled">
+                                    <li>This is a list.</li>
+                                    <li>It appears completely unstyled.</li>
+                                    <li>Structurally, it's still a list.</li>
+                                    <li>However, this style only applies to immediate child elements.</li>
+                                    <li>Nested lists:
+                                        <ul>
+                                            <li>are unaffected by this style</li>
+                                            <li>will still show a bullet</li>
+                                            <li>and have appropriate left margin</li>
+                                        </ul>
+                                    </li>
+                                    <li>This may still come in handy in some situations.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Description Lists -->
+                <div class="row mt-4">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Description List</h5>
+                            <div class="card-body">
+                                <dl>
+                                    <dt>Description lists</dt>
+                                    <dd>A description list is perfect for defining terms.</dd>
+                                    
+                                    <dt>Euismod</dt>
+                                    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+                                    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                    
+                                    <dt>Malesuada porta</dt>
+                                    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                    
+                                    <dt>Truncated term is truncated</dt>
+                                    <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Horizontal Description List</h5>
+                            <div class="card-body">
+                                <dl class="row">
+                                    <dt class="col-sm-3">Description lists</dt>
+                                    <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+                                    
+                                    <dt class="col-sm-3">Euismod</dt>
+                                    <dd class="col-sm-9">
+                                        <p>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</p>
+                                        <p>Donec id elit non mi porta gravida at eget metus.</p>
+                                    </dd>
+                                    
+                                    <dt class="col-sm-3">Malesuada porta</dt>
+                                    <dd class="col-sm-9">Etiam porta sem malesuada magna mollis euismod.</dd>
+                                    
+                                    <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+                                    <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo.</dd>
+                                    
+                                    <dt class="col-sm-3">Nesting</dt>
+                                    <dd class="col-sm-9">
+                                        <dl class="row">
+                                            <dt class="col-sm-4">Nested definition list</dt>
+                                            <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat.</dd>
+                                        </dl>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockquotes -->
+                <div class="row mt-4">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Blockquotes</h5>
+                            <div class="card-body">
+                                <blockquote class="blockquote">
+                                    <p>A well-known quote, contained in a blockquote element.</p>
+                                </blockquote>
+                                <hr>
+                                <figure>
+                                    <blockquote class="blockquote">
+                                        <p>A well-known quote, contained in a blockquote element.</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer">
+                                        Someone famous in <cite title="Source Title">Source Title</cite>
+                                    </figcaption>
+                                </figure>
+                                <hr>
+                                <figure class="text-center">
+                                    <blockquote class="blockquote">
+                                        <p>A well-known quote, contained in a blockquote element.</p>
+                                    </blockquote>
+                                    <figcaption class="blockquote-footer">
+                                        Someone famous in <cite title="Source Title">Source Title</cite>
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Text Colors</h5>
+                            <div class="card-body">
+                                <p class="text-primary">.text-primary</p>
+                                <p class="text-secondary">.text-secondary</p>
+                                <p class="text-success">.text-success</p>
+                                <p class="text-danger">.text-danger</p>
+                                <p class="text-warning bg-dark">.text-warning</p>
+                                <p class="text-info bg-dark">.text-info</p>
+                                <p class="text-light bg-dark">.text-light</p>
+                                <p class="text-dark">.text-dark</p>
+                                <p class="text-body">.text-body</p>
+                                <p class="text-muted">.text-muted</p>
+                                <p class="text-white bg-dark">.text-white</p>
+                                <p class="text-black-50">.text-black-50</p>
+                                <p class="text-white-50 bg-dark">.text-white-50</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Code -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Code</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Inline code</h6>
+                                        <p>Wrap inline snippets of code with <code>&lt;code&gt;</code>. Be sure to escape HTML angle brackets.</p>
+                                        <p>For example, <code>&lt;section&gt;</code> should be wrapped as inline.</p>
+                                        
+                                        <h6 class="mt-4">Variables</h6>
+                                        <p>Use the <code>&lt;var&gt;</code> tag to indicate variables.</p>
+                                        <p><var>y</var> = <var>m</var><var>x</var> + <var>b</var></p>
+                                        
+                                        <h6 class="mt-4">User input</h6>
+                                        <p>Use the <code>&lt;kbd&gt;</code> to indicate input that is typically entered via keyboard.</p>
+                                        <p>To switch directories, type <kbd>cd</kbd> followed by the name of the directory.<br>
+                                        To edit settings, press <kbd><kbd>ctrl</kbd> + <kbd>,</kbd></kbd></p>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>Code blocks</h6>
+                                        <p>Use <code>&lt;pre&gt;</code>s for multiple lines of code. Use the <code>&lt;code&gt;</code> element inside for proper styling.</p>
+                                        <pre><code>&lt;p&gt;Sample text here...&lt;/p&gt;
+&lt;p&gt;And another line of sample text here...&lt;/p&gt;</code></pre>
+                                        
+                                        <h6 class="mt-4">Sample output</h6>
+                                        <p>For indicating sample output from a program use the <code>&lt;samp&gt;</code> tag.</p>
+                                        <samp>This text is meant to be treated as sample output from a computer program.</samp>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Abbreviations -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Abbreviations</h5>
+                            <div class="card-body">
+                                <p>Stylized implementation of HTML's <code>&lt;abbr&gt;</code> element for abbreviations and acronyms to show the expanded version on hover. Abbreviations have a default underline and gain a help cursor to provide additional context on hover and to users of assistive technologies.</p>
+                                <p>Add <code>.initialism</code> to an abbreviation for a slightly smaller font-size.</p>
+                                <p><abbr title="attribute">attr</abbr></p>
+                                <p><abbr title="HyperText Markup Language" class="initialism">HTML</abbr></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+</body>
+</html>

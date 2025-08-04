@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Multiselect" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="forms" activePage="multiselect" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Multiselect</h2>
+                            <p class="pageheader-text">Advanced select boxes with search, tagging, remote data sets, and more.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item">Forms</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Multiselect</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Basic Multiselect -->
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Basic Multiselect</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="select-basic" class="form-label">Basic Select</label>
+                                        <select id="select-basic" class="form-select" placeholder="Select a person...">
+                                            <option value="">Select a person...</option>
+                                            <option value="1">Thomas Edison</option>
+                                            <option value="2">Nikola Tesla</option>
+                                            <option value="3">Albert Einstein</option>
+                                            <option value="4">Marie Curie</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="select-multiple" class="form-label">Multiple Select</label>
+                                        <select id="select-multiple" class="form-select" multiple placeholder="Select multiple people...">
+                                            <option value="1">Thomas Edison</option>
+                                            <option value="2">Nikola Tesla</option>
+                                            <option value="3">Albert Einstein</option>
+                                            <option value="4">Marie Curie</option>
+                                            <option value="5">Isaac Newton</option>
+                                            <option value="6">Charles Darwin</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Select with Groups</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="select-groups" class="form-label">Grouped Options</label>
+                                        <select id="select-groups" class="form-select" placeholder="Select a vehicle...">
+                                            <option value="">Select a vehicle...</option>
+                                            <optgroup label="Cars">
+                                                <option value="sedan">Sedan</option>
+                                                <option value="suv">SUV</option>
+                                                <option value="coupe">Coupe</option>
+                                                <option value="hatchback">Hatchback</option>
+                                            </optgroup>
+                                            <optgroup label="Motorcycles">
+                                                <option value="sport">Sport Bike</option>
+                                                <option value="cruiser">Cruiser</option>
+                                                <option value="touring">Touring</option>
+                                            </optgroup>
+                                            <optgroup label="Trucks">
+                                                <option value="pickup">Pickup Truck</option>
+                                                <option value="semi">Semi Truck</option>
+                                            </optgroup>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="select-disabled" class="form-label">With Disabled Options</label>
+                                        <select id="select-disabled" class="form-select" multiple>
+                                            <option value="1">Active Option 1</option>
+                                            <option value="2">Active Option 2</option>
+                                            <option value="3" disabled>Disabled Option</option>
+                                            <option value="4">Active Option 3</option>
+                                            <option value="5" disabled>Another Disabled</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Features -->
+                <div class="row mt-4">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Tagging</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="select-tags" class="form-label">Tags Input</label>
+                                        <input id="select-tags" type="text" class="form-control" placeholder="Add tags...">
+                                        <small class="form-text text-muted">Type and press enter to add tags</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="select-tags-predefined" class="form-label">Tags with Predefined Options</label>
+                                        <select id="select-tags-predefined" multiple placeholder="Select or create tags...">
+                                            <option value="javascript">JavaScript</option>
+                                            <option value="python">Python</option>
+                                            <option value="java">Java</option>
+                                            <option value="php">PHP</option>
+                                            <option value="ruby">Ruby</option>
+                                            <option value="csharp">C#</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Search & Clear</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="select-search" class="form-label">With Search</label>
+                                        <select id="select-search" class="form-select" placeholder="Search countries...">
+                                            <option value="">Search countries...</option>
+                                            <option value="US">United States</option>
+                                            <option value="GB">United Kingdom</option>
+                                            <option value="CA">Canada</option>
+                                            <option value="AU">Australia</option>
+                                            <option value="DE">Germany</option>
+                                            <option value="FR">France</option>
+                                            <option value="ES">Spain</option>
+                                            <option value="IT">Italy</option>
+                                            <option value="JP">Japan</option>
+                                            <option value="CN">China</option>
+                                            <option value="IN">India</option>
+                                            <option value="BR">Brazil</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="select-clear" class="form-label">With Clear Button</label>
+                                        <select id="select-clear" class="form-select" multiple placeholder="Select options...">
+                                            <option value="1" selected>Option 1 (preselected)</option>
+                                            <option value="2" selected>Option 2 (preselected)</option>
+                                            <option value="3">Option 3</option>
+                                            <option value="4">Option 4</option>
+                                            <option value="5">Option 5</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Limit & Remote -->
+                <div class="row mt-4">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Selection Limits</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="select-limit" class="form-label">Max 3 Items</label>
+                                        <select id="select-limit" class="form-select" multiple placeholder="Select up to 3 items...">
+                                            <option value="1">Item 1</option>
+                                            <option value="2">Item 2</option>
+                                            <option value="3">Item 3</option>
+                                            <option value="4">Item 4</option>
+                                            <option value="5">Item 5</option>
+                                            <option value="6">Item 6</option>
+                                        </select>
+                                        <small class="form-text text-muted">Maximum 3 items can be selected</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="select-remove" class="form-label">Remove Button</label>
+                                        <select id="select-remove" class="form-select" multiple placeholder="Select items...">
+                                            <option value="1" selected>Removable Item 1</option>
+                                            <option value="2" selected>Removable Item 2</option>
+                                            <option value="3">Item 3</option>
+                                            <option value="4">Item 4</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Email Input</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="select-emails" class="form-label">Email Recipients</label>
+                                        <input id="select-emails" type="text" class="form-control" placeholder="Add email addresses...">
+                                        <small class="form-text text-muted">Type valid email addresses and press enter</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="select-users" class="form-label">User Selection</label>
+                                        <select id="select-users" multiple placeholder="Select users...">
+                                            <option value="1" data-data='{"email": "john@example.com", "name": "John Doe"}'>John Doe</option>
+                                            <option value="2" data-data='{"email": "jane@example.com", "name": "Jane Smith"}'>Jane Smith</option>
+                                            <option value="3" data-data='{"email": "bob@example.com", "name": "Bob Johnson"}'>Bob Johnson</option>
+                                            <option value="4" data-data='{"email": "alice@example.com", "name": "Alice Brown"}'>Alice Brown</option>
+                                        </select>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Native Bootstrap Examples -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Native Bootstrap Multiple Select</h5>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="native-select" class="form-label">Native Multiple Select</label>
+                                            <select class="form-select" multiple aria-label="Native multiple select">
+                                                <option selected>Open this select menu</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                                <option value="4">Four</option>
+                                                <option value="5">Five</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="native-size" class="form-label">With Size Attribute</label>
+                                            <select class="form-select" multiple size="5" aria-label="Size 5 select">
+                                                <option value="1">First option</option>
+                                                <option value="2">Second option</option>
+                                                <option value="3">Third option</option>
+                                                <option value="4">Fourth option</option>
+                                                <option value="5">Fifth option</option>
+                                                <option value="6">Sixth option</option>
+                                                <option value="7">Seventh option</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3">
+                                            <label for="native-disabled" class="form-label">Disabled State</label>
+                                            <select class="form-select" multiple disabled aria-label="Disabled select">
+                                                <option selected>Disabled select</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Custom Styled Example -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Custom Styled Multiselect</h5>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="select-custom" class="form-label">Skills Selection</label>
+                                                <select id="select-custom" multiple placeholder="Select your skills...">
+                                                    <optgroup label="Frontend">
+                                                        <option value="html">HTML5</option>
+                                                        <option value="css">CSS3</option>
+                                                        <option value="js">JavaScript</option>
+                                                        <option value="react">React</option>
+                                                        <option value="vue">Vue.js</option>
+                                                        <option value="angular">Angular</option>
+                                                    </optgroup>
+                                                    <optgroup label="Backend">
+                                                        <option value="node">Node.js</option>
+                                                        <option value="python">Python</option>
+                                                        <option value="php">PHP</option>
+                                                        <option value="java">Java</option>
+                                                        <option value="csharp">C#</option>
+                                                    </optgroup>
+                                                    <optgroup label="Database">
+                                                        <option value="mysql">MySQL</option>
+                                                        <option value="postgresql">PostgreSQL</option>
+                                                        <option value="mongodb">MongoDB</option>
+                                                        <option value="redis">Redis</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="select-color" class="form-label">Color Selection</label>
+                                                <select id="select-color" multiple placeholder="Select colors...">
+                                                    <!-- Options will be added via JavaScript -->
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                            <button type="reset" class="btn btn-secondary ms-2">Reset</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+        import { initializeMultiselect } from '@js/pages/multiselect.js';
+    </script>
+</body>
+</html>

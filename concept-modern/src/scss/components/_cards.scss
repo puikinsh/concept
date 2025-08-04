@@ -1,0 +1,122 @@
+// Card Components
+.card {
+  background: #fff;
+  border: 1px solid #e6e6f2;
+  border-radius: 4px;
+  box-shadow: 0px 0px 4px 0px rgba(82, 63, 105, 0.05);
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+  
+  .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6f2;
+    padding: 20px 30px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #3d405c;
+    font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .card-body {
+    padding: 30px;
+  }
+  
+  .card-footer {
+    background-color: #fff;
+    border-top: 1px solid #e6e6f2;
+    padding: 20px 30px;
+  }
+}
+
+// Metric cards - special styling for revenue cards
+.metric-value {
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: #3d405c;
+    font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+.metric-label {
+  font-size: 14px;
+  font-weight: 700;
+  
+  span {
+    margin-left: 5px;
+  }
+}
+
+// Border top cards
+.border-3 {
+  border-width: 3px !important;
+}
+
+.border-top {
+  border-top-style: solid !important;
+}
+
+.border-top-primary {
+  border-top-color: $primary !important;
+}
+
+// Revenue card specific styling
+.card {
+  &.revenue-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    
+    .card-body {
+      position: relative;
+      z-index: 2;
+      padding: 40px 30px;
+    }
+    
+    .metric-value {
+      margin: 15px 0;
+    }
+    
+    .sparkline-container {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 50%;  // Changed from 40% to 50% to make chart cover bottom half
+      z-index: 1;
+      
+      canvas {
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+      }
+    }
+  }
+}
+
+// Finance metric card specific overrides
+.finance-metric-card {
+  .card-body {
+    &.bg-light {
+      padding: 0 !important;
+      margin: 0;
+      height: 90px;
+      
+      .sparkline-container {
+        position: relative;
+        height: 90px !important;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        
+        canvas {
+          display: block !important;
+          width: 100% !important;
+          height: 90px !important;
+          position: relative !important;
+        }
+      }
+    }
+  }
+}

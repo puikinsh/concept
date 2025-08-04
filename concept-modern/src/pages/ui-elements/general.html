@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="UI General Elements" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="ui-elements" activePage="general" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">General Elements</h2>
+                                <p class="pageheader-text">A comprehensive collection of basic UI components including buttons, badges, alerts, progress bars, and more.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">UI Elements</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">General</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Buttons Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="buttons">
+                                <h3 class="section-title">Buttons</h3>
+                                <p>Use custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.</p>
+                            </div>
+                            
+                            <!-- Basic Buttons -->
+                            <div class="card mb-4">
+                                <h5 class="card-header">Basic Buttons</h5>
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-primary">Primary</button>
+                                    <button type="button" class="btn btn-secondary">Secondary</button>
+                                    <button type="button" class="btn btn-success">Success</button>
+                                    <button type="button" class="btn btn-danger">Danger</button>
+                                    <button type="button" class="btn btn-warning">Warning</button>
+                                    <button type="button" class="btn btn-info">Info</button>
+                                    <button type="button" class="btn btn-light">Light</button>
+                                    <button type="button" class="btn btn-dark">Dark</button>
+                                    <button type="button" class="btn btn-link">Link</button>
+                                </div>
+                            </div>
+
+                            <!-- Outline Buttons -->
+                            <div class="card mb-4">
+                                <h5 class="card-header">Outline Buttons</h5>
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-outline-primary">Primary</button>
+                                    <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                                    <button type="button" class="btn btn-outline-success">Success</button>
+                                    <button type="button" class="btn btn-outline-danger">Danger</button>
+                                    <button type="button" class="btn btn-outline-warning">Warning</button>
+                                    <button type="button" class="btn btn-outline-info">Info</button>
+                                    <button type="button" class="btn btn-outline-light">Light</button>
+                                    <button type="button" class="btn btn-outline-dark">Dark</button>
+                                </div>
+                            </div>
+
+                            <!-- Button Sizes -->
+                            <div class="card mb-4">
+                                <h5 class="card-header">Button Sizes</h5>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+                                        <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="button" class="btn btn-primary">Default button</button>
+                                        <button type="button" class="btn btn-secondary">Default button</button>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn btn-primary btn-sm">Small button</button>
+                                        <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Button States -->
+                            <div class="card mb-4">
+                                <h5 class="card-header">Button States</h5>
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-primary">Normal</button>
+                                    <button type="button" class="btn btn-primary active">Active</button>
+                                    <button type="button" class="btn btn-primary" disabled>Disabled</button>
+                                    <div class="mt-3">
+                                        <button type="button" class="btn btn-primary">
+                                            <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                                            Loading...
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Badges Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="badges">
+                                <h3 class="section-title">Badges</h3>
+                                <p>Documentation and examples for badges, our small count and labeling component.</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <h5 class="card-header">Badges</h5>
+                                <div class="card-body">
+                                    <span class="badge bg-primary">Primary</span>
+                                    <span class="badge bg-secondary">Secondary</span>
+                                    <span class="badge bg-success">Success</span>
+                                    <span class="badge bg-danger">Danger</span>
+                                    <span class="badge bg-warning text-dark">Warning</span>
+                                    <span class="badge bg-info text-dark">Info</span>
+                                    <span class="badge bg-light text-dark">Light</span>
+                                    <span class="badge bg-dark">Dark</span>
+                                    
+                                    <h6 class="mt-4">Rounded Badges</h6>
+                                    <span class="badge rounded-pill bg-primary">Primary</span>
+                                    <span class="badge rounded-pill bg-secondary">Secondary</span>
+                                    <span class="badge rounded-pill bg-success">Success</span>
+                                    <span class="badge rounded-pill bg-danger">Danger</span>
+                                    <span class="badge rounded-pill bg-warning text-dark">Warning</span>
+                                    <span class="badge rounded-pill bg-info text-dark">Info</span>
+                                    
+                                    <h6 class="mt-4">Badges in Buttons</h6>
+                                    <button type="button" class="btn btn-primary">
+                                        Notifications <span class="badge bg-light text-dark ms-1">4</span>
+                                    </button>
+                                    <button type="button" class="btn btn-success">
+                                        Messages <span class="badge bg-danger ms-1">9+</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alerts Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="alerts">
+                                <h3 class="section-title">Alerts</h3>
+                                <p>Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <h5 class="card-header">Basic Alerts</h5>
+                                <div class="card-body">
+                                    <div class="alert alert-primary" role="alert">
+                                        A simple primary alert—check it out!
+                                    </div>
+                                    <div class="alert alert-secondary" role="alert">
+                                        A simple secondary alert—check it out!
+                                    </div>
+                                    <div class="alert alert-success" role="alert">
+                                        A simple success alert—check it out!
+                                    </div>
+                                    <div class="alert alert-danger" role="alert">
+                                        A simple danger alert—check it out!
+                                    </div>
+                                    <div class="alert alert-warning" role="alert">
+                                        A simple warning alert—check it out!
+                                    </div>
+                                    <div class="alert alert-info" role="alert">
+                                        A simple info alert—check it out!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4">
+                                <h5 class="card-header">Dismissible Alerts</h5>
+                                <div class="card-body">
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <h4 class="alert-heading">Well done!</h4>
+                                        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                        <hr>
+                                        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bars Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="progress">
+                                <h3 class="section-title">Progress Bars</h3>
+                                <p>Documentation and examples for using Bootstrap custom progress bars featuring support for stacked bars, animated backgrounds, and text labels.</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <h5 class="card-header">Progress Bars</h5>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h6 class="mt-4">Striped Progress Bars</h6>
+                                    <div class="mb-3">
+                                        <div class="progress">
+                                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h6 class="mt-4">Animated Progress Bars</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Spinners Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="spinners">
+                                <h3 class="section-title">Spinners</h3>
+                                <p>Indicate the loading state of a component or page with Bootstrap spinners, built entirely with HTML, CSS, and no JavaScript.</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <h5 class="card-header">Spinners</h5>
+                                <div class="card-body">
+                                    <div class="mb-4">
+                                        <h6>Border Spinner</h6>
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-secondary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-success" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-danger" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-warning" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-info" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-4">
+                                        <h6>Growing Spinner</h6>
+                                        <div class="spinner-grow text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-secondary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-success" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-danger" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-warning" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-info" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div>
+                                        <h6>Size Variations</h6>
+                                        <div class="spinner-border spinner-border-sm" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow spinner-grow-sm" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tooltips & Popovers Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="tooltips">
+                                <h3 class="section-title">Tooltips & Popovers</h3>
+                                <p>Documentation and examples for adding custom Bootstrap tooltips and popovers.</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <h5 class="card-header">Tooltips</h5>
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                                        Tooltip on top
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
+                                        Tooltip on right
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+                                        Tooltip on bottom
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
+                                        Tooltip on left
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="card mb-4">
+                                <h5 class="card-header">Popovers</h5>
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-lg btn-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+                                    
+                                    <h6 class="mt-4">Four Directions</h6>
+                                    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Top popover">
+                                        Popover on top
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Right popover">
+                                        Popover on right
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">
+                                        Popover on bottom
+                                    </button>
+                                    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Left popover">
+                                        Popover on left
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="pagination">
+                                <h3 class="section-title">Pagination</h3>
+                                <p>Documentation and examples for showing pagination to indicate a series of related content exists across multiple pages.</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <h5 class="card-header">Pagination</h5>
+                                <div class="card-body">
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                        </ul>
+                                    </nav>
+                                    
+                                    <h6 class="mt-4">Pagination Sizes</h6>
+                                    <nav aria-label="...">
+                                        <ul class="pagination pagination-lg">
+                                            <li class="page-item active" aria-current="page">
+                                                <span class="page-link">1</span>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        </ul>
+                                    </nav>
+                                    
+                                    <nav aria-label="...">
+                                        <ul class="pagination pagination-sm">
+                                            <li class="page-item active" aria-current="page">
+                                                <span class="page-link">1</span>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Breadcrumbs Section -->
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="section-block" id="breadcrumbs">
+                                <h3 class="section-title">Breadcrumbs</h3>
+                                <p>Indicate the current page's location within a navigational hierarchy that automatically adds separators via CSS.</p>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <h5 class="card-header">Breadcrumbs</h5>
+                                <div class="card-body">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item active" aria-current="page">Home</li>
+                                        </ol>
+                                    </nav>
+
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                        </ol>
+                                    </nav>
+
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                            <li class="breadcrumb-item"><a href="#">Library</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Data</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <!-- Page Specific JS -->
+    <script type="module">
+        // Initialize tooltips
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+        
+        // Initialize popovers
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+    </script>
+</body>
+</html>

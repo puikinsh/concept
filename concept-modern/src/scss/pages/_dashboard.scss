@@ -1,0 +1,326 @@
+// Dashboard specific styles
+.dashboard-ecommerce {
+  .ecommerce-widget {
+    .row + .row {
+      margin-top: 30px;
+    }
+  }
+}
+
+// Finance Dashboard specific styles
+.dashboard-finance {
+  // Date range picker styling
+  .daterangepicker {
+    border: 1px solid #e6e6f2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    
+    &:before, &:after {
+      display: none;
+    }
+  }
+  
+  // Finance metric cards with edge-to-edge sparklines
+  .finance-metric-card {
+    .card-body {
+      &.bg-light {
+        padding: 0 !important; // Remove all padding
+        margin: 0;
+        
+        .sparkline-container {
+          padding: 0;
+          margin: 0;
+          height: 90px !important; // Force height
+          width: 100%;
+          
+          canvas {
+            display: block !important;
+            width: 100% !important;
+            height: 90px !important; // Force canvas height
+          }
+        }
+      }
+    }
+  }
+  
+  // Card footer links
+  .card-footer {
+    &.bg-white {
+      background-color: #fff !important;
+      border-top: 1px solid #e6e6f2;
+    }
+    
+    .card-link {
+      color: $primary;
+      text-decoration: none;
+      font-weight: 500;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  // Background light variations
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+}
+
+// Text muted override
+.text-muted {
+  color: #71748d !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+// Revenue cards
+[id^="sparkline-revenue"] {
+  height: 65px;
+  width: 100%;
+  max-width: 100%;
+}
+
+// Responsive card spacing
+@include media-breakpoint-down(md) {
+  .col-xl-3.col-lg-6,
+  .col-xl-3.col-lg-3 {
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+// Badge dots
+.badge-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  vertical-align: middle;
+  
+  &.badge-brand {
+    background-color: $brand-primary;
+  }
+  
+  &.badge-success {
+    background-color: $success;
+  }
+}
+
+// Icon circles
+.icon-circle-small {
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 0.625rem;
+  
+  &.icon-box-xs {
+    width: 20px;
+    height: 20px;
+    font-size: 10px;
+  }
+}
+
+// Background light colors
+.bg-success-light {
+  background-color: rgba($success, 0.1);
+}
+
+.bg-danger-light {
+  background-color: rgba($danger, 0.1);
+}
+
+// Social sales icons
+.social-sales-icon-circle {
+  display: inline-flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: white;
+  font-size: 0.875rem;
+  
+  &.facebook-bgcolor {
+    background-color: #3b5998;
+  }
+  
+  &.twitter-bgcolor {
+    background-color: #000000;
+  }
+  
+  &.instagram-bgcolor {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+  
+  &.pinterest-bgcolor {
+    background-color: #bd081c;
+  }
+  
+  &.googleplus-bgcolor {
+    background-color: #db4437;
+  }
+}
+
+// Legend items
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  
+  .legend-tile {
+    font-size: 0.625rem;
+  }
+  
+  .legend-text {
+    font-size: 0.875rem;
+    color: $gray-600;
+  }
+}
+
+// Chart containers
+.chart-container {
+  position: relative;
+  height: 400px;
+  
+  &.chart-container-sm {
+    height: 250px;
+  }
+}
+
+// Sparkline container override (already defined in cards.scss)
+// Removed duplicate definition
+
+// Primary link
+.btn-primary-link {
+  color: $primary;
+  text-decoration: none;
+  font-weight: 500;
+  
+  &:hover {
+    color: darken($primary, 10%);
+    text-decoration: underline;
+  }
+}
+
+// List group items background
+.list-group-item {
+  background-color: #fff;
+  
+  &:hover {
+    background-color: #fafafb;
+  }
+}
+
+// Table styles
+.table {
+  background-color: #fff;
+  margin-bottom: 0;
+  
+  thead {
+    &.bg-light {
+      background-color: #f5f5f6 !important;
+      
+      th {
+        border: none;
+        color: #71748d;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        padding: 16px 30px;
+        background-color: #f5f5f6;
+      }
+    }
+  }
+  
+  tbody {
+    background-color: #fff;
+    
+    tr {
+      background-color: #fff;
+      
+      td {
+        padding: 16px 30px;
+        color: #71748d;
+        font-size: 14px;
+        vertical-align: middle;
+        border-color: #e6e6f2;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+// Table responsive wrapper
+.table-responsive {
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  
+  @include media-breakpoint-down(md) {
+    font-size: 0.875rem;
+    
+    .table {
+      thead th {
+        padding: 12px 15px;
+        font-size: 11px;
+      }
+      
+      tbody td {
+        padding: 12px 15px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+// Button outline light
+.btn-outline-light {
+  border-color: #d2d2e4;
+  color: #71748d;
+  font-size: 14px;
+  padding: 8px 20px;
+  font-weight: 500;
+  
+  &:hover {
+    background-color: #f0f0f8;
+    border-color: #d2d2e4;
+    color: #3d405c;
+  }
+}
+
+// Product icon placeholders
+.product-icon {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 20px;
+  
+  &.bg-primary-light {
+    background-color: rgba($primary, 0.1);
+    color: $primary;
+  }
+  
+  &.bg-success-light {
+    background-color: rgba($success, 0.1);
+    color: $success;
+  }
+  
+  &.bg-warning-light {
+    background-color: rgba($warning, 0.1);
+    color: $warning;
+  }
+  
+  &.bg-info-light {
+    background-color: rgba($info, 0.1);
+    color: $info;
+  }
+}

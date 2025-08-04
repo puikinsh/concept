@@ -1,0 +1,15 @@
+<!-- Core JavaScript -->
+<script type="module" src="/js/app.js"></script>
+
+{{#if customScripts}}
+  {{#each customScripts}}
+    <script type="module" src="{{this}}"></script>
+  {{/each}}
+{{/if}}
+
+{{#if isDev}}
+<!-- Development only scripts -->
+<script>
+  console.log('Concept Dashboard v{{version}} - Development Mode');
+</script>
+{{/if}}

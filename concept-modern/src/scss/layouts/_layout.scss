@@ -1,0 +1,88 @@
+// Main Layout Styles
+body {
+  background-color: #efeff6;
+}
+
+.dashboard-main-wrapper {
+  min-height: 100vh;
+  position: relative;
+  background-color: #efeff6;
+}
+
+.dashboard-wrapper {
+  margin-left: $sidebar-width;
+  min-height: 100vh;
+  padding-top: 70px;
+  background-color: #efeff6;
+  
+  @include media-breakpoint-down(lg) {
+    margin-left: 0;
+  }
+}
+
+.dashboard-content {
+  padding: 30px 30px 60px;
+  min-height: calc(100vh - 70px);
+  background-color: #efeff6;
+  
+  @include media-breakpoint-down(md) {
+    padding: 20px 15px 60px;
+  }
+}
+
+// Page Headers
+.page-header {
+  margin-bottom: 30px;
+  
+  .pageheader-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #3d405c;
+    font-family: 'Circular Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  
+  .pageheader-text {
+    color: #71748d;
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+}
+
+// Breadcrumb
+.page-breadcrumb {
+  .breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 0;
+    
+    .breadcrumb-item {
+      font-size: 0.875rem;
+      
+      &.active {
+        color: $text-muted;
+      }
+      
+      a {
+        color: $primary;
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Content sections
+.section {
+  margin-bottom: 30px;
+}
+
+// Responsive utilities
+@include media-breakpoint-down(lg) {
+  .dashboard-wrapper {
+    transition: none; // Disable transition on mobile to prevent janky animations
+  }
+}

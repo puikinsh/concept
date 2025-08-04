@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Form Validation" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="forms" activePage="form-validation" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="container-fluid dashboard-content">
+                <!-- Page Header -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Form Validation</h2>
+                            <p class="pageheader-text">Provide valuable, actionable feedback to your users with HTML5 form validation, via browser default behaviors or custom styles and JavaScript.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                        <li class="breadcrumb-item">Forms</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Form Validation</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Browser Default Validation -->
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Browser Default Validation</h5>
+                            <div class="card-body">
+                                <p>HTML form validation is applied via CSS's two pseudo-classes, <code>:invalid</code> and <code>:valid</code>.</p>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName1" class="form-label">First name</label>
+                                            <input type="text" class="form-control" id="firstName1" required>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName1" class="form-label">Last name</label>
+                                            <input type="text" class="form-control" id="lastName1" required>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email1" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email1" placeholder="name@example.com" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password1" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password1" required minlength="8">
+                                        <small class="form-text text-muted">Minimum 8 characters</small>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" value="" id="terms1" required>
+                                        <label class="form-check-label" for="terms1">
+                                            Agree to terms and conditions
+                                        </label>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Custom Bootstrap Validation</h5>
+                            <div class="card-body">
+                                <p>For custom Bootstrap form validation messages, you'll need to add the <code>novalidate</code> boolean attribute to your form.</p>
+                                <form class="needs-validation" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName2" class="form-label">First name</label>
+                                            <input type="text" class="form-control" id="firstName2" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid first name.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName2" class="form-label">Last name</label>
+                                            <input type="text" class="form-control" id="lastName2" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid last name.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email2" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email2" placeholder="name@example.com" required>
+                                        <div class="valid-feedback">
+                                            Valid email address!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Please provide a valid email address.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="password2" class="form-label">Password</label>
+                                        <input type="password" class="form-control" id="password2" required minlength="8">
+                                        <div class="valid-feedback">
+                                            Strong password!
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Password must be at least 8 characters long.
+                                        </div>
+                                    </div>
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="checkbox" value="" id="terms2" required>
+                                        <label class="form-check-label" for="terms2">
+                                            Agree to terms and conditions
+                                        </label>
+                                        <div class="invalid-feedback">
+                                            You must agree before submitting.
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Server Side Validation -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Server Side Validation Example</h5>
+                            <div class="card-body">
+                                <p>We recommend using client-side validation, but in case you require server-side validation, you can indicate invalid and valid form fields with <code>.is-invalid</code> and <code>.is-valid</code>.</p>
+                                <form>
+                                    <div class="row">
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validServer01" class="form-label">First name</label>
+                                            <input type="text" class="form-control is-valid" id="validServer01" value="Mark" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label for="validServer02" class="form-label">Last name</label>
+                                            <input type="text" class="form-control is-valid" id="validServer02" value="Otto" required>
+                                            <div class="valid-feedback">
+                                                Looks good!
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mb-3">
+                                            <label for="invalidServer03" class="form-label">Username</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">@</span>
+                                                <input type="text" class="form-control is-invalid" id="invalidServer03" required>
+                                                <div class="invalid-feedback">
+                                                    Username is already taken.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="invalidServer04" class="form-label">City</label>
+                                            <input type="text" class="form-control is-invalid" id="invalidServer04" required>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid city.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="invalidServer05" class="form-label">State</label>
+                                            <select class="form-select is-invalid" id="invalidServer05" required>
+                                                <option selected disabled value="">Choose...</option>
+                                                <option>California</option>
+                                                <option>New York</option>
+                                                <option>Texas</option>
+                                            </select>
+                                            <div class="invalid-feedback">
+                                                Please select a valid state.
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label for="invalidServer06" class="form-label">Zip</label>
+                                            <input type="text" class="form-control is-invalid" id="invalidServer06" required>
+                                            <div class="invalid-feedback">
+                                                Please provide a valid zip.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Supported Elements -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Supported Elements</h5>
+                            <div class="card-body">
+                                <p>Validation styles are available for the following form controls and components:</p>
+                                <form class="needs-validation" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="text-muted mb-3">Input Fields</h6>
+                                            <div class="mb-3">
+                                                <label for="validationTextarea" class="form-label">Textarea</label>
+                                                <textarea class="form-control" id="validationTextarea" placeholder="Required example textarea" required></textarea>
+                                                <div class="invalid-feedback">
+                                                    Please enter a message in the textarea.
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="validationSelect" class="form-label">Select</label>
+                                                <select class="form-select" id="validationSelect" required>
+                                                    <option selected disabled value="">Choose...</option>
+                                                    <option>Option 1</option>
+                                                    <option>Option 2</option>
+                                                    <option>Option 3</option>
+                                                </select>
+                                                <div class="invalid-feedback">
+                                                    Please select a valid option.
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="validationFile" class="form-label">File input</label>
+                                                <input type="file" class="form-control" id="validationFile" required>
+                                                <div class="invalid-feedback">
+                                                    Please select a file.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-muted mb-3">Checkboxes and Radios</h6>
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                                                    <label class="form-check-label" for="validationFormCheck1">
+                                                        Check this checkbox
+                                                    </label>
+                                                    <div class="invalid-feedback">
+                                                        You must check this box.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="form-check">
+                                                    <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+                                                    <label class="form-check-label" for="validationFormCheck2">
+                                                        First radio
+                                                    </label>
+                                                </div>
+                                                <div class="form-check mb-3">
+                                                    <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+                                                    <label class="form-check-label" for="validationFormCheck3">
+                                                        Second radio
+                                                    </label>
+                                                    <div class="invalid-feedback">
+                                                        Please select a radio button.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" type="checkbox" id="validationSwitch" required>
+                                                    <label class="form-check-label" for="validationSwitch">
+                                                        Toggle this switch
+                                                    </label>
+                                                    <div class="invalid-feedback">
+                                                        You must toggle this switch.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real-time Validation -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Real-time Validation Example</h5>
+                            <div class="card-body">
+                                <p>This form demonstrates real-time validation with custom rules as you type.</p>
+                                <form id="realtimeForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Username</label>
+                                                <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                                <div class="form-text">Must be 4-20 characters, alphanumeric only</div>
+                                                <div class="invalid-feedback"></div>
+                                                <div class="valid-feedback"></div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="userEmail" class="form-label">Email</label>
+                                                <input type="email" class="form-control" id="userEmail" placeholder="Enter email">
+                                                <div class="invalid-feedback"></div>
+                                                <div class="valid-feedback"></div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="userPassword" class="form-label">Password</label>
+                                                <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
+                                                <div class="password-strength mt-2">
+                                                    <div class="progress" style="height: 5px;">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                                    </div>
+                                                    <small class="form-text text-muted">Password strength: <span class="strength-text">None</span></small>
+                                                </div>
+                                                <div class="invalid-feedback"></div>
+                                                <div class="valid-feedback"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="mb-3">
+                                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                                                <div class="invalid-feedback"></div>
+                                                <div class="valid-feedback"></div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="phoneNumber" class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" id="phoneNumber" placeholder="(123) 456-7890">
+                                                <div class="invalid-feedback"></div>
+                                                <div class="valid-feedback"></div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="creditCard" class="form-label">Credit Card</label>
+                                                <input type="text" class="form-control" id="creditCard" placeholder="1234 5678 9012 3456">
+                                                <div class="invalid-feedback"></div>
+                                                <div class="valid-feedback"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Submit form</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Validation -->
+                <div class="row mt-4">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="card">
+                            <h5 class="card-header">Advanced Registration Form</h5>
+                            <div class="card-body">
+                                <form class="needs-validation" novalidate>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h6 class="text-muted mb-3">Personal Information</h6>
+                                            <div class="mb-3">
+                                                <label for="fullName" class="form-label">Full Name</label>
+                                                <input type="text" class="form-control" id="fullName" pattern="[A-Za-z\s]+" required>
+                                                <div class="invalid-feedback">
+                                                    Please enter a valid name (letters only).
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="birthDate" class="form-label">Date of Birth</label>
+                                                <input type="date" class="form-control" id="birthDate" max="2006-12-31" required>
+                                                <div class="invalid-feedback">
+                                                    You must be at least 18 years old.
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label">Gender</label>
+                                                <div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                                                        <label class="form-check-label" for="male">Male</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="gender" id="female" value="female" required>
+                                                        <label class="form-check-label" for="female">Female</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="radio" name="gender" id="other" value="other" required>
+                                                        <label class="form-check-label" for="other">Other</label>
+                                                    </div>
+                                                </div>
+                                                <div class="invalid-feedback">
+                                                    Please select your gender.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <h6 class="text-muted mb-3">Contact Information</h6>
+                                            <div class="mb-3">
+                                                <label for="contactEmail" class="form-label">Email Address</label>
+                                                <input type="email" class="form-control" id="contactEmail" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid email address.
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="contactPhone" class="form-label">Phone Number</label>
+                                                <input type="tel" class="form-control" id="contactPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid phone number (123-456-7890).
+                                                </div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="website" class="form-label">Website (Optional)</label>
+                                                <input type="url" class="form-control" id="website" placeholder="https://example.com">
+                                                <div class="invalid-feedback">
+                                                    Please provide a valid URL.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-12">
+                                            <h6 class="text-muted mb-3">Address Information</h6>
+                                            <div class="mb-3">
+                                                <label for="address" class="form-label">Street Address</label>
+                                                <input type="text" class="form-control" id="address" required>
+                                                <div class="invalid-feedback">
+                                                    Please provide your address.
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="city" class="form-label">City</label>
+                                                    <input type="text" class="form-control" id="city" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid city.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="state" class="form-label">State</label>
+                                                    <select class="form-select" id="state" required>
+                                                        <option value="">Choose...</option>
+                                                        <option>California</option>
+                                                        <option>New York</option>
+                                                        <option>Texas</option>
+                                                        <option>Florida</option>
+                                                        <option>Illinois</option>
+                                                    </select>
+                                                    <div class="invalid-feedback">
+                                                        Please select a state.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-2 mb-3">
+                                                    <label for="zip" class="form-label">Zip Code</label>
+                                                    <input type="text" class="form-control" id="zip" pattern="[0-9]{5}" maxlength="5" required>
+                                                    <div class="invalid-feedback">
+                                                        Please provide a valid 5-digit zip code.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-12">
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="newsletter">
+                                                <label class="form-check-label" for="newsletter">
+                                                    Subscribe to newsletter
+                                                </label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                                <input class="form-check-input" type="checkbox" id="termsConditions" required>
+                                                <label class="form-check-label" for="termsConditions">
+                                                    I agree to the <a href="#">terms and conditions</a>
+                                                </label>
+                                                <div class="invalid-feedback">
+                                                    You must agree to the terms and conditions.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-primary" type="submit">Register</button>
+                                    <button class="btn btn-secondary ms-2" type="reset">Reset</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script>
+    // Bootstrap form validation
+    (function() {
+        'use strict'
+        
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+        
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+
+    // Real-time validation
+    document.addEventListener('DOMContentLoaded', function() {
+        // Username validation
+        const usernameInput = document.getElementById('username');
+        if (usernameInput) {
+            usernameInput.addEventListener('input', function() {
+                const value = this.value;
+                const isValid = /^[a-zA-Z0-9]{4,20}$/.test(value);
+                
+                if (value.length === 0) {
+                    this.classList.remove('is-valid', 'is-invalid');
+                } else if (isValid) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    this.nextElementSibling.nextElementSibling.textContent = '';
+                    this.nextElementSibling.nextElementSibling.nextElementSibling.textContent = 'Username is available!';
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                    this.nextElementSibling.nextElementSibling.textContent = 'Username must be 4-20 characters, alphanumeric only';
+                    this.nextElementSibling.nextElementSibling.nextElementSibling.textContent = '';
+                }
+            });
+        }
+        
+        // Email validation
+        const emailInput = document.getElementById('userEmail');
+        if (emailInput) {
+            emailInput.addEventListener('input', function() {
+                const value = this.value;
+                const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+                
+                if (value.length === 0) {
+                    this.classList.remove('is-valid', 'is-invalid');
+                } else if (isValid) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    this.nextElementSibling.textContent = '';
+                    this.nextElementSibling.nextElementSibling.textContent = 'Valid email address!';
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                    this.nextElementSibling.textContent = 'Please enter a valid email address';
+                    this.nextElementSibling.nextElementSibling.textContent = '';
+                }
+            });
+        }
+        
+        // Password strength validation
+        const passwordInput = document.getElementById('userPassword');
+        if (passwordInput) {
+            passwordInput.addEventListener('input', function() {
+                const value = this.value;
+                const progressBar = this.parentElement.querySelector('.progress-bar');
+                const strengthText = this.parentElement.querySelector('.strength-text');
+                let strength = 0;
+                
+                if (value.length >= 8) strength++;
+                if (/[a-z]/.test(value) && /[A-Z]/.test(value)) strength++;
+                if (/[0-9]/.test(value)) strength++;
+                if (/[^A-Za-z0-9]/.test(value)) strength++;
+                
+                const strengthLevels = ['None', 'Weak', 'Fair', 'Good', 'Strong'];
+                const strengthColors = ['', 'bg-danger', 'bg-warning', 'bg-info', 'bg-success'];
+                const strengthWidths = ['0%', '25%', '50%', '75%', '100%'];
+                
+                progressBar.className = 'progress-bar ' + strengthColors[strength];
+                progressBar.style.width = strengthWidths[strength];
+                strengthText.textContent = strengthLevels[strength];
+                
+                if (value.length === 0) {
+                    this.classList.remove('is-valid', 'is-invalid');
+                } else if (strength >= 3) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    this.parentElement.querySelector('.invalid-feedback').textContent = '';
+                    this.parentElement.querySelector('.valid-feedback').textContent = 'Strong password!';
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                    this.parentElement.querySelector('.invalid-feedback').textContent = 'Password should be at least 8 characters with uppercase, lowercase, numbers, and special characters';
+                    this.parentElement.querySelector('.valid-feedback').textContent = '';
+                }
+            });
+        }
+        
+        // Confirm password validation
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        if (confirmPasswordInput && passwordInput) {
+            confirmPasswordInput.addEventListener('input', function() {
+                const value = this.value;
+                const passwordValue = passwordInput.value;
+                
+                if (value.length === 0) {
+                    this.classList.remove('is-valid', 'is-invalid');
+                } else if (value === passwordValue && passwordValue.length > 0) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    this.nextElementSibling.textContent = '';
+                    this.nextElementSibling.nextElementSibling.textContent = 'Passwords match!';
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                    this.nextElementSibling.textContent = 'Passwords do not match';
+                    this.nextElementSibling.nextElementSibling.textContent = '';
+                }
+            });
+        }
+        
+        // Phone number formatting and validation
+        const phoneInput = document.getElementById('phoneNumber');
+        if (phoneInput) {
+            phoneInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                let formattedValue = '';
+                
+                if (value.length > 0) {
+                    if (value.length <= 3) {
+                        formattedValue = `(${value}`;
+                    } else if (value.length <= 6) {
+                        formattedValue = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+                    } else {
+                        formattedValue = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+                    }
+                }
+                
+                e.target.value = formattedValue;
+                
+                const isValid = /^\(\d{3}\) \d{3}-\d{4}$/.test(formattedValue);
+                
+                if (formattedValue.length === 0) {
+                    this.classList.remove('is-valid', 'is-invalid');
+                } else if (isValid) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    this.nextElementSibling.textContent = '';
+                    this.nextElementSibling.nextElementSibling.textContent = 'Valid phone number!';
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                    this.nextElementSibling.textContent = 'Please complete the phone number';
+                    this.nextElementSibling.nextElementSibling.textContent = '';
+                }
+            });
+        }
+        
+        // Credit card formatting and validation
+        const creditCardInput = document.getElementById('creditCard');
+        if (creditCardInput) {
+            creditCardInput.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s/g, '');
+                let formattedValue = '';
+                
+                for (let i = 0; i < value.length; i++) {
+                    if (i > 0 && i % 4 === 0) {
+                        formattedValue += ' ';
+                    }
+                    formattedValue += value[i];
+                }
+                
+                e.target.value = formattedValue;
+                
+                const isValid = /^\d{4} \d{4} \d{4} \d{4}$/.test(formattedValue);
+                
+                if (formattedValue.length === 0) {
+                    this.classList.remove('is-valid', 'is-invalid');
+                } else if (isValid) {
+                    this.classList.remove('is-invalid');
+                    this.classList.add('is-valid');
+                    this.nextElementSibling.textContent = '';
+                    this.nextElementSibling.nextElementSibling.textContent = 'Valid credit card format!';
+                } else {
+                    this.classList.remove('is-valid');
+                    this.classList.add('is-invalid');
+                    this.nextElementSibling.textContent = 'Please enter a valid 16-digit credit card number';
+                    this.nextElementSibling.nextElementSibling.textContent = '';
+                }
+            });
+        }
+        
+        // Prevent form submission for real-time validation demo
+        const realtimeForm = document.getElementById('realtimeForm');
+        if (realtimeForm) {
+            realtimeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Form validation successful! (This is a demo)');
+            });
+        }
+    });
+    </script>
+</body>
+</html>

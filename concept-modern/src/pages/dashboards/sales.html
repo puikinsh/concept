@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Sales Dashboard" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-sales" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-sales">
+                <div class="container-fluid dashboard-content">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header">
+                                <h2 class="pageheader-title">Sales Dashboard</h2>
+                                <p class="pageheader-text">Monitor your sales performance, track goals, and analyze customer behavior to drive revenue growth.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Sales</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales KPI Cards -->
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Total Sales</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$152,850</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light">
+                                            <i class="fa fa-fw fa-arrow-up"></i>
+                                        </span>
+                                        <span class="ms-1">17.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">New Customers</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">2,154</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light">
+                                            <i class="fa fa-fw fa-arrow-up"></i>
+                                        </span>
+                                        <span class="ms-1">12.1%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Avg. Order Value</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">$89.50</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-danger fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-danger bg-danger-light">
+                                            <i class="fa fa-fw fa-arrow-down"></i>
+                                        </span>
+                                        <span class="ms-1">3.2%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card border-3 border-top border-top-primary">
+                                <div class="card-body">
+                                    <h5 class="text-muted">Conversion Rate</h5>
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1">3.24%</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-end text-success fw-bold">
+                                        <span class="icon-circle-small icon-box-xs text-success bg-success-light">
+                                            <i class="fa fa-fw fa-arrow-up"></i>
+                                        </span>
+                                        <span class="ms-1">0.5%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales Overview & Target -->
+                    <div class="row mt-4">
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sales Overview</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="sales-overview" height="100"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sales Target Progress</h5>
+                                <div class="card-body">
+                                    <div class="text-center mb-4">
+                                        <h2 class="mb-0">$152,850</h2>
+                                        <p class="text-muted">of $200,000 target</p>
+                                    </div>
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="sales-target"></canvas>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <h3 class="text-primary">76.4%</h3>
+                                        <p class="text-muted mb-0">Target Achievement</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales by Region & Channel -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sales by Region</h5>
+                                <div class="card-body">
+                                    <div class="chart-container">
+                                        <canvas id="sales-by-region"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sales by Channel</h5>
+                                <div class="card-body">
+                                    <div class="chart-container chart-container-sm">
+                                        <canvas id="sales-by-channel"></canvas>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-primary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Online</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-success me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Retail</span>
+                                        </span>
+                                        <span class="legend-item me-3">
+                                            <span class="fa-xs text-warning me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Wholesale</span>
+                                        </span>
+                                        <span class="legend-item">
+                                            <span class="fa-xs text-info me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
+                                            <span class="legend-text">Direct</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Top Products & Sales Team Performance -->
+                    <div class="row mt-4">
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Top Selling Products</h5>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <thead class="bg-light">
+                                                <tr>
+                                                    <th class="border-0">#</th>
+                                                    <th class="border-0">Product</th>
+                                                    <th class="border-0">Units Sold</th>
+                                                    <th class="border-0">Revenue</th>
+                                                    <th class="border-0">Trend</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Premium Laptop Pro</td>
+                                                    <td>1,245</td>
+                                                    <td>$24,900</td>
+                                                    <td class="text-success"><i class="fas fa-arrow-up"></i> 12%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Wireless Headphones</td>
+                                                    <td>2,156</td>
+                                                    <td>$21,560</td>
+                                                    <td class="text-success"><i class="fas fa-arrow-up"></i> 8%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Smart Watch Series 5</td>
+                                                    <td>987</td>
+                                                    <td>$19,740</td>
+                                                    <td class="text-danger"><i class="fas fa-arrow-down"></i> 3%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>Gaming Console</td>
+                                                    <td>654</td>
+                                                    <td>$16,350</td>
+                                                    <td class="text-success"><i class="fas fa-arrow-up"></i> 15%</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>4K Webcam</td>
+                                                    <td>1,890</td>
+                                                    <td>$15,120</td>
+                                                    <td class="text-success"><i class="fas fa-arrow-up"></i> 22%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sales Team Performance</h5>
+                                <div class="card-body">
+                                    <div class="team-performance">
+                                        <div class="team-member mb-4">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div>
+                                                    <h6 class="mb-0">Sarah Johnson</h6>
+                                                    <small class="text-muted">Senior Sales Rep</small>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h6 class="mb-0">$45,250</h6>
+                                                    <small class="text-success">112% of target</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="team-member mb-4">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div>
+                                                    <h6 class="mb-0">Mike Chen</h6>
+                                                    <small class="text-muted">Sales Rep</small>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h6 class="mb-0">$38,900</h6>
+                                                    <small class="text-success">97% of target</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 97%" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="team-member mb-4">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div>
+                                                    <h6 class="mb-0">David Smith</h6>
+                                                    <small class="text-muted">Sales Rep</small>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h6 class="mb-0">$32,100</h6>
+                                                    <small class="text-warning">80% of target</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="team-member mb-4">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div>
+                                                    <h6 class="mb-0">Lisa Wong</h6>
+                                                    <small class="text-muted">Junior Sales Rep</small>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h6 class="mb-0">$28,600</h6>
+                                                    <small class="text-warning">71% of target</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 71%" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="team-member">
+                                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                                <div>
+                                                    <h6 class="mb-0">John Davis</h6>
+                                                    <small class="text-muted">Sales Rep</small>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h6 class="mb-0">$27,900</h6>
+                                                    <small class="text-danger">69% of target</small>
+                                                </div>
+                                            </div>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sales Funnel & Customer Acquisition -->
+                    <div class="row mt-4">
+                        <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Sales Funnel</h5>
+                                <div class="card-body">
+                                    <div class="sales-funnel">
+                                        <div class="funnel-stage mb-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Leads</h6>
+                                                    <p class="text-muted mb-0">Total visitors to the website</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h4 class="mb-0">125,650</h4>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 8px;">
+                                                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="funnel-stage mb-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Qualified Leads</h6>
+                                                    <p class="text-muted mb-0">Showed interest in products</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h4 class="mb-0">45,230</h4>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 8px;">
+                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 36%" aria-valuenow="36" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="funnel-stage mb-3">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Opportunities</h6>
+                                                    <p class="text-muted mb-0">Added items to cart</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h4 class="mb-0">12,540</h4>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 8px;">
+                                                <div class="progress-bar bg-warning" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                        <div class="funnel-stage">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <h6 class="mb-1">Customers</h6>
+                                                    <p class="text-muted mb-0">Completed purchase</p>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h4 class="mb-0">4,075</h4>
+                                                </div>
+                                            </div>
+                                            <div class="progress mt-2" style="height: 8px;">
+                                                <div class="progress-bar bg-success" role="progressbar" style="width: 3.2%" aria-valuenow="3.2" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Customer Acquisition Cost</h5>
+                                <div class="card-body">
+                                    <div class="text-center mb-4">
+                                        <h1 class="text-primary">$24.50</h1>
+                                        <p class="text-muted">Average CAC</p>
+                                    </div>
+                                    <div class="acquisition-metrics">
+                                        <div class="metric-item d-flex justify-content-between mb-3">
+                                            <span class="text-muted">Organic Search</span>
+                                            <span class="fw-bold">$12.30</span>
+                                        </div>
+                                        <div class="metric-item d-flex justify-content-between mb-3">
+                                            <span class="text-muted">Social Media</span>
+                                            <span class="fw-bold">$18.75</span>
+                                        </div>
+                                        <div class="metric-item d-flex justify-content-between mb-3">
+                                            <span class="text-muted">Email Marketing</span>
+                                            <span class="fw-bold">$8.90</span>
+                                        </div>
+                                        <div class="metric-item d-flex justify-content-between mb-3">
+                                            <span class="text-muted">Paid Search</span>
+                                            <span class="fw-bold">$35.60</span>
+                                        </div>
+                                        <div class="metric-item d-flex justify-content-between">
+                                            <span class="text-muted">Referral</span>
+                                            <span class="fw-bold">$5.20</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-white text-center">
+                                    <small class="text-success"><i class="fas fa-arrow-down"></i> 8% decrease from last month</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    {{> layouts/scripts }}
+    
+    <script type="module">
+    import { createSparkline, createLineChart, createDoughnutChart, createBarChart, createMixedChart, colors } from '/js/components/charts.js';
+
+    // Initialize charts
+    document.addEventListener('DOMContentLoaded', () => {
+        // Sales Overview Chart
+        const salesOverviewData = {
+            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+            datasets: [{
+                type: 'bar',
+                label: 'Sales',
+                data: [65000, 72000, 68000, 78000, 85000, 92000, 88000, 95000, 98000, 105000, 110000, 125000],
+                backgroundColor: `${colors.primary}80`,
+                borderColor: colors.primary,
+                borderWidth: 0
+            }, {
+                type: 'line',
+                label: 'Target',
+                data: [70000, 70000, 75000, 75000, 80000, 80000, 85000, 85000, 90000, 90000, 95000, 100000],
+                borderColor: colors.danger,
+                backgroundColor: 'transparent',
+                borderWidth: 2,
+                borderDash: [5, 5],
+                tension: 0.4,
+                fill: false
+            }]
+        };
+        
+        createMixedChart('#sales-overview', salesOverviewData, {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + (value/1000) + 'k';
+                        }
+                    }
+                }
+            }
+        });
+
+        // Sales Target Gauge Chart
+        const salesTargetData = {
+            labels: ['Achieved', 'Remaining'],
+            datasets: [{
+                data: [76.4, 23.6],
+                backgroundColor: [colors.primary, '#e9ecef'],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#sales-target', salesTargetData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            cutout: '75%'
+        });
+
+        // Sales by Region Chart
+        const salesByRegionData = {
+            labels: ['North America', 'Europe', 'Asia Pacific', 'Latin America', 'Middle East'],
+            datasets: [{
+                label: 'Q1',
+                data: [45000, 38000, 32000, 18000, 12000],
+                backgroundColor: colors.primary
+            }, {
+                label: 'Q2',
+                data: [48000, 42000, 35000, 20000, 15000],
+                backgroundColor: colors.success
+            }, {
+                label: 'Q3',
+                data: [52000, 45000, 38000, 22000, 17000],
+                backgroundColor: colors.warning
+            }, {
+                label: 'Q4',
+                data: [58000, 48000, 42000, 25000, 20000],
+                backgroundColor: colors.info
+            }]
+        };
+        
+        createBarChart('#sales-by-region', salesByRegionData, {
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                }
+            },
+            scales: {
+                x: {
+                    stacked: true
+                },
+                y: {
+                    stacked: true,
+                    beginAtZero: true,
+                    ticks: {
+                        callback: function(value) {
+                            return '$' + (value/1000) + 'k';
+                        }
+                    }
+                }
+            }
+        });
+
+        // Sales by Channel Chart
+        const salesByChannelData = {
+            labels: ['Online', 'Retail', 'Wholesale', 'Direct'],
+            datasets: [{
+                data: [45, 25, 20, 10],
+                backgroundColor: [colors.primary, colors.success, colors.warning, colors.info],
+                borderWidth: 0
+            }]
+        };
+        
+        createDoughnutChart('#sales-by-channel', salesByChannelData, {
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        });
+    });
+    </script>
+</body>
+</html>

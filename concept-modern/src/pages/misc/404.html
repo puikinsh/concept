@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" class="h-100">
+<head>
+    {{> layouts/head pageTitle="Page Not Found" }}
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .error-container::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        .error-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+        
+        .error-code {
+            font-size: 10rem;
+            font-weight: 700;
+            color: white;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+            margin: 0;
+            line-height: 1;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: rgba(255,255,255,0.1);
+            transform: translate(5px, 5px);
+            z-index: -1;
+        }
+        
+        .astronaut {
+            font-size: 6rem;
+            animation: bounce 3s infinite;
+            display: block;
+            margin: 2rem auto;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(-5deg); }
+            75% { transform: translateY(-10px) rotate(5deg); }
+        }
+        
+        .search-box {
+            max-width: 400px;
+            margin: 2rem auto;
+        }
+        
+        .quick-links {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 6rem;
+            }
+            .astronaut {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-content">
+            <div class="text-white">
+                <span class="astronaut">🚀</span>
+                <h1 class="error-code">404</h1>
+                <h2 class="h3 mb-3 text-white">Oops! Lost in Space</h2>
+                <p class="lead text-white-50 mb-4">
+                    The page you're looking for has drifted away into the digital cosmos.
+                    <br>Let's get you back on track!
+                </p>
+                
+                <div class="search-box">
+                    <form class="d-flex gap-2" onsubmit="return false;">
+                        <input type="text" class="form-control form-control-lg" placeholder="Search for pages...">
+                        <button type="submit" class="btn btn-light btn-lg">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="quick-links">
+                    <a href="/" class="btn btn-light btn-lg">
+                        <i class="fas fa-home me-2"></i>Go Home
+                    </a>
+                    <a href="#" onclick="history.back()" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-arrow-left me-2"></i>Go Back
+                    </a>
+                </div>
+                
+                <div class="mt-5 text-white-50">
+                    <p class="mb-2">Popular destinations:</p>
+                    <div class="d-flex gap-3 justify-content-center flex-wrap">
+                        <a href="/" class="text-white-50 text-decoration-none">Dashboard</a>
+                        <span class="text-white-50">•</span>
+                        <a href="/pages/charts/index.html" class="text-white-50 text-decoration-none">Charts</a>
+                        <span class="text-white-50">•</span>
+                        <a href="/pages/tables/data-tables.html" class="text-white-50 text-decoration-none">Tables</a>
+                        <span class="text-white-50">•</span>
+                        <a href="/pages/misc/login.html" class="text-white-50 text-decoration-none">Login</a>
+                    </div>
+                </div>
+                
+                <div class="mt-5">
+                    <a href="#" class="text-white-50 text-decoration-none small">
+                        <i class="fas fa-envelope me-1"></i>Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Fun Easter egg: Make astronaut fly when clicked
+        document.querySelector('.astronaut').addEventListener('click', function() {
+            this.style.animation = 'none';
+            setTimeout(() => {
+                this.style.animation = 'bounce 3s infinite, flyAway 1s ease-out';
+                setTimeout(() => {
+                    this.style.animation = 'bounce 3s infinite';
+                }, 1000);
+            }, 10);
+        });
+        
+        // Add flyAway animation dynamically
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes flyAway {
+                0% { transform: translateY(0) scale(1); opacity: 1; }
+                100% { transform: translateY(-200px) scale(0.5); opacity: 0; }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Search functionality (demo)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = this.querySelector('input').value;
+            if (searchTerm) {
+                alert(`Searching for: ${searchTerm}\n\nIn a real application, this would search your site!`);
+            }
+        });
+    </script>
+</body>
+</html>

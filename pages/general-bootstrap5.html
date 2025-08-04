@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/libs/css/style-modern.css">
+    <title>Concept - Bootstrap 5 Admin Dashboard Template</title>
+</head>
+
+<body>
+    <!-- Main Wrapper -->
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar" class="bg-dark text-white">
+            <div class="sidebar-header p-3">
+                <h3>Concept</h3>
+            </div>
+            
+            <ul class="list-unstyled components p-3">
+                <li class="mb-2">
+                    <a href="#dashboardSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white text-decoration-none">
+                        <i class="fas fa-tachometer-alt me-2"></i>Dashboard
+                    </a>
+                    <ul class="collapse list-unstyled" id="dashboardSubmenu">
+                        <li><a href="../index.html" class="text-white-50 text-decoration-none ps-4">E-Commerce</a></li>
+                        <li><a href="../dashboard-finance.html" class="text-white-50 text-decoration-none ps-4">Finance</a></li>
+                        <li><a href="../dashboard-sales.html" class="text-white-50 text-decoration-none ps-4">Sales</a></li>
+                        <li><a href="../dashboard-influencer.html" class="text-white-50 text-decoration-none ps-4">Influencer</a></li>
+                    </ul>
+                </li>
+                
+                <li class="mb-2">
+                    <a href="#uiSubmenu" data-bs-toggle="collapse" aria-expanded="true" class="dropdown-toggle text-white text-decoration-none">
+                        <i class="fas fa-layer-group me-2"></i>UI Elements
+                    </a>
+                    <ul class="collapse show list-unstyled" id="uiSubmenu">
+                        <li><a href="cards.html" class="text-white-50 text-decoration-none ps-4">Cards</a></li>
+                        <li><a href="general-bootstrap5.html" class="text-white text-decoration-none ps-4 active">General</a></li>
+                        <li><a href="carousel.html" class="text-white-50 text-decoration-none ps-4">Carousel</a></li>
+                        <li><a href="listgroup.html" class="text-white-50 text-decoration-none ps-4">List Group</a></li>
+                        <li><a href="typography.html" class="text-white-50 text-decoration-none ps-4">Typography</a></li>
+                        <li><a href="accordions.html" class="text-white-50 text-decoration-none ps-4">Accordions</a></li>
+                        <li><a href="tabs.html" class="text-white-50 text-decoration-none ps-4">Tabs</a></li>
+                    </ul>
+                </li>
+                
+                <li class="mb-2">
+                    <a href="#chartsSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white text-decoration-none">
+                        <i class="fas fa-chart-pie me-2"></i>Charts
+                    </a>
+                    <ul class="collapse list-unstyled" id="chartsSubmenu">
+                        <li><a href="chart-c3.html" class="text-white-50 text-decoration-none ps-4">C3 Charts</a></li>
+                        <li><a href="chart-chartist.html" class="text-white-50 text-decoration-none ps-4">Chartist Charts</a></li>
+                        <li><a href="chart-charts.html" class="text-white-50 text-decoration-none ps-4">Chart.js</a></li>
+                        <li><a href="chart-morris.html" class="text-white-50 text-decoration-none ps-4">Morris</a></li>
+                        <li><a href="chart-sparkline.html" class="text-white-50 text-decoration-none ps-4">Sparkline</a></li>
+                    </ul>
+                </li>
+                
+                <li class="mb-2">
+                    <a href="#formsSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white text-decoration-none">
+                        <i class="fab fa-wpforms me-2"></i>Forms
+                    </a>
+                    <ul class="collapse list-unstyled" id="formsSubmenu">
+                        <li><a href="form-elements.html" class="text-white-50 text-decoration-none ps-4">Form Elements</a></li>
+                        <li><a href="form-validation.html" class="text-white-50 text-decoration-none ps-4">Form Validation</a></li>
+                        <li><a href="multiselect.html" class="text-white-50 text-decoration-none ps-4">Multiselect</a></li>
+                    </ul>
+                </li>
+                
+                <li class="mb-2">
+                    <a href="#tablesSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-white text-decoration-none">
+                        <i class="fas fa-table me-2"></i>Tables
+                    </a>
+                    <ul class="collapse list-unstyled" id="tablesSubmenu">
+                        <li><a href="general-table.html" class="text-white-50 text-decoration-none ps-4">General Tables</a></li>
+                        <li><a href="data-tables.html" class="text-white-50 text-decoration-none ps-4">Data Tables</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper" class="w-100">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+                <div class="container-fluid">
+                    <button class="btn btn-primary" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <form class="d-flex">
+                                    <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
+                                </form>
+                            </li>
+                            
+                            <!-- Notifications Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-bell"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        4
+                                        <span class="visually-hidden">unread notifications</span>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown">
+                                    <li><h6 class="dropdown-header">Notifications</h6></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#">New message from John</a></li>
+                                    <li><a class="dropdown-item" href="#">Server restarted</a></li>
+                                    <li><a class="dropdown-item" href="#">Update available</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item text-center" href="#">View all notifications</a></li>
+                                </ul>
+                            </li>
+                            
+                            <!-- User Dropdown -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="../assets/images/avatar-1.jpg" alt="User Avatar" class="rounded-circle" width="32" height="32">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><h6 class="dropdown-header">John Abraham</h6></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Profile</a></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-10">
+                        <!-- Page Header -->
+                        <div class="page-header py-4">
+                            <h1 class="h2">General Elements</h1>
+                            <p class="lead">Bootstrap 5 UI components with modern best practices</p>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                    <li class="breadcrumb-item"><a href="#">UI Elements</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">General</li>
+                                </ol>
+                            </nav>
+                        </div>
+
+                        <!-- Overview Section -->
+                        <section class="mb-5" id="overview">
+                            <h2>Overview</h2>
+                            <p class="lead">This page showcases Bootstrap 5 components with modern best practices, improved accessibility, and vanilla JavaScript interactions.</p>
+                            <ul>
+                                <li>Modern Bootstrap 5 components without jQuery dependency</li>
+                                <li>Improved accessibility with proper ARIA attributes</li>
+                                <li>Responsive design with mobile-first approach</li>
+                                <li>Clean, semantic HTML structure</li>
+                            </ul>
+                        </section>
+
+                        <!-- Buttons Section -->
+                        <section class="mb-5" id="buttons">
+                            <h2 class="mb-4">Buttons</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Button Examples</h3>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="h6">Basic Buttons</h4>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <button type="button" class="btn btn-primary">Primary</button>
+                                        <button type="button" class="btn btn-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-success">Success</button>
+                                        <button type="button" class="btn btn-danger">Danger</button>
+                                        <button type="button" class="btn btn-warning">Warning</button>
+                                        <button type="button" class="btn btn-info">Info</button>
+                                        <button type="button" class="btn btn-light">Light</button>
+                                        <button type="button" class="btn btn-dark">Dark</button>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Outline Buttons</h4>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <button type="button" class="btn btn-outline-primary">Primary</button>
+                                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-outline-success">Success</button>
+                                        <button type="button" class="btn btn-outline-danger">Danger</button>
+                                        <button type="button" class="btn btn-outline-warning">Warning</button>
+                                        <button type="button" class="btn btn-outline-info">Info</button>
+                                        <button type="button" class="btn btn-outline-light">Light</button>
+                                        <button type="button" class="btn btn-outline-dark">Dark</button>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Button Sizes</h4>
+                                    <div class="d-flex align-items-center gap-2 mb-3">
+                                        <button type="button" class="btn btn-primary btn-lg">Large</button>
+                                        <button type="button" class="btn btn-primary">Default</button>
+                                        <button type="button" class="btn btn-primary btn-sm">Small</button>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Block Buttons</h4>
+                                    <div class="d-grid gap-2">
+                                        <button type="button" class="btn btn-primary">Block level button</button>
+                                        <button type="button" class="btn btn-secondary">Block level button</button>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Toggle Buttons</h4>
+                                    <div class="btn-group" role="group" aria-label="Toggle button group">
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                                        <label class="btn btn-outline-primary" for="btnradio1">Active</label>
+
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btnradio2">Radio</label>
+
+                                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                                        <label class="btn btn-outline-primary" for="btnradio3">Radio</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Colors Section -->
+                        <section class="mb-5" id="colors">
+                            <h2 class="mb-4">Colors</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Color Utilities</h3>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="h6">Background Colors</h4>
+                                    <div class="row g-3 mb-4">
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-primary text-white rounded">.bg-primary</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-secondary text-white rounded">.bg-secondary</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-success text-white rounded">.bg-success</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-danger text-white rounded">.bg-danger</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-warning text-dark rounded">.bg-warning</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-info text-dark rounded">.bg-info</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-light text-dark rounded">.bg-light</div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="p-3 bg-dark text-white rounded">.bg-dark</div>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="h6">Text Colors</h4>
+                                    <p class="text-primary">.text-primary</p>
+                                    <p class="text-secondary">.text-secondary</p>
+                                    <p class="text-success">.text-success</p>
+                                    <p class="text-danger">.text-danger</p>
+                                    <p class="text-warning">.text-warning</p>
+                                    <p class="text-info">.text-info</p>
+                                    <p class="text-light bg-dark">.text-light</p>
+                                    <p class="text-dark">.text-dark</p>
+                                    <p class="text-muted">.text-muted</p>
+
+                                    <h4 class="h6 mt-4">Borders</h4>
+                                    <div class="d-flex gap-3">
+                                        <div class="border p-3" style="width: 100px; height: 100px;">All borders</div>
+                                        <div class="border-top p-3" style="width: 100px; height: 100px;">Top border</div>
+                                        <div class="border-end p-3" style="width: 100px; height: 100px;">End border</div>
+                                        <div class="border-bottom p-3" style="width: 100px; height: 100px;">Bottom border</div>
+                                        <div class="border-start p-3" style="width: 100px; height: 100px;">Start border</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Alerts Section -->
+                        <section class="mb-5" id="alerts">
+                            <h2 class="mb-4">Alerts</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Alert Examples</h3>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="h6">Basic Alerts</h4>
+                                    <div class="alert alert-primary" role="alert">
+                                        A simple primary alert—check it out!
+                                    </div>
+                                    <div class="alert alert-secondary" role="alert">
+                                        A simple secondary alert—check it out!
+                                    </div>
+                                    <div class="alert alert-success" role="alert">
+                                        A simple success alert—check it out!
+                                    </div>
+                                    <div class="alert alert-danger" role="alert">
+                                        A simple danger alert—check it out!
+                                    </div>
+                                    <div class="alert alert-warning" role="alert">
+                                        A simple warning alert—check it out!
+                                    </div>
+                                    <div class="alert alert-info" role="alert">
+                                        A simple info alert—check it out!
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Alert with Additional Content</h4>
+                                    <div class="alert alert-success" role="alert">
+                                        <h4 class="alert-heading">Well done!</h4>
+                                        <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                        <hr>
+                                        <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Dismissible Alert</h4>
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Badges Section -->
+                        <section class="mb-5" id="badges">
+                            <h2 class="mb-4">Badges</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Badge Examples</h3>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="h6">Default Badges</h4>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge bg-primary">Primary</span>
+                                        <span class="badge bg-secondary">Secondary</span>
+                                        <span class="badge bg-success">Success</span>
+                                        <span class="badge bg-danger">Danger</span>
+                                        <span class="badge bg-warning text-dark">Warning</span>
+                                        <span class="badge bg-info text-dark">Info</span>
+                                        <span class="badge bg-light text-dark">Light</span>
+                                        <span class="badge bg-dark">Dark</span>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Pill Badges</h4>
+                                    <div class="d-flex flex-wrap gap-2 mb-3">
+                                        <span class="badge rounded-pill bg-primary">Primary</span>
+                                        <span class="badge rounded-pill bg-secondary">Secondary</span>
+                                        <span class="badge rounded-pill bg-success">Success</span>
+                                        <span class="badge rounded-pill bg-danger">Danger</span>
+                                        <span class="badge rounded-pill bg-warning text-dark">Warning</span>
+                                        <span class="badge rounded-pill bg-info text-dark">Info</span>
+                                        <span class="badge rounded-pill bg-light text-dark">Light</span>
+                                        <span class="badge rounded-pill bg-dark">Dark</span>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Badges in Buttons</h4>
+                                    <button type="button" class="btn btn-primary">
+                                        Notifications <span class="badge bg-light text-dark">4</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Tooltips & Popovers Section -->
+                        <section class="mb-5" id="tooltips">
+                            <h2 class="mb-4">Tooltips & Popovers</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Interactive Elements</h3>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="h6">Tooltips</h4>
+                                    <div class="d-flex gap-2 mb-4">
+                                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+                                            Top
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
+                                            Right
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+                                            Bottom
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip on left">
+                                            Left
+                                        </button>
+                                    </div>
+
+                                    <h4 class="h6">Popovers</h4>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="popover" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">
+                                            Click to toggle popover
+                                        </button>
+                                        <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                                            Popover on top
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Modal Section -->
+                        <section class="mb-5" id="modal">
+                            <h2 class="mb-4">Modals</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Modal Example</h3>
+                                </div>
+                                <div class="card-body">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                        Launch demo modal
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>This is a Bootstrap 5 modal with improved accessibility and modern styling.</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Pagination Section -->
+                        <section class="mb-5" id="pagination">
+                            <h2 class="mb-4">Pagination</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Pagination Examples</h3>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="h6">Default Pagination</h4>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+
+                                    <h4 class="h6 mt-4">Sizing</h4>
+                                    <nav aria-label="Large pagination">
+                                        <ul class="pagination pagination-lg">
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        </ul>
+                                    </nav>
+                                    <nav aria-label="Small pagination">
+                                        <ul class="pagination pagination-sm">
+                                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Images Section -->
+                        <section class="mb-5" id="images">
+                            <h2 class="mb-4">Images</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Image Classes</h3>
+                                </div>
+                                <div class="card-body">
+                                    <img src="https://via.placeholder.com/200x150" class="img-fluid me-3" alt="Responsive image">
+                                    <img src="https://via.placeholder.com/150" class="img-thumbnail me-3" alt="Thumbnail image">
+                                    <img src="https://via.placeholder.com/150" class="rounded-circle" alt="Circle image">
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Progress Bars Section -->
+                        <section class="mb-5" id="progress">
+                            <h2 class="mb-4">Progress Bars</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Progress Examples</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                    </div>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                                    </div>
+
+                                    <h4 class="h6 mt-4">Striped & Animated</h4>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Spinners Section -->
+                        <section class="mb-5" id="spinners">
+                            <h2 class="mb-4">Spinners</h2>
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="h5 mb-0">Loading Spinners</h3>
+                                </div>
+                                <div class="card-body">
+                                    <h4 class="h6">Border Spinner</h4>
+                                    <div class="d-flex gap-3 mb-4">
+                                        <div class="spinner-border text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-secondary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-success" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-border text-danger" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="h6">Growing Spinner</h4>
+                                    <div class="d-flex gap-3">
+                                        <div class="spinner-grow text-primary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-secondary" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-success" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                        <div class="spinner-grow text-danger" role="status">
+                                            <span class="visually-hidden">Loading...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Sidebar Navigation -->
+                    <div class="col-lg-2">
+                        <div class="sticky-top" style="top: 80px;">
+                            <nav class="nav flex-column">
+                                <a class="nav-link active" href="#overview">Overview</a>
+                                <a class="nav-link" href="#buttons">Buttons</a>
+                                <a class="nav-link" href="#colors">Colors</a>
+                                <a class="nav-link" href="#alerts">Alerts</a>
+                                <a class="nav-link" href="#badges">Badges</a>
+                                <a class="nav-link" href="#tooltips">Tooltips</a>
+                                <a class="nav-link" href="#modal">Modal</a>
+                                <a class="nav-link" href="#pagination">Pagination</a>
+                                <a class="nav-link" href="#images">Images</a>
+                                <a class="nav-link" href="#progress">Progress</a>
+                                <a class="nav-link" href="#spinners">Spinners</a>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="bg-light py-4 mt-5">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="mb-0">© 2024 Concept. All rights reserved. Modernized with Bootstrap 5</p>
+                        </div>
+                        <div class="col-md-6 text-md-end">
+                            <a href="#" class="text-decoration-none me-3">About</a>
+                            <a href="#" class="text-decoration-none me-3">Support</a>
+                            <a href="#" class="text-decoration-none">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+        // Initialize popovers
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        });
+
+        // Sidebar toggle
+        document.getElementById('sidebarToggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('active');
+            document.getElementById('page-content-wrapper').classList.toggle('active');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active navigation highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

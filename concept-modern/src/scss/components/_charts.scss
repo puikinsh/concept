@@ -1,0 +1,89 @@
+// Chart Component Styles
+
+// Sparkline containers
+.sparkline-container {
+  position: relative;
+  overflow: hidden;
+  
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 60px !important;
+  }
+  
+  &.sparkline-inline {
+    display: inline-block;
+    width: 200px;
+    height: 80px;
+    margin: 15px 0;
+    
+    canvas {
+      height: 80px !important;
+    }
+  }
+}
+
+// Chart containers
+.chart-container {
+  position: relative;
+  height: 300px;
+  
+  &.chart-container-sm {
+    height: 200px;
+  }
+  
+  &.chart-container-lg {
+    height: 400px;
+  }
+  
+  &.chart-container-xl {
+    height: 500px;
+  }
+}
+
+// Chart card styles
+.card {
+  .chart-wrapper {
+    padding: 20px;
+  }
+  
+  .chart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    
+    .chart-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0;
+    }
+    
+    .chart-actions {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
+
+// Legend styles
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 20px;
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      margin-right: 8px;
+    }
+  }
+}

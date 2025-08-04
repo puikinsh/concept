@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {{> layouts/head pageTitle="Influencer Dashboard" }}
+</head>
+<body>
+    <div class="dashboard-main-wrapper">
+        {{> layouts/header }}
+        {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-influencer" }}
+        
+        <div class="dashboard-wrapper">
+            <div class="dashboard-content">
+                <div class="container-fluid">
+                    <!-- Page Header -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="page-header mb-4">
+                                <h2 class="pageheader-title">Influencer Dashboard</h2>
+                                <p class="pageheader-text">Track your social media influence, engagement metrics, and campaign performance</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="/" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Influencer</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Influencer Profile Card -->
+                    <div class="row mb-4">
+                        <div class="col-12">
+                            <div class="card influencer-profile-card">
+                                <div class="card-body p-0">
+                                    <!-- Cover Image -->
+                                    <div class="profile-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px;"></div>
+                                    
+                                    <!-- Profile Info -->
+                                    <div class="profile-info px-4 pb-4">
+                                        <div class="d-flex align-items-end" style="margin-top: -50px;">
+                                            <img src="/assets/images/avatar-1.jpg" alt="Profile" class="rounded-circle border border-4 border-white" style="width: 120px; height: 120px;">
+                                            <div class="ms-4 mb-3">
+                                                <h3 class="mb-1">Henry Barbara</h3>
+                                                <p class="text-muted mb-2">@henrybarbara • Fitness & Lifestyle Influencer</p>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="rating-star me-3">
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <i class="fas fa-star text-warning"></i>
+                                                        <span class="ms-2 text-muted">(4.9/5.0)</span>
+                                                    </div>
+                                                    <span class="badge bg-success">Verified</span>
+                                                </div>
+                                            </div>
+                                            <div class="ms-auto mb-3">
+                                                <button class="btn btn-primary me-2"><i class="fas fa-envelope me-1"></i> Message</button>
+                                                <button class="btn btn-outline-primary"><i class="fas fa-user-plus me-1"></i> Follow</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Bio Section -->
+                                        <div class="row mt-4">
+                                            <div class="col-lg-8">
+                                                <p class="text-muted">
+                                                    Passionate fitness enthusiast and lifestyle blogger. Helping people achieve their health goals through 
+                                                    motivational content and practical tips. Brand collaborations: fitness@henrybarbara.com
+                                                </p>
+                                                <div class="d-flex flex-wrap gap-2 mt-3">
+                                                    <span class="badge bg-light text-dark">Fitness</span>
+                                                    <span class="badge bg-light text-dark">Healthy Living</span>
+                                                    <span class="badge bg-light text-dark">Nutrition</span>
+                                                    <span class="badge bg-light text-dark">Workout Tips</span>
+                                                    <span class="badge bg-light text-dark">Lifestyle</span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div class="info-list">
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <i class="fas fa-map-marker-alt text-muted me-2"></i>
+                                                        <span>Los Angeles, California</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <i class="fas fa-calendar text-muted me-2"></i>
+                                                        <span>Joined June 2018</span>
+                                                    </div>
+                                                    <div class="d-flex align-items-center">
+                                                        <i class="fas fa-link text-muted me-2"></i>
+                                                        <a href="#">www.henrybarbara.com</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Stats -->
+                    <div class="row mb-4">
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                            <div class="card social-stat-card twitter">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="social-icon">
+                                            <i class="fab fa-twitter"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h4 class="mb-0">13.2K</h4>
+                                            <small class="text-muted">Followers</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                            <div class="card social-stat-card instagram">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="social-icon">
+                                            <i class="fab fa-instagram"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h4 class="mb-0">84K</h4>
+                                            <small class="text-muted">Followers</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                            <div class="card social-stat-card facebook">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="social-icon">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h4 class="mb-0">92.9K</h4>
+                                            <small class="text-muted">Followers</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                            <div class="card social-stat-card youtube">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="social-icon">
+                                            <i class="fab fa-youtube"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h4 class="mb-0">45.6K</h4>
+                                            <small class="text-muted">Subscribers</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                            <div class="card social-stat-card tiktok">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="social-icon">
+                                            <i class="fab fa-tiktok"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h4 class="mb-0">120K</h4>
+                                            <small class="text-muted">Followers</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-4 col-sm-6 mb-3">
+                            <div class="card social-stat-card pinterest">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center">
+                                        <div class="social-icon">
+                                            <i class="fab fa-pinterest"></i>
+                                        </div>
+                                        <div class="ms-3">
+                                            <h4 class="mb-0">28.5K</h4>
+                                            <small class="text-muted">Followers</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Metrics -->
+                    <div class="row mb-4">
+                        <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                            <div class="card metric-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h6 class="text-muted mb-1">Total Reach</h6>
+                                            <h3 class="mb-0">2.4M</h3>
+                                        </div>
+                                        <div class="metric-icon bg-primary-light">
+                                            <i class="fas fa-users text-primary"></i>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-success-light text-success me-2">
+                                            <i class="fas fa-arrow-up me-1"></i>12.5%
+                                        </span>
+                                        <small class="text-muted">vs last month</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                            <div class="card metric-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h6 class="text-muted mb-1">Engagement Rate</h6>
+                                            <h3 class="mb-0">4.8%</h3>
+                                        </div>
+                                        <div class="metric-icon bg-success-light">
+                                            <i class="fas fa-heart text-success"></i>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-success-light text-success me-2">
+                                            <i class="fas fa-arrow-up me-1"></i>8.3%
+                                        </span>
+                                        <small class="text-muted">vs last month</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                            <div class="card metric-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h6 class="text-muted mb-1">Active Campaigns</h6>
+                                            <h3 class="mb-0">12</h3>
+                                        </div>
+                                        <div class="metric-icon bg-warning-light">
+                                            <i class="fas fa-bullhorn text-warning"></i>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-warning-light text-warning me-2">
+                                            <i class="fas fa-minus me-1"></i>0%
+                                        </span>
+                                        <small class="text-muted">no change</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 mb-3">
+                            <div class="card metric-card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <div>
+                                            <h6 class="text-muted mb-1">Monthly Earnings</h6>
+                                            <h3 class="mb-0">$24,850</h3>
+                                        </div>
+                                        <div class="metric-icon bg-info-light">
+                                            <i class="fas fa-dollar-sign text-info"></i>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <span class="badge bg-success-light text-success me-2">
+                                            <i class="fas fa-arrow-up me-1"></i>18.2%
+                                        </span>
+                                        <small class="text-muted">vs last month</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="row mb-4">
+                        <!-- Engagement Overview -->
+                        <div class="col-xl-8 col-lg-7 mb-3">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Engagement Overview</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div style="position: relative; height: 300px;">
+                                        <canvas id="engagementChart"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Audience Demographics -->
+                        <div class="col-xl-4 col-lg-5 mb-3">
+                            <div class="card h-100">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Audience Demographics</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div style="position: relative; height: 250px;">
+                                        <canvas id="demographicsChart"></canvas>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">Age 18-24</span>
+                                            <strong>32%</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">Age 25-34</span>
+                                            <strong>45%</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between mb-2">
+                                            <span class="text-muted">Age 35-44</span>
+                                            <strong>18%</strong>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <span class="text-muted">Age 45+</span>
+                                            <strong>5%</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Campaigns -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Recent Campaigns</h5>
+                                    <a href="#" class="btn btn-sm btn-primary">View All</a>
+                                </div>
+                                <div class="card-body p-0">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Campaign</th>
+                                                    <th>Brand</th>
+                                                    <th>Platform</th>
+                                                    <th>Status</th>
+                                                    <th>Reach</th>
+                                                    <th>Engagement</th>
+                                                    <th>Earnings</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="/assets/images/dribbble.png" alt="Campaign" width="40" class="rounded me-3">
+                                                            <div>
+                                                                <h6 class="mb-0">Summer Fitness Challenge</h6>
+                                                                <small class="text-muted">Started 3 days ago</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>FitGear Pro</td>
+                                                    <td>
+                                                        <div class="d-flex gap-1">
+                                                            <i class="fab fa-instagram text-instagram"></i>
+                                                            <i class="fab fa-tiktok text-dark"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td><span class="badge bg-success">Active</span></td>
+                                                    <td>125K</td>
+                                                    <td>6.2%</td>
+                                                    <td>$3,500</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-primary">View</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="/assets/images/github.png" alt="Campaign" width="40" class="rounded me-3">
+                                                            <div>
+                                                                <h6 class="mb-0">Healthy Meal Prep Series</h6>
+                                                                <small class="text-muted">Started 1 week ago</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>NutriBox</td>
+                                                    <td>
+                                                        <div class="d-flex gap-1">
+                                                            <i class="fab fa-youtube text-danger"></i>
+                                                            <i class="fab fa-instagram text-instagram"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td><span class="badge bg-success">Active</span></td>
+                                                    <td>89K</td>
+                                                    <td>7.8%</td>
+                                                    <td>$2,800</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-primary">View</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <img src="/assets/images/slack.png" alt="Campaign" width="40" class="rounded me-3">
+                                                            <div>
+                                                                <h6 class="mb-0">Morning Routine Tips</h6>
+                                                                <small class="text-muted">Completed 2 weeks ago</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>WellnessHub</td>
+                                                    <td>
+                                                        <div class="d-flex gap-1">
+                                                            <i class="fab fa-instagram text-instagram"></i>
+                                                            <i class="fab fa-facebook text-primary"></i>
+                                                        </div>
+                                                    </td>
+                                                    <td><span class="badge bg-secondary">Completed</span></td>
+                                                    <td>156K</td>
+                                                    <td>5.4%</td>
+                                                    <td>$4,200</td>
+                                                    <td>
+                                                        <button class="btn btn-sm btn-outline-primary">View</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{> layouts/footer }}
+        </div>
+    </div>
+    
+    <!-- Core JavaScript -->
+    {{> layouts/scripts }}
+    
+    <!-- Page Specific JS -->
+    <script type="module">
+        import Chart from 'chart.js/auto';
+
+        // Store chart instances
+        let engagementChart = null;
+        let demographicsChart = null;
+
+        // Function to initialize charts
+        function initializeCharts() {
+            // Destroy existing charts if they exist
+            if (engagementChart) {
+                engagementChart.destroy();
+            }
+            if (demographicsChart) {
+                demographicsChart.destroy();
+            }
+
+            // Engagement Overview Chart
+            const engagementCtx = document.getElementById('engagementChart');
+            if (engagementCtx) {
+                engagementChart = new Chart(engagementCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                        datasets: [{
+                            label: 'Instagram',
+                            data: [12500, 15800, 14200, 18900, 22100, 19800, 24500],
+                            borderColor: '#E4405F',
+                            backgroundColor: 'rgba(228, 64, 95, 0.1)',
+                            tension: 0.4
+                        }, {
+                            label: 'TikTok',
+                            data: [8900, 11200, 13500, 12800, 16700, 18900, 21000],
+                            borderColor: '#000000',
+                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                            tension: 0.4
+                        }, {
+                            label: 'YouTube',
+                            data: [5600, 6800, 7200, 8900, 9500, 11200, 12800],
+                            borderColor: '#FF0000',
+                            backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        animation: {
+                            duration: 750
+                        },
+                        interaction: {
+                            intersect: false,
+                            mode: 'index'
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    usePointStyle: true
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value) {
+                                        return value >= 1000 ? (value/1000) + 'K' : value;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Demographics Chart
+            const demographicsCtx = document.getElementById('demographicsChart');
+            if (demographicsCtx) {
+                demographicsChart = new Chart(demographicsCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Female', 'Male', 'Other'],
+                        datasets: [{
+                            data: [62, 35, 3],
+                            backgroundColor: [
+                                '#FF6B9D',
+                                '#4ECDC4',
+                                '#95E1D3'
+                            ],
+                            borderWidth: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        animation: {
+                            duration: 750
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 15,
+                                    usePointStyle: true
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // Initialize charts when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeCharts);
+        } else {
+            initializeCharts();
+        }
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', () => {
+            if (engagementChart) {
+                engagementChart.destroy();
+            }
+            if (demographicsChart) {
+                demographicsChart.destroy();
+            }
+        });
+    </script>
+</body>
+</html>
