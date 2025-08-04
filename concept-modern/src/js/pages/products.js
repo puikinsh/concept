@@ -1,3 +1,6 @@
+// Import Bootstrap
+import * as bootstrap from 'bootstrap';
+
 // E-commerce Products Page functionality
 export function initializeProducts() {
     // Initialize tooltips
@@ -220,7 +223,9 @@ function handleAddProduct() {
     
     // Close modal
     const modal = bootstrap.Modal.getInstance(document.getElementById('addProductModal'));
-    modal.hide();
+    if (modal) {
+        modal.hide();
+    }
     
     // Reset form
     document.getElementById('addProductForm').reset();

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test Page</title>
+    <link rel="stylesheet" href="/scss/main.scss">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Test Page</h1>
+        <p>This is a test page to verify Vite and styles are working.</p>
+        
+        <button class="btn btn-primary">Primary Button</button>
+        <button class="btn btn-secondary">Secondary Button</button>
+        
+        <div class="alert alert-info mt-3" role="alert">
+            If you can see this styled alert, Bootstrap CSS is working!
+        </div>
+        
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#testModal">
+            Test Modal (Tests Bootstrap JS)
+        </button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="testModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Test Modal</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        If this modal opens, Bootstrap JavaScript is working!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="module" src="/js/app.js"></script>
+</body>
+</html>

@@ -37,34 +37,50 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="row align-items-center">
-                                    <div class="col-xl-6 col-lg-6 col-md-12">
-                                        <div class="input-group">
+                                    <div class="col-xl-4 col-lg-4 col-md-12 mb-3 mb-lg-0">
+                                        <div class="input-group input-group-lg">
                                             <input type="text" class="form-control" placeholder="Search products..." id="productSearch">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search"></i>
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-12">
-                                        <div class="d-flex gap-2 justify-content-lg-end mt-3 mt-lg-0">
-                                            <select class="form-select" id="categoryFilter">
-                                                <option value="">All Categories</option>
-                                                <option value="electronics">Electronics</option>
-                                                <option value="fashion">Fashion</option>
-                                                <option value="home">Home & Garden</option>
-                                                <option value="sports">Sports & Outdoors</option>
-                                                <option value="books">Books</option>
-                                            </select>
-                                            <select class="form-select" id="sortBy">
-                                                <option value="featured">Featured</option>
-                                                <option value="price-low">Price: Low to High</option>
-                                                <option value="price-high">Price: High to Low</option>
-                                                <option value="newest">Newest First</option>
-                                                <option value="rating">Best Rated</option>
-                                            </select>
-                                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addProductModal">
-                                                <i class="fas fa-plus me-1"></i>Add Product
-                                            </button>
+                                    <div class="col-xl-8 col-lg-8 col-md-12">
+                                        <div class="row g-2">
+                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                                <select class="form-select" id="categoryFilter">
+                                                    <option value="">All Categories</option>
+                                                    <option value="electronics">Electronics</option>
+                                                    <option value="fashion">Fashion</option>
+                                                    <option value="home">Home & Garden</option>
+                                                    <option value="sports">Sports & Outdoors</option>
+                                                    <option value="books">Books</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                                <select class="form-select" id="sortBy">
+                                                    <option value="featured">Featured</option>
+                                                    <option value="price-low">Price: Low to High</option>
+                                                    <option value="price-high">Price: High to Low</option>
+                                                    <option value="newest">Newest First</option>
+                                                    <option value="rating">Best Rated</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                                <select class="form-select" id="priceFilter">
+                                                    <option value="">All Prices</option>
+                                                    <option value="0-50">Under $50</option>
+                                                    <option value="50-200">$50 - $200</option>
+                                                    <option value="200-500">$200 - $500</option>
+                                                    <option value="500-1000">$500 - $1,000</option>
+                                                    <option value="1000+">Over $1,000</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-xl-3 col-lg-12 col-md-6 col-sm-6">
+                                                <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                                                    <i class="fas fa-plus me-1"></i>Add Product
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -135,7 +151,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <img src="/assets/images/eco-product-img-1.png" alt="Product" class="img-fluid">
+                                <img src="https://placehold.co/400x400/5969ff/ffffff?text=iPhone+18+Pro+Max&font=montserrat" alt="iPhone 18 Pro Max" class="img-fluid">
                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">-20%</span>
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
@@ -179,7 +195,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <img src="/assets/images/eco-product-img-2.png" alt="Product" class="img-fluid">
+                                <img src="https://placehold.co/400x400/ff407b/ffffff?text=AirPods+Pro+3&font=montserrat" alt="AirPods Pro 3" class="img-fluid">
                                 <span class="badge bg-success position-absolute top-0 end-0 m-2">New</span>
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
@@ -222,7 +238,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <img src="/assets/images/eco-product-img-3.png" alt="Product" class="img-fluid">
+                                <img src="https://placehold.co/400x400/25d5f2/ffffff?text=Apple+Watch+Ultra+3&font=montserrat" alt="Apple Watch Ultra 3" class="img-fluid">
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
                                         <i class="fas fa-eye"></i>
@@ -264,7 +280,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <img src="/assets/images/eco-product-img-4.png" alt="Product" class="img-fluid">
+                                <img src="https://placehold.co/400x400/ffc750/ffffff?text=MacBook+Pro+M5&font=montserrat" alt="MacBook Pro M5" class="img-fluid">
                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">Hot</span>
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
@@ -307,9 +323,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
-                                    <i class="fas fa-laptop fa-3x text-muted"></i>
-                                </div>
+                                <img src="https://placehold.co/400x400/fd5190/ffffff?text=Dell+XPS+16&font=montserrat" alt="Dell XPS 16" class="img-fluid">
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
                                         <i class="fas fa-eye"></i>
@@ -350,9 +364,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
-                                    <i class="fas fa-tablet-alt fa-3x text-muted"></i>
-                                </div>
+                                <img src="https://placehold.co/400x400/28b62c/ffffff?text=iPad+Pro+M4&font=montserrat" alt="iPad Pro M4" class="img-fluid">
                                 <span class="badge bg-info position-absolute top-0 end-0 m-2">Popular</span>
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
@@ -394,9 +406,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
-                                    <i class="fas fa-camera fa-3x text-muted"></i>
-                                </div>
+                                <img src="https://placehold.co/400x400/158cba/ffffff?text=Canon+EOS+R5&font=montserrat" alt="Canon EOS R5" class="img-fluid">
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
                                         <i class="fas fa-eye"></i>
@@ -437,9 +447,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
-                                <div class="placeholder-image d-flex align-items-center justify-content-center bg-light" style="height: 200px;">
-                                    <i class="fas fa-gamepad fa-3x text-muted"></i>
-                                </div>
+                                <img src="https://placehold.co/400x400/ff6f69/ffffff?text=PlayStation+5+Pro&font=montserrat" alt="PlayStation 5 Pro" class="img-fluid">
                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">-15%</span>
                                 <div class="product-actions">
                                     <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">

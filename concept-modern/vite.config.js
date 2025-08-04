@@ -67,6 +67,7 @@ export default defineConfig({
         'chat': resolve(__dirname, 'src/pages/chat.html'),
         'inbox': resolve(__dirname, 'src/pages/inbox.html'),
         'influencer-finder': resolve(__dirname, 'src/pages/apps/influencer-finder.html'),
+        'influencer-profile': resolve(__dirname, 'src/pages/apps/influencer-profile.html'),
         // Settings
         'settings': resolve(__dirname, 'src/pages/settings.html'),
         // User Management

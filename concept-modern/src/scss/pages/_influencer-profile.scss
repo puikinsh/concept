@@ -1,0 +1,305 @@
+// Influencer Profile Page Styles
+
+// Profile Card
+.profile-card {
+    .user-avatar-xxl {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+    }
+    
+    .card-body {
+        h3 {
+            font-weight: 600;
+        }
+        
+        h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #495057;
+        }
+    }
+    
+    .rating-star {
+        font-size: 1.125rem;
+        
+        i {
+            margin-right: 2px;
+        }
+    }
+    
+    .social-channels {
+        li {
+            transition: all 0.2s ease;
+            
+            &:hover {
+                transform: translateX(5px);
+            }
+        }
+        
+        a {
+            color: #495057;
+            transition: color 0.2s ease;
+            
+            &:hover {
+                color: $primary;
+            }
+            
+            i {
+                transition: transform 0.2s ease;
+            }
+        }
+    }
+}
+
+// Profile tabs
+.nav-pills {
+    .nav-link {
+        color: #495057;
+        border: 1px solid #dee2e6;
+        margin: 0 0.25rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background-color: #f8f9fa;
+            transform: translateY(-2px);
+        }
+        
+        &.active {
+            background-color: $primary;
+            border-color: $primary;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba($primary, 0.15);
+        }
+        
+        i {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+// Campaign cards
+.campaign-card {
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+    
+    .campaign-logo {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+    }
+    
+    .campaign-dates {
+        font-size: 0.875rem;
+        color: #6c757d;
+        
+        i {
+            font-size: 0.75rem;
+        }
+    }
+    
+    .card-footer {
+        background-color: #f8f9fa;
+    }
+    
+    .campaign-metric {
+        padding: 0.5rem;
+        border-right: 1px solid #dee2e6;
+        
+        &:last-child {
+            border-right: 0;
+        }
+        
+        h5 {
+            color: $primary;
+            font-weight: 600;
+        }
+        
+        small {
+            font-size: 0.75rem;
+        }
+    }
+}
+
+// Pricing cards
+.pricing-card {
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+    
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    &.featured {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        
+        &:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+    }
+    
+    .card-header {
+        padding: 2rem 1rem;
+        
+        h4 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+    
+    .card-body {
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+    }
+    
+    .package-features {
+        li {
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
+            
+            i {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+// Reviews
+.review-block {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    
+    &:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .review-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #495057;
+        font-style: italic;
+    }
+    
+    .reviewer-info {
+        font-size: 0.875rem;
+        
+        strong {
+            color: #212529;
+        }
+    }
+}
+
+// Message form
+#messageForm {
+    .form-label {
+        font-weight: 500;
+        color: #495057;
+    }
+    
+    .form-control {
+        &:focus {
+            border-color: $primary;
+            box-shadow: 0 0 0 0.2rem rgba($primary, 0.15);
+        }
+    }
+    
+    textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+}
+
+// Section titles
+.section-block {
+    margin-bottom: 1.5rem;
+    
+    .section-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 0;
+    }
+}
+
+// Mobile responsive
+@media (max-width: 991.98px) {
+    .profile-card {
+        margin-bottom: 2rem;
+    }
+    
+    .nav-pills {
+        .nav-link {
+            margin: 0.25rem 0;
+            font-size: 0.875rem;
+        }
+    }
+    
+    .campaign-card {
+        .d-flex {
+            flex-direction: column;
+            text-align: center;
+            
+            .campaign-logo {
+                margin: 0 auto 1rem !important;
+            }
+        }
+    }
+    
+    .pricing-card {
+        &.featured {
+            transform: scale(1);
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .campaign-metric {
+        h5 {
+            font-size: 1rem;
+        }
+        
+        small {
+            font-size: 0.625rem;
+        }
+    }
+    
+    .nav-pills {
+        flex-direction: column;
+        
+        .nav-link {
+            width: 100%;
+            margin: 0.25rem 0;
+        }
+    }
+}
+
+// Animations
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-pane {
+    animation: fadeInUp 0.3s ease;
+}
+
+// Stats animation
+.card-body h1 {
+    transition: all 0.3s ease;
+}

@@ -1,6 +1,9 @@
 // Main Application JavaScript
 import * as bootstrap from 'bootstrap';
 
+// Make Bootstrap available globally
+window.bootstrap = bootstrap;
+
 // Import components
 import { initSidebar } from './components/sidebar.js';
 import { initTooltips } from './components/tooltips.js';
