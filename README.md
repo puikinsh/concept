@@ -1,211 +1,217 @@
-# Concept - Modern Bootstrap 5 Admin Dashboard Template
+# Concept - Bootstrap 5 Admin Dashboard
 
-**Concept** is a cutting-edge, responsive Bootstrap 5 admin dashboard template that combines elegant design with powerful functionality. Built with the latest web technologies including Bootstrap 5.3.7, Vite, and modern JavaScript, this template provides everything you need to create stunning admin interfaces, analytics dashboards, and web applications.
+A modern, responsive admin dashboard template built with Bootstrap 5, featuring a clean design and comprehensive functionality for web applications.
 
-## 🚀 Built with Latest Technologies
+## Overview
 
-### Screenshot
+Concept is a modern admin template built from the ground up with Bootstrap 5.3.7, Vite, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
 
-![Concept Bootstrap 5 Admin Dashboard](concept-bootstrap-5-admin-dashboard.png)
+## Features
 
-### Demo Site: [[Live Preview]](https://colorlib.com/polygon/concept/index.html)
+### Core Technologies
+- **Bootstrap 5.3.7** - Latest Bootstrap framework with modern components
+- **Vite 7.0.6** - Next-generation frontend tooling with lightning-fast HMR support
+- **Handlebars** - Template engine with reusable partials
+- **SCSS** - Advanced styling with variables and mixins
+- **ES6 Modules** - Modern JavaScript architecture
+- **jQuery-free** - Pure vanilla JavaScript implementation
 
-## ✨ Key Features
+### Dashboard Pages
+- **E-commerce Dashboard** - Main dashboard with revenue cards, charts, and recent orders
+- **Finance Dashboard** - Financial metrics, transaction charts, and portfolio overview
+- **Sales Dashboard** - Sales funnel, team performance, and revenue analytics
+- **Influencer Dashboard** - Social media metrics, engagement tracking, and campaign performance
 
-- **Bootstrap 5.3.7**: Latest stable version with all new components and utilities
-- **Vite Build System**: Lightning-fast HMR (Hot Module Replacement) for instant development feedback
-- **Pure JavaScript**: No jQuery dependency - modern vanilla JS for optimal performance
-- **SCSS Architecture**: Organized, maintainable styles with variables and mixins
-- **Handlebars Templating**: Reusable components and layouts for rapid development
-- **Mobile-First Design**: Fully responsive across all devices and screen sizes
-- **Modern UI Components**: Contemporary design with smooth animations and transitions
-- **Dark Mode Ready**: Structured for easy dark theme implementation
+### UI Components
+- **Cards** - Various card layouts with images, colors, borders, and lists
+- **Typography** - Complete typography showcase with Bootstrap 5 utilities
+- **Forms** - Form elements, validation, and multiselect components
+- **Charts** - Chart.js integration with line, bar, pie, and doughnut charts
+- **Tables** - Basic tables and DataTables integration with sorting/filtering
 
-## 📦 What's Included
+### Applications
+- **Calendar** - Full-featured calendar with FullCalendar integration
+- **User Management** - User list with DataTables, filters, and bulk actions
+- **Timeline** - Activity feed with filters and real-time updates
+- **Settings** - Comprehensive settings page with multiple sections
 
-### Multiple Dashboard Variants
-- **E-commerce Dashboard** - Track sales, orders, and customer metrics
-- **Finance Dashboard** - Monitor financial KPIs and transactions
-- **Sales Dashboard** - Analyze sales performance and trends
-- **Influencer Dashboard** - Social media analytics and engagement metrics
+### Additional Pages
+- **404 Error Page** - Modern error page with helpful navigation
+- **Blank Page Template** - Starting point for custom pages
 
-### Rich UI Components
-- Modern Cards with hover effects
-- Bootstrap 5 Buttons with custom styles
-- Interactive Progress Bars & Spinners
-- Tooltips, Popovers & Modals
-- Advanced Forms with validation
-- Responsive Tables with sorting
-- Custom Badges & Alerts
-
-### Built-in Applications
-- **Real-time Chat Interface** - WhatsApp-style messaging UI
-- **Calendar Application** - Event management system
-- **Email/Inbox** - Complete mail interface
-- **User Management** - User lists and profiles
-- **Activity Timeline** - Track system events
-- **Settings Panel** - Configuration interface
-
-### Data Visualization
-- Chart.js for modern charts
-- C3 & D3 for advanced visualizations
-- Morris Charts for simple graphs
-- Sparkline for inline charts
-- Real-time data updates
-
-## 🛠️ Technology Stack
-
-### Core
-- **Bootstrap 5.3.7** - Latest CSS framework
-- **Vite 7.0** - Next-gen frontend tooling
-- **Handlebars** - Powerful templating
-- **SCSS** - Advanced stylesheets
-- **ES6+ JavaScript** - Modern JS features
-
-### Included Libraries
-- FontAwesome 7 Icons
-- Chart.js 4.5
-- DataTables 2.3
-- FullCalendar 6
-- Tom Select
-- SortableJS
-- And 20+ more...
-
-## 🚀 Quick Start
+## Installation
 
 ### Prerequisites
-- Node.js 16+ and npm
+- Node.js 16.x or higher
+- npm 8.x or higher
 
-### Installation
+### Setup Instructions
 
-1. Clone the repository
+1. Clone or download the repository:
 ```bash
-git clone https://github.com/yourusername/concept-dashboard.git
-cd concept-dashboard
+git clone https://github.com/yourusername/concept.git
+cd concept
 ```
 
-2. Navigate to the project
-```bash
-cd concept-modern
-```
-
-3. Install dependencies
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-4. Start development server
+3. Start the development server:
 ```bash
 npm run dev
 ```
 
-5. Build for production
+4. Build for production:
 ```bash
 npm run build
 ```
 
-## 📁 Project Structure
+5. Preview production build:
+```bash
+npm run preview
+```
+
+## Project Structure
 
 ```
-concept-modern/
+concept/
 ├── src/
-│   ├── assets/          # Images and static files
+│   ├── assets/          # Static assets (images, fonts)
 │   ├── js/              # JavaScript modules
-│   │   ├── app.js       # Main application file
-│   │   ├── components/  # Reusable JS components
+│   │   ├── components/  # Reusable components
 │   │   └── pages/       # Page-specific scripts
-│   ├── scss/            # SCSS stylesheets
-│   │   ├── main.scss    # Main stylesheet
-│   │   ├── components/  # Component styles
-│   │   └── pages/       # Page-specific styles
 │   ├── pages/           # HTML pages
-│   ├── partials/        # Reusable Handlebars partials
+│   │   ├── dashboards/  # Dashboard pages
+│   │   ├── ui-elements/ # UI component pages
+│   │   └── misc/        # Miscellaneous pages
+│   ├── partials/        # Handlebars partials
+│   │   └── layouts/     # Layout components
+│   ├── scss/            # SCSS styles
+│   │   ├── components/  # Component styles
+│   │   ├── layouts/     # Layout styles
+│   │   └── pages/       # Page-specific styles
 │   └── index.html       # Main entry point
 ├── dist/                # Production build output
-├── vite.config.js       # Vite configuration
-└── package.json         # Project dependencies
+├── docs/                # Documentation
+├── scripts/             # Build and utility scripts
+├── package.json         # Project dependencies
+└── vite.config.js       # Vite configuration
 ```
 
-## 🎨 Discover Premium Admin Templates
+## Key Dependencies
 
-### [Colorlib](https://colorlib.com) - Premium Quality Templates & Resources
+### Core
+- `bootstrap@5.3.7` - UI framework
+- `@fortawesome/fontawesome-free@7.0.0` - Icon library
+- `vite@7.0.6` - Build tool
+- `sass@1.89.2` - CSS preprocessor
 
-Colorlib is one of the largest and most trusted template resources, offering an extensive collection of free and premium templates. They have amazing curated collections specifically for admin dashboards:
+### JavaScript Libraries
+- `chart.js@4.5.0` - Charts and graphs
+- `datatables.net-bs5@2.2.3` - Advanced tables
+- `@fullcalendar/core@6.1.15` - Calendar functionality
+- `tom-select@2.4.1` - Enhanced select boxes
 
-- 📊 **[Free Bootstrap Admin Dashboard Templates](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)** - 40+ carefully selected free admin templates
-- 💼 **[Bootstrap 5 Admin Templates](https://colorlib.com/wp/bootstrap-5-admin-dashboard/)** - Modern templates built with latest Bootstrap
-- 🎯 **[React Admin Templates](https://colorlib.com/wp/react-admin-dashboard-templates/)** - For React-based applications
-- 📱 **[Responsive Admin Templates](https://colorlib.com/wp/responsive-admin-dashboard-templates/)** - Mobile-first admin panels
-- ⚡ **[Free HTML5 Admin Templates](https://colorlib.com/wp/free-html5-admin-dashboard-templates/)** - Clean, modern designs
+### Build Tools
+- `vite-plugin-handlebars@2.0.0` - Handlebars support
+- `@vitejs/plugin-legacy@7.1.0` - Legacy browser support
 
-**Why Choose Colorlib:**
-- ✅ Trusted by millions of developers worldwide
-- ✅ High-quality, production-ready templates
-- ✅ Regular updates and new releases
-- ✅ Excellent documentation and support
-- ✅ SEO-optimized and performance-focused
-
-Visit [Colorlib.com](https://colorlib.com) to explore their amazing collection!
-
-### [DashboardPack](https://dashboardpack.com) - Premium Dashboard Templates
-
-DashboardPack specializes in high-quality, production-ready admin dashboard templates with a focus on modern design and exceptional developer experience:
-
-- 🎨 **Stunning Designs** - Carefully crafted UI/UX for the best user experience
-- 🔧 **Developer Friendly** - Clean code structure with detailed documentation
-- 📊 **Rich Components** - Advanced charts, tables, and data visualization tools
-- 🌓 **Dark Mode Included** - Built-in light/dark theme switching
-- 📱 **Fully Responsive** - Pixel-perfect on all devices
-- 🚀 **Regular Updates** - Stay current with latest design trends
-- 💎 **Premium Quality** - Professional-grade templates for serious projects
-
-Explore premium dashboards at [DashboardPack.com](https://dashboardpack.com)!
-
-## 🎯 Perfect For
-
-- SaaS Applications
-- E-commerce Platforms
-- Analytics Dashboards
-- CRM Systems
-- Project Management Tools
-- Financial Applications
-- Social Media Dashboards
-- IoT Monitoring Systems
-- Healthcare Management
-- Educational Platforms
-
-## 💻 Browser Support
+## Browser Support
 
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-- Opera (latest)
+- Chrome Mobile (latest)
+- Safari Mobile (latest)
 
-## 📚 Documentation & Support
+## Development Guidelines
 
-- Comprehensive documentation included
-- Code examples and snippets
-- Component library reference
-- Integration guides
-- Regular updates and bug fixes
+### Adding a New Page
 
-## 👥 Authors
+1. Create the HTML file in `src/pages/`
+2. Add the page to `vite.config.js` in the `rollupOptions.input` section
+3. Create corresponding JavaScript in `src/js/pages/`
+4. Create SCSS file in `src/scss/pages/` and import in `main.scss`
+5. Update sidebar navigation in `src/partials/layouts/sidebar.hbs`
 
-- [Colorlib](https://colorlib.com) - Original design and development
-- Open Source Community - Continuous improvements and updates
+### Component Structure
 
-## 📄 License
+JavaScript modules follow this pattern:
+```javascript
+export function initializeComponent() {
+    // Component logic
+}
 
-Concept is licensed under The MIT License (MIT). You can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the final products. But you always need to state that Colorlib is the original author of this template.
+// Auto-initialize on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeComponent);
+} else {
+    initializeComponent();
+}
+```
 
----
+### SCSS Organization
 
-<p align="center">
-  Made with ❤️ by <a href="https://colorlib.com">Colorlib</a>
-  <br>
-  <strong>Discover more amazing templates:</strong>
-  <br>
-  <a href="https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/">Free Admin Templates</a> • 
-  <a href="https://dashboardpack.com">Premium Dashboards</a>
-</p>
+- Use Bootstrap variables for consistency
+- Follow BEM naming convention where applicable
+- Keep component styles modular
+- Use mixins for repeated patterns
+
+## Performance Optimization
+
+- Vite's code splitting for optimal loading
+- Lazy loading for heavy components
+- Optimized images and assets
+- Minimal CSS with PurgeCSS in production
+- ES6 modules for tree shaking
+
+## Deployment
+
+The production build can be deployed to any static hosting service:
+
+1. Build the project: `npm run build`
+2. Deploy the `dist/` folder to your hosting service
+3. Configure your server to serve `index.html` for all routes
+
+### Recommended Hosting
+- Netlify
+- Vercel
+- GitHub Pages
+- AWS S3 + CloudFront
+- Any static file server
+
+## 📚 Documentation
+
+Comprehensive documentation is available in the `docs/` directory:
+
+- **[Getting Started](docs/getting-started/introduction.md)** - Introduction and overview
+- **[Quick Start Guide](docs/getting-started/quick-start.md)** - Get running in 5 minutes
+- **[Installation Guide](docs/getting-started/installation.md)** - Detailed setup instructions
+- **[Customization](docs/customization/)** - Theme and component customization
+- **[Components](docs/components/)** - UI component documentation
+- **[Deployment](docs/deployment/)** - Production deployment guides
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact support@yourcompany.com.
+
+## Credits
+
+- Original Concept template design
+- Bootstrap team for the excellent framework
+- All open-source library contributors

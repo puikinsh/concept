@@ -1,43 +1,49 @@
-# OS Files
-.DS_Store
-Thumbs.db
-
-# Development/Migration Files
-MIGRATION_STATUS.md
-MODERNIZATION_PLAN.md
-SIMPLIFIED_APPROACH.md
-CLAUDE.md
-TODO.md
-*.log
-
-# Old Template Files (to be removed after full migration)
-/pages/
-/assets/
-/documentation/
-/package.json
-/package-lock.json
-/vite.config.js
-/src/scss/main.scss
-concept-bootstrap-5-admin-dashboard.png
-
-# Keep only the modern version
-!/concept-modern/
-
-# Node modules
+# Dependencies
 node_modules/
+.pnp
+.pnp.js
 
-# Build files
+# Build output
 dist/
 build/
 
-# IDE files
-.vscode/
+# Development
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.log
+
+# Editor directories
 .idea/
+.vscode/
 *.swp
 *.swo
+*~
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Archive & Development Docs
+archive/
+DEVELOPMENT_STATUS.md
+DOCUMENTATION_PLAN*.md
+VITE_GUIDE.md
 
 # Temporary files
 *.tmp
 *.temp
 .cache/
-concept-modern/DEVELOPMENT_STATUS.md

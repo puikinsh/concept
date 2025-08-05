@@ -1,22 +1,43 @@
-// Custom variables
-$primary: #5969ff;
-$secondary: #6c757d;
-$success: #28a745;
-$info: #17a2b8;
-$warning: #ffc107;
-$danger: #dc3545;
-$light: #f8f9fa;
-$dark: #343a40;
+// Variables
+@use "variables" as *;
 
-// Import Bootstrap
-@import "~bootstrap/scss/bootstrap";
+// Font imports
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Import Bootstrap 5
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Import FontAwesome
-@import "~fontawesome/css/all.min.css";
+@import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
-// Custom styles
-@import "components/sidebar";
-@import "components/navbar";
+// Core styles
+@import "layouts/layout";
+@import "layouts/sidebar";
+@import "layouts/header";
+@import "layouts/footer";
+
+// Components
 @import "components/cards";
+@import "components/badges";
 @import "components/buttons";
-@import "components/general";
+@import "components/charts";
+@import "components/datatables";
+@import "components/multiselect";
+
+// Pages
+@import "pages/dashboard";
+@import "pages/influencer";
+@import "pages/influencer-finder";
+@import "pages/influencer-profile";
+@import "pages/calendar";
+@import "pages/chat";
+@import "pages/settings";
+@import "pages/users";
+@import "pages/timeline";
+@import "pages/ecommerce";
+@import "pages/products";
+@import "pages/product-single";
+@import "pages/checkout";
+
+// Utilities
+@import "utilities/scrollbar";
