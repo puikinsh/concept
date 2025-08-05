@@ -5,7 +5,7 @@ import legacy from '@vitejs/plugin-legacy';
 
 export default defineConfig({
   root: 'src',
-  base: './',
+  base: process.env.BASE_URL || './',
   publicDir: '../public',
   
   plugins: [
@@ -65,7 +65,9 @@ export default defineConfig({
         // Apps
         'calendar': resolve(__dirname, 'src/pages/calendar.html'),
         'chat': resolve(__dirname, 'src/pages/chat.html'),
-        'inbox': resolve(__dirname, 'src/pages/inbox.html'),
+        'inbox': resolve(__dirname, 'src/pages/email/inbox.html'),
+        'compose': resolve(__dirname, 'src/pages/email/compose.html'),
+        'email-details': resolve(__dirname, 'src/pages/email/details.html'),
         'influencer-finder': resolve(__dirname, 'src/pages/apps/influencer-finder.html'),
         'influencer-profile': resolve(__dirname, 'src/pages/apps/influencer-profile.html'),
         // Settings

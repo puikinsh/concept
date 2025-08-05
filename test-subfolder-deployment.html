@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subfolder Deployment Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .test-section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Concept Dashboard - Subfolder Deployment Test</h1>
+    
+    <div class="test-section">
+        <h2>Test Information</h2>
+        <p>This page simulates how the Concept dashboard would work when deployed to a subfolder like <code>https://colorlib.com/polygon/concept/</code></p>
+        <p>All links in the built files have been updated to use relative paths that work correctly in subfolder deployments.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>Path Structure</h2>
+        <ul>
+            <li><strong>Root pages (e.g., index.html):</strong> Use paths like <code>dashboard-finance.html</code>, <code>assets/css/style.css</code></li>
+            <li><strong>Nested pages (e.g., pages/email/inbox.html):</strong> Use paths like <code>../../index.html</code>, <code>../../assets/css/style.css</code></li>
+            <li><strong>Deep nested pages (e.g., pages/charts/index.html):</strong> Also use <code>../../</code> prefix for root-level resources</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Updated Features</h2>
+        <ul class="success">
+            <li>✓ All navigation links updated to use relative paths</li>
+            <li>✓ Asset paths (CSS, JS, images) use relative references</li>
+            <li>✓ Email pages (inbox, compose, details) properly integrated</li>
+            <li>✓ Vite configuration fixed to include all pages</li>
+            <li>✓ Build process generates flat structure for main pages</li>
+            <li>✓ Nested pages maintain their directory structure</li>
+        </ul>
+    </div>
+
+    <div class="test-section">
+        <h2>Test the Dashboard</h2>
+        <p>To test the dashboard locally with subfolder simulation:</p>
+        <ol>
+            <li>Run <code>npm run build</code> to build the project</li>
+            <li>Use a local server to serve the <code>dist</code> folder</li>
+            <li>Navigate to any page - all links should work correctly</li>
+        </ol>
+        <p><strong>Note:</strong> When deploying to https://colorlib.com/polygon/concept/, simply upload the contents of the <code>dist</code> folder to the <code>concept</code> directory.</p>
+    </div>
+
+    <div class="test-section">
+        <h2>Sample Pages</h2>
+        <p>Here are some key pages to test after deployment:</p>
+        <ul>
+            <li><a href="dist/index.html">Dashboard (E-commerce)</a></li>
+            <li><a href="dist/pages/email/inbox.html">Email Inbox</a></li>
+            <li><a href="dist/pages/dashboards/finance.html">Finance Dashboard</a></li>
+            <li><a href="dist/pages/ui-elements/cards.html">UI Cards</a></li>
+            <li><a href="dist/pages/ecommerce/products.html">Products Page</a></li>
+        </ul>
+    </div>
+</body>
+</html>
