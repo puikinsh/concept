@@ -2,6 +2,16 @@
 
 A modern, responsive admin dashboard template built with Bootstrap 5, featuring a clean design and comprehensive functionality for web applications.
 
+![Concept Bootstrap 5 Admin Dashboard](concept-bootstrap-5-admin-dashboard.png)
+
+## 🌟 Live Demo
+
+Experience the full power of Concept dashboard:
+
+**[View Live Demo →](https://colorlib.com/polygon/concept/index.html)**
+
+Explore all features, pages, and components in action. Perfect for evaluating the template before implementation.
+
 ## Overview
 
 Concept is a modern admin template built from the ground up with Bootstrap 5.3.7, Vite, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
@@ -217,6 +227,25 @@ See the [Complete Deployment Guide](docs/deployment/complete-guide.md) for detai
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 🔗 Related Resources
+
+### Premium Dashboard Collections
+
+**[DashboardPack.com](https://dashboardpack.com/)** - Premium dashboard templates and UI kits marketplace featuring Bootstrap, React, Vue, and Angular admin templates with live demos and multiple licensing options.
+
+### Colorlib Admin Dashboard Articles
+
+**[Colorlib.com](https://colorlib.com/)** - Free web design resources and template collections:
+
+- **[42 Free Bootstrap Admin Dashboard Templates 2025](https://colorlib.com/wp/free-bootstrap-admin-dashboard-templates/)** - Comprehensive collection including AdminLTE, Adminator, ArchitectUI, and more
+- **[42 Free HTML5 Admin Dashboard Templates 2025](https://colorlib.com/wp/free-html5-admin-dashboard-templates/)** - HTML5-based admin templates with responsive designs and Bootstrap framework
+
+### Popular Template Categories
+- **Finance & Analytics Dashboards** - Templates for financial data and reporting
+- **E-commerce Admin Panels** - Store management and inventory solutions  
+- **CRM & Sales Dashboards** - Customer relationship management interfaces
+- **Project Management** - Team collaboration and task tracking templates
 
 ## Support
 

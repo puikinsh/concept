@@ -5,7 +5,7 @@ import legacy from '@vitejs/plugin-legacy';
 
 export default defineConfig({
   root: 'src',
-  base: process.env.BASE_URL || './',
+  base: './',
   publicDir: '../public',
   
   plugins: [
@@ -18,7 +18,7 @@ export default defineConfig({
         lt: (a, b) => a < b,
         gt: (a, b) => a > b,
         lte: (a, b) => a <= b,
-        gte: (a, b) => a >= b,
+        gte: (a, b) => a >= b
       },
       context: (pagePath) => {
         // Add global context data
