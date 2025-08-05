@@ -189,10 +189,22 @@ Comprehensive documentation is available in the `docs/` directory:
 
 - **[Getting Started](docs/getting-started/introduction.md)** - Introduction and overview
 - **[Quick Start Guide](docs/getting-started/quick-start.md)** - Get running in 5 minutes
-- **[Installation Guide](docs/getting-started/installation.md)** - Detailed setup instructions
+- **[Visual Installation Guide](docs/getting-started/visual-guide.md)** - Step-by-step with screenshots
+- **[Dashboard Overview](docs/dashboard-overview.md)** - All dashboard variants explained
+- **[Component Showcase](docs/components/showcase.md)** - Visual component examples
+- **[Deployment Guide](docs/deployment/complete-guide.md)** - Deploy to any platform
 - **[Customization](docs/customization/)** - Theme and component customization
-- **[Components](docs/components/)** - UI component documentation
-- **[Deployment](docs/deployment/)** - Production deployment guides
+
+### 🚀 Important: Deployment Fix Applied
+
+Navigation links have been updated to work with static hosting. The template now deploys correctly to:
+- Netlify (with `_redirects` file included)
+- Vercel
+- GitHub Pages  
+- Traditional web servers
+- Docker containers
+
+See the [Complete Deployment Guide](docs/deployment/complete-guide.md) for details.
 
 ## Contributing
 

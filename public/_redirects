@@ -1,0 +1,58 @@
+# Netlify Redirects for Concept Dashboard
+# This file maps the old navigation paths to the actual build output
+
+# Dashboard pages
+/pages/dashboards/finance.html      /dashboard-finance.html      200
+/pages/dashboards/sales.html        /dashboard-sales.html        200
+/pages/dashboards/influencer.html   /dashboard-influencer.html   200
+
+# UI Elements
+/pages/ui-elements/cards.html       /ui-cards.html              200
+/pages/ui-elements/general.html     /ui-general.html            200
+/pages/ui-elements/typography.html  /ui-typography.html         200
+
+# Forms
+/pages/form-elements.html           /form-elements.html         200
+/pages/form-validation.html         /form-validation.html       200
+/pages/multiselect.html             /multiselect.html           200
+
+# Charts
+/pages/charts/index.html            /charts.html                200
+
+# Tables
+/pages/tables/general-tables.html   /general-tables.html        200
+/pages/tables/data-tables.html      /data-tables.html           200
+
+# E-commerce
+/pages/ecommerce/products.html      /products.html              200
+/pages/ecommerce/product-single.html /product-single.html       200
+/pages/ecommerce/checkout.html      /checkout.html              200
+
+# Apps
+/pages/apps/influencer-finder.html  /influencer-finder.html     200
+/pages/apps/influencer-profile.html /influencer-profile.html    200
+
+# Other pages
+/pages/calendar.html                /calendar.html              200
+/pages/chat.html                    /chat.html                  200
+/pages/inbox.html                   /inbox.html                 200
+/pages/users.html                   /users.html                 200
+/pages/timeline.html                /timeline.html              200
+/pages/settings.html                /settings.html              200
+
+# Auth pages
+/pages/auth/login.html              /login.html                 200
+/pages/auth/signup.html             /signup.html                200
+/pages/auth/forgot-password.html    /forgot-password.html       200
+
+# Misc pages
+/pages/misc/blank-page.html         /blank-page.html            200
+/pages/misc/404.html                /404.html                   200
+
+# Email pages (if they exist in build)
+/pages/email/inbox.html             /inbox.html                 200
+/pages/email/compose.html           /compose.html               200
+/pages/email/details.html           /details.html               200
+
+# Catch all - for any other routes, serve index.html (for SPA behavior if needed)
+/*                                  /index.html                 200
