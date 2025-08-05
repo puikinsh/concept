@@ -182,6 +182,17 @@ The production build can be deployed to any static hosting service:
 - AWS S3 + CloudFront
 - Any static file server
 
+## 📚 Documentation
+
+Comprehensive documentation is available in the `docs/` directory:
+
+- **[Getting Started](docs/getting-started/introduction.md)** - Introduction and overview
+- **[Quick Start Guide](docs/getting-started/quick-start.md)** - Get running in 5 minutes
+- **[Installation Guide](docs/getting-started/installation.md)** - Detailed setup instructions
+- **[Customization](docs/customization/)** - Theme and component customization
+- **[Components](docs/components/)** - UI component documentation
+- **[Deployment](docs/deployment/)** - Production deployment guides
+
 ## Contributing
 
 1. Fork the repository
