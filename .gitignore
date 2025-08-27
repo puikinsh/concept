@@ -48,3 +48,7 @@ VITE_GUIDE.md
 *.temp
 .cache/
 CLAUDE.md
+GITHUB_RELEASE.md
+.gitignore
+RELEASE_NOTES.md
+GIT_COMMANDS.md

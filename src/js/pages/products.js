@@ -241,8 +241,8 @@ function handleAddProduct() {
 // Show quick view
 function showQuickView(productCard) {
   const productName = productCard.querySelector('.card-title a').textContent;
-  const price = productCard.querySelector('.h5.text-primary').textContent;
-  const description = productCard.querySelector('.text-muted.small').textContent;
+  const _price = productCard.querySelector('.h5.text-primary').textContent;
+  const _description = productCard.querySelector('.text-muted.small').textContent;
 
   // In a real app, this would open a modal with full product details
   logger.info('Quick view for:', productName);

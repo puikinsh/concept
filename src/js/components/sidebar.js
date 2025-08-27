@@ -39,7 +39,7 @@ export function initSidebar() {
   // Handle sidebar menu clicks
   const sidebarLinks = document.querySelectorAll('.nav-left-sidebar .nav-link');
   sidebarLinks.forEach((link) => {
-    link.addEventListener('click', function (e) {
+    link.addEventListener('click', function (_e) {
       // Don't prevent default for actual navigation links
       if (!this.hasAttribute('data-bs-toggle')) {
         // This is a navigation link, not a dropdown toggle
@@ -72,7 +72,7 @@ export function initSidebar() {
   // Close sidebar when clicking on a link (mobile only)
   // But NOT when clicking on dropdown toggles
   sidebarLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', (_e) => {
       // Don't close if this is a dropdown toggle
       if (
         link.hasAttribute('data-bs-toggle') &&

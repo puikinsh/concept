@@ -44,7 +44,7 @@ export function initializeMultiselect() {
   new TomSelect('#select-tags-predefined', {
     plugins: ['remove_button'],
     create: true,
-    createFilter: function (input) {
+    createFilter(input) {
       return input.length >= 2;
     }
   });
@@ -74,7 +74,7 @@ export function initializeMultiselect() {
   new TomSelect('#select-emails', {
     persist: false,
     createOnBlur: true,
-    create: function (input) {
+    create(input) {
       // Basic email validation
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (emailRegex.test(input)) {
@@ -92,16 +92,16 @@ export function initializeMultiselect() {
   new TomSelect('#select-users', {
     plugins: ['remove_button'],
     render: {
-      option: function (data, escape) {
+      option(data, escape) {
         return (
           `<div>` +
-                    `<span class="name">${  escape(data.text)  }</span>` +
-                    `<span class="email text-muted ms-2">${  escape(data.email)  }</span>` +
-                `</div>`
+          `<span class="name">${escape(data.text)}</span>` +
+          `<span class="email text-muted ms-2">${escape(data.email)}</span>` +
+          `</div>`
         );
       },
-      item: function (data, escape) {
-        return `<div>${  escape(data.text)  }</div>`;
+      item(data, escape) {
+        return `<div>${escape(data.text)}</div>`;
       }
     }
   });
@@ -110,8 +110,8 @@ export function initializeMultiselect() {
   new TomSelect('#select-custom', {
     plugins: ['remove_button', 'optgroup_columns'],
     render: {
-      optgroup_header: function (data, escape) {
-        return `<div class="optgroup-header fw-bold text-primary">${  escape(data.label)  }</div>`;
+      optgroup_header(data, escape) {
+        return `<div class="optgroup-header fw-bold text-primary">${escape(data.label)}</div>`;
       }
     }
   });
@@ -135,20 +135,20 @@ export function initializeMultiselect() {
       { value: 'cyan', text: 'Cyan', color: '#0dcaf0' }
     ],
     render: {
-      option: function (data, escape) {
+      option(data, escape) {
         return (
           `<div class="d-flex align-items-center">` +
-                    `<span class="color-box me-2" style="background-color: ${  data.color  }; width: 20px; height: 20px; display: inline-block; border-radius: 3px;"></span>` +
-                    `<span>${  escape(data.text)  }</span>` +
-                `</div>`
+          `<span class="color-box me-2" style="background-color: ${data.color}; width: 20px; height: 20px; display: inline-block; border-radius: 3px;"></span>` +
+          `<span>${escape(data.text)}</span>` +
+          `</div>`
         );
       },
-      item: function (data, escape) {
+      item(data, escape) {
         return (
           `<div class="d-flex align-items-center">` +
-                    `<span class="color-box me-2" style="background-color: ${  data.color  }; width: 16px; height: 16px; display: inline-block; border-radius: 2px;"></span>` +
-                    `<span>${  escape(data.text)  }</span>` +
-                `</div>`;
+          `<span class="color-box me-2" style="background-color: ${data.color}; width: 16px; height: 16px; display: inline-block; border-radius: 2px;"></span>` +
+          `<span>${escape(data.text)}</span>` +
+          `</div>`
         );
       }
     }

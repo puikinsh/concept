@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const conversations = {};
 
   // Initialize conversations for each contact
-  chatContacts.forEach((contact, index) => {
+  chatContacts.forEach((contact, _index) => {
     const contactId = contact.getAttribute('data-contact-id');
     conversations[contactId] = {
       messages: [],

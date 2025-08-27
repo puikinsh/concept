@@ -253,7 +253,7 @@ export function initializeTimeline() {
     ];
 
     const loadMoreBtn = document.getElementById('loadMore');
-    const timeline = document.getElementById('timeline');
+    const _timeline = document.getElementById('timeline');
 
     activities.forEach((activity) => {
       const activityHtml = createActivityHtml(activity);
