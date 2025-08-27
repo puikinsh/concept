@@ -1,5 +1,6 @@
 // Main Application JavaScript
 import * as bootstrap from 'bootstrap';
+import { logger } from './utils/logger.js';
 
 // Make Bootstrap available globally
 window.bootstrap = bootstrap;
@@ -16,17 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize Bootstrap components
   initTooltips();
   initPopovers();
-  
+
   // Initialize custom components
   initSidebar();
   initFormValidation();
   initAllDataTables();
-  
+
   // Initialize dropdowns
   const dropdownElementList = document.querySelectorAll('[data-bs-toggle="dropdown"]');
-  dropdownElementList.forEach(dropdown => {
+  dropdownElementList.forEach((dropdown) => {
     new bootstrap.Dropdown(dropdown);
   });
-  
-  console.log('Concept Dashboard initialized');
+
+  logger.info('Concept Dashboard initialized');
 });

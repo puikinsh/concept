@@ -1,5 +1,6 @@
 // DataTables Component with Bootstrap 5 styling
 import DataTable from 'datatables.net-bs5';
+import { logger } from '../utils/logger.js';
 import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css';
 
 // Default DataTables configuration
@@ -17,9 +18,10 @@ const defaultConfig = {
       previous: '<i class="fas fa-angle-left"></i>'
     }
   },
-  dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>' +
-       '<"row"<"col-sm-12"tr>>' +
-       '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>'
+  dom:
+    '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>' +
+    '<"row"<"col-sm-12"tr>>' +
+    '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>'
 };
 
 /**
@@ -30,22 +32,22 @@ const defaultConfig = {
  */
 export function initDataTable(selector, customConfig = {}) {
   const config = { ...defaultConfig, ...customConfig };
-  
+
   // Initialize DataTable
   const table = new DataTable(selector, config);
-  
+
   // Add custom styling to search input
   const searchInput = document.querySelector(`${selector}_wrapper .dataTables_filter input`);
   if (searchInput) {
     searchInput.classList.add('form-control', 'form-control-sm');
   }
-  
+
   // Add custom styling to length select
   const lengthSelect = document.querySelector(`${selector}_wrapper .dataTables_length select`);
   if (lengthSelect) {
     lengthSelect.classList.add('form-select', 'form-select-sm');
   }
-  
+
   return table;
 }
 
@@ -55,41 +57,41 @@ export function initDataTable(selector, customConfig = {}) {
 export function initAllDataTables() {
   const tables = document.querySelectorAll('[data-datatable]');
   const instances = [];
-  
-  tables.forEach(table => {
+
+  tables.forEach((table) => {
     // Get custom config from data attributes
     const customConfig = {};
-    
+
     // Check for common data attributes
     if (table.dataset.pageLength) {
       customConfig.pageLength = parseInt(table.dataset.pageLength);
     }
-    
+
     if (table.dataset.order) {
       try {
         customConfig.order = JSON.parse(table.dataset.order);
       } catch (e) {
-        console.error('Invalid order configuration:', e);
+        logger.error('Invalid order configuration:', e);
       }
     }
-    
+
     if (table.dataset.searching !== undefined) {
       customConfig.searching = table.dataset.searching === 'true';
     }
-    
+
     if (table.dataset.paging !== undefined) {
       customConfig.paging = table.dataset.paging === 'true';
     }
-    
+
     if (table.dataset.info !== undefined) {
       customConfig.info = table.dataset.info === 'true';
     }
-    
+
     // Initialize the table
     const instance = initDataTable(table, customConfig);
     instances.push({ element: table, instance });
   });
-  
+
   return instances;
 }
 
@@ -98,10 +100,8 @@ export function initAllDataTables() {
  * @param {string|HTMLElement} selector - Table selector or element
  */
 export function destroyDataTable(selector) {
-  const table = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const table = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (table && DataTable.isDataTable(table)) {
     new DataTable(table).destroy();
   }
@@ -112,10 +112,8 @@ export function destroyDataTable(selector) {
  * @param {string|HTMLElement} selector - Table selector or element
  */
 export function reloadDataTable(selector) {
-  const table = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const table = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (table && DataTable.isDataTable(table)) {
     new DataTable(table).ajax.reload();
   }

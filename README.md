@@ -83,6 +83,18 @@ npm run build
 npm run preview
 ```
 
+### Code Quality Scripts
+
+```bash
+# Lint JavaScript files
+npm run lint        # Auto-fix issues
+npm run lint:check  # Check only
+
+# Format code with Prettier
+npm run format       # Auto-format files
+npm run format:check # Check formatting
+```
+
 ## Project Structure
 
 ```

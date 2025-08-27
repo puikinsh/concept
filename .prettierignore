@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Production build
+dist/
+build/
+
+# Vendor files
+*.min.js
+*.min.css
+vendor/
+
+# Generated files
+*.generated.*
+
+# Archives and backups
+archive/
+*.backup
+*.bak
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation assets
+docs/**/*.png
+docs/**/*.jpg
+docs/**/*.gif
+docs/**/*.svg
+
+# Fonts
+*.woff
+*.woff2
+*.eot
+*.ttf
+*.otf
+
+# Images
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+
+# Third-party libraries
+src/assets/js/
+public/

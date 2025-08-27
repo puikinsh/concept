@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.min.js
+*.min.css
+
+# Vendor/Third-party files
+vendor/
+src/assets/js/
+public/
+
+# Generated files
+*.generated.*
+
+# Archives
+archive/
+
+# Config files that don't need linting
+vite.config.js
+scripts/
+
+# Test files (if any)
+*.test.js
+*.spec.js
+
+# Documentation
+docs/

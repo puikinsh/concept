@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "vite build && node scripts/fix-paths-universal.js",
     "preview": "vite preview",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "lint": "eslint 'src/**/*.js' --fix",
+    "format": "prettier --write 'src/**/*.{js,html,hbs,scss,css,json}'",
+    "lint:check": "eslint 'src/**/*.js'",
+    "format:check": "prettier --check 'src/**/*.{js,html,hbs,scss,css,json}'"
   },
   "devDependencies": {
     "@eslint/js": "^9.34.0",

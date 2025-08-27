@@ -61,7 +61,11 @@ export const navigation = [
     icon: 'fa-shopping-cart',
     submenu: [
       { id: 'products', label: 'Products', href: '/pages/ecommerce/products.html' },
-      { id: 'product-single', label: 'Product Details', href: '/pages/ecommerce/product-single.html' },
+      {
+        id: 'product-single',
+        label: 'Product Details',
+        href: '/pages/ecommerce/product-single.html'
+      },
       { id: 'checkout', label: 'Checkout', href: '/pages/ecommerce/checkout.html' }
     ]
   },
@@ -70,8 +74,16 @@ export const navigation = [
     label: 'Influencer',
     icon: 'fa-users',
     submenu: [
-      { id: 'influencer-finder', label: 'Influencer Finder', href: '/pages/apps/influencer-finder.html' },
-      { id: 'influencer-profile', label: 'Influencer Profile', href: '/pages/apps/influencer-profile.html' }
+      {
+        id: 'influencer-finder',
+        label: 'Influencer Finder',
+        href: '/pages/apps/influencer-finder.html'
+      },
+      {
+        id: 'influencer-profile',
+        label: 'Influencer Profile',
+        href: '/pages/apps/influencer-profile.html'
+      }
     ]
   },
   {

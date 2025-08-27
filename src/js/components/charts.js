@@ -1,5 +1,6 @@
 // Chart.js Component - Unified chart library for all chart types
 import Chart from 'chart.js/auto';
+import { logger } from '../utils/logger.js';
 
 // Chart color palette
 const colors = {
@@ -82,29 +83,29 @@ const defaultOptions = {
  * @returns {Chart} Chart instance
  */
 export function createSparkline(selector, data, options = {}) {
-  const canvas = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (!canvas) {
-    console.error('Canvas element not found:', selector);
+    logger.error('Canvas element not found:', selector);
     return null;
   }
-  
+
   const sparklineOptions = {
     type: 'line',
     data: {
       labels: new Array(data.length).fill(''),
-      datasets: [{
-        data: data,
-        borderColor: options.color || colors.primary,
-        backgroundColor: `${options.color || colors.primary}08`,
-        borderWidth: 1.5,
-        pointRadius: 0,
-        pointHoverRadius: 0,
-        tension: 0.4,
-        fill: true
-      }]
+      datasets: [
+        {
+          data,
+          borderColor: options.color || colors.primary,
+          backgroundColor: `${options.color || colors.primary}08`,
+          borderWidth: 1.5,
+          pointRadius: 0,
+          pointHoverRadius: 0,
+          tension: 0.4,
+          fill: true
+        }
+      ]
     },
     options: {
       responsive: true,
@@ -120,28 +121,28 @@ export function createSparkline(selector, data, options = {}) {
         intersect: false
       },
       scales: {
-        x: { 
+        x: {
           display: false,
           grid: { display: false }
         },
-        y: { 
+        y: {
           display: false,
           grid: { display: false },
           beginAtZero: false,
-          min: Math.min(...data) * 0.8,  // Slightly more room at bottom
-          max: Math.max(...data) * 1.1   // Less padding at top
+          min: Math.min(...data) * 0.8, // Slightly more room at bottom
+          max: Math.max(...data) * 1.1 // Less padding at top
         }
       },
       elements: {
         point: { radius: 0 },
-        line: { 
+        line: {
           borderWidth: options.lineWidth || 2,
           tension: options.tension || 0.4
         }
       },
       layout: {
         padding: {
-          top: 5,      // Add small padding to prevent clipping
+          top: 5, // Add small padding to prevent clipping
           right: 2,
           bottom: 2,
           left: 2
@@ -149,7 +150,7 @@ export function createSparkline(selector, data, options = {}) {
       }
     }
   };
-  
+
   return new Chart(canvas, sparklineOptions);
 }
 
@@ -161,18 +162,16 @@ export function createSparkline(selector, data, options = {}) {
  * @returns {Chart} Chart instance
  */
 export function createLineChart(selector, data, options = {}) {
-  const canvas = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (!canvas) {
-    console.error('Canvas element not found:', selector);
+    logger.error('Canvas element not found:', selector);
     return null;
   }
-  
+
   const chartConfig = {
     type: 'line',
-    data: data,
+    data,
     options: {
       ...defaultOptions,
       ...options,
@@ -183,7 +182,7 @@ export function createLineChart(selector, data, options = {}) {
       }
     }
   };
-  
+
   return new Chart(canvas, chartConfig);
 }
 
@@ -195,18 +194,16 @@ export function createLineChart(selector, data, options = {}) {
  * @returns {Chart} Chart instance
  */
 export function createBarChart(selector, data, options = {}) {
-  const canvas = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (!canvas) {
-    console.error('Canvas element not found:', selector);
+    logger.error('Canvas element not found:', selector);
     return null;
   }
-  
+
   const chartConfig = {
     type: 'bar',
-    data: data,
+    data,
     options: {
       ...defaultOptions,
       ...options,
@@ -218,7 +215,7 @@ export function createBarChart(selector, data, options = {}) {
       }
     }
   };
-  
+
   return new Chart(canvas, chartConfig);
 }
 
@@ -230,18 +227,16 @@ export function createBarChart(selector, data, options = {}) {
  * @returns {Chart} Chart instance
  */
 export function createDoughnutChart(selector, data, options = {}) {
-  const canvas = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (!canvas) {
-    console.error('Canvas element not found:', selector);
+    logger.error('Canvas element not found:', selector);
     return null;
   }
-  
+
   const chartConfig = {
     type: 'doughnut',
-    data: data,
+    data,
     options: {
       ...defaultOptions,
       ...options,
@@ -255,10 +250,10 @@ export function createDoughnutChart(selector, data, options = {}) {
       }
     }
   };
-  
+
   // Remove scales for doughnut charts
   delete chartConfig.options.scales;
-  
+
   return new Chart(canvas, chartConfig);
 }
 
@@ -270,18 +265,16 @@ export function createDoughnutChart(selector, data, options = {}) {
  * @returns {Chart} Chart instance
  */
 export function createPieChart(selector, data, options = {}) {
-  const canvas = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (!canvas) {
-    console.error('Canvas element not found:', selector);
+    logger.error('Canvas element not found:', selector);
     return null;
   }
-  
+
   const chartConfig = {
     type: 'pie',
-    data: data,
+    data,
     options: {
       ...defaultOptions,
       ...options,
@@ -294,10 +287,10 @@ export function createPieChart(selector, data, options = {}) {
       }
     }
   };
-  
+
   // Remove scales for pie charts
   delete chartConfig.options.scales;
-  
+
   return new Chart(canvas, chartConfig);
 }
 
@@ -309,24 +302,22 @@ export function createPieChart(selector, data, options = {}) {
  * @returns {Chart} Chart instance
  */
 export function createAreaChart(selector, data, options = {}) {
-  const canvas = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (!canvas) {
-    console.error('Canvas element not found:', selector);
+    logger.error('Canvas element not found:', selector);
     return null;
   }
-  
+
   // Ensure datasets have fill property
-  data.datasets = data.datasets.map(dataset => ({
+  data.datasets = data.datasets.map((dataset) => ({
     ...dataset,
     fill: dataset.fill !== undefined ? dataset.fill : 'origin'
   }));
-  
+
   const chartConfig = {
     type: 'line',
-    data: data,
+    data,
     options: {
       ...defaultOptions,
       ...options,
@@ -337,7 +328,7 @@ export function createAreaChart(selector, data, options = {}) {
       }
     }
   };
-  
+
   return new Chart(canvas, chartConfig);
 }
 
@@ -349,24 +340,22 @@ export function createAreaChart(selector, data, options = {}) {
  * @returns {Chart} Chart instance
  */
 export function createMixedChart(selector, data, options = {}) {
-  const canvas = typeof selector === 'string' 
-    ? document.querySelector(selector) 
-    : selector;
-    
+  const canvas = typeof selector === 'string' ? document.querySelector(selector) : selector;
+
   if (!canvas) {
-    console.error('Canvas element not found:', selector);
+    logger.error('Canvas element not found:', selector);
     return null;
   }
-  
+
   const chartConfig = {
     type: 'bar', // Default type
-    data: data,
+    data,
     options: {
       ...defaultOptions,
       ...options
     }
   };
-  
+
   return new Chart(canvas, chartConfig);
 }
 
@@ -377,7 +366,7 @@ export function createMixedChart(selector, data, options = {}) {
  */
 export function updateChartData(chart, newData) {
   if (!chart) return;
-  
+
   chart.data = newData;
   chart.update();
 }
@@ -398,16 +387,16 @@ export function destroyChart(chart) {
 export function initAllCharts() {
   const charts = document.querySelectorAll('[data-chart]');
   const instances = [];
-  
-  charts.forEach(canvas => {
+
+  charts.forEach((canvas) => {
     const chartType = canvas.dataset.chart;
-    const chartData = canvas.dataset.chartData;
-    
+    const { chartData } = canvas.dataset;
+
     if (chartData) {
       try {
         const data = JSON.parse(chartData);
         let instance;
-        
+
         switch (chartType) {
           case 'sparkline':
             instance = createSparkline(canvas, data);
@@ -431,18 +420,18 @@ export function initAllCharts() {
             instance = createMixedChart(canvas, data);
             break;
           default:
-            console.warn('Unknown chart type:', chartType);
+            logger.warn('Unknown chart type:', chartType);
         }
-        
+
         if (instance) {
           instances.push({ element: canvas, instance });
         }
       } catch (e) {
-        console.error('Error parsing chart data:', e);
+        logger.error('Error parsing chart data:', e);
       }
     }
   });
-  
+
   return instances;
 }
 
