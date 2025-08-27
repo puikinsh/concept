@@ -1,4 +1,5 @@
 import { logger } from '../utils/logger.js';
+import { confirmDialog } from '../utils/confirm-dialog.js';
 
 // Settings page functionality
 export function initializeSettings() {
@@ -90,10 +91,16 @@ export function initializeSettings() {
   // Generate new API key
   const generateKeyBtn = document.querySelector('.btn-primary');
   if (generateKeyBtn && generateKeyBtn.textContent.includes('Generate New Key')) {
-    generateKeyBtn.addEventListener('click', () => {
-      if (
-        confirm('Are you sure you want to generate a new API key? The old key will be invalidated.')
-      ) {
+    generateKeyBtn.addEventListener('click', async () => {
+      const confirmed = await confirmDialog({
+        title: 'Generate New API Key',
+        message:
+          'Are you sure you want to generate a new API key? The old key will be invalidated.',
+        confirmText: 'Generate',
+        confirmClass: 'btn-warning'
+      });
+
+      if (confirmed) {
         const newKey = `sk_test_${Math.random().toString(36).substr(2, 20)}`;
         document.getElementById('apiKey').value = newKey;
       }

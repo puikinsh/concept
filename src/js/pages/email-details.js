@@ -1,6 +1,7 @@
 // Email Details Page functionality
 import * as bootstrap from 'bootstrap';
 import { logger } from '../utils/logger.js';
+import { confirmDelete } from '../utils/confirm-dialog.js';
 
 export function initializeEmailDetails() {
   // Initialize tooltips
@@ -60,8 +61,9 @@ export function initializeEmailDetails() {
 
   // Delete button
   if (emailActions.delete) {
-    emailActions.delete.addEventListener('click', () => {
-      if (confirm('Are you sure you want to delete this email?')) {
+    emailActions.delete.addEventListener('click', async () => {
+      const confirmed = await confirmDelete('this email');
+      if (confirmed) {
         showNotification('Email deleted', 'success');
         setTimeout(() => {
           window.location.href = '/pages/email/inbox.html';

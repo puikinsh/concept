@@ -1,7 +1,7 @@
-/* eslint-disable no-alert */
 import $ from 'jquery';
 import DataTable from 'datatables.net-bs5';
 import { logger } from '../utils/logger.js';
+import { confirmDelete } from '../utils/confirm-dialog.js';
 import 'datatables.net-responsive';
 import 'datatables.net-responsive-bs5';
 import 'datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css';
@@ -361,10 +361,12 @@ export function initializeUserManagement() {
           logger.info('Edit user:', userName);
           break;
         case 'Delete':
-          if (confirm(`Are you sure you want to delete ${userName}?`)) {
-            table.row(row).remove().draw();
-            showNotification('User deleted successfully!', 'success');
-          }
+          confirmDelete(userName).then((confirmed) => {
+            if (confirmed) {
+              table.row(row).remove().draw();
+              showNotification('User deleted successfully!', 'success');
+            }
+          });
           break;
       }
     }

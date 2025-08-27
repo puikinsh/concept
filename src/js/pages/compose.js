@@ -1,6 +1,7 @@
 // Email Compose Page functionality
 import Quill from 'quill';
 import { logger } from '../utils/logger.js';
+import { confirmDialog } from '../utils/confirm-dialog.js';
 import 'quill/dist/quill.snow.css';
 
 export function initializeCompose() {
@@ -113,8 +114,15 @@ function handleSendEmail() {
   }, 1500);
 }
 
-function handleDiscard() {
-  if (confirm('Are you sure you want to discard this email?')) {
+async function handleDiscard() {
+  const confirmed = await confirmDialog({
+    title: 'Discard Email',
+    message: 'Are you sure you want to discard this email? Any unsaved changes will be lost.',
+    confirmText: 'Discard',
+    confirmClass: 'btn-danger'
+  });
+
+  if (confirmed) {
     window.location.href = '/pages/email/inbox.html';
   }
 }

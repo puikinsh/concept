@@ -1,5 +1,6 @@
 import Chart from 'chart.js/auto';
 import { logger } from '../utils/logger.js';
+import { confirmDialog } from '../utils/confirm-dialog.js';
 
 // Influencer Dashboard functionality
 export function initializeInfluencerDashboard() {
@@ -200,13 +201,20 @@ export function initializeInfluencerDashboard() {
           logger.info('Show analytics for:', campaignName);
           break;
         case 'Pause':
-          if (confirm(`Are you sure you want to pause the "${campaignName}" campaign?`)) {
-            const statusBadge = row.querySelector('.badge');
-            statusBadge.classList.remove('bg-success');
-            statusBadge.classList.add('bg-secondary');
-            statusBadge.textContent = 'Paused';
-            showNotification(`Campaign "${campaignName}" has been paused.`, 'info');
-          }
+          confirmDialog({
+            title: 'Pause Campaign',
+            message: `Are you sure you want to pause the "${campaignName}" campaign?`,
+            confirmText: 'Pause',
+            confirmClass: 'btn-warning'
+          }).then((confirmed) => {
+            if (confirmed) {
+              const statusBadge = row.querySelector('.badge');
+              statusBadge.classList.remove('bg-success');
+              statusBadge.classList.add('bg-secondary');
+              statusBadge.textContent = 'Paused';
+              showNotification(`Campaign "${campaignName}" has been paused.`, 'info');
+            }
+          });
           break;
         case 'Start': {
           const statusBadge = row.querySelector('.badge');
