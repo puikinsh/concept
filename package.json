@@ -1,6 +1,6 @@
 {
   "name": "concept-modern",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Concept - Modern Bootstrap 5 Admin Dashboard Template",
   "type": "module",
   "scripts": {
@@ -10,31 +10,36 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
-    "@vitejs/plugin-legacy": "^7.1.0",
-    "sass": "^1.89.2",
+    "@eslint/js": "^9.34.0",
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "eslint": "^9.34.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2",
+    "sass": "^1.91.0",
     "terser": "^5.43.1",
-    "vite": "^7.0.6",
+    "vite": "^7.1.3",
     "vite-plugin-handlebars": "^2.0.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
-    "@fullcalendar/bootstrap5": "^6.1.18",
-    "@fullcalendar/core": "^6.1.18",
-    "@fullcalendar/daygrid": "^6.1.18",
-    "@fullcalendar/interaction": "^6.1.18",
-    "@fullcalendar/list": "^6.1.18",
-    "@fullcalendar/timegrid": "^6.1.18",
+    "@fullcalendar/bootstrap5": "^6.1.19",
+    "@fullcalendar/core": "^6.1.19",
+    "@fullcalendar/daygrid": "^6.1.19",
+    "@fullcalendar/interaction": "^6.1.19",
+    "@fullcalendar/list": "^6.1.19",
+    "@fullcalendar/timegrid": "^6.1.19",
     "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.7",
+    "bootstrap": "^5.3.8",
     "chart.js": "^4.5.0",
-    "datatables.net": "^2.3.2",
-    "datatables.net-bs5": "^2.3.2",
-    "datatables.net-responsive": "^3.0.5",
-    "datatables.net-responsive-bs5": "^3.0.5",
+    "datatables.net": "^2.3.3",
+    "datatables.net-bs5": "^2.3.3",
+    "datatables.net-responsive": "^3.0.6",
+    "datatables.net-responsive-bs5": "^3.0.6",
     "daterangepicker": "^3.1.0",
     "moment": "^2.30.1",
+    "quill": "^2.0.3",
     "sortablejs": "^1.15.6",
-    "tom-select": "^2.4.3",
-    "quill": "^2.0.2"
+    "tom-select": "^2.4.3"
   }
 }

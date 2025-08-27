@@ -14,13 +14,13 @@ Explore all features, pages, and components in action. Perfect for evaluating th
 
 ## Overview
 
-Concept is a modern admin template built from the ground up with Bootstrap 5.3.7, Vite, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
+Concept is a modern admin template built from the ground up with Bootstrap 5.3.8, Vite 7.1.3, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
 
 ## Features
 
 ### Core Technologies
-- **Bootstrap 5.3.7** - Latest Bootstrap framework with modern components
-- **Vite 7.0.6** - Next-generation frontend tooling with lightning-fast HMR support
+- **Bootstrap 5.3.8** - Latest Bootstrap framework with modern components
+- **Vite 7.1.3** - Next-generation frontend tooling with lightning-fast HMR support
 - **Handlebars** - Template engine with reusable partials
 - **SCSS** - Advanced styling with variables and mixins
 - **ES6 Modules** - Modern JavaScript architecture
@@ -113,20 +113,20 @@ concept/
 ## Key Dependencies
 
 ### Core
-- `bootstrap@5.3.7` - UI framework
+- `bootstrap@5.3.8` - UI framework
 - `@fortawesome/fontawesome-free@7.0.0` - Icon library
-- `vite@7.0.6` - Build tool
-- `sass@1.89.2` - CSS preprocessor
+- `vite@7.1.3` - Build tool
+- `sass@1.91.0` - CSS preprocessor
 
 ### JavaScript Libraries
 - `chart.js@4.5.0` - Charts and graphs
-- `datatables.net-bs5@2.2.3` - Advanced tables
-- `@fullcalendar/core@6.1.15` - Calendar functionality
-- `tom-select@2.4.1` - Enhanced select boxes
+- `datatables.net-bs5@2.3.3` - Advanced tables
+- `@fullcalendar/core@6.1.19` - Calendar functionality
+- `tom-select@2.4.3` - Enhanced select boxes
 
 ### Build Tools
 - `vite-plugin-handlebars@2.0.0` - Handlebars support
-- `@vitejs/plugin-legacy@7.1.0` - Legacy browser support
+- `@vitejs/plugin-legacy@7.2.1` - Legacy browser support
 
 ## Browser Support
 
@@ -249,10 +249,14 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Support
 
-For support, please open an issue in the GitHub repository or contact support@yourcompany.com.
+For support, please open an issue in the GitHub repository.
 
-## Credits
+## Changelog
 
-- Original Concept template design
-- Bootstrap team for the excellent framework
-- All open-source library contributors
+### Version 3.0.0 (2025-08-27)
+- Updated Bootstrap to 5.3.8
+- Updated Vite to 7.1.3
+- Updated all dependencies to latest stable versions
+- Added comprehensive CLAUDE.md documentation for AI-assisted development
+- Improved build performance and development experience
+- See [CHANGELOG.md](CHANGELOG.md) for detailed changes

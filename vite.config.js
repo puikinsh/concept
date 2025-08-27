@@ -24,7 +24,7 @@ export default defineConfig({
         // Add global context data
         return {
           title: 'Concept Dashboard',
-          version: '2.0.0',
+          version: '3.0.0',
           year: new Date().getFullYear(),
           isDev: process.env.NODE_ENV === 'development'
         };
