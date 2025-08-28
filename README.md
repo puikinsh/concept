@@ -59,7 +59,7 @@ Concept is a modern admin template built from the ground up with Bootstrap 5.3.8
 
 1. Clone or download the repository:
 ```bash
-git clone https://github.com/yourusername/concept.git
+git clone https://github.com/puikinsh/concept.git
 cd concept
 ```
 
