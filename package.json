@@ -22,7 +22,7 @@
     "prettier": "^3.6.2",
     "sass": "^1.91.0",
     "terser": "^5.43.1",
-    "vite": "^7.1.5",
+    "vite": "^7.1.11",
     "vite-plugin-handlebars": "^2.0.0"
   },
   "overrides": {
