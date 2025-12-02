@@ -1,6 +1,6 @@
 {
   "name": "concept-modern",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Concept - Modern Bootstrap 5 Admin Dashboard Template",
   "type": "module",
   "scripts": {
@@ -14,24 +14,25 @@
     "format:check": "prettier --check 'src/**/*.{js,html,hbs,scss,css,json}'"
   },
   "devDependencies": {
-    "@eslint/js": "^9.34.0",
+    "@eslint/js": "^9.39.1",
     "@vitejs/plugin-legacy": "^7.2.1",
-    "eslint": "^9.34.0",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
-    "prettier": "^3.6.2",
-    "sass": "^1.91.0",
-    "terser": "^5.43.1",
-    "vite": "^7.1.11",
+    "prettier": "^3.7.3",
+    "sass": "^1.94.2",
+    "terser": "^5.44.1",
+    "vite": "^7.2.6",
     "vite-plugin-handlebars": "^2.0.0"
   },
   "overrides": {
     "vite-plugin-handlebars": {
       "esbuild": "^0.25.0"
-    }
+    },
+    "js-yaml": "^4.1.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@fortawesome/fontawesome-free": "^7.1.0",
     "@fullcalendar/bootstrap5": "^6.1.19",
     "@fullcalendar/core": "^6.1.19",
     "@fullcalendar/daygrid": "^6.1.19",
@@ -40,11 +41,11 @@
     "@fullcalendar/timegrid": "^6.1.19",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "chart.js": "^4.5.0",
-    "datatables.net": "^2.3.3",
-    "datatables.net-bs5": "^2.3.3",
-    "datatables.net-responsive": "^3.0.6",
-    "datatables.net-responsive-bs5": "^3.0.6",
+    "chart.js": "^4.5.1",
+    "datatables.net": "^2.3.5",
+    "datatables.net-bs5": "^2.3.5",
+    "datatables.net-responsive": "^3.0.7",
+    "datatables.net-responsive-bs5": "^3.0.7",
     "daterangepicker": "^3.1.0",
     "moment": "^2.30.1",
     "quill": "^2.0.3",

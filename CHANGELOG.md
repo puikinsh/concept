@@ -5,6 +5,36 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.0] - 2025-12-02
+
+### Security Fix & Dependency Updates
+This release addresses a security vulnerability and updates all dependencies to their latest versions.
+
+### Security
+- **Fixed js-yaml prototype pollution vulnerability** (CVE-2023-44487) - Added override to force js-yaml 4.1.1 which patches the merge (`<<`) prototype pollution issue
+
+### Changed
+- **Vite** updated from 7.1.11 to **7.2.6** - Latest stable with performance improvements
+- **ESLint** updated from 9.34.0 to **9.39.1** - Latest linting rules and bug fixes
+- **@eslint/js** updated from 9.34.0 to **9.39.1**
+- **Prettier** updated from 3.6.2 to **3.7.3** - Formatting improvements
+- **Sass** updated from 1.91.0 to **1.94.2** - Latest Dart Sass
+- **Terser** updated from 5.43.1 to **5.44.1** - Minification improvements
+- **FontAwesome** updated from 7.0.0 to **7.1.0** - New icons and fixes
+- **Chart.js** updated from 4.5.0 to **4.5.1** - Bug fixes
+- **DataTables packages** updated:
+  - datatables.net from 2.3.3 to **2.3.5**
+  - datatables.net-bs5 from 2.3.3 to **2.3.5**
+  - datatables.net-responsive from 3.0.6 to **3.0.7**
+  - datatables.net-responsive-bs5 from 3.0.6 to **3.0.7**
+
+### Technical Notes
+- All 0 vulnerabilities reported by `npm audit`
+- Build process verified and working
+- No breaking changes from version 3.0.0
+
+---
+
 ## [3.0.0] - 2025-08-27
 
 ### Major Update

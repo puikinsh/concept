@@ -14,13 +14,13 @@ Explore all features, pages, and components in action. Perfect for evaluating th
 
 ## Overview
 
-Concept is a modern admin template built from the ground up with Bootstrap 5.3.8, Vite 7.1.3, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
+Concept is a modern admin template built from the ground up with Bootstrap 5.3.8, Vite 7.2.6, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
 
 ## Features
 
 ### Core Technologies
 - **Bootstrap 5.3.8** - Latest Bootstrap framework with modern components
-- **Vite 7.1.3** - Next-generation frontend tooling with lightning-fast HMR support
+- **Vite 7.2.6** - Next-generation frontend tooling with lightning-fast HMR support
 - **Handlebars** - Template engine with reusable partials
 - **SCSS** - Advanced styling with variables and mixins
 - **ES6 Modules** - Modern JavaScript architecture
@@ -126,13 +126,13 @@ concept/
 
 ### Core
 - `bootstrap@5.3.8` - UI framework
-- `@fortawesome/fontawesome-free@7.0.0` - Icon library
-- `vite@7.1.3` - Build tool
-- `sass@1.91.0` - CSS preprocessor
+- `@fortawesome/fontawesome-free@7.1.0` - Icon library
+- `vite@7.2.6` - Build tool
+- `sass@1.94.2` - CSS preprocessor
 
 ### JavaScript Libraries
-- `chart.js@4.5.0` - Charts and graphs
-- `datatables.net-bs5@2.3.3` - Advanced tables
+- `chart.js@4.5.1` - Charts and graphs
+- `datatables.net-bs5@2.3.5` - Advanced tables
 - `@fullcalendar/core@6.1.19` - Calendar functionality
 - `tom-select@2.4.3` - Enhanced select boxes
 
@@ -265,10 +265,16 @@ For support, please open an issue in the GitHub repository.
 
 ## Changelog
 
+### Version 3.1.0 (2025-12-02)
+- Fixed js-yaml prototype pollution security vulnerability
+- Updated Vite to 7.2.6
+- Updated ESLint to 9.39.1
+- Updated all dependencies to latest stable versions
+- Zero security vulnerabilities
+- See [CHANGELOG.md](CHANGELOG.md) for detailed changes
+
 ### Version 3.0.0 (2025-08-27)
 - Updated Bootstrap to 5.3.8
-- Updated Vite to 7.1.3
-- Updated all dependencies to latest stable versions
 - Added comprehensive CLAUDE.md documentation for AI-assisted development
-- Improved build performance and development experience
+- ESLint and Prettier integration for code quality
 - See [CHANGELOG.md](CHANGELOG.md) for detailed changes
