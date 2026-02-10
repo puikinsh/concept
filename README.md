@@ -49,6 +49,77 @@ Concept is a modern admin template built from the ground up with Bootstrap 5.3.8
 - **404 Error Page** - Modern error page with helpful navigation
 - **Blank Page Template** - Starting point for custom pages
 
+## Premium Dashboard Collection
+
+Building something bigger? These premium admin templates from [DashboardPack](https://dashboardpack.com/?utm_source=github&utm_medium=readme&utm_campaign=concept) deliver pixel-perfect designs, extensive page libraries, and long-term support.
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/tailpanel/?utm_source=github&utm_medium=readme&utm_campaign=concept">
+        <img src="screenshots/tailpanel.png" alt="TailPanel — sleek React admin panel styled with Tailwind CSS" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/tailpanel/?utm_source=github&utm_medium=readme&utm_campaign=concept"><strong>TailPanel</strong></a>
+      <br>
+      <sub>React + TypeScript + Tailwind CSS. 9 dashboards, dark/light mode, Vite HMR.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/admindek-html/?utm_source=github&utm_medium=readme&utm_campaign=concept">
+        <img src="screenshots/admindek.png" alt="Admindek — robust Bootstrap 5 dashboard with real-time analytics" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/admindek-html/?utm_source=github&utm_medium=readme&utm_campaign=concept"><strong>Admindek</strong></a>
+      <br>
+      <sub>Bootstrap 5 + vanilla JS. 100+ components, dual themes, RTL language support.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/adminty-html-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=concept">
+        <img src="screenshots/adminty.png" alt="Adminty — enterprise admin template with 160+ application pages" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/adminty-html-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=concept"><strong>Adminty</strong></a>
+      <br>
+      <sub>Bootstrap 5. 160+ pages spanning dashboards, apps, forms, tables, and charts.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=concept">
+        <img src="screenshots/architectui.png" alt="ArchitectUI — component-rich admin dashboard with 9 layout options" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/architectui-dashboard-html-pro/?utm_source=github&utm_medium=readme&utm_campaign=concept"><strong>ArchitectUI</strong></a>
+      <br>
+      <sub>Bootstrap 5. 250+ unified components, 9 dashboards, easy to extend and customize.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/kero-jquery-html-dashboard-pro/?utm_source=github&utm_medium=readme&utm_campaign=concept">
+        <img src="screenshots/kero.png" alt="Kero — flexible admin panel with switchable navigation modes" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/kero-jquery-html-dashboard-pro/?utm_source=github&utm_medium=readme&utm_campaign=concept"><strong>Kero</strong></a>
+      <br>
+      <sub>Bootstrap 5 + Webpack. Horizontal or sidebar navigation, full SASS customization.</sub>
+    </td>
+    <td align="center" width="50%">
+      <a href="https://dashboardpack.com/theme-details/cryptocurrency-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=concept">
+        <img src="screenshots/cryptocurrency.png" alt="Cryptocurrency Dashboard — crypto portfolio and ICO management panel" width="100%">
+      </a>
+      <br>
+      <a href="https://dashboardpack.com/theme-details/cryptocurrency-dashboard/?utm_source=github&utm_medium=readme&utm_campaign=concept"><strong>Cryptocurrency Dashboard</strong></a>
+      <br>
+      <sub>Bootstrap. Optimized for ICO dashboards, token sales, and crypto asset tracking.</sub>
+    </td>
+  </tr>
+</table>
+
+<p align="center">
+  <a href="https://dashboardpack.com/?utm_source=github&utm_medium=readme&utm_campaign=concept"><strong>Discover All Premium Templates</strong></a>
+</p>
+
 ## Installation
 
 ### Prerequisites
@@ -241,10 +312,6 @@ See the [Complete Deployment Guide](docs/deployment/complete-guide.md) for detai
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 ## 🔗 Related Resources
-
-### Premium Dashboard Collections
-
-**[DashboardPack.com](https://dashboardpack.com/)** - Premium dashboard templates and UI kits marketplace featuring Bootstrap, React, Vue, and Angular admin templates with live demos and multiple licensing options.
 
 ### Colorlib Admin Dashboard Articles
 
