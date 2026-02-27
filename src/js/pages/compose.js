@@ -2,6 +2,7 @@
 import Quill from 'quill';
 import { logger } from '../utils/logger.js';
 import { confirmDialog } from '../utils/confirm-dialog.js';
+import { showToast } from '../utils/toast.js';
 import 'quill/dist/quill.snow.css';
 
 export function initializeCompose() {
@@ -85,7 +86,7 @@ function handleFiles(files) {
   // In a real app, would handle file upload and display
 
   // Show notification
-  showNotification(`${files.length} file(s) attached successfully`, 'success');
+  showToast(`${files.length} file(s) attached successfully`, 'success');
 }
 
 function handleSendEmail() {
@@ -95,18 +96,18 @@ function handleSendEmail() {
   const subject = document.getElementById('emailSubject').value;
 
   if (!to) {
-    showNotification('Please enter at least one recipient', 'error');
+    showToast('Please enter at least one recipient', 'error');
     return;
   }
 
   if (!subject) {
-    showNotification('Please enter a subject', 'error');
+    showToast('Please enter a subject', 'error');
     return;
   }
 
   // In a real app, would send the email
   logger.info('Sending email...', { to, cc, bcc, subject });
-  showNotification('Email sent successfully!', 'success');
+  showToast('Email sent successfully!', 'success');
 
   // Redirect to inbox after delay
   setTimeout(() => {
@@ -129,26 +130,7 @@ async function handleDiscard() {
 
 function handleSaveDraft() {
   // In a real app, would save the draft
-  showNotification('Draft saved successfully', 'success');
-}
-
-function showNotification(message, type = 'info') {
-  const alertClass =
-    type === 'error' ? 'alert-danger' : type === 'success' ? 'alert-success' : 'alert-info';
-
-  const alert = document.createElement('div');
-  alert.className = `alert ${alertClass} alert-dismissible fade show position-fixed top-0 end-0 m-3`;
-  alert.style.zIndex = '1050';
-  alert.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
-
-  document.body.appendChild(alert);
-
-  setTimeout(() => {
-    alert.remove();
-  }, 5000);
+  showToast('Draft saved successfully', 'success');
 }
 
 // Add drag-over styles

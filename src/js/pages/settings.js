@@ -1,5 +1,6 @@
 import { logger } from '../utils/logger.js';
 import { confirmDialog } from '../utils/confirm-dialog.js';
+import { setLoading, resetLoading } from '../utils/button-loading.js';
 
 // Settings page functionality
 export function initializeSettings() {
@@ -47,22 +48,10 @@ export function initializeSettings() {
   if (sendTestEmailBtn && sendTestEmailBtn.textContent.includes('Send Test Email')) {
     sendTestEmailBtn.addEventListener('click', function () {
       const btn = this;
-      const originalText = btn.innerHTML;
-      btn.innerHTML =
-        '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Sending...';
-      btn.disabled = true;
+      setLoading(btn, 'Sending...');
 
       setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check me-2"></i>Test Email Sent!';
-        btn.classList.remove('btn-outline-primary');
-        btn.classList.add('btn-success');
-
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.classList.remove('btn-success');
-          btn.classList.add('btn-outline-primary');
-          btn.disabled = false;
-        }, 3000);
+        resetLoading(btn, '<i class="fas fa-check me-2"></i>Test Email Sent!', 'btn-success', 3000);
       }, 2000);
     });
   }
@@ -72,19 +61,17 @@ export function initializeSettings() {
   if (copyApiKeyBtn) {
     copyApiKeyBtn.addEventListener('click', function () {
       const apiKeyInput = document.getElementById('apiKey');
-      apiKeyInput.select();
-      document.execCommand('copy');
-
-      // Show tooltip
-      const tooltip = new bootstrap.Tooltip(this, {
-        title: 'Copied!',
-        trigger: 'manual'
+      navigator.clipboard.writeText(apiKeyInput.value).then(() => {
+        const tooltip = new bootstrap.Tooltip(this, {
+          title: 'Copied!',
+          trigger: 'manual'
+        });
+        tooltip.show();
+        setTimeout(() => {
+          tooltip.hide();
+          tooltip.dispose();
+        }, 2000);
       });
-      tooltip.show();
-
-      setTimeout(() => {
-        tooltip.hide();
-      }, 2000);
     });
   }
 
@@ -112,22 +99,10 @@ export function initializeSettings() {
     if (button.textContent.includes('Clear') && button.textContent.includes('Cache')) {
       button.addEventListener('click', function () {
         const btn = this;
-        const originalText = btn.textContent;
-        btn.innerHTML =
-          '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Clearing...';
-        btn.disabled = true;
+        setLoading(btn, 'Clearing...');
 
         setTimeout(() => {
-          btn.innerHTML = '<i class="fas fa-check me-2"></i>Cleared!';
-          btn.classList.remove('btn-outline-secondary');
-          btn.classList.add('btn-success');
-
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.classList.remove('btn-success');
-            btn.classList.add('btn-outline-secondary');
-            btn.disabled = false;
-          }, 2000);
+          resetLoading(btn, '<i class="fas fa-check me-2"></i>Cleared!', 'btn-success');
         }, 1500);
       });
     }
@@ -138,9 +113,7 @@ export function initializeSettings() {
   if (backupBtn && backupBtn.textContent === 'Backup Now') {
     backupBtn.addEventListener('click', function () {
       const btn = this;
-      btn.innerHTML =
-        '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Creating backup...';
-      btn.disabled = true;
+      setLoading(btn, 'Creating backup...');
 
       setTimeout(() => {
         btn.innerHTML = '<i class="fas fa-check me-2"></i>Backup completed!';
@@ -155,10 +128,7 @@ export function initializeSettings() {
         btn.parentNode.insertBefore(downloadLink, btn.nextSibling);
 
         setTimeout(() => {
-          btn.textContent = 'Backup Now';
-          btn.classList.remove('btn-success');
-          btn.classList.add('btn-primary');
-          btn.disabled = false;
+          resetLoading(btn);
           downloadLink.remove();
         }, 5000);
       }, 3000);
@@ -170,21 +140,10 @@ export function initializeSettings() {
     button.addEventListener('click', function (e) {
       e.preventDefault();
       const btn = this;
-      const originalText = btn.textContent;
-
-      btn.innerHTML =
-        '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Saving...';
-      btn.disabled = true;
+      setLoading(btn, 'Saving...');
 
       setTimeout(() => {
-        btn.innerHTML = '<i class="fas fa-check me-2"></i>Saved!';
-        btn.classList.add('btn-success');
-
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.classList.remove('btn-success');
-          btn.disabled = false;
-        }, 2000);
+        resetLoading(btn, '<i class="fas fa-check me-2"></i>Saved!', 'btn-success');
       }, 1500);
     });
   });
@@ -208,8 +167,7 @@ export function initializeSettings() {
     if (button.textContent === 'Connect') {
       button.addEventListener('click', function () {
         const btn = this;
-        btn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span>';
-        btn.disabled = true;
+        setLoading(btn, '');
 
         setTimeout(() => {
           btn.textContent = 'Connected';

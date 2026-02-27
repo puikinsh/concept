@@ -1,4 +1,5 @@
 import { logger } from '../utils/logger.js';
+import { showToast } from '../utils/toast.js';
 
 // Influencer Finder Page functionality
 export function initializeInfluencerFinder() {
@@ -52,10 +53,7 @@ function performSearch(searchTerm) {
       card.style.pointerEvents = 'auto';
     });
 
-    showNotification(
-      `Found ${influencerCards.length} influencers matching "${searchTerm}"`,
-      'success'
-    );
+    showToast(`Found ${influencerCards.length} influencers matching "${searchTerm}"`, 'success');
   }, 1000);
 }
 
@@ -176,14 +174,14 @@ function toggleFavorite(button) {
     icon.classList.remove('fas');
     icon.classList.add('far');
     button.setAttribute('data-bs-original-title', 'Add to favorites');
-    showNotification('Removed from favorites', 'info');
+    showToast('Removed from favorites', 'info');
   } else {
     button.classList.remove('btn-outline-secondary');
     button.classList.add('btn-warning');
     icon.classList.remove('far');
     icon.classList.add('fas');
     button.setAttribute('data-bs-original-title', 'Remove from favorites');
-    showNotification('Added to favorites', 'success');
+    showToast('Added to favorites', 'success');
   }
 }
 
@@ -228,8 +226,8 @@ function animateSocialStats(box) {
   });
 }
 
-// Apply filters (global function)
-window.applyFilters = function () {
+// Apply filters — module-scoped, bound via event delegation below
+function applyFilters() {
   // Collect all filter values
   const filters = {
     sortBy: document.getElementById('sortBy').value,
@@ -253,12 +251,12 @@ window.applyFilters = function () {
   // Simulate filter application
   setTimeout(() => {
     cards.forEach((card) => (card.style.opacity = '1'));
-    showNotification('Filters applied successfully', 'success');
+    showToast('Filters applied successfully', 'success');
   }, 500);
-};
+}
 
-// Reset filters (global function)
-window.resetFilters = function () {
+// Reset filters — module-scoped, bound via event delegation below
+function resetFilters() {
   // Reset sort
   document.getElementById('sortBy').value = 'followers';
 
@@ -275,28 +273,20 @@ window.resetFilters = function () {
     cb.checked = defaultChecked.includes(cb.id);
   });
 
-  showNotification('Filters reset', 'info');
-};
-
-// Show notification
-function showNotification(message, type = 'info') {
-  const alertClass = type === 'error' ? 'danger' : type;
-  const alertHtml = `
-        <div class="alert alert-${alertClass} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-  setTimeout(() => {
-    const alert = document.querySelector('.alert');
-    if (alert) {
-      alert.remove();
-    }
-  }, 3000);
+  showToast('Filters reset', 'info');
 }
+
+// Bind filter buttons via event delegation instead of global functions
+document.addEventListener('click', (e) => {
+  if (e.target.closest('[onclick*="applyFilters"]') || e.target.closest('.apply-filters-btn')) {
+    e.preventDefault();
+    applyFilters();
+  }
+  if (e.target.closest('[onclick*="resetFilters"]') || e.target.closest('.reset-filters-btn')) {
+    e.preventDefault();
+    resetFilters();
+  }
+});
 
 // Initialize on DOM ready
 if (document.readyState === 'loading') {

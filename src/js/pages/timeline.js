@@ -1,3 +1,6 @@
+import { showToast } from '../utils/toast.js';
+import { setLoading, resetLoading } from '../utils/button-loading.js';
+
 // Timeline functionality
 export function initializeTimeline() {
   const visibleActivities = new Set(['user', 'system', 'security', 'transaction', 'milestone']);
@@ -29,18 +32,12 @@ export function initializeTimeline() {
 
   // Apply filters button
   document.getElementById('applyFilters').addEventListener('click', function () {
-    const btn = this;
-    const originalText = btn.textContent;
-
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Applying...';
-    btn.disabled = true;
+    setLoading(this, 'Applying...');
 
     setTimeout(() => {
       updateVisibility();
-      showNotification('Filters applied successfully!', 'success');
-
-      btn.textContent = originalText;
-      btn.disabled = false;
+      showToast('Filters applied successfully!', 'success');
+      resetLoading(this);
     }, 500);
   });
 
@@ -56,56 +53,32 @@ export function initializeTimeline() {
 
   // Refresh timeline
   document.getElementById('refreshTimeline').addEventListener('click', function () {
-    const btn = this;
-    const originalHtml = btn.innerHTML;
-
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Refreshing...';
-    btn.disabled = true;
+    setLoading(this, 'Refreshing...');
 
     setTimeout(() => {
-      // Add new activity
       addNewActivity();
-      showNotification('Timeline refreshed!', 'info');
-
-      btn.innerHTML = originalHtml;
-      btn.disabled = false;
+      showToast('Timeline refreshed!', 'info');
+      resetLoading(this);
     }, 1000);
   });
 
   // Export timeline
   document.getElementById('exportTimeline').addEventListener('click', function () {
-    const btn = this;
-    const originalHtml = btn.innerHTML;
-
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-1"></span>Exporting...';
-    btn.disabled = true;
+    setLoading(this, 'Exporting...');
 
     setTimeout(() => {
-      // Generate and download timeline data
       exportTimelineData();
-
-      btn.innerHTML = '<i class="fas fa-check me-1"></i>Exported!';
-
-      setTimeout(() => {
-        btn.innerHTML = originalHtml;
-        btn.disabled = false;
-      }, 2000);
+      resetLoading(this, '<i class="fas fa-check me-1"></i>Exported!');
     }, 1500);
   });
 
   // Load more activities
   document.getElementById('loadMore').addEventListener('click', function () {
-    const btn = this;
-    const originalHtml = btn.innerHTML;
-
-    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Loading...';
-    btn.disabled = true;
+    setLoading(this, 'Loading...');
 
     setTimeout(() => {
       loadMoreActivities();
-
-      btn.innerHTML = originalHtml;
-      btn.disabled = false;
+      resetLoading(this);
     }, 1000);
   });
 
@@ -172,7 +145,7 @@ export function initializeTimeline() {
         replyInput.insertAdjacentHTML('beforebegin', replyHtml);
         replyInput.remove();
 
-        showNotification('Reply posted!', 'success');
+        showToast('Reply posted!', 'success');
       }
     }
   });
@@ -181,15 +154,15 @@ export function initializeTimeline() {
   document.addEventListener('click', (e) => {
     if (e.target.textContent === 'Block IP') {
       const btn = e.target;
-      btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Blocking...';
-      btn.disabled = true;
+      setLoading(btn, 'Blocking...');
 
       setTimeout(() => {
         btn.innerHTML = '<i class="fas fa-check me-2"></i>Blocked';
         btn.classList.remove('btn-danger');
         btn.classList.add('btn-success');
+        btn.disabled = true;
 
-        showNotification('IP address has been blocked!', 'success');
+        showToast('IP address has been blocked!', 'success');
       }, 1000);
     }
   });
@@ -339,24 +312,6 @@ export function initializeTimeline() {
     a.download = 'timeline_export.csv';
     a.click();
     window.URL.revokeObjectURL(url);
-  }
-
-  function showNotification(message, type = 'info') {
-    const alertHtml = `
-            <div class="alert alert-${type} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-                ${message}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        `;
-
-    document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-    setTimeout(() => {
-      const alert = document.querySelector('.alert');
-      if (alert) {
-        alert.remove();
-      }
-    }, 3000);
   }
 }
 

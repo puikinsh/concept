@@ -2,6 +2,7 @@
 import * as bootstrap from 'bootstrap';
 import { logger } from '../utils/logger.js';
 import { confirmDelete } from '../utils/confirm-dialog.js';
+import { showToast } from '../utils/toast.js';
 
 export function initializeEmailDetails() {
   // Initialize tooltips
@@ -50,11 +51,11 @@ export function initializeEmailDetails() {
       if (icon.classList.contains('far')) {
         icon.classList.remove('far');
         icon.classList.add('fas', 'text-warning');
-        showNotification('Email starred', 'success');
+        showToast('Email starred', 'success');
       } else {
         icon.classList.remove('fas', 'text-warning');
         icon.classList.add('far');
-        showNotification('Star removed', 'info');
+        showToast('Star removed', 'info');
       }
     });
   }
@@ -64,7 +65,7 @@ export function initializeEmailDetails() {
     emailActions.delete.addEventListener('click', async () => {
       const confirmed = await confirmDelete('this email');
       if (confirmed) {
-        showNotification('Email deleted', 'success');
+        showToast('Email deleted', 'success');
         setTimeout(() => {
           window.location.href = '/pages/email/inbox.html';
         }, 1000);
@@ -85,7 +86,7 @@ export function initializeEmailDetails() {
   document.querySelectorAll('.attachment-item button').forEach((btn) => {
     btn.addEventListener('click', function () {
       const fileName = this.closest('.attachment-item').querySelector('h6').textContent;
-      showNotification(`Downloading ${fileName}...`, 'info');
+      showToast(`Downloading ${fileName}...`, 'info');
       // In real app, would trigger actual download
     });
   });
@@ -124,12 +125,12 @@ function handleReplySubmit() {
   const replyText = textarea.value.trim();
 
   if (!replyText) {
-    showNotification('Please enter a reply message', 'error');
+    showToast('Please enter a reply message', 'error');
     return;
   }
 
   // In real app, would send the reply
-  showNotification('Reply sent successfully!', 'success');
+  showToast('Reply sent successfully!', 'success');
 
   // Clear textarea
   textarea.value = '';
@@ -154,25 +155,6 @@ function addReplyToConversation(replyText) {
     `;
 
   emailBody.insertAdjacentHTML('beforeend', replyHtml);
-}
-
-function showNotification(message, type = 'info') {
-  const alertClass =
-    type === 'error' ? 'alert-danger' : type === 'success' ? 'alert-success' : 'alert-info';
-
-  const alert = document.createElement('div');
-  alert.className = `alert ${alertClass} alert-dismissible fade show position-fixed top-0 end-0 m-3`;
-  alert.style.zIndex = '1050';
-  alert.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    `;
-
-  document.body.appendChild(alert);
-
-  setTimeout(() => {
-    alert.remove();
-  }, 5000);
 }
 
 // Add hover effect styles

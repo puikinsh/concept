@@ -1,4 +1,6 @@
 import { logger } from '../utils/logger.js';
+import { showToast } from '../utils/toast.js';
+import { setLoading, resetLoading } from '../utils/button-loading.js';
 
 // Checkout Page functionality
 export function initializeCheckout() {
@@ -75,9 +77,9 @@ function handlePromoCode() {
         // Simulate promo code validation
         if (promoCode.toUpperCase() === 'SAVE10') {
           applyDiscount(10);
-          showNotification('Promo code applied! 10% discount', 'success');
+          showToast('Promo code applied! 10% discount', 'success');
         } else {
-          showNotification('Invalid promo code', 'error');
+          showToast('Invalid promo code', 'error');
         }
       }
     });
@@ -172,58 +174,37 @@ function goToStep(stepIndex) {
   // In real app, would handle step navigation
 }
 
-// Complete order
-window.completeOrder = function (event) {
-  // Validate all forms
+// Complete order — bound to checkout button via event delegation instead of global
+function completeOrder(event) {
   const shippingForm = document.getElementById('shippingForm');
   const isValid = shippingForm.checkValidity();
 
   if (!isValid) {
     shippingForm.classList.add('was-validated');
-    showNotification('Please fill in all required fields', 'error');
+    showToast('Please fill in all required fields', 'error');
     return;
   }
 
-  // Show loading state
   const button = event ? event.target : document.querySelector('.btn-checkout');
-  const originalText = button.innerHTML;
-  button.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Processing...';
-  button.disabled = true;
+  setLoading(button, 'Processing...');
 
-  // Simulate order processing
   setTimeout(() => {
-    button.innerHTML = originalText;
-    button.disabled = false;
+    resetLoading(button);
+    showToast('Order completed successfully!', 'success');
 
-    // Show success
-    showNotification('Order completed successfully!', 'success');
-
-    // Redirect to order confirmation
     setTimeout(() => {
       window.location.href = '/';
     }, 2000);
   }, 2000);
-};
-
-// Show notification
-function showNotification(message, type = 'info') {
-  const alertClass = type === 'error' ? 'danger' : type;
-  const alertHtml = `
-        <div class="alert alert-${alertClass} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-  setTimeout(() => {
-    const alert = document.querySelector('.alert');
-    if (alert) {
-      alert.remove();
-    }
-  }, 5000);
 }
+
+// Bind completeOrder via event delegation
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.btn-checkout') || e.target.closest('[onclick*="completeOrder"]')) {
+    e.preventDefault();
+    completeOrder(e);
+  }
+});
 
 // Initialize on DOM ready
 if (document.readyState === 'loading') {

@@ -3,10 +3,28 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
 
 export default [
+  // Global ignores (replaces .eslintignore)
+  {
+    ignores: [
+      'dist/**',
+      'node_modules/**',
+      '*.min.js',
+      '*.min.css',
+      'vendor/**',
+      'src/assets/js/**',
+      'public/**',
+      '*.generated.*',
+      'archive/**',
+      'vite.config.js',
+      'scripts/**',
+      '*.test.js',
+      '*.spec.js',
+      'docs/**'
+    ]
+  },
   js.configs.recommended,
   {
     files: ['**/*.js', '**/*.mjs'],
-    ignores: ['dist/**', 'node_modules/**', '*.min.js'],
     plugins: {
       prettier: prettierPlugin
     },
@@ -50,14 +68,14 @@ export default [
         ResizeObserver: 'readonly',
         MutationObserver: 'readonly',
         IntersectionObserver: 'readonly',
-        
+
         // Node globals
         process: 'readonly',
         __dirname: 'readonly',
         __filename: 'readonly',
         Buffer: 'readonly',
         global: 'readonly',
-        
+
         // Library globals
         bootstrap: 'writable',
         Chart: 'readonly',
@@ -72,13 +90,16 @@ export default [
     rules: {
       // Prettier integration
       'prettier/prettier': 'error',
-      
+
       // Best Practices
-      'no-unused-vars': ['error', { 
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_'
-      }],
+      'no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_'
+        }
+      ],
       'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
       'no-debugger': 'error',
       'no-alert': 'warn',
@@ -91,41 +112,51 @@ export default [
       'no-new-func': 'error',
       'no-script-url': 'error',
       'no-with': 'error',
-      
+
+      // ESLint 10 recommended rules (explicitly configured)
+      'no-useless-assignment': 'error',
+
       // Code Quality
-      'eqeqeq': ['error', 'always', { null: 'ignore' }],
-      'curly': ['error', 'all'],
+      eqeqeq: ['error', 'always', { null: 'ignore' }],
+      curly: ['error', 'all'],
       'no-multi-spaces': 'error',
       'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1 }],
       'no-trailing-spaces': 'error',
-      'semi': ['error', 'always'],
-      'quotes': ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
+      semi: ['error', 'always'],
+      quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
       'comma-dangle': ['error', 'never'],
       'comma-spacing': ['error', { before: false, after: true }],
       'key-spacing': ['error', { beforeColon: false, afterColon: true }],
       'space-before-blocks': 'error',
-      'space-before-function-paren': ['error', {
-        anonymous: 'always',
-        named: 'never',
-        asyncArrow: 'always'
-      }],
+      'space-before-function-paren': [
+        'error',
+        {
+          anonymous: 'always',
+          named: 'never',
+          asyncArrow: 'always'
+        }
+      ],
       'space-in-parens': ['error', 'never'],
       'array-bracket-spacing': ['error', 'never'],
       'object-curly-spacing': ['error', 'always'],
-      
+
       // ES6+ Features
       'arrow-spacing': ['error', { before: true, after: true }],
       'no-duplicate-imports': 'error',
       'no-useless-constructor': 'error',
       'no-useless-rename': 'error',
       'object-shorthand': ['error', 'always', { avoidQuotes: true }],
-      'prefer-destructuring': ['error', {
-        array: false,
-        object: true
-      }, {
-        enforceForRenamedProperties: false
-      }],
-      
+      'prefer-destructuring': [
+        'error',
+        {
+          array: false,
+          object: true
+        },
+        {
+          enforceForRenamedProperties: false
+        }
+      ],
+
       // Async/Promise Rules
       'no-async-promise-executor': 'error',
       'no-await-in-loop': 'warn',

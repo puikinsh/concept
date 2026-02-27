@@ -5,6 +5,65 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.0.0] - 2026-02-27
+
+### Major Refactor & Modernization
+
+This release delivers a comprehensive codebase modernization — ESLint 10 migration, jQuery fully removed, shared utilities extracted, legacy browser plugin dropped, CSS code-splitting enabled, accessibility improvements, and all dependencies updated to latest versions.
+
+### Breaking Changes
+
+- **Removed `@vitejs/plugin-legacy`** — Legacy browser polyfills are no longer bundled. Target modern evergreen browsers only. Saved 133 packages and ~52KB per page.
+- **ESLint upgraded from 9 to 10** — Flat config only (no legacy eslintrc support). Three new rules enabled: `no-useless-assignment`, `no-unassigned-vars`, `preserve-caught-error`.
+- **`.eslintignore` removed** — Migrated into `eslint.config.js` `ignores` array (ESLint 10 requirement).
+- **jQuery fully removed** — `users.js` (the last jQuery consumer) rewritten to use DataTables 2.x vanilla JS API with `new DataTable()` and `DataTable.ext.search`.
+
+### Added
+
+- **Shared toast utility** (`src/js/utils/toast.js`) — XSS-safe notification system replacing 10+ duplicate `showNotification()` functions across page modules
+- **Shared button-loading utility** (`src/js/utils/button-loading.js`) — Centralized loading state management using `WeakMap` to store original button content, replacing inline spinner patterns across all pages
+- **Skip-to-content link** in header for keyboard/screen reader navigation
+- **`prefers-reduced-motion`** media query to disable animations for users who prefer reduced motion
+- **CSS code-splitting** — Vite now produces separate CSS bundles per page instead of a single monolithic file (main CSS reduced from 438KB to 373KB)
+- **Production sourcemaps disabled** — Smaller production builds
+
+### Changed
+
+- **All 18 dependencies updated to latest versions:**
+  - Vite 7.2.6 → **7.3.1**
+  - ESLint 9.39.1 → **10.0.2** (major upgrade)
+  - @eslint/js 9.39.1 → **10.0.1**
+  - Sass 1.94.2 → **1.97.3**
+  - Prettier 3.7.3 → **3.8.1**
+  - Terser 5.44.1 → **5.46.0**
+  - FontAwesome 7.1.0 → **7.2.0**
+  - FullCalendar packages 6.1.19 → **6.1.20**
+  - DataTables packages 2.3.5 → **2.3.7** / 3.0.7 → **3.0.8**
+  - Tom Select 2.4.3 → **2.5.2**
+  - SortableJS 1.15.6 → **1.15.7**
+  - eslint-plugin-prettier 5.5.4 → **5.5.5**
+- **10 page modules migrated** to shared `showToast()` and `setLoading()`/`resetLoading()` utilities: users, settings, checkout, influencer-finder, timeline, products, product-single, compose, email-details, influencer, influencer-profile
+- **37+ `!important` overrides removed** from SCSS by using `.dashboard-wrapper` ancestor selectors for specificity (datatables, buttons, header)
+- **`document.execCommand('copy')` replaced** with `navigator.clipboard.writeText()` in settings page
+- **Global `window.*` functions removed** in checkout and influencer-finder — replaced with module-scoped functions and event delegation
+- **Sass deprecation warnings silenced** via `silenceDeprecations` config (pragmatic until Bootstrap migrates from `@import` to `@use`)
+
+### Improved
+
+- **Build time reduced** from ~9.5s to ~3.7s (removal of legacy transpilation)
+- **Total package count reduced** from 280 to 144 (removed 136 packages)
+- **DRY codebase** — eliminated ~800 lines of duplicated notification and button-loading code
+- **XSS prevention** — toast utility and users page use `textContent`-based HTML escaping
+- **Bundle sizes decreased** across migrated page modules (e.g., settings.js 6.28KB → 5.24KB, products.js 4.92KB → 4.04KB)
+
+### Technical Notes
+
+- 0 lint errors, 3 expected warnings (console.log in logger utility)
+- Build verified and passing (3.69s)
+- 1 low-severity Quill vulnerability (GHSA-v3m3-f69x-jf25) — no safe upgrade path, cosmetic XSS only
+
+---
+
 ## [3.1.0] - 2025-12-02
 
 ### Security Fix & Dependency Updates

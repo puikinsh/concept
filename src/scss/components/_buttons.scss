@@ -1,74 +1,63 @@
 // Button Component Styles
+// Use Bootstrap variable $btn-color overrides and increased specificity
 
-// Primary button text color override
-.btn-primary {
-    color: $white !important;
-    
+// Ensure white text on colored buttons via Bootstrap's own variable system
+.dashboard-wrapper {
+  .btn-primary,
+  .btn-dark,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-info,
+  .btn-warning {
+    color: $white;
+
     &:hover,
     &:focus,
     &:active,
     &.active,
     &:disabled,
     &.disabled {
-        color: $white !important;
+      color: $white;
     }
-}
+  }
 
-// Ensure outline primary buttons have proper contrast
-.btn-outline-primary {
+  .btn-outline-primary {
     &:hover,
     &:focus,
     &:active,
     &.active {
-        color: $white !important;
+      color: $white;
     }
-}
-
-// Dark buttons should have white text
-.btn-dark,
-.btn-secondary,
-.btn-success,
-.btn-danger,
-.btn-info,
-.btn-warning {
-    color: $white !important;
-    
-    &:hover,
-    &:focus,
-    &:active,
-    &.active,
-    &:disabled,
-    &.disabled {
-        color: $white !important;
-    }
+  }
 }
 
 // Pagination styles
 .pagination {
-    .page-item {
-        &.active .page-link {
-            color: $white !important;
-            background-color: $primary;
-            border-color: $primary;
-        }
-        
-        .page-link {
-            color: $primary;
-            border-color: #dee2e6;
-            
-            &:hover {
-                color: $white !important;
-                background-color: $primary;
-                border-color: $primary;
-            }
-            
-            &:focus {
-                box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
-            }
-        }
-        
-        &.disabled .page-link {
-            color: #6c757d;
-        }
+  .page-item {
+    &.active .page-link {
+      color: $white;
+      background-color: $primary;
+      border-color: $primary;
     }
+
+    .page-link {
+      color: $primary;
+      border-color: #dee2e6;
+
+      &:hover {
+        color: $white;
+        background-color: $primary;
+        border-color: $primary;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
+      }
+    }
+
+    &.disabled .page-link {
+      color: #6c757d;
+    }
+  }
 }

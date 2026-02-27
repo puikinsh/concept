@@ -14,13 +14,13 @@ Explore all features, pages, and components in action. Perfect for evaluating th
 
 ## Overview
 
-Concept is a modern admin template built from the ground up with Bootstrap 5.3.8, Vite 7.2.6, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
+Concept is a modern admin template built from the ground up with Bootstrap 5.3.8, Vite 7.3, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
 
 ## Features
 
 ### Core Technologies
 - **Bootstrap 5.3.8** - Latest Bootstrap framework with modern components
-- **Vite 7.2.6** - Next-generation frontend tooling with lightning-fast HMR support
+- **Vite 7.3** - Next-generation frontend tooling with lightning-fast HMR and CSS code-splitting
 - **Handlebars** - Template engine with reusable partials
 - **SCSS** - Advanced styling with variables and mixins
 - **ES6 Modules** - Modern JavaScript architecture
@@ -196,20 +196,23 @@ concept/
 ## Key Dependencies
 
 ### Core
+
 - `bootstrap@5.3.8` - UI framework
-- `@fortawesome/fontawesome-free@7.1.0` - Icon library
-- `vite@7.2.6` - Build tool
-- `sass@1.94.2` - CSS preprocessor
+- `@fortawesome/fontawesome-free@7.2.0` - Icon library
+- `vite@7.3.1` - Build tool
+- `sass@1.97.3` - CSS preprocessor
 
 ### JavaScript Libraries
+
 - `chart.js@4.5.1` - Charts and graphs
-- `datatables.net-bs5@2.3.5` - Advanced tables
-- `@fullcalendar/core@6.1.19` - Calendar functionality
-- `tom-select@2.4.3` - Enhanced select boxes
+- `datatables.net-bs5@2.3.7` - Advanced tables
+- `@fullcalendar/core@6.1.20` - Calendar functionality
+- `tom-select@2.5.2` - Enhanced select boxes
 
 ### Build Tools
+
 - `vite-plugin-handlebars@2.0.0` - Handlebars support
-- `@vitejs/plugin-legacy@7.2.1` - Legacy browser support
+- `eslint@10.0.2` - Code linting with Prettier integration
 
 ## Browser Support
 
@@ -255,11 +258,11 @@ if (document.readyState === 'loading') {
 
 ## Performance Optimization
 
-- Vite's code splitting for optimal loading
+- Vite's JS and CSS code-splitting for optimal per-page loading
 - Lazy loading for heavy components
 - Optimized images and assets
-- Minimal CSS with PurgeCSS in production
 - ES6 modules for tree shaking
+- No legacy browser polyfills — targets modern evergreen browsers
 
 ## Deployment
 
@@ -332,15 +335,25 @@ For support, please open an issue in the GitHub repository.
 
 ## Changelog
 
+### Version 4.0.0 (2026-02-27)
+
+- Major codebase modernization and refactor
+- ESLint upgraded to v10, jQuery fully removed, `@vitejs/plugin-legacy` dropped
+- Shared toast and button-loading utilities extracted (replaced 10+ duplicated functions)
+- CSS code-splitting enabled, 37+ `!important` overrides eliminated
+- Skip-to-content link and `prefers-reduced-motion` accessibility improvements
+- All 18 dependencies updated to latest versions
+- Build time reduced from ~9.5s to ~3.7s, package count from 280 to 144
+- See [CHANGELOG.md](CHANGELOG.md) for detailed changes
+
 ### Version 3.1.0 (2025-12-02)
+
 - Fixed js-yaml prototype pollution security vulnerability
-- Updated Vite to 7.2.6
-- Updated ESLint to 9.39.1
 - Updated all dependencies to latest stable versions
-- Zero security vulnerabilities
 - See [CHANGELOG.md](CHANGELOG.md) for detailed changes
 
 ### Version 3.0.0 (2025-08-27)
+
 - Updated Bootstrap to 5.3.8
 - Added comprehensive CLAUDE.md documentation for AI-assisted development
 - ESLint and Prettier integration for code quality

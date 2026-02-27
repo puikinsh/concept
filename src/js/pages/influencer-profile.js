@@ -1,4 +1,6 @@
 import { logger } from '../utils/logger.js';
+import { showToast } from '../utils/toast.js';
+import { setLoading, resetLoading } from '../utils/button-loading.js';
 
 // Influencer Profile Page functionality
 export function initializeInfluencerProfile() {
@@ -122,23 +124,14 @@ function initializeMessageForm() {
 
     // Show loading state
     const submitBtn = form.querySelector('button[type="submit"]');
-    const originalHtml = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
-    submitBtn.disabled = true;
+    setLoading(submitBtn, 'Sending...');
 
     // Simulate sending message
     setTimeout(() => {
-      // Reset button
-      submitBtn.innerHTML = originalHtml;
-      submitBtn.disabled = false;
-
-      // Show success message
-      showNotification('Message sent successfully! Michael will get back to you soon.', 'success');
-
-      // Reset form
+      resetLoading(submitBtn);
+      showToast('Message sent successfully! Michael will get back to you soon.', 'success');
       form.reset();
 
-      // Switch to reviews tab
       const reviewsTab = document.getElementById('reviews-tab');
       if (reviewsTab) {
         reviewsTab.click();
@@ -202,32 +195,12 @@ document.addEventListener('click', (e) => {
     const packageName = card.querySelector('.card-header h4').textContent;
     const price = card.querySelector('.card-body h1').textContent;
 
-    showNotification(
+    showToast(
       `Selected ${packageName} package (${price}/month). Redirecting to checkout...`,
       'info'
     );
   }
 });
-
-// Show notification
-function showNotification(message, type = 'info') {
-  const alertClass = type === 'error' ? 'danger' : type;
-  const alertHtml = `
-        <div class="alert alert-${alertClass} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-  setTimeout(() => {
-    const alert = document.querySelector('.alert');
-    if (alert) {
-      alert.remove();
-    }
-  }, 5000);
-}
 
 // Social channel hover effects
 document.addEventListener('DOMContentLoaded', () => {

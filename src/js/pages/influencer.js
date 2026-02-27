@@ -1,6 +1,7 @@
 import Chart from 'chart.js/auto';
 import { logger } from '../utils/logger.js';
 import { confirmDialog } from '../utils/confirm-dialog.js';
+import { showToast } from '../utils/toast.js';
 
 // Influencer Dashboard functionality
 export function initializeInfluencerDashboard() {
@@ -212,7 +213,7 @@ export function initializeInfluencerDashboard() {
               statusBadge.classList.remove('bg-success');
               statusBadge.classList.add('bg-secondary');
               statusBadge.textContent = 'Paused';
-              showNotification(`Campaign "${campaignName}" has been paused.`, 'info');
+              showToast(`Campaign "${campaignName}" has been paused.`, 'info');
             }
           });
           break;
@@ -221,7 +222,7 @@ export function initializeInfluencerDashboard() {
           statusBadge.classList.remove('bg-warning', 'text-dark');
           statusBadge.classList.add('bg-success');
           statusBadge.textContent = 'Active';
-          showNotification(`Campaign "${campaignName}" has been started.`, 'success');
+          showToast(`Campaign "${campaignName}" has been started.`, 'success');
           break;
         }
       }
@@ -233,28 +234,9 @@ export function initializeInfluencerDashboard() {
   if (newCampaignBtn) {
     newCampaignBtn.addEventListener('click', () => {
       logger.info('Open new campaign modal');
-      showNotification('New campaign feature coming soon!', 'info');
+      showToast('New campaign feature coming soon!', 'info');
     });
   }
-}
-
-// Notification helper
-function showNotification(message, type = 'info') {
-  const alertHtml = `
-        <div class="alert alert-${type} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-  setTimeout(() => {
-    const alert = document.querySelector('.alert');
-    if (alert) {
-      alert.remove();
-    }
-  }, 5000);
 }
 
 // Initialize on DOM ready

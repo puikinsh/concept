@@ -4,13 +4,13 @@
 // Font imports
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-// Import Bootstrap 5
+// Bootstrap 5 (must use @import — Bootstrap hasn't migrated to @use yet)
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-// Import FontAwesome
+// FontAwesome
 @import "../../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
 
-// Core styles
+// Core layouts (must use @import after Bootstrap @import — @use must precede all @import)
 @import "layouts/layout";
 @import "layouts/sidebar";
 @import "layouts/header";
@@ -41,3 +41,15 @@
 
 // Utilities
 @import "utilities/scrollbar";
+
+// Accessibility: respect reduced motion preference
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

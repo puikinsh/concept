@@ -1,4 +1,5 @@
 import { logger } from '../utils/logger.js';
+import { showToast } from '../utils/toast.js';
 
 // Product Single Page functionality
 export function initializeProductSingle() {
@@ -93,7 +94,7 @@ function handleAddToCart() {
   // In real app, would add to cart state/backend
   logger.info('Adding to cart:', cartItem);
 
-  showNotification(`${productName} added to cart!`, 'success');
+  showToast(`${productName} added to cart!`, 'success');
   updateCartCounter();
 }
 
@@ -105,7 +106,7 @@ function handleBuyNow() {
   logger.info('Buy now:', productName);
 
   // For demo, just show notification
-  showNotification('Redirecting to checkout...', 'info');
+  showToast('Redirecting to checkout...', 'info');
 
   // Simulate redirect
   setTimeout(() => {
@@ -122,11 +123,11 @@ function toggleWishlist(e) {
   if (icon.classList.contains('far')) {
     icon.classList.remove('far');
     icon.classList.add('fas', 'text-danger');
-    showNotification(`${productName} added to wishlist!`, 'success');
+    showToast(`${productName} added to wishlist!`, 'success');
   } else {
     icon.classList.remove('fas', 'text-danger');
     icon.classList.add('far');
-    showNotification(`${productName} removed from wishlist!`, 'info');
+    showToast(`${productName} removed from wishlist!`, 'info');
   }
 }
 
@@ -141,7 +142,7 @@ function handleReviewSubmit(e) {
   const email = document.getElementById('reviewEmail').value;
 
   if (rating === 0) {
-    showNotification('Please select a rating', 'warning');
+    showToast('Please select a rating', 'warning');
     return;
   }
 
@@ -168,7 +169,7 @@ function handleReviewSubmit(e) {
     star.classList.add('far');
   });
 
-  showNotification('Thank you for your review!', 'success');
+  showToast('Thank you for your review!', 'success');
 }
 
 // Update price based on storage selection
@@ -214,25 +215,6 @@ function updateCartCounter() {
     const currentCount = parseInt(cartCounter.textContent) || 0;
     cartCounter.textContent = currentCount + 1;
   }
-}
-
-// Show notification
-function showNotification(message, type = 'info') {
-  const alertHtml = `
-        <div class="alert alert-${type} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-  setTimeout(() => {
-    const alert = document.querySelector('.alert');
-    if (alert) {
-      alert.remove();
-    }
-  }, 3000);
 }
 
 // Initialize on DOM ready

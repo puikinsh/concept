@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         : null;
 
       // Create avatar HTML
-      let avatarHtml = '';
+      let avatarHtml;
       if (avatarElement) {
         avatarElement.style.width = '32px';
         avatarElement.style.height = '32px';

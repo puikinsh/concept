@@ -1,6 +1,7 @@
 // Import Bootstrap
 import * as bootstrap from 'bootstrap';
 import { logger } from '../utils/logger.js';
+import { showToast } from '../utils/toast.js';
 
 // E-commerce Products Page functionality
 export function initializeProducts() {
@@ -168,27 +169,7 @@ function sortProducts(sortType) {
 
 // Add to cart
 function addToCart(productName) {
-  // Show success notification
-  const alertHtml = `
-        <div class="alert alert-success alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-            <i class="fas fa-check-circle me-2"></i>
-            <strong>${productName}</strong> added to cart!
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-  // Auto-dismiss after 3 seconds
-  setTimeout(() => {
-    const alert = document.querySelector('.alert');
-    if (alert) {
-      const bsAlert = new bootstrap.Alert(alert);
-      bsAlert.close();
-    }
-  }, 3000);
-
-  // Update cart counter (if exists)
+  showToast(`${productName} added to cart!`, 'success', 3000);
   updateCartCounter();
 }
 
@@ -202,12 +183,12 @@ function toggleWishlist(btn) {
     // Add to wishlist
     icon.classList.remove('far');
     icon.classList.add('fas', 'text-danger');
-    showNotification(`${productName} added to wishlist!`, 'success');
+    showToast(`${productName} added to wishlist!`, 'success');
   } else {
     // Remove from wishlist
     icon.classList.remove('fas', 'text-danger');
     icon.classList.add('far');
-    showNotification(`${productName} removed from wishlist!`, 'info');
+    showToast(`${productName} removed from wishlist!`, 'info');
   }
 }
 
@@ -235,7 +216,7 @@ function handleAddProduct() {
   document.getElementById('addProductForm').reset();
 
   // Show success message
-  showNotification('Product added successfully!', 'success');
+  showToast('Product added successfully!', 'success');
 }
 
 // Show quick view
@@ -246,7 +227,7 @@ function showQuickView(productCard) {
 
   // In a real app, this would open a modal with full product details
   logger.info('Quick view for:', productName);
-  showNotification(`Quick view: ${productName}`, 'info');
+  showToast(`Quick view: ${productName}`, 'info');
 }
 
 // Update cart counter
@@ -257,25 +238,6 @@ function updateCartCounter() {
     const currentCount = parseInt(cartCounter.textContent) || 0;
     cartCounter.textContent = currentCount + 1;
   }
-}
-
-// Show notification
-function showNotification(message, type = 'info') {
-  const alertHtml = `
-        <div class="alert alert-${type} alert-dismissible fade show position-fixed top-0 end-0 m-3" role="alert" style="z-index: 1050;">
-            ${message}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    `;
-
-  document.body.insertAdjacentHTML('beforeend', alertHtml);
-
-  setTimeout(() => {
-    const alert = document.querySelector('.alert');
-    if (alert) {
-      alert.remove();
-    }
-  }, 3000);
 }
 
 // Initialize on DOM ready
