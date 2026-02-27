@@ -76,6 +76,12 @@ function updatePathsInFile(filePath, rootDir) {
     return match.replace(p1, prefix + p1);
   });
   
+  // Update /index.html to relative path
+  updatedContent = updatedContent.replace(/href="\/index\.html"/g, () => {
+    const prefix = fileDepth > 0 ? '../'.repeat(fileDepth) : '';
+    return `href="${prefix}index.html"`;
+  });
+
   // Update special paths like /pages/email/compose.html
   updatedContent = updatedContent.replace(/href="\/pages\/([^"]+)"/g, (match, p1) => {
     const prefix = fileDepth > 0 ? '../'.repeat(fileDepth) : '';

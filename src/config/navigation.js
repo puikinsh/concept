@@ -8,7 +8,7 @@ export const navigation = [
     icon: 'fa-chart-line',
     badge: { text: '4', color: 'primary' },
     submenu: [
-      { id: 'dashboard-ecommerce', label: 'E-Commerce', href: '/' },
+      { id: 'dashboard-ecommerce', label: 'E-Commerce', href: '/index.html' },
       { id: 'dashboard-finance', label: 'Finance', href: '/pages/dashboards/finance.html' },
       { id: 'dashboard-sales', label: 'Sales', href: '/pages/dashboards/sales.html' },
       { id: 'dashboard-influencer', label: 'Influencer', href: '/pages/dashboards/influencer.html' }
