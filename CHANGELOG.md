@@ -5,6 +5,56 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0] - 2026-08-07
+
+A security, performance and accessibility release. All 26 open Dependabot
+alerts are resolved, jQuery is gone from the dependency tree entirely, the
+HTML validator passes across all 31 pages, and a completely broken feature is
+fixed. This release also carries the previously-unreleased 4.0.0 work.
+
+### ⚠️ Breaking Changes
+
+| Change | Notes |
+|--------|-------|
+| DataTables 2 → 3 (`datatables.net-bs5@^3`) | Drops the jQuery dependency. The legacy `dom` string is replaced by `layout` |
+| `initDataTable` default config uses `layout`, not `dom` | Any caller passing `dom` must migrate. `dom` in the defaults silently overrode a caller's `layout` |
+| `daterangepicker` and `moment` removed | Neither was imported anywhere; they were the last packages pulling jQuery in |
+| `quill` pinned to exactly `2.0.2` | 2.0.3 is the only version affected by GHSA-v3m3-f69x-jf25 and has no patched release |
+| Removed `src/js/pages/data-tables.js` | Dead file; nothing imported it, and it referenced three packages that were never installed |
+
+### 🔒 Security
+
+- **All 26 Dependabot alerts resolved** — handlebars, vite, immutable, postcss, lodash-es, brace-expansion, flatted, esbuild and others. `npm audit` reports **0 vulnerabilities**.
+- **jQuery is completely gone** from the dependency tree. DataTables 3 no longer requires it, and the two remaining packages that pulled it in (`daterangepicker`, `moment`) were dead code.
+- **Google Fonts no longer loads.** `main.scss` had an `@import url('https://fonts.googleapis.com/...Inter...')` firing on every page — a third-party request that leaks visitor IPs and has been ruled a GDPR violation in Germany. It was also pointless: **no stylesheet ever referenced Inter**; `$font-family-base` is `'Circular Std'` with a system fallback. The import is removed rather than self-hosted.
+- Audited every `innerHTML` sink and found no user-input paths. No `eval`, no `document.write`.
+
+### 🐛 Bug Fixes
+
+- **The DataTables export buttons never worked.** `data-tables.html` asked for `dom: 'Bfrtip'` with `buttons: ['copy','csv','excel','pdf','print']`, but nothing ever imported the Buttons extension and `datatables.net-buttons` was not even installed. Copy / CSV / Excel / Print now render and function, loaded on demand so only that page pays for them. (`pdf` is dropped — pdfmake is a ~2 MB dependency for one demo button.)
+- **Eight pages emitted two complete HTML documents.** `product-single`, `products`, `checkout`, `influencer-finder`, `influencer-profile`, `email/details`, `email/compose` and `email/inbox` invoked both `{{> layouts/main}}` and `{{> layouts/base}}`, and `layouts/main` already wraps `layouts/base`. Each page shipped a second, empty `<!doctype html>` document.
+- **`npm run build` broke under Vite 8** — `__dirname` is unavailable when Vite resolves configs natively. Replaced with `import.meta.dirname`.
+- `npm run type-check` and other stale tooling paths cleaned up.
+
+### ♿ Accessibility
+
+`html-validate` across the built output went from **1684 errors to 0**.
+
+- 78 icon-only buttons and links gained an `aria-label`, with their icons marked `aria-hidden`.
+- 86 buttons gained an explicit `type`; 72 `<th>` cells gained a `scope`.
+- Removed static `aria-hidden` from Bootstrap modals (it flagged every focusable child) and added `role="dialog"` where `aria-labelledby` is used.
+- Dropped `aria-labelledby` from `.dropdown-menu`, matching current Bootstrap 5.3 markup — it is invalid on a plain `<div>`.
+- Named every landmark uniquely, fixed placeholder `aria-label="..."` values, gave 14 password fields `autocomplete`, encoded 21 raw ampersands, converted 14 layout-only `<form>` wrappers to `<div>`, moved two `<style>` blocks out of `<body>`, and fixed `<p>` inside `<label>`.
+
+### 📦 Dependencies
+
+Major upgrades: **Vite 7 → 8**, DataTables 2 → 3, DataTables Responsive 3 → 4.
+
+**Added:** `datatables.net-buttons`, `datatables.net-buttons-bs5`, `jszip`, `html-validate`.
+**Removed:** `daterangepicker`, `moment`, and transitively `jquery`.
+
+---
+
 ## [4.0.0] - 2026-02-27
 
 ### Major Refactor & Modernization
