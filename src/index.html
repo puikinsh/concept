@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="E-commerce Dashboard" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-ecommerce" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="dashboard-content">
                 <div class="container-fluid">
@@ -107,15 +107,15 @@
                                         <table class="table">
                                             <thead class="bg-light">
                                                 <tr>
-                                                    <th class="border-0">#</th>
-                                                    <th class="border-0">Image</th>
-                                                    <th class="border-0">Product Name</th>
-                                                    <th class="border-0">Product Id</th>
-                                                    <th class="border-0">Quantity</th>
-                                                    <th class="border-0">Price</th>
-                                                    <th class="border-0">Order Time</th>
-                                                    <th class="border-0">Customer</th>
-                                                    <th class="border-0">Status</th>
+                                                    <th scope="col" class="border-0">#</th>
+                                                    <th scope="col" class="border-0">Image</th>
+                                                    <th scope="col" class="border-0">Product Name</th>
+                                                    <th scope="col" class="border-0">Product Id</th>
+                                                    <th scope="col" class="border-0">Quantity</th>
+                                                    <th scope="col" class="border-0">Price</th>
+                                                    <th scope="col" class="border-0">Order Time</th>
+                                                    <th scope="col" class="border-0">Customer</th>
+                                                    <th scope="col" class="border-0">Status</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -254,9 +254,9 @@
                                         <table class="table table-sm">
                                             <thead class="bg-light">
                                                 <tr>
-                                                    <th class="border-0">Campaign</th>
-                                                    <th class="border-0">Visits</th>
-                                                    <th class="border-0">Revenue</th>
+                                                    <th scope="col" class="border-0">Campaign</th>
+                                                    <th scope="col" class="border-0">Visits</th>
+                                                    <th scope="col" class="border-0">Revenue</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -547,29 +547,29 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
     import { createSparkline, createLineChart, createDoughnutChart, createBarChart, colors } from '/js/components/charts.js';
 
     // Initialize charts
     document.addEventListener('DOMContentLoaded', () => {
         // Initialize sparklines
-        createSparkline('#sparkline-revenue', [5, 10, 5, 20, 15, 25, 20, 30], { 
-            color: colors.primary 
+        createSparkline('#sparkline-revenue', [5, 10, 5, 20, 15, 25, 20, 30], {
+            color: colors.primary
         });
-        
-        createSparkline('#sparkline-revenue2', [3, 7, 5, 10, 5, 12, 16, 15], { 
-            color: colors.success 
+
+        createSparkline('#sparkline-revenue2', [3, 7, 5, 10, 5, 12, 16, 15], {
+            color: colors.success
         });
-        
-        createSparkline('#sparkline-revenue3', [15, 13, 15, 12, 10, 8, 10, 7], { 
-            color: colors.danger 
+
+        createSparkline('#sparkline-revenue3', [15, 13, 15, 12, 10, 8, 10, 7], {
+            color: colors.danger
         });
-        
-        createSparkline('#sparkline-revenue4', [2, 3, 2, 5, 4, 7, 5, 8], { 
-            color: colors.info 
+
+        createSparkline('#sparkline-revenue4', [2, 3, 2, 5, 4, 7, 5, 8], {
+            color: colors.info
         });
 
         // Customer Acquisition Chart
@@ -581,7 +581,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#customer-acquisition', customerData, {
             plugins: {
                 legend: {
@@ -599,7 +599,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#product-category', categoryData, {
             plugins: {
                 legend: {
@@ -621,7 +621,7 @@
                 tension: 0.4
             }]
         };
-        
+
         createLineChart('#product-sales', productSalesData, {
             plugins: {
                 legend: {
@@ -644,7 +644,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#revenue-by-category', revenueCategoryData, {
             plugins: {
                 legend: {
@@ -666,7 +666,7 @@
                 tension: 0.4
             }]
         };
-        
+
         createLineChart('#total-revenue', totalRevenueData, {
             plugins: {
                 legend: {

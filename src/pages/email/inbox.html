@@ -4,10 +4,10 @@
 <div class="dashboard-main-wrapper">
     <!-- Header -->
     {{> layouts/header}}
-    
+
     <!-- Sidebar -->
     {{> layouts/sidebar activeMenu="email" activePage="inbox"}}
-    
+
     <!-- Main Content -->
     <div class="dashboard-wrapper">
         <div class="dashboard-email">
@@ -112,20 +112,20 @@
                                                         </div>
                                                         <div class="col-auto">
                                                             <div class="btn-group btn-group-sm" role="group">
-                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Archive">
-                                                                    <i class="fas fa-archive"></i>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Archive" aria-label="Archive">
+                                                                    <i aria-hidden="true" class="fas fa-archive"></i>
                                                                 </button>
-                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Delete">
-                                                                    <i class="fas fa-trash"></i>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Delete" aria-label="Delete">
+                                                                    <i aria-hidden="true" class="fas fa-trash"></i>
                                                                 </button>
-                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Mark as Read">
-                                                                    <i class="fas fa-envelope-open"></i>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Mark as Read" aria-label="Mark as Read">
+                                                                    <i aria-hidden="true" class="fas fa-envelope-open"></i>
                                                                 </button>
-                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Mark as Unread">
-                                                                    <i class="fas fa-envelope"></i>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Mark as Unread" aria-label="Mark as Unread">
+                                                                    <i aria-hidden="true" class="fas fa-envelope"></i>
                                                                 </button>
-                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Star">
-                                                                    <i class="fas fa-star"></i>
+                                                                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" title="Star" aria-label="Star">
+                                                                    <i aria-hidden="true" class="fas fa-star"></i>
                                                                 </button>
                                                             </div>
                                                         </div>
@@ -146,7 +146,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer -->
         {{> layouts/footer}}
     </div>
@@ -155,5 +155,3 @@
 <!-- Page Specific Scripts -->
 <script type="module" src="/js/pages/inbox.js"></script>
 {{/inline}}
-
-{{> layouts/base}}

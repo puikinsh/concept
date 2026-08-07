@@ -1,15 +1,15 @@
 <a class="visually-hidden-focusable skip-link" href="#main-content">Skip to main content</a>
 <div class="dashboard-header">
-    <nav class="navbar navbar-expand fixed-top">
+    <nav class="navbar navbar-expand fixed-top" aria-label="Main navigation">
         <div class="container-fluid">
             <!-- Mobile Sidebar Toggle -->
             <button class="navbar-toggler sidebar-toggler me-3 d-lg-none" type="button" aria-label="Toggle sidebar">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <!-- Brand -->
             <a class="navbar-brand" href="index.html">Concept</a>
-            
+
             <!-- Search Bar - Hidden on Mobile -->
             <div class="mx-auto d-none d-md-block">
                 <div class="top-search-bar">
@@ -17,22 +17,22 @@
                     <input class="form-control" type="search" placeholder="Search anything..." aria-label="Search">
                 </div>
             </div>
-            
+
             <!-- Right Side Items - Always visible -->
             <ul class="navbar-nav ms-auto navbar-right-top">
                 <!-- Mobile Search Toggle -->
                 <li class="nav-item d-md-none">
-                    <a class="nav-link nav-icons" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
-                        <i class="fas fa-search"></i>
+                    <a class="nav-link nav-icons" href="#" data-bs-toggle="modal" data-bs-target="#searchModal" aria-label="Search">
+                        <i aria-hidden="true" class="fas fa-search"></i>
                     </a>
                 </li>
-                
+
                 <!-- Apps Grid - Hidden on small mobile -->
                 <li class="nav-item dropdown d-none d-sm-block">
-                    <a class="nav-link nav-icons" href="#" id="navbarApps" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-th"></i>
+                    <a class="nav-link nav-icons" href="#" id="navbarApps" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Th">
+                        <i aria-hidden="true" class="fas fa-th"></i>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end apps-dropdown" aria-labelledby="navbarApps">
+                    <div class="dropdown-menu dropdown-menu-end apps-dropdown">
                         <div class="dropdown-header d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">Quick Apps</h6>
                         </div>
@@ -57,14 +57,14 @@
                         </div>
                     </div>
                 </li>
-                
+
                 <!-- Notifications -->
                 <li class="nav-item dropdown notification">
-                    <a class="nav-link nav-icons" href="#" id="navbarNotifications" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link nav-icons" href="#" id="navbarNotifications" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
                         <i class="fas fa-bell"></i>
                         <span class="indicator"></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end notification-dropdown" aria-labelledby="navbarNotifications">
+                    <div class="dropdown-menu dropdown-menu-end notification-dropdown">
                         <div class="dropdown-header d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">Notifications</h6>
                             <span class="badge bg-primary rounded-pill">4 New</span>
@@ -109,14 +109,14 @@
                         <a href="#" class="dropdown-item text-center text-primary">View all notifications</a>
                     </div>
                 </li>
-                
+
                 <!-- Messages - Hidden on small mobile -->
                 <li class="nav-item dropdown d-none d-sm-block">
-                    <a class="nav-link nav-icons" href="#" id="navbarMessages" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link nav-icons" href="#" id="navbarMessages" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Messages">
                         <i class="fas fa-envelope"></i>
                         <span class="indicator"></span>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end messages-dropdown" aria-labelledby="navbarMessages">
+                    <div class="dropdown-menu dropdown-menu-end messages-dropdown">
                         <div class="dropdown-header d-flex justify-content-between align-items-center">
                             <h6 class="mb-0">Messages</h6>
                             <span class="badge bg-primary rounded-pill">3 New</span>
@@ -158,13 +158,13 @@
                         <a href="#" class="dropdown-item text-center text-primary">View all messages</a>
                     </div>
                 </li>
-                
+
                 <!-- User Profile -->
                 <li class="nav-item dropdown nav-user ms-2">
-                    <a class="nav-link p-0" href="#" id="navbarUser" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link p-0" href="#" id="navbarUser" data-bs-toggle="dropdown" aria-expanded="false" aria-label="User">
                         <img src="https://ui-avatars.com/api/?name=John+Abraham&background=5969ff&color=fff" alt="User" class="user-avatar-md rounded-circle">
                     </a>
-                    <div class="dropdown-menu dropdown-menu-end nav-user-dropdown" aria-labelledby="navbarUser">
+                    <div class="dropdown-menu dropdown-menu-end nav-user-dropdown">
                         <div class="nav-user-info">
                             <div class="d-flex align-items-center">
                                 <img src="https://ui-avatars.com/api/?name=John+Abraham&background=5969ff&color=fff" alt="User" class="rounded-circle me-3" width="50">
@@ -188,7 +188,7 @@
 </div>
 
 <!-- Mobile Search Modal -->
-<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" role="dialog">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">

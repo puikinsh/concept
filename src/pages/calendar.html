@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Calendar" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="apps" activePage="calendar" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -34,10 +34,10 @@
                     <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12 col-12">
                         <div class="card">
                             <div class="card-body">
-                                <button class="btn btn-primary w-100 mb-4" data-bs-toggle="modal" data-bs-target="#eventModal">
+                                <button type="button" class="btn btn-primary w-100 mb-4" data-bs-toggle="modal" data-bs-target="#eventModal">
                                     <i class="fas fa-plus me-2"></i>Add Event
                                 </button>
-                                
+
                                 <h5 class="mb-3">Event Categories</h5>
                                 <div class="event-categories">
                                     <div class="form-check mb-2">
@@ -117,7 +117,7 @@
     </div>
 
     <!-- Event Modal -->
-    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -180,9 +180,9 @@
             </div>
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
         import { initializeCalendar } from '@js/pages/calendar.js';
     </script>

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Sales Dashboard" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-sales" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="dashboard-sales">
                 <div class="container-fluid dashboard-content">
@@ -181,11 +181,11 @@
                                         <table class="table table-hover">
                                             <thead class="bg-light">
                                                 <tr>
-                                                    <th class="border-0">#</th>
-                                                    <th class="border-0">Product</th>
-                                                    <th class="border-0">Units Sold</th>
-                                                    <th class="border-0">Revenue</th>
-                                                    <th class="border-0">Trend</th>
+                                                    <th scope="col" class="border-0">#</th>
+                                                    <th scope="col" class="border-0">Product</th>
+                                                    <th scope="col" class="border-0">Units Sold</th>
+                                                    <th scope="col" class="border-0">Revenue</th>
+                                                    <th scope="col" class="border-0">Trend</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -425,9 +425,9 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
     import { createSparkline, createLineChart, createDoughnutChart, createBarChart, createMixedChart, colors } from '/js/components/charts.js';
 
@@ -455,7 +455,7 @@
                 fill: false
             }]
         };
-        
+
         createMixedChart('#sales-overview', salesOverviewData, {
             plugins: {
                 legend: {
@@ -484,7 +484,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#sales-target', salesTargetData, {
             plugins: {
                 legend: {
@@ -515,7 +515,7 @@
                 backgroundColor: colors.info
             }]
         };
-        
+
         createBarChart('#sales-by-region', salesByRegionData, {
             plugins: {
                 legend: {
@@ -548,7 +548,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#sales-by-channel', salesByChannelData, {
             plugins: {
                 legend: {

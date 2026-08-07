@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Charts" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="charts" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="dashboard-content">
                 <div class="container-fluid">
@@ -129,7 +129,7 @@
                     <div class="row mt-4">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">Mixed Chart (Bar & Line)</h5>
+                                <h5 class="card-header">Mixed Chart (Bar &amp; Line)</h5>
                                 <div class="card-body">
                                     <div class="chart-container">
                                         <canvas id="mixed-chart"></canvas>
@@ -226,9 +226,9 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
     import { createLineChart, createBarChart, createAreaChart, createPieChart, createDoughnutChart, createSparkline, colors } from '/js/components/charts.js';
     import Chart from 'chart.js/auto';
@@ -536,15 +536,15 @@
         createSparkline('#sparkline-1', [5, 10, 5, 20, 15, 25, 20, 30, 25, 35, 30, 40], {
             color: colors.primary
         });
-        
+
         createSparkline('#sparkline-2', [3, 7, 5, 10, 5, 12, 16, 15, 20, 18, 22, 25], {
             color: colors.success
         });
-        
+
         createSparkline('#sparkline-3', [15, 13, 15, 12, 10, 8, 10, 7, 5, 8, 10, 12], {
             color: colors.warning
         });
-        
+
         createSparkline('#sparkline-4', [8, 12, 10, 15, 18, 20, 25, 30, 28, 35, 32, 40], {
             color: colors.info
         });

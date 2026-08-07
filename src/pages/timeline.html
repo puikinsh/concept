@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Timeline" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="timeline" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -46,7 +46,7 @@
                                         <option value="custom">Custom Range</option>
                                     </select>
                                 </div>
-                                
+
                                 <div class="mb-4">
                                     <label class="form-label">Activity Type</label>
                                     <div class="activity-filters">
@@ -82,14 +82,14 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="mb-4">
                                     <label class="form-label">Users</label>
                                     <input type="text" class="form-control" placeholder="Search users..." id="userSearch">
                                 </div>
-                                
-                                <button class="btn btn-primary w-100 mb-2" id="applyFilters">Apply Filters</button>
-                                <button class="btn btn-outline-secondary w-100" id="resetFilters">Reset</button>
+
+                                <button type="button" class="btn btn-primary w-100 mb-2" id="applyFilters">Apply Filters</button>
+                                <button type="button" class="btn btn-outline-secondary w-100" id="resetFilters">Reset</button>
                             </div>
                         </div>
 
@@ -126,10 +126,10 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h5 class="mb-0">Recent Activities</h5>
                                     <div>
-                                        <button class="btn btn-sm btn-outline-secondary me-2" id="exportTimeline">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary me-2" id="exportTimeline">
                                             <i class="fas fa-download me-1"></i>Export
                                         </button>
-                                        <button class="btn btn-sm btn-primary" id="refreshTimeline">
+                                        <button type="button" class="btn btn-sm btn-primary" id="refreshTimeline">
                                             <i class="fas fa-sync me-1"></i>Refresh
                                         </button>
                                     </div>
@@ -141,7 +141,7 @@
                                     <div class="timeline-date">
                                         <h6 class="text-muted">Today</h6>
                                     </div>
-                                    
+
                                     <div class="timeline-item" data-type="user">
                                         <div class="timeline-marker bg-primary"></div>
                                         <div class="timeline-content">
@@ -152,8 +152,8 @@
                                                     <small class="text-muted"><i class="far fa-clock me-1"></i>2 hours ago</small>
                                                 </div>
                                                 <div class="dropdown">
-                                                    <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
-                                                        <i class="fas fa-ellipsis-v"></i>
+                                                    <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown" aria-label="More options">
+                                                        <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View Details</a></li>
@@ -166,7 +166,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-item" data-type="system">
                                         <div class="timeline-marker bg-warning"></div>
                                         <div class="timeline-content">
@@ -186,7 +186,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-item" data-type="security">
                                         <div class="timeline-marker bg-danger"></div>
                                         <div class="timeline-content">
@@ -201,13 +201,13 @@
                                             <div class="timeline-body">
                                                 <p class="mb-0">Multiple failed login attempts detected from IP: 192.168.1.100</p>
                                                 <div class="mt-2">
-                                                    <button class="btn btn-sm btn-danger me-2">Block IP</button>
-                                                    <button class="btn btn-sm btn-outline-secondary">View Details</button>
+                                                    <button type="button" class="btn btn-sm btn-danger me-2">Block IP</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">View Details</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-item" data-type="transaction">
                                         <div class="timeline-marker bg-success"></div>
                                         <div class="timeline-content">
@@ -225,17 +225,17 @@
                                                         <p class="mb-0">Premium Plan Subscription</p>
                                                         <small class="text-muted">Order #12345</small>
                                                     </div>
-                                                    <button class="btn btn-sm btn-outline-primary">View Invoice</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-primary">View Invoice</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Yesterday -->
                                     <div class="timeline-date">
                                         <h6 class="text-muted">Yesterday</h6>
                                     </div>
-                                    
+
                                     <div class="timeline-item" data-type="milestone">
                                         <div class="timeline-marker bg-info">
                                             <i class="fas fa-trophy text-white small"></i>
@@ -259,7 +259,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-item" data-type="user">
                                         <div class="timeline-marker bg-primary"></div>
                                         <div class="timeline-content">
@@ -277,17 +277,17 @@
                                                     </div>
                                                 </div>
                                                 <div class="mt-2">
-                                                    <button class="btn btn-sm btn-outline-primary me-2">
+                                                    <button type="button" class="btn btn-sm btn-outline-primary me-2">
                                                         <i class="far fa-thumbs-up me-1"></i>Like
                                                     </button>
-                                                    <button class="btn btn-sm btn-outline-secondary">
+                                                    <button type="button" class="btn btn-sm btn-outline-secondary">
                                                         <i class="far fa-comment me-1"></i>Reply
                                                     </button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-item" data-type="system">
                                         <div class="timeline-marker bg-warning"></div>
                                         <div class="timeline-content">
@@ -316,10 +316,10 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Load More -->
                                     <div class="text-center mt-4">
-                                        <button class="btn btn-outline-primary" id="loadMore">
+                                        <button type="button" class="btn btn-outline-primary" id="loadMore">
                                             <i class="fas fa-arrow-down me-2"></i>Load More Activities
                                         </button>
                                     </div>
@@ -332,9 +332,9 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
         import { initializeTimeline } from '@js/pages/timeline.js';
     </script>

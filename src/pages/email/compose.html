@@ -4,10 +4,10 @@
 <div class="dashboard-main-wrapper">
     <!-- Header -->
     {{> layouts/header}}
-    
+
     <!-- Sidebar -->
     {{> layouts/sidebar activeMenu="email" activePage="compose"}}
-    
+
     <!-- Main Content -->
     <div class="dashboard-wrapper">
         <div class="dashboard-email">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Email Interface -->
                 <div class="row">
                     <div class="col-xl-12">
@@ -103,21 +103,21 @@
                                                     <!-- To Field -->
                                                     <div class="mb-3">
                                                         <label for="toEmail" class="form-label">To:</label>
-                                                        <input type="text" class="form-control" id="toEmail" placeholder="Enter recipient email addresses" multiple>
+                                                        <input type="email" class="form-control" id="toEmail" placeholder="Enter recipient email addresses" multiple>
                                                     </div>
 
                                                     <!-- CC/BCC Fields -->
                                                     <div class="row mb-3">
                                                         <div class="col-md-6">
                                                             <label for="ccEmail" class="form-label">
-                                                                CC: 
+                                                                CC:
                                                                 <small class="text-muted">(Optional)</small>
                                                             </label>
                                                             <input type="text" class="form-control" id="ccEmail" placeholder="Carbon copy recipients">
                                                         </div>
                                                         <div class="col-md-6">
                                                             <label for="bccEmail" class="form-label">
-                                                                BCC: 
+                                                                BCC:
                                                                 <small class="text-muted">(Optional)</small>
                                                             </label>
                                                             <input type="text" class="form-control" id="bccEmail" placeholder="Blind carbon copy recipients">
@@ -179,7 +179,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer -->
         {{> layouts/footer}}
     </div>
@@ -188,5 +188,3 @@
 <!-- Page Specific Scripts -->
 <script type="module" src="/js/pages/compose.js"></script>
 {{/inline}}
-
-{{> layouts/base}}

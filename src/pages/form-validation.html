@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Form Validation" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="forms" activePage="form-validation" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="password1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="password1" required minlength="8">
+                                        <input type="password" class="form-control" id="password1" required minlength="8" autocomplete="new-password">
                                         <small class="form-text text-muted">Minimum 8 characters</small>
                                     </div>
                                     <div class="form-check mb-3">
@@ -107,7 +107,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="password2" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="password2" required minlength="8">
+                                        <input type="password" class="form-control" id="password2" required minlength="8" autocomplete="new-password">
                                         <div class="valid-feedback">
                                             Strong password!
                                         </div>
@@ -313,7 +313,7 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="userPassword" class="form-label">Password</label>
-                                                <input type="password" class="form-control" id="userPassword" placeholder="Enter password">
+                                                <input type="password" class="form-control" id="userPassword" placeholder="Enter password" autocomplete="new-password">
                                                 <div class="password-strength mt-2">
                                                     <div class="progress" style="height: 5px;">
                                                         <div class="progress-bar" role="progressbar" style="width: 0%"></div>
@@ -327,7 +327,7 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label for="confirmPassword" class="form-label">Confirm Password</label>
-                                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password">
+                                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" autocomplete="new-password">
                                                 <div class="invalid-feedback"></div>
                                                 <div class="valid-feedback"></div>
                                             </div>
@@ -494,17 +494,17 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script>
     // Bootstrap form validation
     (function() {
         'use strict'
-        
+
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.querySelectorAll('.needs-validation')
-        
+
         // Loop over them and prevent submission
         Array.prototype.slice.call(forms)
             .forEach(function(form) {
@@ -513,7 +513,7 @@
                         event.preventDefault()
                         event.stopPropagation()
                     }
-                    
+
                     form.classList.add('was-validated')
                 }, false)
             })
@@ -527,7 +527,7 @@
             usernameInput.addEventListener('input', function() {
                 const value = this.value;
                 const isValid = /^[a-zA-Z0-9]{4,20}$/.test(value);
-                
+
                 if (value.length === 0) {
                     this.classList.remove('is-valid', 'is-invalid');
                 } else if (isValid) {
@@ -543,14 +543,14 @@
                 }
             });
         }
-        
+
         // Email validation
         const emailInput = document.getElementById('userEmail');
         if (emailInput) {
             emailInput.addEventListener('input', function() {
                 const value = this.value;
                 const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-                
+
                 if (value.length === 0) {
                     this.classList.remove('is-valid', 'is-invalid');
                 } else if (isValid) {
@@ -566,7 +566,7 @@
                 }
             });
         }
-        
+
         // Password strength validation
         const passwordInput = document.getElementById('userPassword');
         if (passwordInput) {
@@ -575,20 +575,20 @@
                 const progressBar = this.parentElement.querySelector('.progress-bar');
                 const strengthText = this.parentElement.querySelector('.strength-text');
                 let strength = 0;
-                
+
                 if (value.length >= 8) strength++;
                 if (/[a-z]/.test(value) && /[A-Z]/.test(value)) strength++;
                 if (/[0-9]/.test(value)) strength++;
                 if (/[^A-Za-z0-9]/.test(value)) strength++;
-                
+
                 const strengthLevels = ['None', 'Weak', 'Fair', 'Good', 'Strong'];
                 const strengthColors = ['', 'bg-danger', 'bg-warning', 'bg-info', 'bg-success'];
                 const strengthWidths = ['0%', '25%', '50%', '75%', '100%'];
-                
+
                 progressBar.className = 'progress-bar ' + strengthColors[strength];
                 progressBar.style.width = strengthWidths[strength];
                 strengthText.textContent = strengthLevels[strength];
-                
+
                 if (value.length === 0) {
                     this.classList.remove('is-valid', 'is-invalid');
                 } else if (strength >= 3) {
@@ -604,14 +604,14 @@
                 }
             });
         }
-        
+
         // Confirm password validation
         const confirmPasswordInput = document.getElementById('confirmPassword');
         if (confirmPasswordInput && passwordInput) {
             confirmPasswordInput.addEventListener('input', function() {
                 const value = this.value;
                 const passwordValue = passwordInput.value;
-                
+
                 if (value.length === 0) {
                     this.classList.remove('is-valid', 'is-invalid');
                 } else if (value === passwordValue && passwordValue.length > 0) {
@@ -627,14 +627,14 @@
                 }
             });
         }
-        
+
         // Phone number formatting and validation
         const phoneInput = document.getElementById('phoneNumber');
         if (phoneInput) {
             phoneInput.addEventListener('input', function(e) {
                 let value = e.target.value.replace(/\D/g, '');
                 let formattedValue = '';
-                
+
                 if (value.length > 0) {
                     if (value.length <= 3) {
                         formattedValue = `(${value}`;
@@ -644,11 +644,11 @@
                         formattedValue = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
                     }
                 }
-                
+
                 e.target.value = formattedValue;
-                
+
                 const isValid = /^\(\d{3}\) \d{3}-\d{4}$/.test(formattedValue);
-                
+
                 if (formattedValue.length === 0) {
                     this.classList.remove('is-valid', 'is-invalid');
                 } else if (isValid) {
@@ -664,25 +664,25 @@
                 }
             });
         }
-        
+
         // Credit card formatting and validation
         const creditCardInput = document.getElementById('creditCard');
         if (creditCardInput) {
             creditCardInput.addEventListener('input', function(e) {
                 let value = e.target.value.replace(/\s/g, '');
                 let formattedValue = '';
-                
+
                 for (let i = 0; i < value.length; i++) {
                     if (i > 0 && i % 4 === 0) {
                         formattedValue += ' ';
                     }
                     formattedValue += value[i];
                 }
-                
+
                 e.target.value = formattedValue;
-                
+
                 const isValid = /^\d{4} \d{4} \d{4} \d{4}$/.test(formattedValue);
-                
+
                 if (formattedValue.length === 0) {
                     this.classList.remove('is-valid', 'is-invalid');
                 } else if (isValid) {
@@ -698,7 +698,7 @@
                 }
             });
         }
-        
+
         // Prevent form submission for real-time validation demo
         const realtimeForm = document.getElementById('realtimeForm');
         if (realtimeForm) {

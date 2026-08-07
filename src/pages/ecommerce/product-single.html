@@ -4,10 +4,10 @@
 <div class="dashboard-main-wrapper">
     <!-- Header -->
     {{> layouts/header}}
-    
+
     <!-- Sidebar -->
     {{> layouts/sidebar activeMenu="ecommerce" activePage="product-single"}}
-    
+
     <!-- Main Content -->
     <div class="dashboard-wrapper">
         <div class="dashboard-ecommerce">
@@ -19,7 +19,7 @@
                             <h2 class="pageheader-title">Product Details</h2>
                             <p class="pageheader-text">View detailed product information, specifications, and customer reviews.</p>
                             <div class="page-breadcrumb">
-                                <nav aria-label="breadcrumb">
+                                <nav aria-label="Product breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-link">Dashboard</a></li>
                                         <li class="breadcrumb-item"><a href="products.html" class="breadcrumb-link">E-Commerce</a></li>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Product Details -->
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -51,7 +51,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Product Info -->
                                     <div class="col-xl-6 col-lg-6 col-md-12">
                                         <div class="product-info">
@@ -70,15 +70,15 @@
                                                 <span class="text-muted ms-3">|</span>
                                                 <span class="ms-3 text-success">In Stock</span>
                                             </div>
-                                            
+
                                             <div class="price mb-4">
                                                 <h3 class="text-primary mb-0">$1,899.00</h3>
                                                 <del class="text-muted">$2,099.00</del>
                                                 <span class="badge bg-danger ms-2">-14% OFF</span>
                                             </div>
-                                            
+
                                             <p class="mb-4">The iPhone 15 Pro Max features a strong and light titanium design with a 6.7-inch Super Retina XDR display. It's powered by the A17 Pro chip with pro-level GPU performance.</p>
-                                            
+
                                             <!-- Product Options -->
                                             <div class="product-options mb-4">
                                                 <div class="mb-3">
@@ -86,32 +86,32 @@
                                                     <div class="color-options d-flex gap-2">
                                                         <input type="radio" class="btn-check" name="color" id="color1" checked>
                                                         <label class="btn btn-outline-secondary" for="color1">Natural Titanium</label>
-                                                        
+
                                                         <input type="radio" class="btn-check" name="color" id="color2">
                                                         <label class="btn btn-outline-secondary" for="color2">Blue Titanium</label>
-                                                        
+
                                                         <input type="radio" class="btn-check" name="color" id="color3">
                                                         <label class="btn btn-outline-secondary" for="color3">White Titanium</label>
-                                                        
+
                                                         <input type="radio" class="btn-check" name="color" id="color4">
                                                         <label class="btn btn-outline-secondary" for="color4">Black Titanium</label>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="mb-3">
                                                     <label class="form-label fw-bold">Storage:</label>
                                                     <div class="storage-options d-flex gap-2">
                                                         <input type="radio" class="btn-check" name="storage" id="storage1">
                                                         <label class="btn btn-outline-secondary" for="storage1">256GB</label>
-                                                        
+
                                                         <input type="radio" class="btn-check" name="storage" id="storage2" checked>
                                                         <label class="btn btn-outline-secondary" for="storage2">512GB</label>
-                                                        
+
                                                         <input type="radio" class="btn-check" name="storage" id="storage3">
                                                         <label class="btn btn-outline-secondary" for="storage3">1TB</label>
                                                     </div>
                                                 </div>
-                                                
+
                                                 <div class="mb-4">
                                                     <label class="form-label fw-bold">Quantity:</label>
                                                     <div class="input-group" style="width: 150px;">
@@ -121,25 +121,25 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <!-- Action Buttons -->
                                             <div class="d-flex gap-2 mb-4">
-                                                <button class="btn btn-primary btn-lg flex-fill">
+                                                <button type="button" class="btn btn-primary btn-lg flex-fill">
                                                     <i class="fas fa-shopping-cart me-2"></i>Add to Cart
                                                 </button>
-                                                <button class="btn btn-success btn-lg flex-fill">
+                                                <button type="button" class="btn btn-success btn-lg flex-fill">
                                                     <i class="fas fa-bolt me-2"></i>Buy Now
                                                 </button>
-                                                <button class="btn btn-outline-secondary btn-lg">
-                                                    <i class="far fa-heart"></i>
+                                                <button type="button" class="btn btn-outline-secondary btn-lg" aria-label="Like">
+                                                    <i aria-hidden="true" class="far fa-heart"></i>
                                                 </button>
                                             </div>
-                                            
+
                                             <!-- Product Meta -->
                                             <div class="product-meta">
                                                 <p class="mb-2"><strong>SKU:</strong> <span class="text-muted">APL-IP15PM-512</span></p>
                                                 <p class="mb-2"><strong>Category:</strong> <a href="#" class="text-decoration-none">Electronics</a>, <a href="#" class="text-decoration-none">Smartphones</a></p>
-                                                <p class="mb-2"><strong>Tags:</strong> 
+                                                <p class="mb-2"><strong>Tags:</strong>
                                                     <a href="#" class="badge bg-light text-dark text-decoration-none">iPhone</a>
                                                     <a href="#" class="badge bg-light text-dark text-decoration-none">Apple</a>
                                                     <a href="#" class="badge bg-light text-dark text-decoration-none">5G</a>
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Product Tabs -->
                 <div class="row mt-4">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -177,7 +177,7 @@
                                     <div class="tab-pane fade show active" id="description" role="tabpanel">
                                         <h5>Product Description</h5>
                                         <p>The iPhone 15 Pro Max is forged in titanium and features the groundbreaking A17 Pro chip, a customizable Action button, and the most powerful iPhone camera system ever.</p>
-                                        
+
                                         <h6 class="mt-4">Key Features:</h6>
                                         <ul>
                                             <li>6.7-inch Super Retina XDR display with ProMotion</li>
@@ -188,7 +188,7 @@
                                             <li>Emergency SOS via satellite</li>
                                             <li>Crash Detection</li>
                                         </ul>
-                                        
+
                                         <h6 class="mt-4">What's in the Box:</h6>
                                         <ul>
                                             <li>iPhone 15 Pro Max</li>
@@ -196,7 +196,7 @@
                                             <li>Documentation</li>
                                         </ul>
                                     </div>
-                                    
+
                                     <!-- Specifications Tab -->
                                     <div class="tab-pane fade" id="specifications" role="tabpanel">
                                         <h5>Technical Specifications</h5>
@@ -204,7 +204,7 @@
                                             <table class="table table-striped">
                                                 <tbody>
                                                     <tr>
-                                                        <td width="30%"><strong>Display</strong></td>
+                                                        <td style="width: 30%"><strong>Display</strong></td>
                                                         <td>6.7-inch (diagonal) all-screen OLED display, 2796×1290-pixel resolution at 460 ppi</td>
                                                     </tr>
                                                     <tr>
@@ -239,7 +239,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    
+
                                     <!-- Reviews Tab -->
                                     <div class="tab-pane fade" id="reviews" role="tabpanel">
                                         <div class="row">
@@ -256,7 +256,7 @@
                                                     </div>
                                                     <p class="text-muted">Based on 125 reviews</p>
                                                 </div>
-                                                
+
                                                 <!-- Rating Breakdown -->
                                                 <div class="rating-breakdown">
                                                     <div class="d-flex align-items-center mb-2">
@@ -300,10 +300,10 @@
                                                         <span class="small">2%</span>
                                                     </div>
                                                 </div>
-                                                
-                                                <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a Review</button>
+
+                                                <button type="button" class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a Review</button>
                                             </div>
-                                            
+
                                             <div class="col-md-8">
                                                 <!-- Individual Reviews -->
                                                 <div class="reviews-list">
@@ -323,7 +323,7 @@
                                                         </div>
                                                         <p class="mb-0">Amazing phone! The camera quality is outstanding and the titanium build feels premium. Battery life is excellent too.</p>
                                                     </div>
-                                                    
+
                                                     <div class="review-item border-bottom pb-3 mb-3">
                                                         <div class="d-flex justify-content-between mb-2">
                                                             <div>
@@ -340,7 +340,7 @@
                                                         </div>
                                                         <p class="mb-0">Great upgrade from my iPhone 13. The Action button is very useful. Only complaint is the price, but you get what you pay for.</p>
                                                     </div>
-                                                    
+
                                                     <div class="review-item">
                                                         <div class="d-flex justify-content-between mb-2">
                                                             <div>
@@ -358,8 +358,8 @@
                                                         <p class="mb-0">The A17 Pro chip is incredibly fast. Gaming performance is console-level. The 5x zoom camera is a game changer for photography.</p>
                                                     </div>
                                                 </div>
-                                                
-                                                <nav class="mt-4">
+
+                                                <nav class="mt-4" aria-label="Review pagination">
                                                     <ul class="pagination justify-content-center">
                                                         <li class="page-item disabled">
                                                             <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -380,7 +380,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Related Products -->
                 <div class="row mt-4">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -408,12 +408,12 @@
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <span class="h5 mb-0 text-primary">$999</span>
-                                                    <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                                    <button type="button" class="btn btn-sm btn-primary">Add to Cart</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                                         <div class="card product-card h-100">
                                             <div class="card-header p-0">
@@ -432,12 +432,12 @@
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <span class="h5 mb-0 text-primary">$249</span>
-                                                    <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                                    <button type="button" class="btn btn-sm btn-primary">Add to Cart</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                                         <div class="card product-card h-100">
                                             <div class="card-header p-0">
@@ -456,12 +456,12 @@
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <span class="h5 mb-0 text-primary">$39</span>
-                                                    <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                                    <button type="button" class="btn btn-sm btn-primary">Add to Cart</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                                         <div class="card product-card h-100">
                                             <div class="card-header p-0">
@@ -480,7 +480,7 @@
                                                 </div>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <span class="h5 mb-0 text-primary">$59</span>
-                                                    <button class="btn btn-sm btn-primary">Add to Cart</button>
+                                                    <button type="button" class="btn btn-sm btn-primary">Add to Cart</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -492,14 +492,14 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer -->
         {{> layouts/footer}}
     </div>
 </div>
 
 <!-- Review Modal -->
-<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -507,7 +507,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="reviewForm">
+                <div>
                     <div class="mb-3">
                         <label class="form-label">Rating</label>
                         <div class="star-rating">
@@ -534,7 +534,7 @@
                         <label for="reviewEmail" class="form-label">Email Address</label>
                         <input type="email" class="form-control" id="reviewEmail" required>
                     </div>
-                </form>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -568,5 +568,3 @@ function decreaseQuantity() {
 }
 </script>
 {{/inline}}
-
-{{> layouts/base}}

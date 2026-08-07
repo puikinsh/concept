@@ -4,10 +4,10 @@
 <div class="dashboard-main-wrapper">
     <!-- Header -->
     {{> layouts/header}}
-    
+
     <!-- Sidebar -->
     {{> layouts/sidebar activeMenu="ecommerce" activePage="products"}}
-    
+
     <!-- Main Content -->
     <div class="dashboard-wrapper">
         <div class="dashboard-ecommerce">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Filters and Search -->
                 <div class="row mb-4">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -40,8 +40,8 @@
                                     <div class="col-xl-4 col-lg-4 col-md-12 mb-3 mb-lg-0">
                                         <div class="input-group">
                                             <input type="text" class="form-control" placeholder="Search products..." id="productSearch">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search"></i>
+                                            <button class="btn btn-primary" type="button" aria-label="Search">
+                                                <i aria-hidden="true" class="fas fa-search"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -52,8 +52,8 @@
                                                     <option value="">All Categories</option>
                                                     <option value="electronics">Electronics</option>
                                                     <option value="fashion">Fashion</option>
-                                                    <option value="home">Home & Garden</option>
-                                                    <option value="sports">Sports & Outdoors</option>
+                                                    <option value="home">Home &amp; Garden</option>
+                                                    <option value="sports">Sports &amp; Outdoors</option>
                                                     <option value="books">Books</option>
                                                 </select>
                                             </div>
@@ -77,7 +77,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-xl-3 col-lg-12 col-md-6 col-sm-6">
-                                                <button class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#addProductModal">
+                                                <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#addProductModal">
                                                     <i class="fas fa-plus me-1"></i>Add Product
                                                 </button>
                                             </div>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Product Stats -->
                 <div class="row">
                     <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -144,7 +144,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Product Grid -->
                 <div class="row">
                     <!-- Product Card 1 -->
@@ -154,11 +154,11 @@
                                 <img src="https://placehold.co/400x400/5969ff/ffffff?text=iPhone+18+Pro+Max&font=montserrat" alt="iPhone 18 Pro Max" class="img-fluid">
                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">-20%</span>
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -184,13 +184,13 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-primary btn-sm w-100">
+                                <button type="button" class="btn btn-primary btn-sm w-100">
                                     <i class="fas fa-shopping-cart me-1"></i>Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Product Card 2 -->
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
@@ -198,11 +198,11 @@
                                 <img src="https://placehold.co/400x400/ff407b/ffffff?text=AirPods+Pro+3&font=montserrat" alt="AirPods Pro 3" class="img-fluid">
                                 <span class="badge bg-success position-absolute top-0 end-0 m-2">New</span>
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -227,24 +227,24 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-primary btn-sm w-100">
+                                <button type="button" class="btn btn-primary btn-sm w-100">
                                     <i class="fas fa-shopping-cart me-1"></i>Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Product Card 3 -->
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
                                 <img src="https://placehold.co/400x400/25d5f2/ffffff?text=Apple+Watch+Ultra+3&font=montserrat" alt="Apple Watch Ultra 3" class="img-fluid">
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -269,13 +269,13 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-primary btn-sm w-100">
+                                <button type="button" class="btn btn-primary btn-sm w-100">
                                     <i class="fas fa-shopping-cart me-1"></i>Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Product Card 4 -->
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
@@ -283,11 +283,11 @@
                                 <img src="https://placehold.co/400x400/ffc750/ffffff?text=MacBook+Pro+M5&font=montserrat" alt="MacBook Pro M5" class="img-fluid">
                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">Hot</span>
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -312,24 +312,24 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-secondary btn-sm w-100" disabled>
+                                <button type="button" class="btn btn-secondary btn-sm w-100" disabled>
                                     <i class="fas fa-bell me-1"></i>Notify Me
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- More Product Cards... -->
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
                                 <img src="https://placehold.co/400x400/fd5190/ffffff?text=Dell+XPS+16&font=montserrat" alt="Dell XPS 16" class="img-fluid">
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -354,24 +354,24 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-primary btn-sm w-100">
+                                <button type="button" class="btn btn-primary btn-sm w-100">
                                     <i class="fas fa-shopping-cart me-1"></i>Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
                                 <img src="https://placehold.co/400x400/28b62c/ffffff?text=iPad+Pro+M4&font=montserrat" alt="iPad Pro M4" class="img-fluid">
                                 <span class="badge bg-info position-absolute top-0 end-0 m-2">Popular</span>
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -396,23 +396,23 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-primary btn-sm w-100">
+                                <button type="button" class="btn btn-primary btn-sm w-100">
                                     <i class="fas fa-shopping-cart me-1"></i>Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
                                 <img src="https://placehold.co/400x400/158cba/ffffff?text=Canon+EOS+R5&font=montserrat" alt="Canon EOS R5" class="img-fluid">
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -437,24 +437,24 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-primary btn-sm w-100">
+                                <button type="button" class="btn btn-primary btn-sm w-100">
                                     <i class="fas fa-shopping-cart me-1"></i>Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12 mb-4">
                         <div class="card product-card h-100">
                             <div class="card-header p-0 position-relative">
                                 <img src="https://placehold.co/400x400/ff6f69/ffffff?text=PlayStation+5+Pro&font=montserrat" alt="PlayStation 5 Pro" class="img-fluid">
                                 <span class="badge bg-danger position-absolute top-0 end-0 m-2">-15%</span>
                                 <div class="product-actions">
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View">
-                                        <i class="fas fa-eye"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Quick View" aria-label="Quick View">
+                                        <i aria-hidden="true" class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist">
-                                        <i class="fas fa-heart"></i>
+                                    <button type="button" class="btn btn-sm btn-light" data-bs-toggle="tooltip" title="Add to Wishlist" aria-label="Add to Wishlist">
+                                        <i aria-hidden="true" class="fas fa-heart"></i>
                                     </button>
                                 </div>
                             </div>
@@ -480,22 +480,22 @@
                                 </div>
                             </div>
                             <div class="card-footer bg-light">
-                                <button class="btn btn-primary btn-sm w-100">
+                                <button type="button" class="btn btn-primary btn-sm w-100">
                                     <i class="fas fa-shopping-cart me-1"></i>Add to Cart
                                 </button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Pagination -->
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <nav aria-label="Page navigation">
                             <ul class="pagination justify-content-center">
                                 <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1">
-                                        <i class="fas fa-chevron-left"></i>
+                                    <a class="page-link" href="#" tabindex="-1" aria-label="Previous">
+                                        <i aria-hidden="true" class="fas fa-chevron-left"></i>
                                     </a>
                                 </li>
                                 <li class="page-item active"><a class="page-link" href="#">1</a></li>
@@ -504,8 +504,8 @@
                                 <li class="page-item"><a class="page-link" href="#">4</a></li>
                                 <li class="page-item"><a class="page-link" href="#">5</a></li>
                                 <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-chevron-right"></i>
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <i aria-hidden="true" class="fas fa-chevron-right"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -514,14 +514,14 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer -->
         {{> layouts/footer}}
     </div>
 </div>
 
 <!-- Add Product Modal -->
-<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+<div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -529,7 +529,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form id="addProductForm">
+                <div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="productName" class="form-label">Product Name</label>
@@ -541,8 +541,8 @@
                                 <option value="">Select Category</option>
                                 <option value="electronics">Electronics</option>
                                 <option value="fashion">Fashion</option>
-                                <option value="home">Home & Garden</option>
-                                <option value="sports">Sports & Outdoors</option>
+                                <option value="home">Home &amp; Garden</option>
+                                <option value="sports">Sports &amp; Outdoors</option>
                                 <option value="books">Books</option>
                             </select>
                         </div>
@@ -569,7 +569,7 @@
                         <label for="productImage" class="form-label">Product Image</label>
                         <input type="file" class="form-control" id="productImage" accept="image/*">
                     </div>
-                </form>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
@@ -582,5 +582,3 @@
 <!-- Page Specific Scripts -->
 <script type="module" src="/js/pages/products.js"></script>
 {{/inline}}
-
-{{> layouts/base}}

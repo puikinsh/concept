@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Finance Dashboard" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-finance" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="dashboard-content">
                 <div class="container-fluid">
@@ -32,7 +32,7 @@
                     <!-- Date Range Picker -->
                     <div class="row">
                         <div class="offset-xl-10 col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
-                            <form>
+                            <div>
                                 <div class="form-group">
                                     <select class="form-select" id="daterange">
                                         <option value="today">Today</option>
@@ -42,7 +42,7 @@
                                         <option value="year">This Year</option>
                                     </select>
                                 </div>
-                            </form>
+                            </div>
                         </div>
                     </div>
 
@@ -186,7 +186,7 @@
                         <!-- EBIT -->
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                             <div class="card">
-                                <h5 class="card-header">EBIT (Earnings Before Interest & Tax)</h5>
+                                <h5 class="card-header">EBIT (Earnings Before Interest &amp; Tax)</h5>
                                 <div class="card-body">
                                     <div class="chart-container">
                                         <canvas id="ebit-chart"></canvas>
@@ -194,7 +194,7 @@
                                     <div class="text-center">
                                         <span class="legend-item me-3">
                                             <span class="fa-xs text-secondary me-1 legend-tile"><i class="fa fa-fw fa-square"></i></span>
-                                            <span class="legend-text">EBIT (Earnings Before Interest & Tax)</span>
+                                            <span class="legend-text">EBIT (Earnings Before Interest &amp; Tax)</span>
                                         </span>
                                     </div>
                                 </div>
@@ -318,9 +318,9 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
     import { createSparkline, createLineChart, createDoughnutChart, createBarChart, colors } from '/js/components/charts.js';
 
@@ -336,20 +336,20 @@
         }
 
         // Initialize sparklines
-        createSparkline('#sparkline-income', [10, 15, 20, 18, 25, 22, 30, 28, 35], { 
-            color: colors.success 
+        createSparkline('#sparkline-income', [10, 15, 20, 18, 25, 22, 30, 28, 35], {
+            color: colors.success
         });
-        
-        createSparkline('#sparkline-expenses', [30, 25, 28, 22, 20, 18, 15, 12], { 
-            color: colors.danger 
+
+        createSparkline('#sparkline-expenses', [30, 25, 28, 22, 20, 18, 15, 12], {
+            color: colors.danger
         });
-        
-        createSparkline('#sparkline-cash', [5, 10, 8, 15, 12, 20, 18, 25], { 
-            color: colors.success 
+
+        createSparkline('#sparkline-cash', [5, 10, 8, 15, 12, 20, 18, 25], {
+            color: colors.success
         });
-        
-        createSparkline('#sparkline-profit', [8, 12, 10, 15, 18, 20, 25, 30], { 
-            color: colors.success 
+
+        createSparkline('#sparkline-profit', [8, 12, 10, 15, 18, 20, 25, 30], {
+            color: colors.success
         });
 
         // AP and AR Balance Chart
@@ -369,7 +369,7 @@
                 borderWidth: 1
             }]
         };
-        
+
         createBarChart('#ap-ar-balance', apArData, {
             plugins: {
                 legend: {
@@ -397,7 +397,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#income-budget', incomeBudgetData, {
             plugins: {
                 legend: {
@@ -416,7 +416,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#expenses-budget', expensesBudgetData, {
             plugins: {
                 legend: {
@@ -439,7 +439,7 @@
                 tension: 0.4
             }]
         };
-        
+
         createLineChart('#ebit-chart', ebitData, {
             plugins: {
                 legend: {
@@ -469,7 +469,7 @@
                 borderWidth: 1
             }]
         };
-        
+
         createBarChart('#cost-goods-services', costGoodsData, {
             plugins: {
                 legend: {
@@ -497,7 +497,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#disputed-overdue', disputedOverdueData, {
             plugins: {
                 legend: {
@@ -526,7 +526,7 @@
                 fill: false
             }]
         };
-        
+
         createLineChart('#disputed-invoices', disputedInvoicesData, {
             plugins: {
                 legend: {
@@ -549,7 +549,7 @@
                 borderWidth: 0
             }]
         };
-        
+
         createDoughnutChart('#accounts-payable-age', accountsPayableAgeData, {
             plugins: {
                 legend: {
@@ -575,7 +575,7 @@
                 tension: 0.4
             }]
         };
-        
+
         createLineChart('#working-capital', workingCapitalData, {
             plugins: {
                 legend: {
@@ -617,7 +617,7 @@
                 borderWidth: 1
             }]
         };
-        
+
         createBarChart('#inventory-turnover', inventoryTurnoverData, {
             plugins: {
                 legend: {

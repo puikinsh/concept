@@ -1,13 +1,76 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Card Components" }}
+
+    <style>
+        .icon-circle-medium {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+        }
+
+        .bg-primary-light {
+            background-color: rgba(102, 126, 234, 0.1);
+        }
+
+        .border-top-success {
+            border-top-color: #71dd37 !important;
+        }
+
+        .border-top-danger {
+            border-top-color: #ef476f !important;
+        }
+
+        .border-top-warning {
+            border-top-color: #ffc107 !important;
+        }
+
+        .user-avatar-lg {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            font-weight: 600;
+        }
+
+        .bg-instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .post-thumbnail-placeholder {
+            font-size: 1.5rem;
+        }
+
+        /* Card image placeholder styling */
+        .card-img-top, .card-img-bottom, .card-img {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-overlay {
+            z-index: 1;
+        }
+
+        /* Opacity utility */
+        .opacity-25 {
+            opacity: 0.25;
+        }
+
+        /* Ensure horizontal cards work properly */
+        .row.g-0 > div > div {
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="ui-elements" activePage="cards" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -515,70 +578,8 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
-    <style>
-        .icon-circle-medium {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            font-size: 1.5rem;
-        }
-        
-        .bg-primary-light {
-            background-color: rgba(102, 126, 234, 0.1);
-        }
-        
-        .border-top-success {
-            border-top-color: #71dd37 !important;
-        }
-        
-        .border-top-danger {
-            border-top-color: #ef476f !important;
-        }
-        
-        .border-top-warning {
-            border-top-color: #ffc107 !important;
-        }
-        
-        .user-avatar-lg {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            font-weight: 600;
-        }
-        
-        .bg-instagram {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-        }
-        
-        .post-thumbnail-placeholder {
-            font-size: 1.5rem;
-        }
-        
-        /* Card image placeholder styling */
-        .card-img-top, .card-img-bottom, .card-img {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card-img-overlay {
-            z-index: 1;
-        }
-        
-        /* Opacity utility */
-        .opacity-25 {
-            opacity: 0.25;
-        }
-        
-        /* Ensure horizontal cards work properly */
-        .row.g-0 > div > div {
-            height: 100%;
-        }
-    </style>
+
 </body>
 </html>
