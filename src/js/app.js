@@ -1,4 +1,5 @@
 // Main Application JavaScript
+
 import * as bootstrap from 'bootstrap';
 import { logger } from './utils/logger.js';
 
