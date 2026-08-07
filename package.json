@@ -1,6 +1,6 @@
 {
   "name": "concept-modern",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Concept - Modern Bootstrap 5 Admin Dashboard Template",
   "type": "module",
   "scripts": {
@@ -11,18 +11,20 @@
     "lint": "eslint 'src/**/*.js' --fix",
     "format": "prettier --write 'src/**/*.{js,html,hbs,scss,css,json}'",
     "lint:check": "eslint 'src/**/*.js'",
-    "format:check": "prettier --check 'src/**/*.{js,html,hbs,scss,css,json}'"
+    "format:check": "prettier --check 'src/**/*.{js,html,hbs,scss,css,json}'",
+    "lint:html": "npm run build --silent && html-validate \"dist/**/*.html\""
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "eslint": "^10.0.2",
+    "eslint": "^10.8.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
-    "prettier": "^3.8.1",
-    "sass": "^1.97.3",
-    "terser": "^5.46.0",
-    "vite": "^7.3.1",
-    "vite-plugin-handlebars": "^2.0.0"
+    "eslint-plugin-prettier": "^5.5.6",
+    "html-validate": "^11.6.2",
+    "prettier": "^3.9.6",
+    "sass": "^1.102.0",
+    "terser": "^5.49.2",
+    "vite": "^8.2.1",
+    "vite-plugin-handlebars": "^2.0.3"
   },
   "overrides": {
     "vite-plugin-handlebars": {
@@ -31,7 +33,7 @@
     "js-yaml": "^4.1.1"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@fortawesome/fontawesome-free": "^7.3.1",
     "@fullcalendar/bootstrap5": "^6.1.20",
     "@fullcalendar/core": "^6.1.20",
     "@fullcalendar/daygrid": "^6.1.20",
@@ -41,14 +43,16 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
     "chart.js": "^4.5.1",
-    "datatables.net": "^2.3.7",
-    "datatables.net-bs5": "^2.3.7",
-    "datatables.net-responsive": "^3.0.8",
-    "datatables.net-responsive-bs5": "^3.0.8",
-    "daterangepicker": "^3.1.0",
-    "moment": "^2.30.1",
-    "quill": "^2.0.3",
+    "datatables.net": "^3.0.1",
+    "datatables.net-bs5": "^3.0.1",
+    "datatables.net-buttons": "^4.0.1",
+    "datatables.net-buttons-bs5": "^4.0.1",
+    "datatables.net-responsive": "^4.0.1",
+    "datatables.net-responsive-bs5": "^4.0.1",
+    "jszip": "^3.10.1",
+    "quill": "2.0.2",
     "sortablejs": "^1.15.7",
-    "tom-select": "^2.5.2"
-  }
+    "tom-select": "^2.6.2"
+  },
+  "license": "MIT"
 }

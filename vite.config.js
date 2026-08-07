@@ -1,5 +1,8 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+
+// Vite 8 resolves configs natively, where rootDir is unavailable.
+const rootDir = import.meta.dirname;
 import handlebars from 'vite-plugin-handlebars';
 
 export default defineConfig({
@@ -9,7 +12,7 @@ export default defineConfig({
 
   plugins: [
     handlebars({
-      partialDirectory: resolve(__dirname, 'src/partials'),
+      partialDirectory: resolve(rootDir, 'src/partials'),
       helpers: {
         json: (context) => JSON.stringify(context),
         eq: (a, b) => a === b,
@@ -35,48 +38,48 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'src/index.html'),
+        main: resolve(rootDir, 'src/index.html'),
         // Dashboard pages
-        'dashboard-finance': resolve(__dirname, 'src/pages/dashboards/finance.html'),
-        'dashboard-sales': resolve(__dirname, 'src/pages/dashboards/sales.html'),
-        'dashboard-influencer': resolve(__dirname, 'src/pages/dashboards/influencer.html'),
+        'dashboard-finance': resolve(rootDir, 'src/pages/dashboards/finance.html'),
+        'dashboard-sales': resolve(rootDir, 'src/pages/dashboards/sales.html'),
+        'dashboard-influencer': resolve(rootDir, 'src/pages/dashboards/influencer.html'),
         // UI Elements
-        'ui-cards': resolve(__dirname, 'src/pages/ui-elements/cards.html'),
-        'ui-general': resolve(__dirname, 'src/pages/ui-elements/general.html'),
-        'ui-typography': resolve(__dirname, 'src/pages/ui-elements/typography.html'),
+        'ui-cards': resolve(rootDir, 'src/pages/ui-elements/cards.html'),
+        'ui-general': resolve(rootDir, 'src/pages/ui-elements/general.html'),
+        'ui-typography': resolve(rootDir, 'src/pages/ui-elements/typography.html'),
         // Forms
-        'form-elements': resolve(__dirname, 'src/pages/form-elements.html'),
-        'form-validation': resolve(__dirname, 'src/pages/form-validation.html'),
-        multiselect: resolve(__dirname, 'src/pages/multiselect.html'),
+        'form-elements': resolve(rootDir, 'src/pages/form-elements.html'),
+        'form-validation': resolve(rootDir, 'src/pages/form-validation.html'),
+        multiselect: resolve(rootDir, 'src/pages/multiselect.html'),
         // Charts
-        charts: resolve(__dirname, 'src/pages/charts/index.html'),
+        charts: resolve(rootDir, 'src/pages/charts/index.html'),
         // Tables
-        'general-tables': resolve(__dirname, 'src/pages/tables/general-tables.html'),
-        'data-tables': resolve(__dirname, 'src/pages/tables/data-tables.html'),
+        'general-tables': resolve(rootDir, 'src/pages/tables/general-tables.html'),
+        'data-tables': resolve(rootDir, 'src/pages/tables/data-tables.html'),
         // E-Commerce
-        products: resolve(__dirname, 'src/pages/ecommerce/products.html'),
-        'product-single': resolve(__dirname, 'src/pages/ecommerce/product-single.html'),
-        checkout: resolve(__dirname, 'src/pages/ecommerce/checkout.html'),
+        products: resolve(rootDir, 'src/pages/ecommerce/products.html'),
+        'product-single': resolve(rootDir, 'src/pages/ecommerce/product-single.html'),
+        checkout: resolve(rootDir, 'src/pages/ecommerce/checkout.html'),
         // Apps
-        calendar: resolve(__dirname, 'src/pages/calendar.html'),
-        chat: resolve(__dirname, 'src/pages/chat.html'),
-        inbox: resolve(__dirname, 'src/pages/email/inbox.html'),
-        compose: resolve(__dirname, 'src/pages/email/compose.html'),
-        'email-details': resolve(__dirname, 'src/pages/email/details.html'),
-        'influencer-finder': resolve(__dirname, 'src/pages/apps/influencer-finder.html'),
-        'influencer-profile': resolve(__dirname, 'src/pages/apps/influencer-profile.html'),
+        calendar: resolve(rootDir, 'src/pages/calendar.html'),
+        chat: resolve(rootDir, 'src/pages/chat.html'),
+        inbox: resolve(rootDir, 'src/pages/email/inbox.html'),
+        compose: resolve(rootDir, 'src/pages/email/compose.html'),
+        'email-details': resolve(rootDir, 'src/pages/email/details.html'),
+        'influencer-finder': resolve(rootDir, 'src/pages/apps/influencer-finder.html'),
+        'influencer-profile': resolve(rootDir, 'src/pages/apps/influencer-profile.html'),
         // Settings
-        settings: resolve(__dirname, 'src/pages/settings.html'),
+        settings: resolve(rootDir, 'src/pages/settings.html'),
         // User Management
-        users: resolve(__dirname, 'src/pages/users.html'),
-        timeline: resolve(__dirname, 'src/pages/timeline.html'),
+        users: resolve(rootDir, 'src/pages/users.html'),
+        timeline: resolve(rootDir, 'src/pages/timeline.html'),
         // Auth Pages
-        login: resolve(__dirname, 'src/pages/auth/login.html'),
-        signup: resolve(__dirname, 'src/pages/auth/signup.html'),
-        'forgot-password': resolve(__dirname, 'src/pages/auth/forgot-password.html'),
+        login: resolve(rootDir, 'src/pages/auth/login.html'),
+        signup: resolve(rootDir, 'src/pages/auth/signup.html'),
+        'forgot-password': resolve(rootDir, 'src/pages/auth/forgot-password.html'),
         // Misc Pages
-        'blank-page': resolve(__dirname, 'src/pages/misc/blank-page.html'),
-        404: resolve(__dirname, 'src/pages/misc/404.html')
+        'blank-page': resolve(rootDir, 'src/pages/misc/blank-page.html'),
+        404: resolve(rootDir, 'src/pages/misc/404.html')
       },
       output: {
         chunkFileNames: 'assets/js/[name]-[hash].js',
@@ -115,12 +118,12 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      '@': resolve(__dirname, 'src'),
-      '@scss': resolve(__dirname, 'src/scss'),
-      '@js': resolve(__dirname, 'src/js'),
-      '@assets': resolve(__dirname, 'src/assets'),
-      '@components': resolve(__dirname, 'src/js/components'),
-      '@utils': resolve(__dirname, 'src/js/utils')
+      '@': resolve(rootDir, 'src'),
+      '@scss': resolve(rootDir, 'src/scss'),
+      '@js': resolve(rootDir, 'src/js'),
+      '@assets': resolve(rootDir, 'src/assets'),
+      '@components': resolve(rootDir, 'src/js/components'),
+      '@utils': resolve(rootDir, 'src/js/utils')
     }
   }
 });
