@@ -18,10 +18,12 @@ const defaultConfig = {
       previous: '<i class="fas fa-angle-left"></i>'
     }
   },
-  dom:
-    '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>' +
-    '<"row"<"col-sm-12"tr>>' +
-    '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>'
+  layout: {
+    topStart: 'pageLength',
+    topEnd: 'search',
+    bottomStart: 'info',
+    bottomEnd: 'paging'
+  }
 };
 
 /**
@@ -30,6 +32,44 @@ const defaultConfig = {
  * @param {Object} customConfig - Custom configuration to merge with defaults
  * @returns {DataTable} DataTable instance
  */
+/**
+ * Initialize a DataTable with the Buttons extension (copy / csv / excel / print).
+ *
+ * Buttons and JSZip are imported dynamically so only the pages that actually
+ * export data pay for them. Previously data-tables.html asked for
+ * `dom: 'Bfrtip'` with a `buttons` array while nothing ever imported the
+ * Buttons extension, so the export toolbar simply never rendered.
+ *
+ * @param {string|HTMLElement} selector
+ * @param {Object} customConfig
+ * @returns {Promise<DataTable>}
+ */
+export async function initDataTableWithButtons(selector, customConfig = {}) {
+  // Import the .mjs builds: the .js ones are UMD and expect a jQuery-style
+  // global, which throws under Vite's ESM bundling.
+  const [, , , JSZipModule] = await Promise.all([
+    import('datatables.net-buttons-bs5'),
+    import('datatables.net-buttons/js/buttons.html5.mjs'),
+    import('datatables.net-buttons/js/buttons.print.mjs'),
+    import('jszip')
+  ]);
+
+  // The Excel export looks JSZip up through this registration hook.
+  DataTable.Buttons.jszip(JSZipModule.default ?? JSZipModule);
+
+  const { buttons = ['copy', 'csv', 'excel', 'print'], ...rest } = customConfig;
+
+  return initDataTable(selector, {
+    ...rest,
+    // DataTables 3 prefers `layout` over the legacy `dom` string.
+    layout: {
+      ...defaultConfig.layout,
+      topStart: 'buttons'
+    },
+    buttons
+  });
+}
+
 export function initDataTable(selector, customConfig = {}) {
   const config = { ...defaultConfig, ...customConfig };
 
