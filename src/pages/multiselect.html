@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Multiselect" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="forms" activePage="multiselect" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -35,7 +35,7 @@
                         <div class="card">
                             <h5 class="card-header">Basic Multiselect</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="select-basic" class="form-label">Basic Select</label>
                                         <select id="select-basic" class="form-select" placeholder="Select a person...">
@@ -57,7 +57,7 @@
                                             <option value="6">Charles Darwin</option>
                                         </select>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="card">
                             <h5 class="card-header">Select with Groups</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="select-groups" class="form-label">Grouped Options</label>
                                         <select id="select-groups" class="form-select" placeholder="Select a vehicle...">
@@ -97,7 +97,7 @@
                                             <option value="5" disabled>Another Disabled</option>
                                         </select>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                         <div class="card">
                             <h5 class="card-header">Tagging</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="select-tags" class="form-label">Tags Input</label>
                                         <input id="select-tags" type="text" class="form-control" placeholder="Add tags...">
@@ -126,15 +126,15 @@
                                             <option value="csharp">C#</option>
                                         </select>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Search & Clear</h5>
+                            <h5 class="card-header">Search &amp; Clear</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="select-search" class="form-label">With Search</label>
                                         <select id="select-search" class="form-select" placeholder="Search countries...">
@@ -163,7 +163,7 @@
                                             <option value="5">Option 5</option>
                                         </select>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -175,7 +175,7 @@
                         <div class="card">
                             <h5 class="card-header">Selection Limits</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="select-limit" class="form-label">Max 3 Items</label>
                                         <select id="select-limit" class="form-select" multiple placeholder="Select up to 3 items...">
@@ -197,7 +197,7 @@
                                             <option value="4">Item 4</option>
                                         </select>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -205,7 +205,7 @@
                         <div class="card">
                             <h5 class="card-header">Email Input</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="select-emails" class="form-label">Email Recipients</label>
                                         <input id="select-emails" type="text" class="form-control" placeholder="Add email addresses...">
@@ -220,7 +220,7 @@
                                             <option value="4" data-data='{"email": "alice@example.com", "name": "Alice Brown"}'>Alice Brown</option>
                                         </select>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -337,9 +337,9 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
         import { initializeMultiselect } from '@js/pages/multiselect.js';
     </script>

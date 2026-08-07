@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Chat" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="apps" activePage="chat" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="dashboard-content">
                 <div class="container-fluid">
@@ -42,8 +42,8 @@
                                             <div class="p-3 border-bottom">
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" placeholder="Search conversations..." aria-label="Search conversations">
-                                                    <button class="btn btn-outline-secondary" type="button">
-                                                        <i class="fas fa-search"></i>
+                                                    <button class="btn btn-outline-secondary" type="button" aria-label="Search">
+                                                        <i aria-hidden="true" class="fas fa-search"></i>
                                                     </button>
                                                 </div>
                                             </div>
@@ -64,8 +64,8 @@
                                                         <small class="text-success">Online</small>
                                                     </div>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-sm btn-ghost" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        <button class="btn btn-sm btn-ghost" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More options">
+                                                            <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-end">
                                                             <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle me-2"></i>Profile</a></li>
@@ -197,8 +197,8 @@
                                             <!-- Chat Header -->
                                             <div class="chat-header p-3 border-bottom">
                                                 <div class="d-flex align-items-center">
-                                                    <button class="btn btn-sm btn-ghost d-md-none me-2" id="toggleContacts">
-                                                        <i class="fas fa-bars"></i>
+                                                    <button type="button" class="btn btn-sm btn-ghost d-md-none me-2" id="toggleContacts" aria-label="Toggle navigation">
+                                                        <i aria-hidden="true" class="fas fa-bars"></i>
                                                     </button>
                                                     <div class="avatar-circle bg-info text-white rounded-circle me-3 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
                                         <span class="fw-bold">SJ</span>
@@ -207,15 +207,15 @@
                                                         <h5 class="mb-0">Sarah Johnson</h5>
                                                         <small class="text-success">Online</small>
                                                     </div>
-                                                    <button class="btn btn-sm btn-ghost me-2" data-bs-toggle="tooltip" title="Voice Call">
-                                                        <i class="fas fa-phone"></i>
+                                                    <button type="button" class="btn btn-sm btn-ghost me-2" data-bs-toggle="tooltip" title="Voice Call" aria-label="Voice Call">
+                                                        <i aria-hidden="true" class="fas fa-phone"></i>
                                                     </button>
-                                                    <button class="btn btn-sm btn-ghost me-2" data-bs-toggle="tooltip" title="Video Call">
-                                                        <i class="fas fa-video"></i>
+                                                    <button type="button" class="btn btn-sm btn-ghost me-2" data-bs-toggle="tooltip" title="Video Call" aria-label="Video Call">
+                                                        <i aria-hidden="true" class="fas fa-video"></i>
                                                     </button>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-sm btn-ghost" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        <button class="btn btn-sm btn-ghost" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="More options">
+                                                            <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                         </button>
                                                         <ul class="dropdown-menu dropdown-menu-end">
                                                             <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>View Profile</a></li>
@@ -270,7 +270,7 @@
                                                                 <div class="message-attachment mb-2">
                                                                     <i class="fas fa-file-pdf text-danger me-2"></i>
                                                                     <span>Dashboard_Design_v2.pdf</span>
-                                                                    <a href="#" class="ms-2"><i class="fas fa-download"></i></a>
+                                                                    <a href="#" class="ms-2" aria-label="Download"><i aria-hidden="true" class="fas fa-download"></i></a>
                                                                 </div>
                                                                 <p class="mb-0">Here's the latest version for your review</p>
                                                             </div>
@@ -315,17 +315,17 @@
                                             <!-- Message Input -->
                                             <div class="chat-input border-top p-3">
                                                 <form id="messageForm" class="d-flex align-items-center">
-                                                    <button type="button" class="btn btn-ghost me-2" data-bs-toggle="tooltip" title="Attach File">
-                                                        <i class="fas fa-paperclip"></i>
+                                                    <button type="button" class="btn btn-ghost me-2" data-bs-toggle="tooltip" title="Attach File" aria-label="Attach File">
+                                                        <i aria-hidden="true" class="fas fa-paperclip"></i>
                                                     </button>
                                                     <div class="flex-grow-1">
                                                         <input type="text" class="form-control" id="messageInput" placeholder="Type a message..." autocomplete="off">
                                                     </div>
-                                                    <button type="button" class="btn btn-ghost ms-2" data-bs-toggle="tooltip" title="Emoji">
-                                                        <i class="far fa-smile"></i>
+                                                    <button type="button" class="btn btn-ghost ms-2" data-bs-toggle="tooltip" title="Emoji" aria-label="Emoji">
+                                                        <i aria-hidden="true" class="far fa-smile"></i>
                                                     </button>
-                                                    <button type="submit" class="btn btn-primary ms-2" id="sendButton">
-                                                        <i class="fas fa-paper-plane"></i>
+                                                    <button type="submit" class="btn btn-primary ms-2" id="sendButton" aria-label="Send">
+                                                        <i aria-hidden="true" class="fas fa-paper-plane"></i>
                                                     </button>
                                                 </form>
                                             </div>
@@ -340,9 +340,9 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <!-- Page Specific JS -->
     <script type="module" src="../js/pages/chat.js"></script>
 </body>

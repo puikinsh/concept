@@ -4,10 +4,10 @@
 <div class="dashboard-main-wrapper">
     <!-- Header -->
     {{> layouts/header}}
-    
+
     <!-- Sidebar -->
     {{> layouts/sidebar activeMenu="ecommerce" activePage="checkout"}}
-    
+
     <!-- Main Content -->
     <div class="dashboard-wrapper">
         <div class="dashboard-ecommerce">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Checkout Steps -->
                 <div class="row mb-4">
                     <div class="col-12">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <!-- Checkout Form -->
                     <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
@@ -72,7 +72,7 @@
                                 <h5 class="mb-0">Shipping Information</h5>
                             </div>
                             <div class="card-body">
-                                <form id="shippingForm">
+                                <div>
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="firstName" class="form-label">First Name</label>
@@ -83,27 +83,27 @@
                                             <input type="text" class="form-control" id="lastName" required>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email Address</label>
                                         <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
                                     </div>
-                                    
+
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Phone Number</label>
                                         <input type="tel" class="form-control" id="phone" placeholder="+1 (555) 123-4567" required>
                                     </div>
-                                    
+
                                     <div class="mb-3">
                                         <label for="address" class="form-label">Address</label>
                                         <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
                                     </div>
-                                    
+
                                     <div class="mb-3">
                                         <label for="address2" class="form-label">Address 2 <span class="text-muted">(Optional)</span></label>
                                         <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="col-md-5 mb-3">
                                             <label for="country" class="form-label">Country</label>
@@ -130,26 +130,26 @@
                                             <input type="text" class="form-control" id="zip" required>
                                         </div>
                                     </div>
-                                    
+
                                     <hr class="mb-4">
-                                    
+
                                     <div class="form-check mb-3">
                                         <input type="checkbox" class="form-check-input" id="sameAddress">
                                         <label class="form-check-label" for="sameAddress">
                                             Billing address is the same as shipping address
                                         </label>
                                     </div>
-                                    
+
                                     <div class="form-check mb-3">
                                         <input type="checkbox" class="form-check-input" id="saveInfo">
                                         <label class="form-check-label" for="saveInfo">
                                             Save this information for next time
                                         </label>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
-                        
+
                         <!-- Payment Information -->
                         <div class="card mb-4">
                             <div class="card-header">
@@ -176,14 +176,14 @@
                                         </label>
                                     </div>
                                 </div>
-                                
+
                                 <div id="creditCardForm">
                                     <div class="mb-3">
                                         <label for="cardName" class="form-label">Name on Card</label>
                                         <input type="text" class="form-control" id="cardName" required>
                                         <small class="text-muted">Full name as displayed on card</small>
                                     </div>
-                                    
+
                                     <div class="mb-3">
                                         <label for="cardNumber" class="form-label">Card Number</label>
                                         <div class="input-group">
@@ -195,7 +195,7 @@
                                             </span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="row">
                                         <div class="col-md-6 mb-3">
                                             <label for="expiry" class="form-label">Expiry Date</label>
@@ -207,20 +207,20 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div id="paypalForm" style="display: none;">
                                     <div class="text-center py-4">
                                         <p class="mb-3">You will be redirected to PayPal to complete your purchase.</p>
-                                        <button class="btn btn-warning btn-lg">
+                                        <button type="button" class="btn btn-warning btn-lg">
                                             <i class="fab fa-paypal me-2"></i>Continue with PayPal
                                         </button>
                                     </div>
                                 </div>
-                                
+
                                 <div id="applePayForm" style="display: none;">
                                     <div class="text-center py-4">
                                         <p class="mb-3">Use Touch ID or Face ID to complete your purchase.</p>
-                                        <button class="btn btn-dark btn-lg">
+                                        <button type="button" class="btn btn-dark btn-lg">
                                             <i class="fab fa-apple me-2"></i>Pay with Apple Pay
                                         </button>
                                     </div>
@@ -228,7 +228,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Order Summary -->
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
                         <div class="card">
@@ -249,7 +249,7 @@
                                         </div>
                                         <span class="fw-bold">$1,899</span>
                                     </div>
-                                    
+
                                     <div class="order-item d-flex justify-content-between align-items-start mb-3">
                                         <div class="d-flex">
                                             <img src="https://placehold.co/80x80/ff407b/ffffff?text=AirPods&font=montserrat" alt="Product" width="60" class="me-3">
@@ -262,9 +262,9 @@
                                         <span class="fw-bold">$299</span>
                                     </div>
                                 </div>
-                                
+
                                 <hr>
-                                
+
                                 <!-- Promo Code -->
                                 <div class="mb-3">
                                     <label for="promoCode" class="form-label small text-muted">Promo Code</label>
@@ -273,9 +273,9 @@
                                         <button class="btn btn-outline-secondary" type="button">Apply</button>
                                     </div>
                                 </div>
-                                
+
                                 <hr>
-                                
+
                                 <!-- Order Totals -->
                                 <div class="order-totals">
                                     <div class="d-flex justify-content-between mb-2">
@@ -296,11 +296,11 @@
                                         <strong class="text-primary h5 mb-0">$2,410.82</strong>
                                     </div>
                                 </div>
-                                
-                                <button class="btn btn-primary btn-lg w-100" onclick="completeOrder()">
+
+                                <button type="button" class="btn btn-primary btn-lg w-100" onclick="completeOrder()">
                                     <i class="fas fa-lock me-2"></i>Complete Order
                                 </button>
-                                
+
                                 <div class="text-center mt-3">
                                     <small class="text-muted">
                                         <i class="fas fa-shield-alt me-1"></i>
@@ -309,7 +309,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Trust Badges -->
                         <div class="card mt-3">
                             <div class="card-body text-center">
@@ -341,7 +341,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer -->
         {{> layouts/footer}}
     </div>
@@ -357,7 +357,7 @@ document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
         document.getElementById('creditCardForm').style.display = 'none';
         document.getElementById('paypalForm').style.display = 'none';
         document.getElementById('applePayForm').style.display = 'none';
-        
+
         if (this.id === 'creditCard') {
             document.getElementById('creditCardForm').style.display = 'block';
         } else if (this.id === 'paypal') {
@@ -374,5 +374,3 @@ function completeOrder() {
 }
 </script>
 {{/inline}}
-
-{{> layouts/base}}

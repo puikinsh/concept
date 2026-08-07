@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Influencer Dashboard" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="dashboard" activePage="dashboard-influencer" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="dashboard-content">
                 <div class="container-fluid">
@@ -36,14 +36,14 @@
                                 <div class="card-body p-0">
                                     <!-- Cover Image -->
                                     <div class="profile-cover" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px;"></div>
-                                    
+
                                     <!-- Profile Info -->
                                     <div class="profile-info px-4 pb-4">
                                         <div class="d-flex align-items-end" style="margin-top: -50px;">
                                             <img src="https://placehold.co/120x120/667eea/ffffff?text=HB&font=montserrat" alt="Profile" class="rounded-circle border border-4 border-white" style="width: 120px; height: 120px;">
                                             <div class="ms-4 mb-3">
                                                 <h3 class="mb-1">Henry Barbara</h3>
-                                                <p class="text-muted mb-2">@henrybarbara • Fitness & Lifestyle Influencer</p>
+                                                <p class="text-muted mb-2">@henrybarbara • Fitness &amp; Lifestyle Influencer</p>
                                                 <div class="d-flex align-items-center">
                                                     <div class="rating-star me-3">
                                                         <i class="fas fa-star text-warning"></i>
@@ -57,16 +57,16 @@
                                                 </div>
                                             </div>
                                             <div class="ms-auto mb-3">
-                                                <button class="btn btn-primary me-2"><i class="fas fa-envelope me-1"></i> Message</button>
-                                                <button class="btn btn-outline-primary"><i class="fas fa-user-plus me-1"></i> Follow</button>
+                                                <button type="button" class="btn btn-primary me-2"><i class="fas fa-envelope me-1"></i> Message</button>
+                                                <button type="button" class="btn btn-outline-primary"><i class="fas fa-user-plus me-1"></i> Follow</button>
                                             </div>
                                         </div>
-                                        
+
                                         <!-- Bio Section -->
                                         <div class="row mt-4">
                                             <div class="col-lg-8">
                                                 <p class="text-muted">
-                                                    Passionate fitness enthusiast and lifestyle blogger. Helping people achieve their health goals through 
+                                                    Passionate fitness enthusiast and lifestyle blogger. Helping people achieve their health goals through
                                                     motivational content and practical tips. Brand collaborations: fitness@henrybarbara.com
                                                 </p>
                                                 <div class="d-flex flex-wrap gap-2 mt-3">
@@ -343,14 +343,14 @@
                                         <table class="table table-hover mb-0">
                                             <thead>
                                                 <tr>
-                                                    <th>Campaign</th>
-                                                    <th>Brand</th>
-                                                    <th>Platform</th>
-                                                    <th>Status</th>
-                                                    <th>Reach</th>
-                                                    <th>Engagement</th>
-                                                    <th>Earnings</th>
-                                                    <th>Actions</th>
+                                                    <th scope="col">Campaign</th>
+                                                    <th scope="col">Brand</th>
+                                                    <th scope="col">Platform</th>
+                                                    <th scope="col">Status</th>
+                                                    <th scope="col">Reach</th>
+                                                    <th scope="col">Engagement</th>
+                                                    <th scope="col">Earnings</th>
+                                                    <th scope="col">Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -376,7 +376,7 @@
                                                     <td>6.2%</td>
                                                     <td>$3,500</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-outline-primary">View</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -401,7 +401,7 @@
                                                     <td>7.8%</td>
                                                     <td>$2,800</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-outline-primary">View</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -426,7 +426,7 @@
                                                     <td>5.4%</td>
                                                     <td>$4,200</td>
                                                     <td>
-                                                        <button class="btn btn-sm btn-outline-primary">View</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-primary">View</button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -441,10 +441,10 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     <!-- Core JavaScript -->
     {{> layouts/scripts }}
-    
+
     <!-- Page Specific JS -->
     <script type="module">
         import Chart from 'chart.js/auto';

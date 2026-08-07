@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Form Elements" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="forms" activePage="form-elements" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -35,7 +35,7 @@
                         <div class="card">
                             <h5 class="card-header">Basic Form Elements</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="inputText" class="form-label">Text Input</label>
                                         <input type="text" class="form-control" id="inputText" placeholder="Enter text">
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputPassword" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                        <input type="password" class="form-control" id="inputPassword" placeholder="Password" autocomplete="new-password">
                                     </div>
                                     <div class="mb-3">
                                         <label for="inputNumber" class="form-label">Number Input</label>
@@ -69,15 +69,15 @@
                                         <label for="inputColor" class="form-label">Color Picker</label>
                                         <input type="color" class="form-control form-control-color" id="inputColor" value="#5969ff">
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                         <div class="card">
-                            <h5 class="card-header">Textarea & Select</h5>
+                            <h5 class="card-header">Textarea &amp; Select</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="mb-3">
                                         <label for="exampleTextarea" class="form-label">Textarea</label>
                                         <textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Enter your message..."></textarea>
@@ -113,7 +113,7 @@
                                         <label for="formRange" class="form-label">Range</label>
                                         <input type="range" class="form-range" id="formRange">
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -273,7 +273,7 @@
                                     <div class="row mb-3">
                                         <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-10">
-                                            <input type="password" class="form-control" id="inputPassword3">
+                                            <input type="password" class="form-control" id="inputPassword3" autocomplete="new-password">
                                         </div>
                                     </div>
                                     <fieldset class="row mb-3">
@@ -400,13 +400,13 @@
                         <div class="card">
                             <h5 class="card-header">Floating Labels</h5>
                             <div class="card-body">
-                                <form>
+                                <div>
                                     <div class="form-floating mb-3">
                                         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                                         <label for="floatingInput">Email address</label>
                                     </div>
                                     <div class="form-floating mb-3">
-                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="new-password">
                                         <label for="floatingPassword">Password</label>
                                     </div>
                                     <div class="form-floating mb-3">
@@ -422,7 +422,7 @@
                                         </select>
                                         <label for="floatingSelect">Works with selects</label>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -433,7 +433,7 @@
                                 <input class="form-control form-control-lg mb-3" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
                                 <input class="form-control mb-3" type="text" placeholder="Default input" aria-label="default input example">
                                 <input class="form-control form-control-sm mb-3" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
-                                
+
                                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                                     <option selected>Large select</option>
                                     <option value="1">One</option>
@@ -557,17 +557,17 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script>
     // Bootstrap form validation
     (function() {
         'use strict'
-        
+
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.querySelectorAll('.needs-validation')
-        
+
         // Loop over them and prevent submission
         Array.prototype.slice.call(forms)
             .forEach(function(form) {
@@ -576,7 +576,7 @@
                         event.preventDefault()
                         event.stopPropagation()
                     }
-                    
+
                     form.classList.add('was-validated')
                 }, false)
             })

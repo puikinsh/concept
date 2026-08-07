@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="Settings" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="settings" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -79,32 +79,32 @@
                                                 <input type="text" class="form-control" id="siteName" value="Concept Dashboard">
                                                 <small class="form-text text-muted">The name of your website displayed in the header and title</small>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="siteDescription" class="form-label">Site Description</label>
                                                 <textarea class="form-control" id="siteDescription" rows="3">A modern Bootstrap 5 admin dashboard template</textarea>
                                                 <small class="form-text text-muted">Brief description of your website for SEO purposes</small>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="siteUrl" class="form-label">Site URL</label>
                                                 <input type="url" class="form-control" id="siteUrl" value="https://example.com">
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="timezone" class="form-label">Timezone</label>
                                                 <select class="form-select" id="timezone">
                                                     <option value="UTC">UTC</option>
-                                                    <option value="America/New_York" selected>Eastern Time (US & Canada)</option>
-                                                    <option value="America/Chicago">Central Time (US & Canada)</option>
-                                                    <option value="America/Denver">Mountain Time (US & Canada)</option>
-                                                    <option value="America/Los_Angeles">Pacific Time (US & Canada)</option>
+                                                    <option value="America/New_York" selected>Eastern Time (US &amp; Canada)</option>
+                                                    <option value="America/Chicago">Central Time (US &amp; Canada)</option>
+                                                    <option value="America/Denver">Mountain Time (US &amp; Canada)</option>
+                                                    <option value="America/Los_Angeles">Pacific Time (US &amp; Canada)</option>
                                                     <option value="Europe/London">London</option>
                                                     <option value="Europe/Paris">Paris</option>
                                                     <option value="Asia/Tokyo">Tokyo</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="dateFormat" class="form-label">Date Format</label>
                                                 <select class="form-select" id="dateFormat">
@@ -113,7 +113,7 @@
                                                     <option value="YYYY-MM-DD">YYYY-MM-DD</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="language" class="form-label">Language</label>
                                                 <select class="form-select" id="language">
@@ -124,7 +124,7 @@
                                                     <option value="ja">Japanese</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="d-flex justify-content-end">
                                                 <button type="button" class="btn btn-outline-secondary me-2">Reset</button>
                                                 <button type="submit" class="btn btn-primary">Save Changes</button>
@@ -141,32 +141,32 @@
                                         <h5 class="mb-0">Account Settings</h5>
                                     </div>
                                     <div class="card-body">
-                                        <form>
+                                        <div>
                                             <div class="mb-4">
                                                 <label for="username" class="form-label">Username</label>
                                                 <input type="text" class="form-control" id="username" value="johndoe">
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="displayName" class="form-label">Display Name</label>
                                                 <input type="text" class="form-control" id="displayName" value="John Doe">
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="accountEmail" class="form-label">Email Address</label>
                                                 <input type="email" class="form-control" id="accountEmail" value="john.doe@example.com">
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="phone" class="form-label">Phone Number</label>
                                                 <input type="tel" class="form-control" id="phone" value="+1 (555) 123-4567">
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="bio" class="form-label">Bio</label>
                                                 <textarea class="form-control" id="bio" rows="3">Product designer with 5+ years of experience</textarea>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label class="form-label">Profile Picture</label>
                                                 <div class="d-flex align-items-center">
@@ -186,13 +186,13 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Delete Account</h6>
                                             <p class="text-muted">Once you delete your account, there is no going back. Please be certain.</p>
                                             <button type="button" class="btn btn-danger">Delete Account</button>
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -208,24 +208,24 @@
                                             <h6 class="mb-3">Change Password</h6>
                                             <div class="mb-3">
                                                 <label for="currentPassword" class="form-label">Current Password</label>
-                                                <input type="password" class="form-control" id="currentPassword">
+                                                <input type="password" class="form-control" id="currentPassword" autocomplete="new-password">
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="newPassword" class="form-label">New Password</label>
-                                                <input type="password" class="form-control" id="newPassword">
-                                                <small class="form-text text-muted">Use 8 or more characters with a mix of letters, numbers & symbols</small>
+                                                <input type="password" class="form-control" id="newPassword" autocomplete="new-password">
+                                                <small class="form-text text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols</small>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="confirmPassword" class="form-label">Confirm New Password</label>
-                                                <input type="password" class="form-control" id="confirmPassword">
+                                                <input type="password" class="form-control" id="confirmPassword" autocomplete="new-password">
                                             </div>
-                                            
+
                                             <button type="submit" class="btn btn-primary mb-4">Update Password</button>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Two-Factor Authentication</h6>
                                             <p class="text-muted">Add an extra layer of security to your account by enabling two-factor authentication.</p>
                                             <div class="form-check form-switch mb-4">
@@ -234,12 +234,12 @@
                                                     Enable Two-Factor Authentication
                                                 </label>
                                             </div>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Sessions</h6>
                                             <p class="text-muted">Manage and logout your active sessions on other browsers and devices.</p>
-                                            
+
                                             <div class="list-group mb-3">
                                                 <div class="list-group-item">
                                                     <div class="d-flex w-100 justify-content-between align-items-center">
@@ -256,11 +256,11 @@
                                                             <h6 class="mb-1">Safari on iPhone</h6>
                                                             <p class="mb-0 text-muted small">Last active 2 hours ago</p>
                                                         </div>
-                                                        <button class="btn btn-sm btn-outline-danger">Logout</button>
+                                                        <button type="button" class="btn btn-sm btn-outline-danger">Logout</button>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <button type="button" class="btn btn-outline-danger">Logout Other Sessions</button>
                                         </form>
                                     </div>
@@ -276,7 +276,7 @@
                                     <div class="card-body">
                                         <form>
                                             <h6 class="mb-3">Email Configuration</h6>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="mailDriver" class="form-label">Mail Driver</label>
                                                 <select class="form-select" id="mailDriver">
@@ -286,27 +286,27 @@
                                                     <option value="ses">Amazon SES</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="smtpHost" class="form-label">SMTP Host</label>
                                                 <input type="text" class="form-control" id="smtpHost" value="smtp.gmail.com">
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="smtpPort" class="form-label">SMTP Port</label>
                                                 <input type="number" class="form-control" id="smtpPort" value="587">
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="smtpUsername" class="form-label">SMTP Username</label>
                                                 <input type="text" class="form-control" id="smtpUsername" value="your-email@gmail.com">
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="smtpPassword" class="form-label">SMTP Password</label>
-                                                <input type="password" class="form-control" id="smtpPassword" placeholder="••••••••">
+                                                <input type="password" class="form-control" id="smtpPassword" placeholder="••••••••" autocomplete="new-password">
                                             </div>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="smtpEncryption" class="form-label">Encryption</label>
                                                 <select class="form-select" id="smtpEncryption">
@@ -315,17 +315,17 @@
                                                     <option value="none">None</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="fromEmail" class="form-label">From Email Address</label>
                                                 <input type="email" class="form-control" id="fromEmail" value="noreply@example.com">
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="fromName" class="form-label">From Name</label>
                                                 <input type="text" class="form-control" id="fromName" value="Concept Dashboard">
                                             </div>
-                                            
+
                                             <div class="d-flex justify-content-between">
                                                 <button type="button" class="btn btn-outline-primary">Send Test Email</button>
                                                 <button type="submit" class="btn btn-primary">Save Configuration</button>
@@ -344,62 +344,62 @@
                                     <div class="card-body">
                                         <form>
                                             <h6 class="mb-3">Email Notifications</h6>
-                                            
+
                                             <div class="form-check form-switch mb-3">
                                                 <input class="form-check-input" type="checkbox" id="emailComments" checked>
                                                 <label class="form-check-label" for="emailComments">
                                                     Comments on your posts
                                                 </label>
                                             </div>
-                                            
+
                                             <div class="form-check form-switch mb-3">
                                                 <input class="form-check-input" type="checkbox" id="emailFollowers" checked>
                                                 <label class="form-check-label" for="emailFollowers">
                                                     New followers
                                                 </label>
                                             </div>
-                                            
+
                                             <div class="form-check form-switch mb-3">
                                                 <input class="form-check-input" type="checkbox" id="emailMentions">
                                                 <label class="form-check-label" for="emailMentions">
                                                     Mentions and tags
                                                 </label>
                                             </div>
-                                            
+
                                             <div class="form-check form-switch mb-4">
                                                 <input class="form-check-input" type="checkbox" id="emailNewsletter" checked>
                                                 <label class="form-check-label" for="emailNewsletter">
                                                     Newsletter and product updates
                                                 </label>
                                             </div>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Push Notifications</h6>
-                                            
+
                                             <div class="form-check form-switch mb-3">
                                                 <input class="form-check-input" type="checkbox" id="pushMessages" checked>
                                                 <label class="form-check-label" for="pushMessages">
                                                     Direct messages
                                                 </label>
                                             </div>
-                                            
+
                                             <div class="form-check form-switch mb-3">
                                                 <input class="form-check-input" type="checkbox" id="pushTasks" checked>
                                                 <label class="form-check-label" for="pushTasks">
                                                     Task assignments
                                                 </label>
                                             </div>
-                                            
+
                                             <div class="form-check form-switch mb-3">
                                                 <input class="form-check-input" type="checkbox" id="pushReminders" checked>
                                                 <label class="form-check-label" for="pushReminders">
                                                     Reminders
                                                 </label>
                                             </div>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Desktop Notifications</h6>
                                             <p class="text-muted">Show notifications on desktop when the app is in background</p>
                                             <div class="form-check form-switch mb-4">
@@ -408,7 +408,7 @@
                                                     Enable desktop notifications
                                                 </label>
                                             </div>
-                                            
+
                                             <button type="submit" class="btn btn-primary">Save Preferences</button>
                                         </form>
                                     </div>
@@ -430,7 +430,7 @@
                                                         <input class="form-check-input" type="radio" name="theme" id="themeLight" value="light" checked>
                                                         <label class="form-check-label card p-3 text-center" for="themeLight">
                                                             <i class="fas fa-sun fa-2x mb-2"></i>
-                                                            <p class="mb-0">Light</p>
+                                                            <span class="d-block mb-0">Light</span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -439,7 +439,7 @@
                                                         <input class="form-check-input" type="radio" name="theme" id="themeDark" value="dark">
                                                         <label class="form-check-label card p-3 text-center" for="themeDark">
                                                             <i class="fas fa-moon fa-2x mb-2"></i>
-                                                            <p class="mb-0">Dark</p>
+                                                            <span class="d-block mb-0">Dark</span>
                                                         </label>
                                                     </div>
                                                 </div>
@@ -448,12 +448,12 @@
                                                         <input class="form-check-input" type="radio" name="theme" id="themeAuto" value="auto">
                                                         <label class="form-check-label card p-3 text-center" for="themeAuto">
                                                             <i class="fas fa-adjust fa-2x mb-2"></i>
-                                                            <p class="mb-0">Auto</p>
+                                                            <span class="d-block mb-0">Auto</span>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <h6 class="mb-3">Color Scheme</h6>
                                             <div class="d-flex gap-2 mb-4">
                                                 <button type="button" class="btn btn-primary color-scheme-btn active" data-color="primary">Primary</button>
@@ -463,7 +463,7 @@
                                                 <button type="button" class="btn btn-info color-scheme-btn" data-color="info">Info</button>
                                                 <button type="button" class="btn btn-dark color-scheme-btn" data-color="dark">Dark</button>
                                             </div>
-                                            
+
                                             <h6 class="mb-3">Layout</h6>
                                             <div class="mb-3">
                                                 <label for="sidebarLayout" class="form-label">Sidebar Layout</label>
@@ -473,7 +473,7 @@
                                                     <option value="compact">Compact</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <div class="mb-4">
                                                 <label for="contentWidth" class="form-label">Content Width</label>
                                                 <select class="form-select" id="contentWidth">
@@ -481,7 +481,7 @@
                                                     <option value="boxed">Boxed</option>
                                                 </select>
                                             </div>
-                                            
+
                                             <h6 class="mb-3">Font Size</h6>
                                             <div class="mb-4">
                                                 <input type="range" class="form-range" min="12" max="20" value="16" id="fontSize">
@@ -490,7 +490,7 @@
                                                     <small>Large</small>
                                                 </div>
                                             </div>
-                                            
+
                                             <button type="submit" class="btn btn-primary">Apply Changes</button>
                                         </form>
                                     </div>
@@ -521,7 +521,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="list-group-item">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="d-flex align-items-center">
@@ -533,10 +533,10 @@
                                                             <small class="text-muted">Get notifications in your Slack workspace</small>
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-sm btn-outline-primary">Connect</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-primary">Connect</button>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="list-group-item">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="d-flex align-items-center">
@@ -553,7 +553,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="list-group-item">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="d-flex align-items-center">
@@ -565,10 +565,10 @@
                                                             <small class="text-muted">Email marketing automation</small>
                                                         </div>
                                                     </div>
-                                                    <button class="btn btn-sm btn-outline-primary">Connect</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-primary">Connect</button>
                                                 </div>
                                             </div>
-                                            
+
                                             <div class="list-group-item">
                                                 <div class="d-flex align-items-center justify-content-between">
                                                     <div class="d-flex align-items-center">
@@ -584,19 +584,19 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="mt-4">
                                             <h6 class="mb-3">API Keys</h6>
                                             <div class="mb-3">
                                                 <label for="apiKey" class="form-label">API Key</label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" id="apiKey" value="sk_test_4eC39HqLyjWDarjtT1zdp7dc" readonly>
-                                                    <button class="btn btn-outline-secondary" type="button">
-                                                        <i class="fas fa-copy"></i>
+                                                    <button class="btn btn-outline-secondary" type="button" aria-label="Copy">
+                                                        <i aria-hidden="true" class="fas fa-copy"></i>
                                                     </button>
                                                 </div>
                                             </div>
-                                            <button class="btn btn-primary">Generate New Key</button>
+                                            <button type="button" class="btn btn-primary">Generate New Key</button>
                                         </div>
                                     </div>
                                 </div>
@@ -611,7 +611,7 @@
                                     <div class="card-body">
                                         <form>
                                             <h6 class="mb-3">Developer Options</h6>
-                                            
+
                                             <div class="form-check form-switch mb-3">
                                                 <input class="form-check-input" type="checkbox" id="debugMode">
                                                 <label class="form-check-label" for="debugMode">
@@ -619,7 +619,7 @@
                                                 </label>
                                                 <small class="form-text text-muted d-block">Show detailed error messages and logs</small>
                                             </div>
-                                            
+
                                             <div class="form-check form-switch mb-4">
                                                 <input class="form-check-input" type="checkbox" id="maintenanceMode">
                                                 <label class="form-check-label" for="maintenanceMode">
@@ -627,22 +627,22 @@
                                                 </label>
                                                 <small class="form-text text-muted d-block">Temporarily disable the site for maintenance</small>
                                             </div>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Cache</h6>
                                             <p class="text-muted">Clear various types of cached data to improve performance</p>
-                                            
+
                                             <div class="d-flex gap-2 mb-4">
                                                 <button type="button" class="btn btn-outline-secondary">Clear App Cache</button>
                                                 <button type="button" class="btn btn-outline-secondary">Clear View Cache</button>
                                                 <button type="button" class="btn btn-outline-secondary">Clear All Cache</button>
                                             </div>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Database</h6>
-                                            
+
                                             <div class="mb-3">
                                                 <label for="dbBackup" class="form-label">Automatic Backup</label>
                                                 <select class="form-select" id="dbBackup">
@@ -652,14 +652,14 @@
                                                     <option value="never">Never</option>
                                                 </select>
                                             </div>
-                                            
-                                            <button type="button" class="btn btn-primary mb-4">Backup Now</button>
-                                            
+
+                                            <button type="submit" class="btn btn-primary mb-4">Backup Now</button>
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3">Export/Import</h6>
                                             <p class="text-muted">Export your settings or import from a backup</p>
-                                            
+
                                             <div class="d-flex gap-2 mb-4">
                                                 <button type="button" class="btn btn-outline-primary">
                                                     <i class="fas fa-download me-2"></i>Export Settings
@@ -668,12 +668,12 @@
                                                     <i class="fas fa-upload me-2"></i>Import Settings
                                                 </button>
                                             </div>
-                                            
+
                                             <hr>
-                                            
+
                                             <h6 class="mb-3 text-danger">Danger Zone</h6>
                                             <p class="text-muted">These actions are irreversible. Please be careful.</p>
-                                            
+
                                             <button type="button" class="btn btn-outline-danger me-2">Reset All Settings</button>
                                             <button type="button" class="btn btn-danger">Delete All Data</button>
                                         </form>
@@ -687,9 +687,9 @@
             {{> layouts/footer }}
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
         import { initializeSettings } from '@js/pages/settings.js';
     </script>

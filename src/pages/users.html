@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     {{> layouts/head pageTitle="User Management" }}
@@ -7,7 +7,7 @@
     <div class="dashboard-main-wrapper">
         {{> layouts/header }}
         {{> layouts/sidebar activeMenu="users" }}
-        
+
         <div class="dashboard-wrapper">
             <div class="container-fluid dashboard-content">
                 <!-- Page Header -->
@@ -120,10 +120,10 @@
                                 <div class="d-flex justify-content-between align-items-center">
                                     <h5 class="mb-0">User List</h5>
                                     <div>
-                                        <button class="btn btn-sm btn-outline-secondary me-2" id="exportBtn">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary me-2" id="exportBtn">
                                             <i class="fas fa-download me-1"></i>Export
                                         </button>
-                                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
+                                        <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal">
                                             <i class="fas fa-plus me-1"></i>Add User
                                         </button>
                                     </div>
@@ -154,7 +154,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-2">
-                                        <button class="btn btn-outline-secondary w-100" id="resetFilters">
+                                        <button type="button" class="btn btn-outline-secondary w-100" id="resetFilters">
                                             <i class="fas fa-redo me-1"></i>Reset
                                         </button>
                                     </div>
@@ -165,18 +165,18 @@
                                     <table id="userTable" class="table table-hover">
                                         <thead>
                                             <tr>
-                                                <th>
+                                                <th scope="col">
                                                     <div class="form-check">
                                                         <input class="form-check-input" type="checkbox" id="selectAll">
                                                     </div>
                                                 </th>
-                                                <th>User</th>
-                                                <th>Email</th>
-                                                <th>Role</th>
-                                                <th>Status</th>
-                                                <th>Joined</th>
-                                                <th>Last Active</th>
-                                                <th>Actions</th>
+                                                <th scope="col">User</th>
+                                                <th scope="col">Email</th>
+                                                <th scope="col">Role</th>
+                                                <th scope="col">Status</th>
+                                                <th scope="col">Joined</th>
+                                                <th scope="col">Last Active</th>
+                                                <th scope="col">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -202,8 +202,8 @@
                                                 <td>2 hours ago</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
-                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown" aria-label="More options">
+                                                            <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
@@ -236,8 +236,8 @@
                                                 <td>5 minutes ago</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
-                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown" aria-label="More options">
+                                                            <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
@@ -270,8 +270,8 @@
                                                 <td>1 day ago</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
-                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown" aria-label="More options">
+                                                            <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
@@ -304,8 +304,8 @@
                                                 <td>1 week ago</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
-                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown" aria-label="More options">
+                                                            <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
@@ -338,8 +338,8 @@
                                                 <td>1 month ago</td>
                                                 <td>
                                                     <div class="dropdown">
-                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown">
-                                                            <i class="fas fa-ellipsis-v"></i>
+                                                        <button class="btn btn-sm btn-light" type="button" data-bs-toggle="dropdown" aria-label="More options">
+                                                            <i aria-hidden="true" class="fas fa-ellipsis-v"></i>
                                                         </button>
                                                         <ul class="dropdown-menu">
                                                             <li><a class="dropdown-item" href="#"><i class="fas fa-eye me-2"></i>View</a></li>
@@ -358,13 +358,13 @@
                                 <div class="bulk-actions mt-3" id="bulkActions" style="display: none;">
                                     <div class="d-flex align-items-center">
                                         <span class="me-3"><span id="selectedCount">0</span> users selected</span>
-                                        <button class="btn btn-sm btn-outline-primary me-2">
+                                        <button type="button" class="btn btn-sm btn-outline-primary me-2">
                                             <i class="fas fa-envelope me-1"></i>Send Email
                                         </button>
-                                        <button class="btn btn-sm btn-outline-warning me-2">
+                                        <button type="button" class="btn btn-sm btn-outline-warning me-2">
                                             <i class="fas fa-ban me-1"></i>Suspend
                                         </button>
-                                        <button class="btn btn-sm btn-outline-danger">
+                                        <button type="button" class="btn btn-sm btn-outline-danger">
                                             <i class="fas fa-trash me-1"></i>Delete
                                         </button>
                                     </div>
@@ -379,7 +379,7 @@
     </div>
 
     <!-- Add User Modal -->
-    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -437,9 +437,9 @@
             </div>
         </div>
     </div>
-    
+
     {{> layouts/scripts }}
-    
+
     <script type="module">
         import { initializeUserManagement } from '@js/pages/users.js';
     </script>

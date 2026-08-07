@@ -4,10 +4,10 @@
 <div class="dashboard-main-wrapper">
     <!-- Header -->
     {{> layouts/header}}
-    
+
     <!-- Sidebar -->
     {{> layouts/sidebar activeMenu="influencer" activePage="influencer-finder"}}
-    
+
     <!-- Main Content -->
     <div class="dashboard-wrapper">
         <div class="influence-finder">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Search Bar -->
                 <div class="row mb-4">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <!-- Influencer List -->
                     <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12">
@@ -91,8 +91,8 @@
                                     </div>
                                     <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
-                                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites">
-                                                <i class="far fa-star"></i>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites" aria-label="Add to favorites">
+                                                <i aria-hidden="true" class="far fa-star"></i>
                                             </button>
                                             <a href="influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
                                         </div>
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Influencer Card 2 -->
                         <div class="card influencer-card mb-3">
                             <div class="card-body">
@@ -180,8 +180,8 @@
                                     </div>
                                     <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
-                                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites">
-                                                <i class="far fa-star"></i>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites" aria-label="Add to favorites">
+                                                <i aria-hidden="true" class="far fa-star"></i>
                                             </button>
                                             <a href="influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
                                         </div>
@@ -229,7 +229,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Influencer Card 3 -->
                         <div class="card influencer-card mb-3">
                             <div class="card-body">
@@ -269,8 +269,8 @@
                                     </div>
                                     <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
-                                            <button class="btn btn-warning btn-sm me-2" data-bs-toggle="tooltip" title="Remove from favorites">
-                                                <i class="fas fa-star"></i>
+                                            <button type="button" class="btn btn-warning btn-sm me-2" data-bs-toggle="tooltip" title="Remove from favorites" aria-label="Remove from favorites">
+                                                <i aria-hidden="true" class="fas fa-star"></i>
                                             </button>
                                             <a href="influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
                                         </div>
@@ -318,7 +318,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Influencer Card 4 -->
                         <div class="card influencer-card mb-3">
                             <div class="card-body">
@@ -358,8 +358,8 @@
                                     </div>
                                     <div class="col-xl-3 col-lg-12 col-md-12 col-sm-12 col-12">
                                         <div class="influencer-actions text-xl-end mt-3 mt-xl-0">
-                                            <button class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites">
-                                                <i class="far fa-star"></i>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm me-2" data-bs-toggle="tooltip" title="Add to favorites" aria-label="Add to favorites">
+                                                <i aria-hidden="true" class="far fa-star"></i>
                                             </button>
                                             <a href="influencer-profile.html" class="btn btn-primary btn-sm">View Profile</a>
                                         </div>
@@ -407,7 +407,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Pagination -->
                         <nav aria-label="Page navigation" class="mt-4">
                             <ul class="pagination justify-content-center">
@@ -425,13 +425,13 @@
                             </ul>
                         </nav>
                     </div>
-                    
+
                     <!-- Filter Sidebar -->
                     <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12">
                         <div class="card filter-sidebar">
                             <div class="card-body">
                                 <h5 class="card-title">Filter Results</h5>
-                                
+
                                 <!-- Sorting -->
                                 <div class="mb-4">
                                     <label class="form-label fw-bold">Sort By</label>
@@ -442,7 +442,7 @@
                                         <option value="recent">Recently Active</option>
                                     </select>
                                 </div>
-                                
+
                                 <!-- Rating Filter -->
                                 <div class="mb-4">
                                     <label class="form-label fw-bold">Minimum Rating</label>
@@ -465,7 +465,7 @@
                                                 <i class="fas fa-star text-warning"></i>
                                                 <i class="fas fa-star text-warning"></i>
                                                 <i class="far fa-star text-warning"></i>
-                                                <span class="text-muted small">& up</span>
+                                                <span class="text-muted small">&amp; up</span>
                                             </label>
                                         </div>
                                         <div class="form-check">
@@ -476,7 +476,7 @@
                                                 <i class="fas fa-star text-warning"></i>
                                                 <i class="far fa-star text-warning"></i>
                                                 <i class="far fa-star text-warning"></i>
-                                                <span class="text-muted small">& up</span>
+                                                <span class="text-muted small">&amp; up</span>
                                             </label>
                                         </div>
                                         <div class="form-check">
@@ -487,7 +487,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Social Media Platforms -->
                                 <div class="mb-4">
                                     <label class="form-label fw-bold">Social Media Platforms</label>
@@ -530,7 +530,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Categories -->
                                 <div class="mb-4">
                                     <label class="form-label fw-bold">Categories</label>
@@ -561,11 +561,11 @@
                                         </div>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="beauty">
-                                            <label class="form-check-label" for="beauty">Beauty & Makeup</label>
+                                            <label class="form-check-label" for="beauty">Beauty &amp; Makeup</label>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Age Range -->
                                 <div class="mb-4">
                                     <label class="form-label fw-bold">Age Range</label>
@@ -577,7 +577,7 @@
                                         <option value="46+">46+</option>
                                     </select>
                                 </div>
-                                
+
                                 <!-- Follower Range -->
                                 <div class="mb-4">
                                     <label class="form-label fw-bold">Follower Count</label>
@@ -589,11 +589,11 @@
                                         <option value="1m+">1M+ (Mega)</option>
                                     </select>
                                 </div>
-                                
+
                                 <!-- Apply/Reset Buttons -->
                                 <div class="d-grid gap-2">
-                                    <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
-                                    <button class="btn btn-outline-secondary" onclick="resetFilters()">Reset</button>
+                                    <button type="button" class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+                                    <button type="button" class="btn btn-outline-secondary" onclick="resetFilters()">Reset</button>
                                 </div>
                             </div>
                         </div>
@@ -601,7 +601,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- Footer -->
         {{> layouts/footer}}
     </div>
@@ -623,7 +623,7 @@ function resetFilters() {
     document.getElementById('ratingAll').checked = true;
     document.getElementById('ageRange').value = '';
     document.getElementById('followerRange').value = '';
-    
+
     // Reset checkboxes
     document.querySelectorAll('.form-check-input[type="checkbox"]').forEach(cb => {
         cb.checked = ['facebook', 'instagram', 'twitter', 'youtube', 'lifestyle', 'fitness'].includes(cb.id);
@@ -639,5 +639,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {{/inline}}
-
-{{> layouts/base}}
