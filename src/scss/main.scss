@@ -2,7 +2,10 @@
 @use "variables" as *;
 
 // Font imports
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+// No web font is loaded. $font-family-base resolves to 'Circular Std' with a
+// full system-font fallback, so nothing needs fetching. A Google Fonts
+// @import for Inter used to sit here: a third-party request (and GDPR
+// exposure) for a family no stylesheet ever referenced.
 
 // Bootstrap 5 (must use @import — Bootstrap hasn't migrated to @use yet)
 @import "../../node_modules/bootstrap/scss/bootstrap";
