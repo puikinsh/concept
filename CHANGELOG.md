@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.1] - 2026-11-16
+
+A maintenance release: every dependency is on its latest release, Bootstrap is 5.3.9, and `npm audit` reports 0 vulnerabilities.
+
+### 📦 Dependencies
+
+- **Bootstrap** 5.3.8 → **5.3.9**
+- Chart.js 4.6, DataTables 3.1 (Buttons 4.1, Responsive 4.1), FullCalendar 6.1.22, Tom Select 2.7, Vite 8.3, Sass 1.108, ESLint 10.15, html-validate 11.21, Prettier 3.10.
+- **Held back:** `quill` stays at exactly `2.0.2` (2.0.3 is affected by GHSA-v3m3-f69x-jf25, no patched release). FullCalendar stays on 6.x because 7.x is a new architecture (`@fullcalendar/core` becomes types only, no 7.x daygrid/timegrid/list packages) and needs a calendar rewrite.
+
+### 🐛 Bug Fixes
+
+- `npm run lint:html` failed under html-validate 11.21 (`presentation-role-style`): tab list items now use `role="none"`.
+- Horizontal overflow on a 390px viewport is gone from the calendar (toolbar view buttons now wrap), general tables (tables are wrapped in `.table-responsive`) and the single product page (a `.d-flex.gap-2 > *` width rule stretched the hidden colour/storage radios).
+
+---
+
 ## [5.0.0] - 2026-08-07
 
 A security, performance and accessibility release. All 26 open Dependabot
