@@ -225,6 +225,12 @@
 
 @include media-breakpoint-down(md) {
     #calendar {
+        // #calendar is itself the .fc element, so this cannot nest under .fc
+        .fc-toolbar-chunk .btn-group {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
         .fc {
             font-size: 0.875rem;
             
