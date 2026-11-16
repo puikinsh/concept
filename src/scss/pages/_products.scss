@@ -197,7 +197,7 @@
         .d-flex.gap-2 {
             flex-direction: column;
             
-            > * {
+            > *:not(.btn-check) {
                 width: 100%;
             }
         }

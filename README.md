@@ -14,12 +14,12 @@ Explore all features, pages, and components in action. Perfect for evaluating th
 
 ## Overview
 
-Concept is a modern admin template built from the ground up with Bootstrap 5.3.8, Vite 7.3, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
+Concept is a modern admin template built from the ground up with Bootstrap 5.3.9, Vite 8, and ES6 modules. This jQuery-free dashboard provides a solid foundation for building admin panels, analytics dashboards, and management systems.
 
 ## Features
 
 ### Core Technologies
-- **Bootstrap 5.3.8** - Latest Bootstrap framework with modern components
+- **Bootstrap 5.3.9** - Latest Bootstrap framework with modern components
 - **Vite 7.3** - Next-generation frontend tooling with lightning-fast HMR and CSS code-splitting
 - **Handlebars** - Template engine with reusable partials
 - **SCSS** - Advanced styling with variables and mixins
@@ -197,7 +197,7 @@ concept/
 
 ### Core
 
-- `bootstrap@5.3.8` - UI framework
+- `bootstrap@5.3.9` - UI framework
 - `@fortawesome/fontawesome-free@7.2.0` - Icon library
 - `vite@7.3.1` - Build tool
 - `sass@1.97.3` - CSS preprocessor
